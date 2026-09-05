@@ -50,7 +50,7 @@ nav button[aria-pressed="true"] { background: var(--ink); color: white; }
 .toolbar label { white-space: nowrap; }
 h2 { font-size: 18px; font-weight: 600; letter-spacing: -.3px; margin: 0 0 8px; }
 .muted { color: var(--muted); font-size: 12px; line-height: 1.6; }
-#chart svg { display: block; width: 100%; height: auto; }
+#chart > svg { display: block; width: 100%; height: auto; }
 .empty { padding: 80px 20px; text-align: center; color: var(--muted); }
 .legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; font-size: 12px; }
 .legend span::before { content: ""; display: inline-block; width: 18px; height: 3px; vertical-align: middle; background: var(--series-color); margin-right: 7px; }
@@ -96,6 +96,8 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
 <div id="summary" class="summary"></div>
 <nav id="tabs" aria-label="Result views"></nav><section class="panel">
 <div class="toolbar"><label id="select-label" for="quantity">Quantity</label><select id="quantity"></select>
+<label id="group-label" for="group" hidden>Panels</label><select id="group" hidden></select>
+<label id="resolution-label" for="resolution" hidden>Period</label><select id="resolution" hidden><option value="annual">Annual</option><option value="original">Original</option></select>
 <label id="sample-label" for="sample" hidden>Sample</label><select id="sample" hidden></select>
 <label id="residual-label"><input id="residual" type="checkbox"> Residuals</label>
 <button id="download-svg" type="button">Save figure</button><button id="download-csv" type="button">Download data</button></div>
@@ -105,7 +107,7 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
 <details id="data-details"><summary>View data</summary><p id="table-note" class="muted"></p><div class="table-pages"><button id="previous-page" type="button">Previous</button><span id="page-number"></span><button id="next-page" type="button">Next</button></div><div id="table" class="table-wrap" tabindex="0" role="region" aria-label="Selected result data"></div></details>
 </section><p class="footnote">Numerical checks describe the checks supplied with each result. They do not establish model adequacy.</p>
 </main></div>
-<script id="result-data" type="application/json">{"schema_version":"1.0","title":"Hindcasting","type":"hindcast","reference":"hindcast-1","models":[{"id":"hindcast-1","label":"Through 2013","metadata":{"training_end":2013,"horizon":3,"time_label":"Year","study":"hindcast","purpose":"workflow_demo","illustrative":true,"method":"Log-linear index extrapolation; a display example, not a stock assessment forecast"}},{"id":"hindcast-2","label":"Through 2016","metadata":{"training_end":2016,"horizon":3,"time_label":"Year","study":"hindcast","purpose":"workflow_demo","illustrative":true,"method":"Log-linear index extrapolation; a display example, not a stock assessment forecast"}},{"id":"hindcast-3","label":"Through 2019","metadata":{"training_end":2019,"horizon":3,"time_label":"Year","study":"hindcast","purpose":"workflow_demo","illustrative":true,"method":"Log-linear index extrapolation; a display example, not a stock assessment forecast"}}],"changes":{"encoding":"columns-v1","names":["id","parent","change"],"columns":[{"values":["hindcast-1","hindcast-2","hindcast-3"]},{"dictionary":[null],"index":[0,0,0]},{"dictionary":["No change description supplied"],"index":[0,0,0]}],"n":3},"series":{"encoding":"columns-v1","names":["time","metric","group","value","unit","definition","model","label"],"columns":[{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]}],"n":0},"fits":{"encoding":"columns-v1","names":["time","series","observed","unit","predicted","kind","cutoff","lead","model","label"],"columns":[{"dictionary":[2014,2015,2016,2017,2018,2019,2020,2021,2022],"index":[0,1,2,0,1,2,0,1,2,3,4,5,3,4,5,3,4,5,6,7,8,6,7,8,6,7,8]},{"dictionary":["Index 18 (Region 1)","Index 19 (Region 1)","Index 20 (Region 2)"],"index":[0,0,0,1,1,1,2,2,2,0,0,0,1,1,1,2,2,2,0,0,0,1,1,1,2,2,2]},{"values":[0.534249440170542,0.610459945494768,0.483833914957584,0.869128916645273,0.923487470227196,0.994049496935054,1.04373534993691,1.22377077691567,1.13572929605611,0.503585067785675,0.44199217333407,0.466975339471439,0.679637993540111,1.1614387047662,0.909406517143503,0.734357067400453,0.64550184014846,0.713722524698996,0.377731205082218,0.384903092509445,0.533173522636986,0.960523282163485,0.974737478989675,0.665420460916155,0.772716002092201,0.751048561936257,1.00202993070836]},{"dictionary":["geometric-mean-scaled index"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[0.387012000364884,0.373787557177581,0.361015001522059,0.906963667394703,0.895639151044182,0.884456034702485,0.518985857113952,0.50759671339495,0.496457504414775,0.373386491982264,0.361201844692789,0.34941481658011,0.888669766108376,0.878460114579775,0.868367758573438,0.563736104043877,0.553282231807705,0.543022215249653,0.354214846418289,0.343012329654471,0.332164107418713,0.86720888773413,0.857729234131929,0.848353204735716,0.555245930114159,0.54544579760967,0.535818638182328]},{"dictionary":["index"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":[2013,2016,2019],"index":[0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2]},{"dictionary":[1,2,3],"index":[0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2]},{"dictionary":["hindcast-1","hindcast-2","hindcast-3"],"index":[0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2]},{"dictionary":["Through 2013","Through 2016","Through 2019"],"index":[0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2]}],"n":27},"compositions":{"encoding":"columns-v1","names":["time","axis","series","bin","observed","predicted","sample_size","model","label"],"columns":[{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]}],"n":0},"checks":{"encoding":"columns-v1","names":["check","status","value","threshold","detail","model","label"],"columns":[{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]}],"n":0},"status":{"encoding":"columns-v1","names":["model","label","status","passed","failed","unknown"],"columns":[{"values":["hindcast-1","hindcast-2","hindcast-3"]},{"values":["Through 2013","Through 2016","Through 2019"]},{"dictionary":["unknown"],"index":[0,0,0]},{"dictionary":[0],"index":[0,0,0]},{"dictionary":[0],"index":[0,0,0]},{"dictionary":[0],"index":[0,0,0]}],"n":3},"tables":[{"model":"hindcast-1","label":"Through 2013","name":"hindcast_scores","columns":["series","lead","unit","n","bias","rmse"],"rows":{"encoding":"columns-v1","names":["series","lead","unit","n","bias","rmse"],"columns":[{"dictionary":["Index 18 (Region 1)","Index 19 (Region 1)","Index 20 (Region 2)"],"index":[0,1,2,0,1,2,0,1,2]},{"dictionary":[1,2,3],"index":[0,0,0,1,1,1,2,2,2]},{"dictionary":["geometric-mean-scaled index"],"index":[0,0,0,0,0,0,0,0,0]},{"dictionary":[1],"index":[0,0,0,0,0,0,0,0,0]},{"values":[-0.147237439805658,0.0378347507494305,-0.524749492822953,-0.236672388317187,-0.0278483191830147,-0.716174063520724,-0.122818913435525,-0.109593462232569,-0.639271791641333]},{"values":[0.147237439805658,0.0378347507494305,0.524749492822953,0.236672388317187,0.0278483191830147,0.716174063520724,0.122818913435525,0.109593462232569,0.639271791641333]}],"n":9}},{"model":"hindcast-2","label":"Through 2016","name":"hindcast_scores","columns":["series","lead","unit","n","bias","rmse"],"rows":{"encoding":"columns-v1","names":["series","lead","unit","n","bias","rmse"],"columns":[{"dictionary":["Index 18 (Region 1)","Index 19 (Region 1)","Index 20 (Region 2)"],"index":[0,1,2,0,1,2,0,1,2]},{"dictionary":[1,2,3],"index":[0,0,0,1,1,1,2,2,2]},{"dictionary":["geometric-mean-scaled index"],"index":[0,0,0,0,0,0,0,0,0]},{"dictionary":[1],"index":[0,0,0,0,0,0,0,0,0]},{"values":[-0.130198575803411,0.209031772568265,-0.170620963356576,-0.0807903286412809,-0.282978590186427,-0.0922196083407555,-0.117560522891329,-0.0410387585700646,-0.170700309449343]},{"values":[0.130198575803411,0.209031772568265,0.170620963356576,0.0807903286412809,0.282978590186427,0.0922196083407555,0.117560522891329,0.0410387585700646,0.170700309449343]}],"n":9}},{"model":"hindcast-3","label":"Through 2019","name":"hindcast_scores","columns":["series","lead","unit","n","bias","rmse"],"rows":{"encoding":"columns-v1","names":["series","lead","unit","n","bias","rmse"],"columns":[{"dictionary":["Index 18 (Region 1)","Index 19 (Region 1)","Index 20 (Region 2)"],"index":[0,1,2,0,1,2,0,1,2]},{"dictionary":[1,2,3],"index":[0,0,0,1,1,1,2,2,2]},{"dictionary":["geometric-mean-scaled index"],"index":[0,0,0,0,0,0,0,0,0]},{"dictionary":[1],"index":[0,0,0,0,0,0,0,0,0]},{"values":[-0.0235163586639294,-0.0933143944293546,-0.217470071978042,-0.0418907628549741,-0.117008244857746,-0.205602764326587,-0.201009415218273,0.182932743819561,-0.466211292526037]},{"values":[0.0235163586639294,0.0933143944293546,0.217470071978042,0.0418907628549741,0.117008244857746,0.205602764326587,0.201009415218273,0.182932743819561,0.466211292526037]}],"n":9}}],"views":[]}</script>
+<script id="result-data" type="application/json">{"schema_version":"1.0","title":"Hindcasting","type":"hindcast","reference":"hindcast-1","models":[{"id":"hindcast-1","label":"Through 2013","metadata":{"training_end":2013,"horizon":3,"time_label":"Year","study":"hindcast","purpose":"workflow_demo","illustrative":true,"method":"Log-linear index extrapolation; a display example, not a stock assessment forecast"}},{"id":"hindcast-2","label":"Through 2016","metadata":{"training_end":2016,"horizon":3,"time_label":"Year","study":"hindcast","purpose":"workflow_demo","illustrative":true,"method":"Log-linear index extrapolation; a display example, not a stock assessment forecast"}},{"id":"hindcast-3","label":"Through 2019","metadata":{"training_end":2019,"horizon":3,"time_label":"Year","study":"hindcast","purpose":"workflow_demo","illustrative":true,"method":"Log-linear index extrapolation; a display example, not a stock assessment forecast"}}],"changes":{"encoding":"columns-v1","names":["id","parent","change"],"columns":[{"values":["hindcast-1","hindcast-2","hindcast-3"]},{"dictionary":[null],"index":[0,0,0]},{"dictionary":["No change description supplied"],"index":[0,0,0]}],"n":3},"series":{"encoding":"columns-v1","names":["time","metric","group","value","unit","definition","model","label"],"columns":[{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]}],"n":0},"fits":{"encoding":"columns-v1","names":["time","series","observed","unit","predicted","kind","cutoff","lead","model","label"],"columns":[{"dictionary":[2014,2015,2016,2017,2018,2019,2020,2021,2022],"index":[0,1,2,0,1,2,0,1,2,3,4,5,3,4,5,3,4,5,6,7,8,6,7,8,6,7,8]},{"dictionary":["Index 18 (Region 1)","Index 19 (Region 1)","Index 20 (Region 2)"],"index":[0,0,0,1,1,1,2,2,2,0,0,0,1,1,1,2,2,2,0,0,0,1,1,1,2,2,2]},{"values":[0.534249440170542,0.610459945494768,0.483833914957584,0.869128916645273,0.923487470227196,0.994049496935054,1.04373534993691,1.22377077691567,1.13572929605611,0.503585067785675,0.44199217333407,0.466975339471439,0.679637993540111,1.1614387047662,0.909406517143503,0.734357067400453,0.64550184014846,0.713722524698996,0.377731205082218,0.384903092509445,0.533173522636986,0.960523282163485,0.974737478989675,0.665420460916155,0.772716002092201,0.751048561936257,1.00202993070836]},{"dictionary":["geometric-mean-scaled index"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[0.387012000364884,0.373787557177581,0.361015001522059,0.906963667394703,0.895639151044182,0.884456034702485,0.518985857113952,0.50759671339495,0.496457504414775,0.373386491982264,0.361201844692789,0.34941481658011,0.888669766108376,0.878460114579775,0.868367758573438,0.563736104043877,0.553282231807705,0.543022215249653,0.354214846418289,0.343012329654471,0.332164107418713,0.86720888773413,0.857729234131929,0.848353204735716,0.555245930114159,0.54544579760967,0.535818638182328]},{"dictionary":["index"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":[2013,2016,2019],"index":[0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2]},{"dictionary":[1,2,3],"index":[0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2]},{"dictionary":["hindcast-1","hindcast-2","hindcast-3"],"index":[0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2]},{"dictionary":["Through 2013","Through 2016","Through 2019"],"index":[0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2]}],"n":27},"compositions":{"encoding":"columns-v1","names":["time","axis","series","bin","observed","predicted","sample_size","model","label"],"columns":[{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]}],"n":0},"annual":null,"checks":{"encoding":"columns-v1","names":["check","status","value","threshold","detail","model","label"],"columns":[{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]}],"n":0},"status":{"encoding":"columns-v1","names":["model","label","status","passed","failed","unknown"],"columns":[{"values":["hindcast-1","hindcast-2","hindcast-3"]},{"values":["Through 2013","Through 2016","Through 2019"]},{"dictionary":["unknown"],"index":[0,0,0]},{"dictionary":[0],"index":[0,0,0]},{"dictionary":[0],"index":[0,0,0]},{"dictionary":[0],"index":[0,0,0]}],"n":3},"tables":[{"model":"hindcast-1","label":"Through 2013","name":"hindcast_scores","columns":["series","lead","unit","n","bias","rmse"],"rows":{"encoding":"columns-v1","names":["series","lead","unit","n","bias","rmse"],"columns":[{"dictionary":["Index 18 (Region 1)","Index 19 (Region 1)","Index 20 (Region 2)"],"index":[0,1,2,0,1,2,0,1,2]},{"dictionary":[1,2,3],"index":[0,0,0,1,1,1,2,2,2]},{"dictionary":["geometric-mean-scaled index"],"index":[0,0,0,0,0,0,0,0,0]},{"dictionary":[1],"index":[0,0,0,0,0,0,0,0,0]},{"values":[-0.147237439805658,0.0378347507494305,-0.524749492822953,-0.236672388317187,-0.0278483191830147,-0.716174063520724,-0.122818913435525,-0.109593462232569,-0.639271791641333]},{"values":[0.147237439805658,0.0378347507494305,0.524749492822953,0.236672388317187,0.0278483191830147,0.716174063520724,0.122818913435525,0.109593462232569,0.639271791641333]}],"n":9}},{"model":"hindcast-2","label":"Through 2016","name":"hindcast_scores","columns":["series","lead","unit","n","bias","rmse"],"rows":{"encoding":"columns-v1","names":["series","lead","unit","n","bias","rmse"],"columns":[{"dictionary":["Index 18 (Region 1)","Index 19 (Region 1)","Index 20 (Region 2)"],"index":[0,1,2,0,1,2,0,1,2]},{"dictionary":[1,2,3],"index":[0,0,0,1,1,1,2,2,2]},{"dictionary":["geometric-mean-scaled index"],"index":[0,0,0,0,0,0,0,0,0]},{"dictionary":[1],"index":[0,0,0,0,0,0,0,0,0]},{"values":[-0.130198575803411,0.209031772568265,-0.170620963356576,-0.0807903286412809,-0.282978590186427,-0.0922196083407555,-0.117560522891329,-0.0410387585700646,-0.170700309449343]},{"values":[0.130198575803411,0.209031772568265,0.170620963356576,0.0807903286412809,0.282978590186427,0.0922196083407555,0.117560522891329,0.0410387585700646,0.170700309449343]}],"n":9}},{"model":"hindcast-3","label":"Through 2019","name":"hindcast_scores","columns":["series","lead","unit","n","bias","rmse"],"rows":{"encoding":"columns-v1","names":["series","lead","unit","n","bias","rmse"],"columns":[{"dictionary":["Index 18 (Region 1)","Index 19 (Region 1)","Index 20 (Region 2)"],"index":[0,1,2,0,1,2,0,1,2]},{"dictionary":[1,2,3],"index":[0,0,0,1,1,1,2,2,2]},{"dictionary":["geometric-mean-scaled index"],"index":[0,0,0,0,0,0,0,0,0]},{"dictionary":[1],"index":[0,0,0,0,0,0,0,0,0]},{"values":[-0.0235163586639294,-0.0933143944293546,-0.217470071978042,-0.0418907628549741,-0.117008244857746,-0.205602764326587,-0.201009415218273,0.182932743819561,-0.466211292526037]},{"values":[0.0235163586639294,0.0933143944293546,0.217470071978042,0.0418907628549741,0.117008244857746,0.205602764326587,0.201009415218273,0.182932743819561,0.466211292526037]}],"n":9}}],"views":[]}</script>
 <script>/* Offline viewer: data selection is separate from SVG drawing and downloads. */
 "use strict";
 (() => {
@@ -165,6 +167,7 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
   }
   for (const name of ["changes", "checks", "status"]) data[name] = unpack(data[name]);
   for (const name of ["series", "fits", "compositions"]) data[name] = new RowStore(data[name]);
+  if (data.annual) for (const name of ["series", "fits"]) data.annual[name] = new RowStore(data.annual[name]);
   data.views = data.views || [];
   data.curves = new RowStore(data.tables.filter(t => t.name === "curves").flatMap(t =>
     unpack(t.rows).map(r => ({...r, model: t.model, label: t.label}))));
@@ -195,13 +198,32 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
     (row.metric === "equilibrium_spawning_depletion" ? "SB/SB0" :
     row.metric === "dynamic_spawning_depletion" ? "SB/SB[F=0]" :
     `${row.display_name || pretty(row.metric)}${row.unit && row.unit !== "ratio" ? ` (${row.unit})` : ""}`);
+  // Render a small, explicit mathematical vocabulary with text nodes only.
+  function mathText(element, value) {
+    element.replaceChildren();
+    const svg = element.namespaceURI === "http://www.w3.org/2000/svg";
+    const parts = value.replaceAll("SB_F0", "SB[F=0]").split(/(SB0|\[[^\]]+\]|\^-?\d+|per year)/g);
+    for (const part of parts) {
+      if (!part) continue;
+      const sub = part === "SB0" || part.startsWith("[");
+      const sup = part.startsWith("^") || part === "per year";
+      if (!sub && !sup) { element.append(document.createTextNode(part)); continue; }
+      if (part === "SB0") element.append(document.createTextNode("SB"));
+      if (part === "per year") element.append(document.createTextNode("year"));
+      const span = svg ? document.createElementNS("http://www.w3.org/2000/svg", "tspan") : node(sub ? "sub" : "sup");
+      span.textContent = part === "SB0" ? "0" : part === "per year" ? "−1" : sub ? part.slice(1, -1) : part.slice(1);
+      if (svg) { span.setAttribute("baseline-shift", sub ? "sub" : "super"); span.setAttribute("font-size", "9"); }
+      element.append(span);
+    }
+  }
   const choices = {};
   const savedChoice = {};
+  let savedGroup = "";
   let tab = "series", scope = null, activeTab = "series", tablePage = 0;
   let currentRows = [];
   let currentColumns = [];
   byId("title").textContent = data.title;
-  byId("eyebrow").textContent = `${data.type} / ${data.models.length} models`;
+  byId("eyebrow").textContent = `${data.type} / ${data.models.length} model${data.models.length === 1 ? "" : "s"}`;
   byId("collection-kind").textContent = `${data.type} · in supplied order`;
 
   for (const [i, model] of data.models.entries()) {
@@ -219,7 +241,8 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
     const body = node("div");
     body.append(node("span", String(i + 1).padStart(2, "0") +
       (model.id === data.reference ? " / REFERENCE" : ""), "step"));
-    body.append(node("strong", model.label), node("small", change.change));
+    body.append(node("strong", model.label));
+    if (change.change && change.change !== "No change description supplied") body.append(node("small", change.change));
     if (change.parent) {
       const parent = data.models.find(m => m.id === change.parent);
       body.append(node("small", `From ${parent.label}`));
@@ -252,12 +275,14 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
     button.type = "button"; button.dataset.tab = id;
     button.addEventListener("click", () => {
       tab = view.type; scope = view.scope || null; activeTab = id; tablePage = 0; controls(); render();
+      history.replaceState(null, "", `#${id}`);
     });
     byId("tabs").append(button);
   }
   const seriesChoices = source => source.representatives(["metric", "group"])
     .map(({key, row}) => ({key, label: `${row.display_name || pretty(key[0])} / ${pretty(key[1])}`}));
-  choices.series = seriesChoices(data.series);
+  choices.series = data.series.representatives(["metric"])
+    .map(({key, row}) => ({key, label: row.display_name || pretty(key[0])}));
   choices.curves = seriesChoices(data.curves);
   choices.fits = data.fits.representatives(["kind", "series"])
     .map(({key, row}) => ({key, label: row.series_label || pretty(key[1])}));
@@ -266,11 +291,13 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
   choices.reports = data.views.map((view, i) => ({key: [i], label: pretty(view.label)}));
   choices.checks = [{key: [], label: "All recorded numerical checks"}];
   choices.tables = data.tables.map((t, i) => ({key: [i], label: `${t.label} / ${pretty(t.name)}`}));
-  byId("quantity").addEventListener("change", () => { savedChoice[activeTab] = byId("quantity").value; tablePage = 0; samples(); render(); });
+  byId("quantity").addEventListener("change", () => { savedChoice[activeTab] = byId("quantity").value; tablePage = 0; groups(); samples(); render(); });
+  byId("group").addEventListener("change", () => { savedGroup = byId("group").value; tablePage = 0; render(); });
   byId("sample").addEventListener("change", () => { tablePage = 0; render(); });
   byId("previous-page").addEventListener("click", () => { tablePage--; table(currentRows); });
   byId("next-page").addEventListener("click", () => { tablePage++; table(currentRows); });
   byId("residual").addEventListener("change", render);
+  byId("resolution").addEventListener("change", () => { tablePage = 0; render(); });
 
   function controls() {
     byId("quantity").replaceChildren();
@@ -283,11 +310,30 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
     const saved = savedChoice[activeTab];
     byId("quantity").value = [...byId("quantity").options].some(o => o.value === saved) ? saved : byId("quantity").options[0]?.value || "";
     byId("select-label").textContent = tab === "fits" ? (scope === "index" ? "Index" : "Fishery / group") : tab === "compositions" ? "Fishery / group" : tab === "tables" ? "Table" : "Quantity";
-    samples();
+    groups(); samples();
+    const timing = !!data.annual && ["series", "fits"].includes(tab);
+    byId("resolution").hidden = !timing; byId("resolution-label").hidden = !timing;
     byId("residual-label").hidden = tab !== "fits";
     document.querySelectorAll("#tabs button").forEach(button => {
       button.setAttribute("aria-pressed", String(button.dataset.tab === activeTab));
     });
+  }
+
+  const groupLabel = row => row.group_label || (row.group === "all" ? "Overall" : pretty(row.group));
+  function groups() {
+    byId("group").replaceChildren();
+    const choice = choices.series[Number(byId("quantity").value)];
+    const available = tab === "series" && choice ?
+      data.series.representatives(["group"], {metric: choice.key[0]}).map(({row}) => row) : [];
+    const multiple = available.length > 1;
+    byId("group").hidden = !multiple; byId("group-label").hidden = !multiple;
+    if (multiple) {
+      const option = node("option", "All groups"); option.value = ""; byId("group").append(option);
+    }
+    for (const row of available) {
+      const option = node("option", groupLabel(row)); option.value = JSON.stringify(row.group); byId("group").append(option);
+    }
+    if (multiple && [...byId("group").options].some(o => o.value === savedGroup)) byId("group").value = savedGroup;
   }
 
   function samples() {
@@ -328,9 +374,14 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
     const choice = choices[tab][Number(byId("quantity").value)];
     const key = choice ? choice.key : [];
     let rows = [];
-    if (tab === "series") rows = data.series.select({model: selected, metric: key[0], group: key[1]});
+    if (tab === "series") {
+      const conditions = {model: selected, metric: key[0]};
+      if (byId("group").value) conditions.group = JSON.parse(byId("group").value);
+      rows = (data.annual && byId("resolution").value === "annual" ? data.annual.series : data.series).select(conditions);
+    }
     if (tab === "curves") rows = data.curves.select({model: selected, metric: key[0], group: key[1]});
-    if (tab === "fits") rows = data.fits.select({model: selected, kind: key[0], series: key[1]});
+    if (tab === "fits") rows = (data.annual && byId("resolution").value === "annual" ? data.annual.fits : data.fits)
+      .select({model: selected, kind: key[0], series: key[1]});
     if (tab === "compositions" && byId("sample").value) {
       const [time, record] = JSON.parse(byId("sample").value);
       rows = data.compositions.select({model: selected, axis: key[0], series: key[1], time,
@@ -355,6 +406,10 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
         `${scope === "index" ? "Observed index values" : scope === "catch" ? "Recorded catches" : scope === "tag" ? "Observed tag recaptures" : "Observed values"} (points) and model predictions (lines).`)) :
       tab === "compositions" ? "Observed proportions (points) and predicted proportions (lines) for the selected sample." :
       tab === "checks" ? "Inspect each recorded check and threshold. Unknown checks are not passes." : "Supplied model table.";
+    mathText(byId("definition"), byId("definition").textContent);
+    if (data.annual && byId("resolution").value === "annual" && tab === "fits" && !byId("residual").checked)
+      byId("definition").append(document.createTextNode(scope === "catch" || scope === "tag" ?
+        " Annual totals." : " Annual geometric means."));
     byId("chart").replaceChildren(); byId("legend").replaceChildren(); byId("hover").textContent = "";
     const chartable = ["series", "curves", "reports", "fits", "compositions"].includes(tab) && rows.length > 0;
     byId("chart").hidden = !chartable;
@@ -362,7 +417,7 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
     byId("download-csv").disabled = !rows.length;
     byId("data-details").open = ["checks", "tables"].includes(tab);
     byId("data-details").hidden = !rows.length;
-    if (chartable) draw(rows);
+    if (chartable) drawPanels(rows);
     else if (!rows.length) {
       byId("chart").hidden = false;
       byId("chart").append(node("p", selected.size ? "This selection has no data." : "Select a model to see its results.", "empty"));
@@ -390,20 +445,49 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
     table.append(body); byId("table").append(table);
   }
 
-  function draw(rows) {
+  // Small multiples preserve groups instead of connecting their values into a
+  // single model line. Compatible panels share ranges and display multipliers.
+  function drawPanels(rows) {
+    const panels = tab === "series" ? unique(rows.map(r => r.group)).sort((a, b) => (a === "all") - (b === "all")) : [];
+    if (panels.length < 2) { draw(rows); return; }
+    const width = Math.max(320, Math.min(1100, byId("chart").clientWidth || 900));
+    const columns = width >= 740 ? 2 : 1;
+    const gap = 16, panelWidth = (width - gap * (columns - 1)) / columns;
+    const compatible = unique(rows.map(r => JSON.stringify([r.unit, r.axis_label || ""]))).length === 1;
+    const charts = panels.map(group => {
+      const part = rows.filter(r => r.group === group);
+      return draw(part, {width: panelWidth, label: groupLabel(part[0]), axisRows: compatible ? rows : part});
+    }).filter(Boolean);
+    if (!charts.length) return;
+    const tileHeight = Math.max(...charts.map(svg => svg.viewBox.baseVal.height));
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    svg.setAttribute("viewBox", `0 0 ${width} ${Math.ceil(charts.length / columns) * (tileHeight + gap) - gap}`);
+    svg.setAttribute("aria-label", byId("plot-title").textContent + ": all groups");
+    charts.forEach((chart, i) => {
+      chart.setAttribute("x", (i % columns) * (panelWidth + gap));
+      chart.setAttribute("y", Math.floor(i / columns) * (tileHeight + gap));
+      chart.setAttribute("width", panelWidth); chart.setAttribute("height", chart.viewBox.baseVal.height);
+      svg.append(chart);
+    });
+    byId("chart").append(svg);
+  }
+
+  function draw(rows, options = {}) {
     const residual = tab === "fits" && byId("residual").checked;
     const xname = ["curves", "reports"].includes(tab) ? "x" : tab === "compositions" ? "bin" : "time";
     const yname = ["series", "curves", "reports"].includes(tab) ? "value" : residual ? "residual" : "predicted";
     const observations = ["fits", "compositions"].includes(tab) && !residual;
-    const values = rows.flatMap(r => observations ? [r.observed, r.predicted] : [r[yname], r.lower, r.upper]).filter(Number.isFinite);
+    const axisRows = options.axisRows || rows;
+    const values = axisRows.flatMap(r => observations ? [r.observed, r.predicted] : [r[yname], r.lower, r.upper]).filter(Number.isFinite);
     if (!values.length) { byId("chart").append(node("p", "No finite values to draw.", "empty")); byId("download-svg").hidden = true; return; }
     const magnitude = values.reduce((m, v) => Math.max(m, Math.abs(v)), 0);
     const scalable = !rows[0].axis_label && ["t", "kg", "fish", "number", "model biomass units", "model abundance units"].includes(rows[0].unit);
     const exponent = scalable ? (magnitude >= 1e6 ? 6 : magnitude >= 1e4 ? 3 : 0) : 0;
     const divisor = 10 ** exponent;
     const displayRow = {...rows[0], unit: exponent ? `10^${exponent} ${rows[0].unit}` : rows[0].unit};
-    const width = Math.max(440, Math.min(900, byId("chart").clientWidth || 900));
-    const height = 390, left = 100, right = 25, top = 22, bottom = 55;
+    const width = options.width || Math.max(320, Math.min(900, byId("chart").clientWidth || 900));
+    const height = options.label ? 320 : 390, left = 90, right = 25, top = options.label ? 35 : 22, bottom = 55;
     const lineId = r => tab === "reports" ? JSON.stringify([r.model, r.line]) : r.model;
     const lineModels = tab === "reports" ? unique(rows.map(lineId)).map(id => {
       const r = rows.find(r => lineId(r) === id);
@@ -419,7 +503,7 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
       legendPositions.push({model, x: legendX, y: legendY}); legendX += size;
     }
     const totalHeight = legendY + 18;
-    let [xmin, xmax] = extent(rows.map(r => r[xname]));
+    let [xmin, xmax] = extent(axisRows.map(r => r[xname]).filter(Number.isFinite));
     let [ymin, ymax] = extent(values);
     ymin = Math.min(0, ymin); ymax = Math.max(0, ymax);
     if (xmin === xmax) { xmin -= .5; xmax += .5; }
@@ -442,6 +526,7 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
       "font-size": 12, "font-family": "sans-serif", "text-anchor": anchor}, content);
     el("rect", {width, height: totalHeight, fill: "white"});
     el("desc", {}, byId("definition").textContent);
+    if (options.label) text(left, 16, options.label, "start");
     for (const tick of ticks(ymin / divisor, ymax / divisor)) {
       const value = tick * divisor;
       el("line", {x1: left, x2: width - right, y1: py(value), y2: py(value), stroke: "#e8edef"});
@@ -465,26 +550,6 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
     const yLabel = ["series", "curves", "reports"].includes(tab) ? quantityLabel(displayRow) : tab === "compositions" ? "Proportion" :
       fitLabel + (dimensionless ? "" : ` (${displayRow.unit})`);
     const axisLabel = text(16, (height - bottom + top) / 2, yLabel);
-    // Restricted notation renders subscripts/exponents as SVG text, never HTML.
-    const mathText = (element, value) => {
-      element.replaceChildren();
-      const parts = value.split(/(SB0|\[[^\]]+\]|\^-?\d+|per year)/g);
-      for (const part of parts) {
-        if (!part) continue;
-        const span = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
-        if (part === "SB0") {
-          element.append(document.createTextNode("SB"));
-          span.textContent = "0"; span.setAttribute("baseline-shift", "sub");
-        } else if (part.startsWith("[")) {
-          span.textContent = part.slice(1, -1); span.setAttribute("baseline-shift", "sub");
-        } else if (part.startsWith("^") || part === "per year") {
-          if (part === "per year") element.append(document.createTextNode("year"));
-          span.textContent = part === "per year" ? "−1" : part.slice(1);
-          span.setAttribute("baseline-shift", "super");
-        } else { element.append(document.createTextNode(part)); continue; }
-        span.setAttribute("font-size", "9"); element.append(span);
-      }
-    };
     mathText(axisLabel, yLabel);
     mathText(xAxisLabel, xLabel);
     axisLabel.setAttribute("transform", `rotate(-90 16 ${(height - bottom + top) / 2})`);
@@ -540,6 +605,7 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
     });
     svg.addEventListener("pointerleave", () => cursor.setAttribute("visibility", "hidden"));
     byId("chart").append(svg);
+    return svg;
   }
 
   function download(content, type, filename) {
@@ -559,5 +625,11 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
   });
   let resize;
   window.addEventListener("resize", () => { clearTimeout(resize); resize = setTimeout(render, 100); });
-  controls(); render();
+  function openRequestedTab() {
+    const requested = tabs.find(view => view.type + (view.scope ? `-${view.scope}` : "") === location.hash.slice(1));
+    if (requested) { tab = requested.type; scope = requested.scope || null; activeTab = location.hash.slice(1); }
+    controls(); render();
+  }
+  window.addEventListener("hashchange", openRequestedTab);
+  openRequestedTab();
 })();</script></body></html>

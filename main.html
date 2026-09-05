@@ -132,6 +132,7 @@ window.Quarto = {
 <section id="sec-data" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Data compilation</h1>
 <p>The diagnostic model retains the ALB observation timing and two-region structure. Catch, abundance-index, length-composition and conditional age-at-length observations are available in the interactive diagnostic supplement.</p>
+<p>Region boundaries follow the <a href="https://meetings.wcpfc.int/node/23119">2024 South Pacific albacore assessment, Rev.03</a>, Section 4.1 and Figure 2. The spatial comparison also shows its Figure 1 reproduction of the 2021 structure.</p>
 <p><a href="#tbl-fisheries-definitions" class="quarto-xref">Table&nbsp;2</a> describes the fishery roles and observation periods. <a href="#fig-data-coverage-tile" class="quarto-xref">Figure&nbsp;6</a> shows data availability. Index observations and predictions follow the model likelihood’s geometric-mean centering convention.</p>
 <!-- Add data sources, collection methods, screening rules and limitations here. -->
 </section>
@@ -149,7 +150,7 @@ window.Quarto = {
 </section>
 <section id="sec-results" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Results</h1>
-<p><a href="#fig-diag-time-series" class="quarto-xref">Figure&nbsp;39</a> shows annual reference-model trajectories. Stocks use time-weighted annual means; recruitment and catches use annual totals. Depletion is the ratio of annual spawning-potential summaries. Index points and predictions use annual geometric means. The interactive viewer retains the original time resolution.</p>
+<p><a href="#fig-diag-time-series" class="quarto-xref">Figure&nbsp;39</a> shows annual reference-model trajectories. Stocks use time-weighted annual means; recruitment and catches use annual totals. Depletion is the ratio of annual spawning-potential summaries. Index points and predictions use annual geometric means. The interactive viewer opens annual summaries; select Original to inspect the fitted time steps.</p>
 <p>Length-residual panels retain the original fitted records and their compressed-tail support. Conditional age-at-length fits are pooled by region using raw sample counts, preserving the model’s prediction scale.</p>
 <p>Index fits and residuals (<a href="#fig-cpue-fit-residuals" class="quarto-xref">Figure&nbsp;18</a>), length-composition residuals and conditional age-at-length fits (<a href="#fig-caal-fits-regions" class="quarto-xref">Figure&nbsp;26</a>) are generated from the same result bundle used by the interactive viewer.</p>
 <p>The following studies demonstrate the intended diagnostic presentation: starting-value trials (<a href="#fig-jitter-scatter-plot" class="quarto-xref">Figure&nbsp;27</a>), simulation-estimation recovery (<a href="#fig-selftest-recovery" class="quarto-xref">Figure&nbsp;30</a>), retrospective analysis (<a href="#fig-retro-analysis" class="quarto-xref">Figure&nbsp;32</a>), objective profiles (<a href="#fig-diag-profile-data-sources" class="quarto-xref">Figure&nbsp;33</a>) and sensitivity comparisons. Their displayed values are illustrative. Hindcasting (<a href="#fig-hindcast-analysis" class="quarto-xref">Figure&nbsp;73</a>; <a href="#tbl-hindcast-skill" class="quarto-xref">Table&nbsp;14</a>) exercises withheld-data prediction with inexpensive log-linear index trends, not refitted stock-assessment models.</p>
@@ -1040,28 +1041,28 @@ Table&nbsp;14: Out-of-sample prediction bias and RMSE by series and forecast lea
 </section>
 <section id="figures" class="level1" data-number="10">
 <h1 data-number="10"><span class="header-section-number">10</span> Figures</h1>
-<div id="fig-map-5regions" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/formats/map-5regions.pdf">
+<div id="fig-map-5regions" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/map-5regions.pdf">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-map-5regions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="artifacts/formats/map-5regions.svg" class="img-fluid figure-img" style="width:100.0%">
+<img src="artifacts/diagnostic/map-5regions.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-map-5regions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Illustrative output. Model regions.
+Figure&nbsp;1: Model regions for the 2024 South Pacific albacore assessment (WCPFC-SC20-SA-WP-02, Rev.03, Figure 2).
 </figcaption>
 </figure>
 </div>
-<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/map-5regions.pdf">Download vector figure</a></p>
-<div id="fig-map-spatial-comparison" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/formats/map-spatial-comparison.pdf">
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/map-5regions.pdf">Download vector figure</a></p>
+<div id="fig-map-spatial-comparison" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/map-spatial-comparison.pdf">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-map-spatial-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="artifacts/formats/map-spatial-comparison.svg" class="img-fluid figure-img" style="width:100.0%">
+<img src="artifacts/diagnostic/map-spatial-comparison.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-map-spatial-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Illustrative output. Comparison of model spatial structures.
+Figure&nbsp;2: Spatial structures of the 2024 and 2021 South Pacific albacore assessments (WCPFC-SC20-SA-WP-02, Rev.03, Figures 1–2).
 </figcaption>
 </figure>
 </div>
-<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/map-spatial-comparison.pdf">Download vector figure</a></p>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/map-spatial-comparison.pdf">Download vector figure</a></p>
 <div id="fig-catch-hist-full" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/formats/catch-hist-full.pdf">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-catch-hist-full-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">

@@ -12,8 +12,8 @@
 "tbl-ref-points","ref-points","table","table","reference_points","","","","Model reference points and their definitions.","missing_data","Supply tables$reference_points",FALSE
 "tbl-est-uncertainty","est-uncertainty","table","table","uncertainty_summary","","","","Comparison of supplied uncertainty summaries.","missing_data","Supply tables$uncertainty_summary",FALSE
 "tbl-stock-projections","stock-projections","table","table","projection_summary","","","","Projected quantities by scenario and reporting period.","missing_data","Supply tables$projection_summary",FALSE
-"fig-map-5regions","map-5regions","figure","regions","regions","","spatial","structure;region;polygon;longitude;latitude","Model regions.","available","",TRUE
-"fig-map-spatial-comparison","map-spatial-comparison","figure","regions","regions","comparison","spatial","structure;region;polygon;longitude;latitude","Comparison of model spatial structures.","available","",TRUE
+"fig-map-5regions","map-5regions","figure","regions","regions","","spatial","structure;region;polygon;longitude;latitude","Model regions.","missing_data","Supply tables$regions",FALSE
+"fig-map-spatial-comparison","map-spatial-comparison","figure","regions","regions","comparison","spatial","structure;region;polygon;longitude;latitude","Comparison of model spatial structures.","missing_data","Supply tables$regions for comparison",FALSE
 "fig-catch-hist-full","catch-hist-full","figure","stack","catch_history","overall","","time;metric;group;facet;value;unit;definition","Catch by fishing group.","available","",TRUE
 "fig-catch-hist-regional","catch-hist-regional","figure","stack","catch_history","regional","","time;metric;group;facet;value;unit;definition","Catch by fishing group and region.","available","",TRUE
 "fig-catch-map","catch-map","figure","spatial","spatial_catch","","spatial","longitude;latitude;group;value;unit","Spatial catch distribution by fishing group.","available","",TRUE
