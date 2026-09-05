@@ -1,0 +1,557 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Objective profiles · Display example</title><style>:root {
+  color-scheme: light;
+  --ink: #17333d;
+  --muted: #65757d;
+  --line: #e2e9ec;
+  --accent: #187e83;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: #f5f7f8;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, select, input { font: inherit; }
+button, select { border: 1px solid var(--line); border-radius: 8px; background: white; padding: 8px 12px; color: var(--ink); }
+button { cursor: pointer; }
+button:hover { background: #edf5f5; }
+button:focus-visible, select:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid #4fa1b3; outline-offset: 3px; }
+button[disabled] { opacity: .45; cursor: default; }
+.skip { position: fixed; top: -50px; left: 16px; padding: 10px; background: white; z-index: 9; }
+.skip:focus { top: 8px; }
+header { height: 76px; display: flex; align-items: center; justify-content: space-between; padding: 0 36px; border-bottom: 1px solid var(--line); background: #fff; }
+.brand { font-size: 22px; font-weight: 720; letter-spacing: -.7px; }
+.brand span { font-weight: 400; color: var(--accent); padding-left: 6px; }
+.local { font-size: 12px; color: var(--muted); }
+.workspace { display: grid; grid-template-columns: 248px minmax(0, 1fr); max-width: 1600px; margin: auto; }
+aside { padding: 32px 20px; border-right: 1px solid var(--line); min-height: calc(100vh - 76px); min-width: 0; }
+.side-title { display: flex; justify-content: space-between; align-items: center; font-size: 14px; font-weight: 650; }
+.side-title button { border: 0; color: var(--accent); background: transparent; padding-right: 0; font-size: 12px; }
+#collection-kind { margin: 2px 0 22px; color: var(--muted); font-size: 12px; text-transform: capitalize; }
+.model { display: grid; grid-template-columns: 20px 1fr; gap: 9px; padding: 14px 10px; margin-bottom: 10px; background: #fff; border: 1px solid var(--line); border-radius: 12px; cursor: pointer; }
+.model:has(input:checked) { border-color: #8ab8bc; box-shadow: 0 2px 8px #17333d05; }
+.model input { margin: 3px 0; accent-color: var(--accent); width: 16px; height: 16px; }
+.model strong { display: block; font-size: 13px; line-height: 1.5; }
+.model small { display: block; color: var(--muted); font-size: 11px; line-height: 1.6; margin-top: 4px; }
+.model .step { color: var(--accent); font-size: 10px; letter-spacing: 1px; }
+main { padding: 38px 42px 20px; min-width: 0; }
+.eyebrow { color: var(--accent); font-size: 11px; letter-spacing: 1.7px; text-transform: uppercase; font-weight: 650; }
+h1 { font-size: clamp(24px, 2.5vw, 34px); letter-spacing: -.9px; font-weight: 650; margin: 12px 0 8px; line-height: 1.3; }
+.intro { color: var(--muted); margin: 0 0 25px; font-size: 14px; }
+.summary { display: flex; flex-wrap: wrap; gap: 20px; margin: 0 0 28px; font-size: 12px; color: var(--muted); }
+.summary b { color: var(--ink); font-size: 17px; margin-right: 5px; }
+nav { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+nav button { background: transparent; border-color: transparent; font-size: 13px; }
+nav button[aria-pressed="true"] { background: var(--ink); color: white; }
+.panel { border: 1px solid var(--line); border-radius: 16px; background: #fff; padding: 24px; box-shadow: 0 4px 24px #17333d04; }
+.toolbar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 12px; border-bottom: 1px solid #eff3f4; padding-bottom: 20px; margin-bottom: 20px; }
+.toolbar select { max-width: 100%; flex: 1; min-width: 120px; }
+.toolbar label { white-space: nowrap; }
+h2 { font-size: 18px; font-weight: 600; letter-spacing: -.3px; margin: 0 0 8px; }
+.muted { color: var(--muted); font-size: 12px; line-height: 1.6; }
+#chart svg { display: block; width: 100%; height: auto; }
+.empty { padding: 80px 20px; text-align: center; color: var(--muted); }
+.legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; font-size: 12px; }
+.legend span::before { content: ""; display: inline-block; width: 18px; height: 3px; vertical-align: middle; background: var(--series-color); margin-right: 7px; }
+.hover { min-height: 24px; text-align: center; font-size: 12px; color: var(--muted); margin: 12px 0; }
+.table-wrap { overflow: auto; max-height: 430px; border-radius: 8px; }
+details { min-width: 0; border-top: 1px solid var(--line); padding-top: 14px; }
+summary { cursor: pointer; font-size: 12px; color: var(--accent); }
+table { border-collapse: collapse; width: 100%; font-size: 12px; text-align: left; }
+th { position: sticky; top: 0; background: #f1f6f7; color: var(--ink); font-weight: 600; }
+th, td { padding: 10px 12px; border-bottom: 1px solid #edf1f3; white-space: nowrap; }
+td { color: #50636d; }
+.footnote { color: var(--muted); font-size: 11px; margin: 16px 2px; line-height: 1.7; }
+footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding: 24px 2px 6px; font-size: 10px; color: #65757d; }
+[hidden] { display: none !important; }
+@media (max-width: 850px) {
+  .workspace { grid-template-columns: minmax(0, 1fr); }
+  aside { min-height: 0; border-right: 0; border-bottom: 1px solid var(--line); padding: 16px 20px; }
+  #models { display: flex; gap: 8px; overflow-x: auto; }
+  .model { min-width: 200px; margin-bottom: 0; }
+  #collection-kind { margin-bottom: 10px; }
+  main { padding: 26px 20px 16px; }
+  header { height: 65px; padding: 0 20px; }
+  .panel { padding: 16px; }
+}
+@media (max-width: 480px) {
+  .local { display: none; }
+  .toolbar { gap: 8px; }
+  .toolbar select { flex-basis: 75%; }
+  main { padding-left: 12px; padding-right: 12px; }
+  nav { gap: 2px; }
+  nav button { padding: 8px; font-size: 12px; }
+}
+
+.table-pages { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.table-pages[hidden] { display: none; }
+#sample { flex: 0 1 190px; }</style></head><body>
+<a class="skip" href="#main">Skip to results</a>
+<header><div class="brand">KIMSA <span>view</span></div><div class="local">A view of your models</div></header>
+<div class="workspace"><aside aria-label="Model selection"><div class="side-title">Models <button id="toggle-all" type="button">Clear</button></div><p id="collection-kind"></p><div id="models"></div></aside>
+<main id="main"><div class="eyebrow" id="eyebrow"></div><h1 id="title"></h1>
+<p class="intro"><strong>Illustrative study.</strong> Display values demonstrate the workflow; these models have not been fitted.</p>
+<p class="intro">Workflow demonstration; not a stock assessment.</p>
+<div id="summary" class="summary"></div>
+<nav id="tabs" aria-label="Result views"></nav><section class="panel">
+<div class="toolbar"><label id="select-label" for="quantity">Quantity</label><select id="quantity"></select>
+<label id="sample-label" for="sample" hidden>Sample</label><select id="sample" hidden></select>
+<label id="residual-label"><input id="residual" type="checkbox"> Residuals</label>
+<button id="download-svg" type="button">Save figure</button><button id="download-csv" type="button">Download data</button></div>
+<h2 id="plot-title"></h2><p id="definition" class="muted"></p>
+<div id="chart" role="img" aria-label="Selected model comparison"></div>
+<div id="legend" class="legend"></div><p id="hover" class="hover" aria-live="polite"></p>
+<details id="data-details"><summary>View data</summary><p id="table-note" class="muted"></p><div class="table-pages"><button id="previous-page" type="button">Previous</button><span id="page-number"></span><button id="next-page" type="button">Next</button></div><div id="table" class="table-wrap" tabindex="0" role="region" aria-label="Selected result data"></div></details>
+</section><p class="footnote">Numerical checks describe the checks supplied with each result. They do not establish model adequacy.</p>
+</main></div>
+<script id="result-data" type="application/json">{"schema_version":"1.0","title":"Objective profiles · Display example","type":"comparison","reference":"profiles","models":[{"id":"profiles","label":"Illustrative objective profiles","metadata":{"illustrative":true,"purpose":"workflow_demo","time_label":"Year"}}],"changes":{"encoding":"columns-v1","names":["id","parent","change"],"columns":[{"values":["profiles"]},{"values":[null]},{"values":["No change description supplied"]}],"n":1},"series":{"encoding":"columns-v1","names":["time","metric","group","value","unit","definition","model","label"],"columns":[{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]}],"n":0},"fits":{"encoding":"columns-v1","names":["time","kind","series","observed","predicted","unit","model","label"],"columns":[{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]}],"n":0},"compositions":{"encoding":"columns-v1","names":["time","axis","series","bin","observed","predicted","sample_size","model","label"],"columns":[{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]}],"n":0},"checks":{"encoding":"columns-v1","names":["check","status","value","threshold","detail","model","label"],"columns":[{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]}],"n":0},"status":{"encoding":"columns-v1","names":["model","label","status","passed","failed","unknown"],"columns":[{"values":["profiles"]},{"values":["Illustrative objective profiles"]},{"values":["unknown"]},{"values":[0]},{"values":[0]},{"values":[0]}],"n":1},"tables":[{"model":"profiles","label":"Illustrative objective profiles","name":"profiles","columns":["parameter","x","component","group","domain","objective","unit","profile_type","axis_label","axis_definition","target","converged","target_attained","objective_basis"],"rows":{"encoding":"columns-v1","names":["parameter","x","component","group","domain","objective","unit","profile_type","axis_label","axis_definition","target","converged","target_attained","objective_basis"],"columns":[{"dictionary":["Steepness","Average total biomass"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},{"dictionary":[0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95,1000000,1100000,1200000,1300000,1400000,1500000,1600000,1700000,1800000,1900000],"index":[0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,10,11,12,13,14,15,16,17,18,19,10,11,12,13,14,15,16,17,18,19,10,11,12,13,14,15,16,17,18,19,10,11,12,13,14,15,16,17,18,19,10,11,12,13,14,15,16,17,18,19,10,11,12,13,14,15,16,17,18,19,10,11,12,13,14,15,16,17,18,19,10,11,12,13,14,15,16,17,18,19,10,11,12,13,14,15,16,17,18,19]},{"dictionary":["Index","Composition"],"index":[0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1]},{"dictionary":["Reference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["total","index","length","conditional_age","tag"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},{"dictionary":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,2.25],"index":[0,1,2,3,4,5,6,7,8,9,10,9,8,11,6,5,4,5,2,1,0,1,2,3,4,5,6,7,8,9,10,9,8,11,6,5,4,5,2,1,0,1,2,3,4,5,6,7,8,9,10,9,8,11,6,5,4,5,2,1,0,1,2,3,4,5,6,7,8,9,10,9,8,11,6,5,4,5,2,1,0,1,2,3,4,5,6,7,8,9,10,9,8,11,6,5,4,5,2,1,0,1,2,3,4,5,6,7,8,9,10,9,8,11,6,5,4,5,2,1,0,1,2,3,4,5,6,7,8,9,10,9,8,11,6,5,4,5,2,1,0,1,2,3,4,5,6,7,8,9,10,9,8,11,6,5,4,5,2,1,0,1,2,3,4,5,6,7,8,9,10,9,8,11,6,5,4,5,2,1,0,1,2,3,4,5,6,7,8,9,10,9,8,11,6,5,4,5,2,1]},{"dictionary":["ratio","t"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},{"dictionary":["parameter","quantity"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},{"dictionary":["Steepness","Average total biomass"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},{"dictionary":["Profile on the supplied parameter scale.","Total biomass averaged over the declared model periods, 2001-2020."],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},{"dictionary":[0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95,1000000,1100000,1200000,1300000,1400000,1500000,1600000,1700000,1800000,1900000],"index":[0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,10,11,12,13,14,15,16,17,18,19,10,11,12,13,14,15,16,17,18,19,10,11,12,13,14,15,16,17,18,19,10,11,12,13,14,15,16,17,18,19,10,11,12,13,14,15,16,17,18,19,10,11,12,13,14,15,16,17,18,19,10,11,12,13,14,15,16,17,18,19,10,11,12,13,14,15,16,17,18,19,10,11,12,13,14,15,16,17,18,19]},{"dictionary":[true],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":[true],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["unpenalized"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}],"n":200}}],"views":[{"id":"diag-profile-data-sources/Steepness / Reference","label":"Objective profile Total / Steepness / Reference","rows":{"encoding":"columns-v1","names":["parameter","x","component","group","domain","objective","unit","profile_type","axis_label","axis_definition","target","converged","target_attained","objective_basis","objective_reported","model","label","objective_difference","value","metric","y_label","x_label","x_unit","line","definition"],"columns":[{"dictionary":["Steepness"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95]},{"dictionary":["Index","Composition"],"index":[0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1]},{"dictionary":["Reference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["total"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["ratio"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["parameter"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Steepness"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Profile on the supplied parameter scale."],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95]},{"dictionary":[true],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":[true],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["unpenalized"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["profiles"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Illustrative objective profiles"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["objective_difference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Objective difference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Steepness"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["ratio"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Reference / Index","Reference / Composition"],"index":[0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1]},{"dictionary":["Profile on the supplied parameter scale."],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}],"n":20}},{"id":"diag-profile-data-sources/Average total biomass / Reference","label":"Objective profile Total / Average total biomass / Reference","rows":{"encoding":"columns-v1","names":["parameter","x","component","group","domain","objective","unit","profile_type","axis_label","axis_definition","target","converged","target_attained","objective_basis","objective_reported","model","label","objective_difference","value","metric","y_label","x_label","x_unit","line","definition"],"columns":[{"dictionary":["Average total biomass"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[1000000,1100000,1200000,1300000,1400000,1500000,1600000,1700000,1800000,1900000,1000000,1100000,1200000,1300000,1400000,1500000,1600000,1700000,1800000,1900000]},{"dictionary":["Index","Composition"],"index":[0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1]},{"dictionary":["Reference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["total"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["ratio"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["quantity"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Average total biomass"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Total biomass averaged over the declared model periods, 2001-2020."],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[1000000,1100000,1200000,1300000,1400000,1500000,1600000,1700000,1800000,1900000,1000000,1100000,1200000,1300000,1400000,1500000,1600000,1700000,1800000,1900000]},{"dictionary":[true],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":[true],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["unpenalized"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["profiles"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Illustrative objective profiles"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["objective_difference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Objective difference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Average total biomass (t)"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["t"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Reference / Index","Reference / Composition"],"index":[0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1]},{"dictionary":["Total biomass averaged over the declared model periods, 2001-2020."],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}],"n":20}},{"id":"diag-profile-data-cpue/Steepness / Reference","label":"Objective profile Index / Steepness / Reference","rows":{"encoding":"columns-v1","names":["parameter","x","component","group","domain","objective","unit","profile_type","axis_label","axis_definition","target","converged","target_attained","objective_basis","objective_reported","model","label","objective_difference","value","metric","y_label","x_label","x_unit","line","definition"],"columns":[{"dictionary":["Steepness"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95]},{"dictionary":["Index","Composition"],"index":[0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1]},{"dictionary":["Reference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["index"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["ratio"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["parameter"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Steepness"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Profile on the supplied parameter scale."],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95]},{"dictionary":[true],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":[true],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["unpenalized"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["profiles"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Illustrative objective profiles"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["objective_difference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Objective difference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Steepness"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["ratio"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Reference / Index","Reference / Composition"],"index":[0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1]},{"dictionary":["Profile on the supplied parameter scale."],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}],"n":20}},{"id":"diag-profile-data-cpue/Average total biomass / Reference","label":"Objective profile Index / Average total biomass / Reference","rows":{"encoding":"columns-v1","names":["parameter","x","component","group","domain","objective","unit","profile_type","axis_label","axis_definition","target","converged","target_attained","objective_basis","objective_reported","model","label","objective_difference","value","metric","y_label","x_label","x_unit","line","definition"],"columns":[{"dictionary":["Average total biomass"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[1000000,1100000,1200000,1300000,1400000,1500000,1600000,1700000,1800000,1900000,1000000,1100000,1200000,1300000,1400000,1500000,1600000,1700000,1800000,1900000]},{"dictionary":["Index","Composition"],"index":[0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1]},{"dictionary":["Reference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["index"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["ratio"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["quantity"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Average total biomass"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Total biomass averaged over the declared model periods, 2001-2020."],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[1000000,1100000,1200000,1300000,1400000,1500000,1600000,1700000,1800000,1900000,1000000,1100000,1200000,1300000,1400000,1500000,1600000,1700000,1800000,1900000]},{"dictionary":[true],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":[true],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["unpenalized"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["profiles"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Illustrative objective profiles"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["objective_difference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Objective difference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Average total biomass (t)"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["t"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Reference / Index","Reference / Composition"],"index":[0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1]},{"dictionary":["Total biomass averaged over the declared model periods, 2001-2020."],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}],"n":20}},{"id":"diag-profile-data-lf/Steepness / Reference","label":"Objective profile Length / Steepness / Reference","rows":{"encoding":"columns-v1","names":["parameter","x","component","group","domain","objective","unit","profile_type","axis_label","axis_definition","target","converged","target_attained","objective_basis","objective_reported","model","label","objective_difference","value","metric","y_label","x_label","x_unit","line","definition"],"columns":[{"dictionary":["Steepness"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95]},{"dictionary":["Index","Composition"],"index":[0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1]},{"dictionary":["Reference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["length"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["ratio"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["parameter"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Steepness"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Profile on the supplied parameter scale."],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95]},{"dictionary":[true],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":[true],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["unpenalized"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["profiles"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Illustrative objective profiles"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["objective_difference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Objective difference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Steepness"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["ratio"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Reference / Index","Reference / Composition"],"index":[0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1]},{"dictionary":["Profile on the supplied parameter scale."],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}],"n":20}},{"id":"diag-profile-data-lf/Average total biomass / Reference","label":"Objective profile Length / Average total biomass / Reference","rows":{"encoding":"columns-v1","names":["parameter","x","component","group","domain","objective","unit","profile_type","axis_label","axis_definition","target","converged","target_attained","objective_basis","objective_reported","model","label","objective_difference","value","metric","y_label","x_label","x_unit","line","definition"],"columns":[{"dictionary":["Average total biomass"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[1000000,1100000,1200000,1300000,1400000,1500000,1600000,1700000,1800000,1900000,1000000,1100000,1200000,1300000,1400000,1500000,1600000,1700000,1800000,1900000]},{"dictionary":["Index","Composition"],"index":[0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1]},{"dictionary":["Reference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["length"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["ratio"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["quantity"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Average total biomass"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Total biomass averaged over the declared model periods, 2001-2020."],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[1000000,1100000,1200000,1300000,1400000,1500000,1600000,1700000,1800000,1900000,1000000,1100000,1200000,1300000,1400000,1500000,1600000,1700000,1800000,1900000]},{"dictionary":[true],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":[true],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["unpenalized"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["profiles"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Illustrative objective profiles"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["objective_difference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Objective difference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Average total biomass (t)"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["t"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Reference / Index","Reference / Composition"],"index":[0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1]},{"dictionary":["Total biomass averaged over the declared model periods, 2001-2020."],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}],"n":20}},{"id":"diag-profile-data-caal/Steepness / Reference","label":"Objective profile Conditional age / Steepness / Reference","rows":{"encoding":"columns-v1","names":["parameter","x","component","group","domain","objective","unit","profile_type","axis_label","axis_definition","target","converged","target_attained","objective_basis","objective_reported","model","label","objective_difference","value","metric","y_label","x_label","x_unit","line","definition"],"columns":[{"dictionary":["Steepness"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95]},{"dictionary":["Index","Composition"],"index":[0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1]},{"dictionary":["Reference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["conditional_age"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["ratio"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["parameter"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Steepness"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Profile on the supplied parameter scale."],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95]},{"dictionary":[true],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":[true],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["unpenalized"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["profiles"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Illustrative objective profiles"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["objective_difference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Objective difference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Steepness"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["ratio"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Reference / Index","Reference / Composition"],"index":[0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1]},{"dictionary":["Profile on the supplied parameter scale."],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}],"n":20}},{"id":"diag-profile-data-caal/Average total biomass / Reference","label":"Objective profile Conditional age / Average total biomass / Reference","rows":{"encoding":"columns-v1","names":["parameter","x","component","group","domain","objective","unit","profile_type","axis_label","axis_definition","target","converged","target_attained","objective_basis","objective_reported","model","label","objective_difference","value","metric","y_label","x_label","x_unit","line","definition"],"columns":[{"dictionary":["Average total biomass"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[1000000,1100000,1200000,1300000,1400000,1500000,1600000,1700000,1800000,1900000,1000000,1100000,1200000,1300000,1400000,1500000,1600000,1700000,1800000,1900000]},{"dictionary":["Index","Composition"],"index":[0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1]},{"dictionary":["Reference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["conditional_age"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["ratio"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["quantity"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Average total biomass"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Total biomass averaged over the declared model periods, 2001-2020."],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[1000000,1100000,1200000,1300000,1400000,1500000,1600000,1700000,1800000,1900000,1000000,1100000,1200000,1300000,1400000,1500000,1600000,1700000,1800000,1900000]},{"dictionary":[true],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":[true],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["unpenalized"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["profiles"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Illustrative objective profiles"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["objective_difference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Objective difference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Average total biomass (t)"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["t"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Reference / Index","Reference / Composition"],"index":[0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1]},{"dictionary":["Total biomass averaged over the declared model periods, 2001-2020."],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}],"n":20}},{"id":"diag-profile-data-tag-prog/Steepness / Reference","label":"Objective profile Tag / Steepness / Reference","rows":{"encoding":"columns-v1","names":["parameter","x","component","group","domain","objective","unit","profile_type","axis_label","axis_definition","target","converged","target_attained","objective_basis","objective_reported","model","label","objective_difference","value","metric","y_label","x_label","x_unit","line","definition"],"columns":[{"dictionary":["Steepness"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95]},{"dictionary":["Index","Composition"],"index":[0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1]},{"dictionary":["Reference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["tag"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["ratio"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["parameter"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Steepness"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Profile on the supplied parameter scale."],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95]},{"dictionary":[true],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":[true],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["unpenalized"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["profiles"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Illustrative objective profiles"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["objective_difference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Objective difference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Steepness"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["ratio"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Reference / Index","Reference / Composition"],"index":[0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1]},{"dictionary":["Profile on the supplied parameter scale."],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}],"n":20}},{"id":"diag-profile-data-tag-prog/Average total biomass / Reference","label":"Objective profile Tag / Average total biomass / Reference","rows":{"encoding":"columns-v1","names":["parameter","x","component","group","domain","objective","unit","profile_type","axis_label","axis_definition","target","converged","target_attained","objective_basis","objective_reported","model","label","objective_difference","value","metric","y_label","x_label","x_unit","line","definition"],"columns":[{"dictionary":["Average total biomass"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[1000000,1100000,1200000,1300000,1400000,1500000,1600000,1700000,1800000,1900000,1000000,1100000,1200000,1300000,1400000,1500000,1600000,1700000,1800000,1900000]},{"dictionary":["Index","Composition"],"index":[0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1]},{"dictionary":["Reference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["tag"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["ratio"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["quantity"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Average total biomass"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Total biomass averaged over the declared model periods, 2001-2020."],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[1000000,1100000,1200000,1300000,1400000,1500000,1600000,1700000,1800000,1900000,1000000,1100000,1200000,1300000,1400000,1500000,1600000,1700000,1800000,1900000]},{"dictionary":[true],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":[true],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["unpenalized"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["profiles"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Illustrative objective profiles"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"values":[4,2.25,1,0.249999999999999,0,0.25,1,2.25,4,6.25,9,6.25,4,2.25,1,0.25,0,0.25,1,2.25]},{"dictionary":["objective_difference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Objective difference"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Average total biomass (t)"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["t"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":["Reference / Index","Reference / Composition"],"index":[0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1]},{"dictionary":["Total biomass averaged over the declared model periods, 2001-2020."],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}],"n":20}}]}</script>
+<script>/* Offline viewer: data selection is separate from SVG drawing and downloads. */
+"use strict";
+(() => {
+  const data = JSON.parse(document.getElementById("result-data").textContent);
+  // Older row-based payloads and new compact column payloads share the same view.
+  const unpack = table => {
+    if (!table || table.encoding !== "columns-v1") return table;
+    const columns = table.columns.map(column => column.index ?
+      column.index.map(i => column.dictionary[i]) : column.values);
+    return Array.from({length: table.n}, (_, i) =>
+      Object.fromEntries(table.names.map((name, j) => [name, columns[j][i]])));
+  };
+  // Keep large records columnar. Only the selected model/series/sample becomes
+  // row objects; opening a table does not expand every other custom table.
+  class RowStore {
+    constructor(table) {
+      this.packed = table?.encoding === "columns-v1";
+      this.source = table || [];
+      this.length = this.packed ? table.n : this.source.length;
+      this.names = this.packed ? table.names : (this.source[0] ? Object.keys(this.source[0]) : []);
+      this.positions = new Map(this.names.map((name, i) => [name, i]));
+    }
+    value(i, name) {
+      if (!this.packed) return this.source[i][name];
+      const position = this.positions.get(name);
+      if (position === undefined) return undefined;
+      const column = this.source.columns[position];
+      return column.index ? column.dictionary[column.index[i]] : column.values[i];
+    }
+    row(i) { return this.packed ? Object.fromEntries(this.names.map(name => [name, this.value(i, name)])) : this.source[i]; }
+    select(conditions) {
+      const matches = Object.entries(conditions);
+      const rows = [];
+      for (let i = 0; i < this.length; i++) {
+        if (matches.every(([name, expected]) => {
+          const value = this.value(i, name);
+          return expected instanceof Set ? expected.has(value) : typeof expected === "function" ? expected(value) : value === expected;
+        })) rows.push(this.row(i));
+      }
+      return rows;
+    }
+    representatives(columns, conditions = {}) {
+      const found = new Map();
+      const filters = Object.entries(conditions);
+      for (let i = 0; i < this.length; i++) {
+        if (!filters.every(([name, value]) => this.value(i, name) === value)) continue;
+        const key = JSON.stringify(columns.map(name => this.value(i, name)));
+        if (!found.has(key)) found.set(key, this.row(i));
+      }
+      return [...found].map(([key, row]) => ({key: JSON.parse(key), row}));
+    }
+    unique(name) {
+      const values = new Set();
+      for (let i = 0; i < this.length; i++) values.add(this.value(i, name));
+      return [...values];
+    }
+  }
+  for (const name of ["changes", "checks", "status"]) data[name] = unpack(data[name]);
+  for (const name of ["series", "fits", "compositions"]) data[name] = new RowStore(data[name]);
+  data.views = data.views || [];
+  data.curves = new RowStore(data.tables.filter(t => t.name === "curves").flatMap(t =>
+    unpack(t.rows).map(r => ({...r, model: t.model, label: t.label}))));
+  const byId = id => document.getElementById(id);
+  const node = (tag, text, className) => {
+    const el = document.createElement(tag);
+    if (text !== undefined) el.textContent = text;
+    if (className) el.className = className;
+    return el;
+  };
+  const palettes = ["#187e83", "#cf7953", "#7666a5", "#5273aa", "#749753", "#b35e81"];
+  const color = id => palettes[data.models.findIndex(m => m.id === id) % palettes.length];
+  const selected = new Set(data.models.slice(0, 6).map(m => m.id));
+  const format = value => typeof value === "number" ?
+    value.toLocaleString("en", {maximumSignificantDigits: 5}) : value == null ? "" : String(value);
+  const pretty = value => { const text = value.replaceAll("_", " "); return text.charAt(0).toUpperCase() + text.slice(1); };
+  const extent = values => values.reduce(([lo, hi], x) => [Math.min(lo, x), Math.max(hi, x)], [Infinity, -Infinity]);
+  const ticks = (lo, hi, integer = false) => {
+    const raw = (hi - lo) / 5;
+    const power = Math.pow(10, Math.floor(Math.log10(raw)));
+    const step = Math.max(integer ? 1 : 0, [1, 2, 5, 10].find(n => n * power >= raw) * power);
+    const values = [];
+    for (let x = Math.ceil(lo / step) * step; x <= hi + step * 1e-9; x += step) values.push(x);
+    return values;
+  };
+  const unique = values => [...new Set(values)];
+  const quantityLabel = row => row.y_label || row.axis_label ||
+    (row.metric === "equilibrium_spawning_depletion" ? "SB/SB0" :
+    row.metric === "dynamic_spawning_depletion" ? "SB/SB[F=0]" :
+    `${row.display_name || pretty(row.metric)}${row.unit && row.unit !== "ratio" ? ` (${row.unit})` : ""}`);
+  const choices = {};
+  const savedChoice = {};
+  let tab = "series", scope = null, activeTab = "series", tablePage = 0;
+  let currentRows = [];
+  let currentColumns = [];
+  byId("title").textContent = data.title;
+  byId("eyebrow").textContent = `${data.type} / ${data.models.length} models`;
+  byId("collection-kind").textContent = `${data.type} · in supplied order`;
+
+  for (const [i, model] of data.models.entries()) {
+    const change = data.changes.find(c => c.id === model.id);
+    const label = node("label", undefined, "model");
+    const input = node("input");
+    input.type = "checkbox";
+    input.value = model.id;
+    input.checked = selected.has(model.id);
+    input.setAttribute("aria-label", model.label);
+    input.addEventListener("change", () => {
+      input.checked ? selected.add(model.id) : selected.delete(model.id);
+      render();
+    });
+    const body = node("div");
+    body.append(node("span", String(i + 1).padStart(2, "0") +
+      (model.id === data.reference ? " / REFERENCE" : ""), "step"));
+    body.append(node("strong", model.label), node("small", change.change));
+    if (change.parent) {
+      const parent = data.models.find(m => m.id === change.parent);
+      body.append(node("small", `From ${parent.label}`));
+    }
+    label.append(input, body);
+    byId("models").append(label);
+  }
+  byId("toggle-all").addEventListener("click", () => {
+    const clear = selected.size > 0;
+    selected.clear();
+    if (!clear) data.models.forEach(m => selected.add(m.id));
+    document.querySelectorAll(".model input").forEach(el => { el.checked = selected.has(el.value); });
+    render();
+  });
+
+  const fitNames = {index: "Index fits", catch: "Catch fits", tag: "Tag recaptures", effort: "Effort fits"};
+  const axisNames = {length: "Length compositions", weight: "Weight compositions", age: "Age compositions", conditional_age: "Age at length"};
+  const tabs = [
+    ...(data.series.length ? [{type: "series", title: "Trajectories"}] : []),
+    ...(data.curves.length ? [{type: "curves", title: "Biology and model curves"}] : []),
+    ...data.fits.unique("kind").map(kind => ({type: "fits", scope: kind, title: fitNames[kind] || `${pretty(kind)} fits`})),
+    ...data.compositions.unique("axis").map(axis => ({type: "compositions", scope: axis, title: axisNames[axis] || `${pretty(axis)} compositions`})),
+    ...(data.views.length ? [{type: "reports", title: "Study plots"}] : []),
+    {type: "checks", title: "Checks"}, ...(data.tables.length ? [{type: "tables", title: "Tables"}] : [])
+  ];
+  if (!data.series.length) { tab = tabs[0].type; scope = tabs[0].scope || null; activeTab = tab + (scope ? `-${scope}` : ""); }
+  for (const view of tabs) {
+    const id = view.type + (view.scope ? `-${view.scope}` : "");
+    const button = node("button", view.title);
+    button.type = "button"; button.dataset.tab = id;
+    button.addEventListener("click", () => {
+      tab = view.type; scope = view.scope || null; activeTab = id; tablePage = 0; controls(); render();
+    });
+    byId("tabs").append(button);
+  }
+  const seriesChoices = source => source.representatives(["metric", "group"])
+    .map(({key, row}) => ({key, label: `${row.display_name || pretty(key[0])} / ${pretty(key[1])}`}));
+  choices.series = seriesChoices(data.series);
+  choices.curves = seriesChoices(data.curves);
+  choices.fits = data.fits.representatives(["kind", "series"])
+    .map(({key, row}) => ({key, label: row.series_label || pretty(key[1])}));
+  choices.compositions = data.compositions.representatives(["axis", "series"])
+    .map(({key, row}) => ({key, label: row.series_label || pretty(key[1])}));
+  choices.reports = data.views.map((view, i) => ({key: [i], label: pretty(view.label)}));
+  choices.checks = [{key: [], label: "All recorded numerical checks"}];
+  choices.tables = data.tables.map((t, i) => ({key: [i], label: `${t.label} / ${pretty(t.name)}`}));
+  byId("quantity").addEventListener("change", () => { savedChoice[activeTab] = byId("quantity").value; tablePage = 0; samples(); render(); });
+  byId("sample").addEventListener("change", () => { tablePage = 0; render(); });
+  byId("previous-page").addEventListener("click", () => { tablePage--; table(currentRows); });
+  byId("next-page").addEventListener("click", () => { tablePage++; table(currentRows); });
+  byId("residual").addEventListener("change", render);
+
+  function controls() {
+    byId("quantity").replaceChildren();
+    choices[tab].forEach((choice, i) => {
+      if (scope && choice.key[0] !== scope) return;
+      const option = node("option", choice.label);
+      option.value = String(i);
+      byId("quantity").append(option);
+    });
+    const saved = savedChoice[activeTab];
+    byId("quantity").value = [...byId("quantity").options].some(o => o.value === saved) ? saved : byId("quantity").options[0]?.value || "";
+    byId("select-label").textContent = tab === "fits" ? (scope === "index" ? "Index" : "Fishery / group") : tab === "compositions" ? "Fishery / group" : tab === "tables" ? "Table" : "Quantity";
+    samples();
+    byId("residual-label").hidden = tab !== "fits";
+    document.querySelectorAll("#tabs button").forEach(button => {
+      button.setAttribute("aria-pressed", String(button.dataset.tab === activeTab));
+    });
+  }
+
+  function samples() {
+    const show = tab === "compositions";
+    byId("sample").hidden = !show; byId("sample-label").hidden = !show;
+    byId("sample").replaceChildren();
+    if (!show) return;
+    const choice = choices.compositions[Number(byId("quantity").value)];
+    if (!choice) return;
+    const rows = data.compositions.representatives(["time", "record"], {axis: choice.key[0], series: choice.key[1]}).map(({row}) => row);
+    const keys = unique(rows.map(r => JSON.stringify([r.time, r.record == null ? null : String(r.record)])))
+      .sort((a, b) => JSON.parse(a)[0] - JSON.parse(b)[0]);
+    const timeCounts = new Map();
+    for (const key of keys) { const time = JSON.parse(key)[0]; timeCounts.set(time, (timeCounts.get(time) || 0) + 1); }
+    const sampleRows = new Map(rows.map(r => [JSON.stringify([r.time, r.record == null ? null : String(r.record)]), r]));
+    for (const key of keys) {
+      const [time, record] = JSON.parse(key);
+      const repeated = timeCounts.get(time) > 1;
+      const row = sampleRows.get(key);
+      const condition = row?.condition_bin != null ? ` · length ${row.condition_bin} ${row.condition_unit || ""}` : (repeated ? ` · sample ${record}` : "");
+      const option = node("option", String(time) + condition);
+      option.value = key; byId("sample").append(option);
+    }
+    byId("sample").value = keys[keys.length - 1] || "";
+  }
+
+  function render() {
+    byId("toggle-all").textContent = selected.size ? "Clear" : "Select all";
+    byId("summary").replaceChildren();
+    const statuses = data.status.filter(s => selected.has(s.model));
+    for (const [count, label] of [[selected.size, "selected"],
+      [statuses.filter(s => s.status === "passed").length, "checks passed"],
+      [statuses.filter(s => s.status === "failed").length, "checks failed"],
+      [statuses.filter(s => s.status === "unknown").length, "unchecked"]]) {
+      const item = node("span"); item.append(node("b", String(count)), document.createTextNode(label));
+      byId("summary").append(item);
+    }
+    const choice = choices[tab][Number(byId("quantity").value)];
+    const key = choice ? choice.key : [];
+    let rows = [];
+    if (tab === "series") rows = data.series.select({model: selected, metric: key[0], group: key[1]});
+    if (tab === "curves") rows = data.curves.select({model: selected, metric: key[0], group: key[1]});
+    if (tab === "fits") rows = data.fits.select({model: selected, kind: key[0], series: key[1]});
+    if (tab === "compositions" && byId("sample").value) {
+      const [time, record] = JSON.parse(byId("sample").value);
+      rows = data.compositions.select({model: selected, axis: key[0], series: key[1], time,
+        record: value => (value == null ? null : String(value)) === record});
+    }
+    if (tab === "reports" && choice) rows = unpack(data.views[key[0]].rows);
+    if (tab === "checks") rows = data.checks;
+    if (tab === "tables" && choice) {
+      const source = data.tables[key[0]];
+      rows = unpack(source.rows).map(r => ({...r, model: source.model, label: source.label}));
+    }
+    rows = rows.filter(r => selected.has(r.model));
+    if (tab === "fits" && byId("residual").checked) rows = rows.map(r => ({...r,
+      residual: Number.isFinite(r.observed) && Number.isFinite(r.predicted) ? r.observed - r.predicted : null}));
+    tablePage = Math.min(tablePage, Math.max(0, Math.ceil(rows.length / 100) - 1));
+    currentRows = rows;
+    currentColumns = unique(rows.flatMap(Object.keys));
+    byId("plot-title").textContent = choice ? choice.label + (tab === "compositions" ? ` · ${byId("sample").selectedOptions[0]?.textContent || ""}` : "") : "No data in this view";
+    byId("definition").textContent = ["series", "curves", "reports"].includes(tab) ? rows[0]?.definition || "" :
+      tab === "fits" ? (byId("residual").checked ? "Raw residuals: observed minus predicted, in original units." :
+        `${scope === "index" ? "Observed index values" : scope === "catch" ? "Recorded catches" : scope === "tag" ? "Observed tag recaptures" : "Observed values"} (points) and model predictions (lines).`) :
+      tab === "compositions" ? "Observed proportions (points) and predicted proportions (lines) for the selected sample." :
+      tab === "checks" ? "Inspect each recorded check and threshold. Unknown checks are not passes." : "Supplied model table.";
+    byId("chart").replaceChildren(); byId("legend").replaceChildren(); byId("hover").textContent = "";
+    const chartable = ["series", "curves", "reports", "fits", "compositions"].includes(tab) && rows.length > 0;
+    byId("chart").hidden = !chartable;
+    byId("download-svg").hidden = !chartable;
+    byId("download-csv").disabled = !rows.length;
+    byId("data-details").open = ["checks", "tables"].includes(tab);
+    byId("data-details").hidden = !rows.length;
+    if (chartable) draw(rows);
+    else if (!rows.length) {
+      byId("chart").hidden = false;
+      byId("chart").append(node("p", selected.size ? "This selection has no data." : "Select a model to see its results.", "empty"));
+    }
+    table(rows);
+  }
+
+  function table(rows) {
+    byId("table").replaceChildren();
+    byId("table-note").textContent = rows.length ? `${rows.length.toLocaleString()} rows. ` +
+      (rows.length > 100 ? "Browse pages or download all rows." : "Exact values are available below.") : "";
+    const pages = Math.max(1, Math.ceil(rows.length / 100));
+    byId("page-number").textContent = `${tablePage + 1} / ${pages}`;
+    byId("previous-page").disabled = tablePage === 0;
+    byId("next-page").disabled = tablePage >= pages - 1;
+    document.querySelector(".table-pages").hidden = pages === 1;
+    if (!rows.length) return;
+    const table = node("table"); const head = node("thead"); const tr = node("tr");
+    currentColumns.forEach(c => { const th = node("th", pretty(c)); th.scope = "col"; tr.append(th); });
+    head.append(tr); table.append(head);
+    const body = node("tbody");
+    rows.slice(tablePage * 100, (tablePage + 1) * 100).forEach(r => {
+      const row = node("tr"); currentColumns.forEach(c => row.append(node("td", format(r[c])))); body.append(row);
+    });
+    table.append(body); byId("table").append(table);
+  }
+
+  function draw(rows) {
+    const residual = tab === "fits" && byId("residual").checked;
+    const xname = ["curves", "reports"].includes(tab) ? "x" : tab === "compositions" ? "bin" : "time";
+    const yname = ["series", "curves", "reports"].includes(tab) ? "value" : residual ? "residual" : "predicted";
+    const observations = ["fits", "compositions"].includes(tab) && !residual;
+    const values = rows.flatMap(r => observations ? [r.observed, r.predicted] : [r[yname], r.lower, r.upper]).filter(Number.isFinite);
+    if (!values.length) { byId("chart").append(node("p", "No finite values to draw.", "empty")); byId("download-svg").hidden = true; return; }
+    const magnitude = values.reduce((m, v) => Math.max(m, Math.abs(v)), 0);
+    const scalable = !rows[0].axis_label && ["t", "kg", "fish", "number", "model biomass units", "model abundance units"].includes(rows[0].unit);
+    const exponent = scalable ? (magnitude >= 1e6 ? 6 : magnitude >= 1e4 ? 3 : 0) : 0;
+    const divisor = 10 ** exponent;
+    const displayRow = {...rows[0], unit: exponent ? `10^${exponent} ${rows[0].unit}` : rows[0].unit};
+    const width = Math.max(440, Math.min(900, byId("chart").clientWidth || 900));
+    const height = 390, left = 100, right = 25, top = 22, bottom = 55;
+    const lineId = r => tab === "reports" ? JSON.stringify([r.model, r.line]) : r.model;
+    const lineModels = tab === "reports" ? unique(rows.map(lineId)).map(id => {
+      const r = rows.find(r => lineId(r) === id);
+      return {id, label: data.models.length > 1 ? `${r.label} / ${r.line}` : r.line};
+    }) : data.models.filter(m => selected.has(m.id));
+    const lineColor = id => tab === "reports" ? palettes[lineModels.findIndex(m => m.id === id) % palettes.length] : color(id);
+    const legendModels = lineModels.filter(m => rows.some(r => lineId(r) === m.id));
+    const legendPositions = [];
+    let legendX = left, legendY = height + 18;
+    for (const model of legendModels) {
+      const size = Math.min(width - left - right, model.label.length * 7 + 44);
+      if (legendX + size > width - right && legendX > left) { legendX = left; legendY += 22; }
+      legendPositions.push({model, x: legendX, y: legendY}); legendX += size;
+    }
+    const totalHeight = legendY + 18;
+    let [xmin, xmax] = extent(rows.map(r => r[xname]));
+    let [ymin, ymax] = extent(values);
+    ymin = Math.min(0, ymin); ymax = Math.max(0, ymax);
+    if (xmin === xmax) { xmin -= .5; xmax += .5; }
+    const pad = (ymax - ymin || Math.max(Math.abs(ymax), 1)) * .08;
+    if (ymin < 0) ymin -= pad;
+    ymax += pad;
+    const px = x => left + (x - xmin) / (xmax - xmin) * (width - left - right);
+    const py = y => height - bottom - (y - ymin) / (ymax - ymin) * (height - top - bottom);
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("viewBox", `0 0 ${width} ${totalHeight}`);
+    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    svg.setAttribute("aria-label", byId("plot-title").textContent);
+    const el = (tag, attrs, text) => {
+      const n = document.createElementNS("http://www.w3.org/2000/svg", tag);
+      Object.entries(attrs).forEach(([key, value]) => n.setAttribute(key, String(value)));
+      if (text !== undefined) n.textContent = text;
+      svg.append(n); return n;
+    };
+    const text = (x, y, content, anchor = "middle") => el("text", {x, y, fill: "#65757d",
+      "font-size": 12, "font-family": "sans-serif", "text-anchor": anchor}, content);
+    el("rect", {width, height: totalHeight, fill: "white"});
+    el("desc", {}, byId("definition").textContent);
+    for (const tick of ticks(ymin / divisor, ymax / divisor)) {
+      const value = tick * divisor;
+      el("line", {x1: left, x2: width - right, y1: py(value), y2: py(value), stroke: "#e8edef"});
+      text(left - 12, py(value) + 4, format(tick), "end");
+    }
+    const xMagnitude = Math.max(Math.abs(xmin), Math.abs(xmax));
+    const xScalable = tab === "reports" && ["t", "kg", "fish", "number", "model biomass units", "model abundance units"].includes(rows[0].x_unit);
+    const xExponent = xScalable ? (xMagnitude >= 1e6 ? 6 : xMagnitude >= 1e4 ? 3 : 0) : 0;
+    const xDivisor = 10 ** xExponent;
+    for (const value of ticks(xmin / xDivisor, xmax / xDivisor, !xExponent && rows.every(r => Number.isInteger(r[xname]))))
+      text(px(value * xDivisor), height - bottom + 25, value.toLocaleString("en", {useGrouping: false, maximumFractionDigits: 6}));
+    const timeLabels = unique(data.models.map(m => m.metadata.time_label).filter(Boolean));
+    let xLabel = tab === "reports" ? rows[0].x_label : tab === "curves" ? pretty(rows[0].x_unit) : xname === "time" ? (timeLabels.length === 1 ? timeLabels[0] : "Time") :
+      pretty(rows[0].axis) + (rows[0].bin_unit ? ` (${rows[0].bin_unit})` : "");
+    if (xExponent) xLabel = xLabel.replace(`(${rows[0].x_unit})`, `(10^${xExponent} ${rows[0].x_unit})`);
+    const xAxisLabel = text(width / 2, height - 5, xLabel);
+    const fitLabel = residual ? "Residual" : rows[0].kind === "index" ?
+      (displayRow.unit === "geometric-mean-scaled index" ? "Relative index" : "Abundance index") :
+      rows[0].kind === "tag" ? "Tag recaptures" : rows[0].kind ? pretty(rows[0].kind) : "";
+    const dimensionless = ["ratio", "relative", "probability", "relative abundance", "geometric-mean-scaled index"].includes(displayRow.unit);
+    const yLabel = ["series", "curves", "reports"].includes(tab) ? quantityLabel(displayRow) : tab === "compositions" ? "Proportion" :
+      fitLabel + (dimensionless ? "" : ` (${displayRow.unit})`);
+    const axisLabel = text(16, (height - bottom + top) / 2, yLabel);
+    // Restricted notation renders subscripts/exponents as SVG text, never HTML.
+    const mathText = (element, value) => {
+      element.replaceChildren();
+      const parts = value.split(/(SB0|\[[^\]]+\]|\^-?\d+|per year)/g);
+      for (const part of parts) {
+        if (!part) continue;
+        const span = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+        if (part === "SB0") {
+          element.append(document.createTextNode("SB"));
+          span.textContent = "0"; span.setAttribute("baseline-shift", "sub");
+        } else if (part.startsWith("[")) {
+          span.textContent = part.slice(1, -1); span.setAttribute("baseline-shift", "sub");
+        } else if (part.startsWith("^") || part === "per year") {
+          if (part === "per year") element.append(document.createTextNode("year"));
+          span.textContent = part === "per year" ? "−1" : part.slice(1);
+          span.setAttribute("baseline-shift", "super");
+        } else { element.append(document.createTextNode(part)); continue; }
+        span.setAttribute("font-size", "9"); element.append(span);
+      }
+    };
+    mathText(axisLabel, yLabel);
+    mathText(xAxisLabel, xLabel);
+    axisLabel.setAttribute("transform", `rotate(-90 16 ${(height - bottom + top) / 2})`);
+    if (residual) el("line", {x1: left, x2: width - right, y1: py(0), y2: py(0), stroke: "#839199", "stroke-dasharray": "4 4"});
+    for (const model of lineModels) {
+      const points = rows.filter(r => lineId(r) === model.id).sort((a, b) => a[xname] - b[xname]);
+      if (!points.length) continue;
+      if (tab === "reports" && points.some(p => Number.isFinite(p.lower) && Number.isFinite(p.upper))) {
+        for (const probability of unique(points.map(p => p.probability))) {
+          const band = points.filter(p => p.probability === probability);
+          let run = [];
+          const flush = () => {
+            if (run.length > 1) el("polygon", {points: [...run.map(p => `${px(p[xname])},${py(p.lower)}`),
+              ...[...run].reverse().map(p => `${px(p[xname])},${py(p.upper)}`)].join(" "),
+              fill: lineColor(model.id), "fill-opacity": .13, stroke: "none"});
+            run = [];
+          };
+          for (const p of band) {
+            if (Number.isFinite(p.lower) && Number.isFinite(p.upper)) run.push(p); else flush();
+          }
+          flush();
+        }
+      }
+      let path = "", segment = false;
+      for (const p of points) {
+        if (!Number.isFinite(p[yname])) { segment = false; continue; }
+        path += `${segment ? "L" : "M"}${px(p[xname])},${py(p[yname])} `;
+        segment = true;
+        if (residual || points.length === 1) el("circle", {cx: px(p[xname]), cy: py(p[yname]), r: 3, fill: lineColor(model.id)});
+      }
+      if (!residual) el("path", {d: path, fill: "none", stroke: lineColor(model.id), "stroke-width": 2.5, "stroke-linejoin": "round"});
+      if (observations) points.filter(p => Number.isFinite(p.observed)).forEach(p =>
+        el("circle", {cx: px(p[xname]), cy: py(p.observed), r: 3.5, fill: "white", stroke: lineColor(model.id), "stroke-width": 1.5}));
+    }
+    for (const item of legendPositions) {
+      el("line", {x1: item.x, x2: item.x + 19, y1: item.y - 4, y2: item.y - 4, stroke: lineColor(item.model.id), "stroke-width": 2.5});
+      text(item.x + 26, item.y, item.model.label, "start");
+    }
+    const cursor = el("line", {x1: 0, x2: 0, y1: top, y2: height - bottom, stroke: "#93a6af", visibility: "hidden"});
+    svg.addEventListener("pointermove", event => {
+      const rect = svg.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width * width;
+      const target = xmin + (x - left) / (width - left - right) * (xmax - xmin);
+      const nearest = rows.reduce((a, b) => Math.abs(a[xname] - target) < Math.abs(b[xname] - target) ? a : b)[xname];
+      cursor.setAttribute("x1", px(nearest)); cursor.setAttribute("x2", px(nearest)); cursor.setAttribute("visibility", "visible");
+      byId("hover").textContent = `${format(nearest)} · ` + rows.filter(r => r[xname] === nearest)
+        .map(r => `${r.label}: ${format(r[yname])}${observations ? ` (observed ${format(r.observed)})` : ""}`).join(" · ");
+    });
+    svg.addEventListener("pointerleave", () => cursor.setAttribute("visibility", "hidden"));
+    byId("chart").append(svg);
+  }
+
+  function download(content, type, filename) {
+    const url = URL.createObjectURL(new Blob([content], {type}));
+    const link = node("a"); link.href = url; link.download = filename; link.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+  byId("download-csv").addEventListener("click", () => {
+    const quote = value => '"' + String(value == null ? "" : value).replaceAll('"', '""') + '"';
+    const csv = [currentColumns.map(quote).join(","), ...currentRows.map(row =>
+      currentColumns.map(c => quote(row[c])).join(","))].join("\r\n");
+    download(csv, "text/csv;charset=utf-8", `${tab}-data.csv`);
+  });
+  byId("download-svg").addEventListener("click", () => {
+    const svg = byId("chart").querySelector("svg");
+    if (svg) download(new XMLSerializer().serializeToString(svg), "image/svg+xml", `${tab}-comparison.svg`);
+  });
+  let resize;
+  window.addEventListener("resize", () => { clearTimeout(resize); resize = setTimeout(render, 100); });
+  controls(); render();
+})();</script></body></html>

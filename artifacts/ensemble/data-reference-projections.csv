@@ -1,40 +1,21 @@
-"year","scenario","value","lower","upper"
-2023,"Lower catch",0.43,0.344,0.516
-2024,"Lower catch",0.438,0.3504,0.5256
-2025,"Lower catch",0.446,0.3568,0.5352
-2026,"Lower catch",0.454,0.3632,0.5448
-2027,"Lower catch",0.462,0.3696,0.5544
-2028,"Lower catch",0.47,0.376,0.564
-2029,"Lower catch",0.478,0.3824,0.5736
-2030,"Lower catch",0.486,0.3888,0.5832
-2031,"Lower catch",0.494,0.3952,0.5928
-2032,"Lower catch",0.502,0.4016,0.6024
-2033,"Lower catch",0.51,0.408,0.612
-2034,"Lower catch",0.518,0.4144,0.6216
-2035,"Lower catch",0.526,0.4208,0.6312
-2023,"Reference catch",0.43,0.344,0.516
-2024,"Reference catch",0.432,0.3456,0.5184
-2025,"Reference catch",0.434,0.3472,0.5208
-2026,"Reference catch",0.436,0.3488,0.5232
-2027,"Reference catch",0.438,0.3504,0.5256
-2028,"Reference catch",0.44,0.352,0.528
-2029,"Reference catch",0.442,0.3536,0.5304
-2030,"Reference catch",0.444,0.3552,0.5328
-2031,"Reference catch",0.446,0.3568,0.5352
-2032,"Reference catch",0.448,0.3584,0.5376
-2033,"Reference catch",0.45,0.36,0.54
-2034,"Reference catch",0.452,0.3616,0.5424
-2035,"Reference catch",0.454,0.3632,0.5448
-2023,"Higher catch",0.43,0.344,0.516
-2024,"Higher catch",0.424,0.3392,0.5088
-2025,"Higher catch",0.418,0.3344,0.5016
-2026,"Higher catch",0.412,0.3296,0.4944
-2027,"Higher catch",0.406,0.3248,0.4872
-2028,"Higher catch",0.4,0.32,0.48
-2029,"Higher catch",0.394,0.3152,0.4728
-2030,"Higher catch",0.388,0.3104,0.4656
-2031,"Higher catch",0.382,0.3056,0.4584
-2032,"Higher catch",0.376,0.3008,0.4512
-2033,"Higher catch",0.37,0.296,0.444
-2034,"Higher catch",0.364,0.2912,0.4368
-2035,"Higher catch",0.358,0.2864,0.4296
+"time","group","facet","metric","value","unit","definition","lower","upper","probability","uncertainty"
+2021,"Reference catch","all","dynamic_spawning_depletion",0.88,"ratio","Illustrative dynamic_spawning_depletion",0.748,1.012,0.95,"illustrative supplied quantiles"
+2022,"Reference catch","all","dynamic_spawning_depletion",0.858272722584933,"ratio","Illustrative dynamic_spawning_depletion",0.729531814197193,0.987013630972673,0.95,"illustrative supplied quantiles"
+2023,"Reference catch","all","dynamic_spawning_depletion",0.837081893560628,"ratio","Illustrative dynamic_spawning_depletion",0.711519609526534,0.962644177594723,0.95,"illustrative supplied quantiles"
+2024,"Reference catch","all","dynamic_spawning_depletion",0.816414267969127,"ratio","Illustrative dynamic_spawning_depletion",0.693952127773758,0.938876408164496,0.95,"illustrative supplied quantiles"
+2025,"Reference catch","all","dynamic_spawning_depletion",0.796256927871644,"ratio","Illustrative dynamic_spawning_depletion",0.676818388690898,0.915695467052391,0.95,"illustrative supplied quantiles"
+2026,"Reference catch","all","dynamic_spawning_depletion",0.776597274274444,"ratio","Illustrative dynamic_spawning_depletion",0.660107683133278,0.893086865415611,0.95,"illustrative supplied quantiles"
+2027,"Reference catch","all","dynamic_spawning_depletion",0.757423019254051,"ratio","Illustrative dynamic_spawning_depletion",0.643809566365943,0.871036472142159,0.95,"illustrative supplied quantiles"
+2028,"Reference catch","all","dynamic_spawning_depletion",0.738722178276903,"ratio","Illustrative dynamic_spawning_depletion",0.627913851535367,0.849530505018438,0.95,"illustrative supplied quantiles"
+2029,"Reference catch","all","dynamic_spawning_depletion",0.720483062708624,"ratio","Illustrative dynamic_spawning_depletion",0.612410603302331,0.828555522114918,0.95,"illustrative supplied quantiles"
+2030,"Reference catch","all","dynamic_spawning_depletion",0.702694272508252,"ratio","Illustrative dynamic_spawning_depletion",0.597290131632014,0.80809841338449,0.95,"illustrative supplied quantiles"
+2031,"Reference catch","all","dynamic_spawning_depletion",0.685344689102836,"ratio","Illustrative dynamic_spawning_depletion",0.582542985737411,0.788146392468262,0.95,"illustrative supplied quantiles"
+2032,"Reference catch","all","dynamic_spawning_depletion",0.668423468437972,"ratio","Illustrative dynamic_spawning_depletion",0.568159948172277,0.768686988703668,0.95,"illustrative supplied quantiles"
+2033,"Reference catch","all","dynamic_spawning_depletion",0.651920034199912,"ratio","Illustrative dynamic_spawning_depletion",0.554132029069925,0.749708039329899,0.95,"illustrative supplied quantiles"
+2034,"Reference catch","all","dynamic_spawning_depletion",0.635824071205024,"ratio","Illustrative dynamic_spawning_depletion",0.54045046052427,0.731197681885777,0.95,"illustrative supplied quantiles"
+2035,"Reference catch","all","dynamic_spawning_depletion",0.620125518952468,"ratio","Illustrative dynamic_spawning_depletion",0.527106691109598,0.713144346795338,0.95,"illustrative supplied quantiles"
+2036,"Reference catch","all","dynamic_spawning_depletion",0.604814565336056,"ratio","Illustrative dynamic_spawning_depletion",0.514092380535647,0.695536750136464,0.95,"illustrative supplied quantiles"
+2037,"Reference catch","all","dynamic_spawning_depletion",0.589881640511363,"ratio","Illustrative dynamic_spawning_depletion",0.501399394434658,0.678363886588067,0.95,"illustrative supplied quantiles"
+2038,"Reference catch","all","dynamic_spawning_depletion",0.575317410914266,"ratio","Illustrative dynamic_spawning_depletion",0.489019799277126,0.661615022551405,0.95,"illustrative supplied quantiles"
+2039,"Reference catch","all","dynamic_spawning_depletion",0.561112773427161,"ratio","Illustrative dynamic_spawning_depletion",0.476945857413087,0.645279689441235,0.95,"illustrative supplied quantiles"
+2040,"Reference catch","all","dynamic_spawning_depletion",0.547258849689218,"ratio","Illustrative dynamic_spawning_depletion",0.465170022235835,0.6293476771426,0.95,"illustrative supplied quantiles"

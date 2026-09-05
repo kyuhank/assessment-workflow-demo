@@ -36,6 +36,35 @@ ul.task-list li input[type="checkbox"] {
 <link href="main_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="main_files/libs/bootstrap/bootstrap-37cd5f27db3ad2399d539c317f6c765f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles/report.css">
 </head>
@@ -93,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="sec-summary" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Executive summary</h1>
-<p>This is a workflow demonstration, not a stock assessment. It uses ALB outputs to demonstrate the model-to-report tools. The diagnostic-model figures use the archived MFCL-compatible KIMSA fit from job 24781. Stepwise, starting-value, self-test, retrospective, sensitivity, ensemble and additional-output figures use illustrative display values to demonstrate report construction. They are not new assessment estimates.</p>
+<p>This is a workflow demonstration, not a stock assessment. It uses ALB outputs to demonstrate the model-to-report tools. The diagnostic-model figures use the archived MFCL-compatible KIMSA fit from job 24781. Stepwise, starting-value, self-test, retrospective, sensitivity, ensemble, profile and additional-output figures use illustrative display values to demonstrate report construction. They are not new assessment estimates.</p>
 <p>Replace the illustrative study bundles with fitted results, write the assessment interpretation in the section files, and update the report cover before submission.</p>
 </section>
 <section id="sec-introduction" class="level1" data-number="2">
@@ -103,27 +132,27 @@ ul.task-list li input[type="checkbox"] {
 <section id="sec-data" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Data compilation</h1>
 <p>The diagnostic model retains the ALB observation timing and two-region structure. Catch, abundance-index, length-composition and conditional age-at-length observations are available in the interactive diagnostic supplement.</p>
-<p><a href="#tbl-fisheries-definitions" class="quarto-xref">Table&nbsp;2</a> describes the fishery roles and observation periods. <a href="#fig-data-coverage-tile" class="quarto-xref">Figure&nbsp;3</a> shows data availability. Index observations and predictions follow the model likelihood’s geometric-mean centering convention.</p>
+<p><a href="#tbl-fisheries-definitions" class="quarto-xref">Table&nbsp;2</a> describes the fishery roles and observation periods. <a href="#fig-data-coverage-tile" class="quarto-xref">Figure&nbsp;6</a> shows data availability. Index observations and predictions follow the model likelihood’s geometric-mean centering convention.</p>
 <!-- Add data sources, collection methods, screening rules and limitations here. -->
 </section>
 <section id="sec-model" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Model description</h1>
 <p>The archived ALB fit uses the MFCL-compatible age-region state, age-based selectivity and five-pass hybrid F, without tagging. Its original F upper bound of 3 is retained for reproduction; new model specifications default to 6.</p>
 <p>Length compositions use square_fita with fishery divisors and a raw-record sample-size cap of 1000. The composition settings table records the fitted likelihood configuration.</p>
-<p><a href="#fig-growth-curve" class="quarto-xref">Figure&nbsp;5</a>, <a href="#fig-maturity-ogive" class="quarto-xref">Figure&nbsp;6</a> and <a href="#fig-natm-at-age" class="quarto-xref">Figure&nbsp;7</a> describe the biological inputs and estimates; <a href="#fig-select-age" class="quarto-xref">Figure&nbsp;33</a> shows fishery selectivity. Additional-format panels illustrate output types that are not estimated by this tag-free ALB reference model.</p>
+<p><a href="#fig-growth-curve" class="quarto-xref">Figure&nbsp;13</a>, <a href="#fig-maturity-ogive" class="quarto-xref">Figure&nbsp;14</a> and <a href="#fig-natm-at-age" class="quarto-xref">Figure&nbsp;15</a> describe the biological inputs and estimates; <a href="#fig-select-age" class="quarto-xref">Figure&nbsp;40</a> shows fishery selectivity. Additional-format panels illustrate output types that are not estimated by this tag-free ALB reference model.</p>
 <!-- Add population equations, observation models, priors, estimation phases and assumptions here. -->
 </section>
 <section id="sec-development" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Model development</h1>
-<p><a href="#fig-stepwise-panel" class="quarto-xref">Figure&nbsp;8</a> illustrates how model-development results are assembled. Each study retains its model definitions and change descriptions. Replace the example model collections with the actual development sequence before interpreting the differences.</p>
+<p><a href="#fig-stepwise-panel" class="quarto-xref">Figure&nbsp;16</a> illustrates how model-development results are assembled. Each study retains its model definitions and change descriptions. Replace the example model collections with the actual development sequence before interpreting the differences.</p>
 <!-- Explain why each model change was made and identify the final diagnostic model. -->
 </section>
 <section id="sec-results" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Results</h1>
-<p><a href="#fig-diag-time-series" class="quarto-xref">Figure&nbsp;32</a> shows annual reference-model trajectories. Stocks use time-weighted annual means; recruitment and catches use annual totals. Depletion is the ratio of annual spawning-potential summaries. Index points and predictions use annual geometric means. The interactive viewer retains the original time resolution.</p>
-<p>Length-residual panels use raw-sample-weighted annual averages within each fitted bin; terminal bins retain the model’s compressed-tail support. These displays do not define a new annual likelihood.</p>
-<p>Index fits and residuals (<a href="#fig-cpue-fit" class="quarto-xref">Figure&nbsp;69</a>, <a href="#fig-cpue-fit-residuals" class="quarto-xref">Figure&nbsp;9</a>), length-composition residuals (<a href="#fig-length-fit-by-fishery" class="quarto-xref">Figure&nbsp;10</a>) and conditional age-at-length residuals (<a href="#fig-caal-fits-regions" class="quarto-xref">Figure&nbsp;19</a>) are generated from the same result bundle used by the interactive viewer.</p>
-<p>The following studies demonstrate the intended diagnostic presentation: starting-value trials (<a href="#fig-jitter-scatter-plot" class="quarto-xref">Figure&nbsp;21</a>), simulation-estimation recovery (<a href="#fig-selftest-recovery" class="quarto-xref">Figure&nbsp;24</a>), retrospective analysis (<a href="#fig-retro-analysis" class="quarto-xref">Figure&nbsp;26</a>), objective profiles (<a href="#fig-diag-profile-data-sources" class="quarto-xref">Figure&nbsp;27</a>) and sensitivity comparisons. Their displayed values are illustrative.</p>
+<p><a href="#fig-diag-time-series" class="quarto-xref">Figure&nbsp;39</a> shows annual reference-model trajectories. Stocks use time-weighted annual means; recruitment and catches use annual totals. Depletion is the ratio of annual spawning-potential summaries. Index points and predictions use annual geometric means. The interactive viewer retains the original time resolution.</p>
+<p>Length-residual panels retain the original fitted records and their compressed-tail support. Conditional age-at-length fits are pooled by region using raw sample counts, preserving the model’s prediction scale.</p>
+<p>Index fits and residuals (<a href="#fig-cpue-fit" class="quarto-xref">Figure&nbsp;77</a>, <a href="#fig-cpue-fit-residuals" class="quarto-xref">Figure&nbsp;18</a>), length-composition residuals and conditional age-at-length fits (<a href="#fig-caal-fits-regions" class="quarto-xref">Figure&nbsp;26</a>) are generated from the same result bundle used by the interactive viewer.</p>
+<p>The following studies demonstrate the intended diagnostic presentation: starting-value trials (<a href="#fig-jitter-scatter-plot" class="quarto-xref">Figure&nbsp;27</a>), simulation-estimation recovery (<a href="#fig-selftest-recovery" class="quarto-xref">Figure&nbsp;30</a>), retrospective analysis (<a href="#fig-retro-analysis" class="quarto-xref">Figure&nbsp;32</a>), objective profiles (<a href="#fig-diag-profile-data-sources" class="quarto-xref">Figure&nbsp;33</a>) and sensitivity comparisons. Their displayed values are illustrative.</p>
 <!-- Interpret the real fits and diagnostics here after replacing the example study bundles. -->
 </section>
 <section id="sec-status" class="level1" data-number="7">
@@ -142,216 +171,204 @@ ul.task-list li input[type="checkbox"] {
 <div id="tbl-open-science-resources" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-open-science-resources-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Resources accompanying the workflow demonstration.
+Table&nbsp;1: Illustrative output. Assessment resources and output provenance.
 </figcaption>
 <div aria-describedby="tbl-open-science-resources-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
 <thead>
 <tr class="header">
-<th>Resource</th>
-<th>Contents</th>
+<th style="text-align: left;">Resource</th>
+<th style="text-align: left;">Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Interactive results</td>
-<td>Complete fitted records and study galleries</td>
-</tr>
-<tr class="even">
-<td>Editable manuscript</td>
-<td>Quarto sections, captions and replaceable artifacts</td>
-</tr>
-<tr class="odd">
-<td>Model provenance</td>
-<td>Archived ALB job 24781; illustrative auxiliary studies</td>
+<td style="text-align: left;">Numeric display fixture</td>
+<td style="text-align: left;">Demonstrate reporting inputs</td>
 </tr>
 </tbody>
 </table>
 </div>
 </figure>
 </div>
-<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/open-science-resources.csv">Download complete table</a></p>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/open-science-resources.csv">Download complete table</a></p>
 <div id="tbl-fisheries-definitions" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-fisheries-definitions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2: Fishery roles, regions, observation periods and units.
+Table&nbsp;2: Fishery definitions and observation units.
 </figcaption>
 <div aria-describedby="tbl-fisheries-definitions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>fishery</th>
-<th>region</th>
-<th>role</th>
-<th>first_year</th>
-<th>last_year</th>
-<th>unit</th>
+<th style="text-align: right;">Fishery</th>
+<th style="text-align: right;">Region</th>
+<th style="text-align: left;">Role</th>
+<th style="text-align: right;">First year</th>
+<th style="text-align: right;">Last year</th>
+<th style="text-align: left;">Unit</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>1</td>
-<td>1</td>
-<td>Catch</td>
-<td>1954</td>
-<td>2022</td>
-<td>fish</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: right;">1954</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: left;">fish</td>
 </tr>
 <tr class="even">
-<td>2</td>
-<td>1</td>
-<td>Catch</td>
-<td>1954</td>
-<td>2022</td>
-<td>fish</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: right;">1954</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: left;">fish</td>
 </tr>
 <tr class="odd">
-<td>3</td>
-<td>1</td>
-<td>Catch</td>
-<td>1954</td>
-<td>2022</td>
-<td>fish</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: right;">1954</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: left;">fish</td>
 </tr>
 <tr class="even">
-<td>4</td>
-<td>1</td>
-<td>Catch</td>
-<td>1954</td>
-<td>2022</td>
-<td>fish</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: right;">1954</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: left;">fish</td>
 </tr>
 <tr class="odd">
-<td>5</td>
-<td>1</td>
-<td>Catch</td>
-<td>1992</td>
-<td>2022</td>
-<td>fish</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: right;">1992</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: left;">fish</td>
 </tr>
 <tr class="even">
-<td>6</td>
-<td>1</td>
-<td>Catch</td>
-<td>1982</td>
-<td>2022</td>
-<td>fish</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: right;">1982</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: left;">fish</td>
 </tr>
 <tr class="odd">
-<td>7</td>
-<td>1</td>
-<td>Catch</td>
-<td>1987</td>
-<td>2022</td>
-<td>fish</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: right;">1987</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: left;">fish</td>
 </tr>
 <tr class="even">
-<td>8</td>
-<td>1</td>
-<td>Catch</td>
-<td>1954</td>
-<td>2022</td>
-<td>fish</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: right;">1954</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: left;">fish</td>
 </tr>
 <tr class="odd">
-<td>9</td>
-<td>1</td>
-<td>Catch</td>
-<td>1984</td>
-<td>2022</td>
-<td>fish</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: right;">1984</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: left;">fish</td>
 </tr>
 <tr class="even">
-<td>10</td>
-<td>1</td>
-<td>Catch</td>
-<td>1985</td>
-<td>2022</td>
-<td>fish</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: right;">1985</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: left;">fish</td>
 </tr>
 <tr class="odd">
-<td>11</td>
-<td>1</td>
-<td>Catch</td>
-<td>1982</td>
-<td>2022</td>
-<td>t</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: right;">1982</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: left;">t</td>
 </tr>
 <tr class="even">
-<td>12</td>
-<td>1</td>
-<td>Catch</td>
-<td>1987</td>
-<td>2022</td>
-<td>t</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: right;">1987</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: left;">t</td>
 </tr>
 <tr class="odd">
-<td>13</td>
-<td>1</td>
-<td>Catch</td>
-<td>1983</td>
-<td>1990</td>
-<td>t</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: right;">1983</td>
+<td style="text-align: right;">1990</td>
+<td style="text-align: left;">t</td>
 </tr>
 <tr class="even">
-<td>14</td>
-<td>2</td>
-<td>Catch</td>
-<td>1957</td>
-<td>2022</td>
-<td>fish</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: right;">1957</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: left;">fish</td>
 </tr>
 <tr class="odd">
-<td>15</td>
-<td>2</td>
-<td>Catch</td>
-<td>1961</td>
-<td>2021</td>
-<td>fish</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: right;">1961</td>
+<td style="text-align: right;">2021</td>
+<td style="text-align: left;">fish</td>
 </tr>
 <tr class="even">
-<td>16</td>
-<td>2</td>
-<td>Catch</td>
-<td>1963</td>
-<td>2021</td>
-<td>fish</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: right;">1963</td>
+<td style="text-align: right;">2021</td>
+<td style="text-align: left;">fish</td>
 </tr>
 <tr class="odd">
-<td>17</td>
-<td>2</td>
-<td>Catch</td>
-<td>1986</td>
-<td>2006</td>
-<td>t</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: right;">1986</td>
+<td style="text-align: right;">2006</td>
+<td style="text-align: left;">t</td>
 </tr>
 <tr class="even">
-<td>18</td>
-<td>1</td>
-<td>Index</td>
-<td>1954</td>
-<td>2022</td>
-<td>relative index</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Index</td>
+<td style="text-align: right;">1954</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: left;">relative index</td>
 </tr>
 <tr class="odd">
-<td>19</td>
-<td>1</td>
-<td>Index</td>
-<td>1992</td>
-<td>2022</td>
-<td>relative index</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Index</td>
+<td style="text-align: right;">1992</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: left;">relative index</td>
 </tr>
 <tr class="even">
-<td>20</td>
-<td>2</td>
-<td>Index</td>
-<td>1954</td>
-<td>2022</td>
-<td>relative index</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Index</td>
+<td style="text-align: right;">1954</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: left;">relative index</td>
 </tr>
 </tbody>
 </table>
@@ -359,33 +376,77 @@ Table&nbsp;2: Fishery roles, regions, observation periods and units.
 </figure>
 </div>
 <p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/fisheries-definitions.csv">Download complete table</a></p>
+<div id="tbl-dm-configuration" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-dm-configuration-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Illustrative output. Dirichlet–multinomial composition settings.
+</figcaption>
+<div aria-describedby="tbl-dm-configuration-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Fishery</th>
+<th style="text-align: left;">Likelihood</th>
+<th style="text-align: right;">Group</th>
+<th style="text-align: right;">Theta</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Fishery A</td>
+<td style="text-align: left;">dirichlet_multinomial</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">20</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/dm-configuration.csv">Download complete table</a></p>
+<div id="tbl-dm-groups" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-dm-groups-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Illustrative output. Groups sharing composition-weight parameters.
+</figcaption>
+<div aria-describedby="tbl-dm-groups-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Group</th>
+<th style="text-align: left;">Fishery</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Fishery A</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/dm-groups.csv">Download complete table</a></p>
 <div id="tbl-tag-definitions" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tag-definitions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3: Illustrative tag-release programmes.
+Table&nbsp;5: Illustrative output. Tag-release and reporting groups.
 </figcaption>
 <div aria-describedby="tbl-tag-definitions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Programme</th>
-<th>Years</th>
-<th>Releases</th>
-<th>Mixing_period</th>
+<th style="text-align: left;">Programme</th>
+<th style="text-align: left;">Region</th>
+<th style="text-align: left;">Mixing</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>A</td>
-<td>2000–2004</td>
-<td>30000</td>
-<td>4 quarters</td>
-</tr>
-<tr class="even">
-<td>B</td>
-<td>2005–2008</td>
-<td>26000</td>
-<td>4 quarters</td>
+<td style="text-align: left;">Programme A</td>
+<td style="text-align: left;">Region 1</td>
+<td style="text-align: left;">Two supplied model periods</td>
 </tr>
 </tbody>
 </table>
@@ -393,45 +454,83 @@ Table&nbsp;3: Illustrative tag-release programmes.
 </figure>
 </div>
 <p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/tag-definitions.csv">Download complete table</a></p>
+<div id="tbl-parameter-bounds" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-parameter-bounds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6: Illustrative output. Parameters on or near their declared bounds.
+</figcaption>
+<div aria-describedby="tbl-parameter-bounds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: right;">Estimate</th>
+<th style="text-align: right;">Lower</th>
+<th style="text-align: right;">Upper</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Steepness</td>
+<td style="text-align: right;">0.7</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: right;">0.99</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/parameter-bounds.csv">Download complete table</a></p>
+<div id="tbl-parameter-correlations" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-parameter-correlations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7: Illustrative output. Parameter correlations from the supplied covariance estimate.
+</figcaption>
+<div aria-describedby="tbl-parameter-correlations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Partner</th>
+<th style="text-align: right;">Correlation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">log R0</td>
+<td style="text-align: left;">Index q</td>
+<td style="text-align: right;">-0.65</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/parameter-correlations.csv">Download complete table</a></p>
 <div id="tbl-manage-quant" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-manage-quant-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;4: Illustrative management quantities and supplied ranges.
+Table&nbsp;8: Management quantities and supplied uncertainty summaries.
 </figcaption>
 <div aria-describedby="tbl-manage-quant-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Quantity</th>
-<th>Median</th>
-<th>Lower</th>
-<th>Upper</th>
+<th style="text-align: left;">Quantity</th>
+<th style="text-align: left;">Period</th>
+<th style="text-align: right;">Estimate</th>
+<th style="text-align: right;">Lower</th>
+<th style="text-align: right;">Upper</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Dynamic spawning depletion</td>
-<td>4.4e-01</td>
-<td>3.5e-01</td>
-<td>5.3e-01</td>
-</tr>
-<tr class="even">
-<td>Spawning potential relative to MSY</td>
-<td>2.1e+00</td>
-<td>1.5e+00</td>
-<td>2.8e+00</td>
-</tr>
-<tr class="odd">
-<td>Fishing mortality relative to MSY</td>
-<td>6.5e-01</td>
-<td>4.2e-01</td>
-<td>8.8e-01</td>
-</tr>
-<tr class="even">
-<td>MSY (t)</td>
-<td>9.5e+04</td>
-<td>8.0e+04</td>
-<td>1.1e+05</td>
+<td style="text-align: left;"><span class="math inline">\(SB/SB_{F=0}\)</span></td>
+<td style="text-align: left;">2016–2020</td>
+<td style="text-align: right;">0.45</td>
+<td style="text-align: right;">0.35</td>
+<td style="text-align: right;">0.55</td>
 </tr>
 </tbody>
 </table>
@@ -439,35 +538,49 @@ Table&nbsp;4: Illustrative management quantities and supplied ranges.
 </figure>
 </div>
 <p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/ensemble/manage-quant.csv">Download complete table</a></p>
-<div id="tbl-stock-status-refs" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="tbl-cmm-depletion" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-stock-status-refs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5: Reference quantities used in the illustrative status panels.
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cmm-depletion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;9: Spawning-depletion comparisons for the declared reference periods.
 </figcaption>
-<div aria-describedby="tbl-stock-status-refs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="tbl-cmm-depletion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
 <thead>
 <tr class="header">
-<th>Quantity</th>
-<th>Definition</th>
+<th style="text-align: left;">Period</th>
+<th style="text-align: left;">Reference</th>
+<th style="text-align: right;">Ratio</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Unfished spawning potential</td>
-<td>Dynamic unfished spawning potential</td>
+<td style="text-align: left;">2016–2020</td>
+<td style="text-align: left;">2012–2015</td>
+<td style="text-align: right;">0.95</td>
 </tr>
-<tr class="even">
-<td>Spawning potential at MSY</td>
-<td>Equilibrium spawning potential at maximum sustainable yield</td>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/ensemble/cmm-depletion.csv">Download complete table</a></p>
+<div id="tbl-stock-status-refs" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-stock-status-refs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;10: Stock-status probabilities for the declared reference points.
+</figcaption>
+<div aria-describedby="tbl-stock-status-refs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Condition</th>
+<th style="text-align: right;">Probability</th>
 </tr>
+</thead>
+<tbody>
 <tr class="odd">
-<td>Fishing mortality at MSY</td>
-<td>Fishing mortality at maximum sustainable yield</td>
+<td style="text-align: left;"><span class="math inline">\(F/F_{MSY}\)</span> &gt; 1</td>
+<td style="text-align: right;">0.05</td>
 </tr>
 </tbody>
 </table>
@@ -478,24 +591,24 @@ Table&nbsp;5: Reference quantities used in the illustrative status panels.
 <div id="tbl-ref-points" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ref-points-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6: Illustrative equilibrium reference points and supplied ranges.
+Table&nbsp;11: Model reference points and their definitions.
 </figcaption>
 <div aria-describedby="tbl-ref-points-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Quantity</th>
-<th>Median</th>
-<th>Lower</th>
-<th>Upper</th>
+<th style="text-align: left;">Quantity</th>
+<th style="text-align: right;">Estimate</th>
+<th style="text-align: left;">Unit</th>
+<th style="text-align: left;">Definition</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>MSY (t)</td>
-<td>95000</td>
-<td>80000</td>
-<td>110000</td>
+<td style="text-align: left;"><span class="math inline">\(SB_{MSY}\)</span></td>
+<td style="text-align: right;">1e+06</td>
+<td style="text-align: left;">t</td>
+<td style="text-align: left;">Spawning potential at MSY</td>
 </tr>
 </tbody>
 </table>
@@ -506,36 +619,24 @@ Table&nbsp;6: Illustrative equilibrium reference points and supplied ranges.
 <div id="tbl-est-uncertainty" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-est-uncertainty-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;7: Illustrative between-model ranges for management quantities.
+Table&nbsp;12: Comparison of supplied uncertainty summaries.
 </figcaption>
 <div aria-describedby="tbl-est-uncertainty-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Quantity</th>
-<th>Median</th>
-<th>Lower</th>
-<th>Upper</th>
+<th style="text-align: left;">Source</th>
+<th style="text-align: left;">Quantity</th>
+<th style="text-align: right;">Lower</th>
+<th style="text-align: right;">Upper</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Dynamic spawning depletion</td>
-<td>0.44</td>
-<td>0.35</td>
-<td>0.53</td>
-</tr>
-<tr class="even">
-<td>Spawning potential relative to MSY</td>
-<td>2.10</td>
-<td>1.50</td>
-<td>2.80</td>
-</tr>
-<tr class="odd">
-<td>Fishing mortality relative to MSY</td>
-<td>0.65</td>
-<td>0.42</td>
-<td>0.88</td>
+<td style="text-align: left;">Supplied illustrative quantiles</td>
+<td style="text-align: left;"><span class="math inline">\(SB/SB_{F=0}\)</span></td>
+<td style="text-align: right;">0.35</td>
+<td style="text-align: right;">0.55</td>
 </tr>
 </tbody>
 </table>
@@ -546,47 +647,24 @@ Table&nbsp;7: Illustrative between-model ranges for management quantities.
 <div id="tbl-stock-projections" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-stock-projections-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;8: Illustrative projected spawning depletion by catch scenario.
+Table&nbsp;13: Projected quantities by scenario and reporting period.
 </figcaption>
 <div aria-describedby="tbl-stock-projections-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Year</th>
-<th>Scenario</th>
-<th>Depletion</th>
+<th style="text-align: left;">Scenario</th>
+<th style="text-align: left;">Period</th>
+<th style="text-align: left;">Quantity</th>
+<th style="text-align: right;">Median</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>2025</td>
-<td>Current catch</td>
-<td>0.43</td>
-</tr>
-<tr class="even">
-<td>2030</td>
-<td>Current catch</td>
-<td>0.41</td>
-</tr>
-<tr class="odd">
-<td>2035</td>
-<td>Current catch</td>
-<td>0.40</td>
-</tr>
-<tr class="even">
-<td>2025</td>
-<td>Lower catch</td>
-<td>0.45</td>
-</tr>
-<tr class="odd">
-<td>2030</td>
-<td>Lower catch</td>
-<td>0.49</td>
-</tr>
-<tr class="even">
-<td>2035</td>
-<td>Lower catch</td>
-<td>0.52</td>
+<td style="text-align: left;">Reference catch</td>
+<td style="text-align: left;">2031–2040</td>
+<td style="text-align: left;"><span class="math inline">\(SB/SB_{F=0}\)</span></td>
+<td style="text-align: right;">0.45</td>
 </tr>
 </tbody>
 </table>
@@ -597,22 +675,22 @@ Table&nbsp;8: Illustrative projected spawning depletion by catch scenario.
 <div id="tbl-models" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;9: Model configurations.
+Table&nbsp;14: Model configurations.
 </figcaption>
 <div aria-describedby="tbl-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Model</th>
-<th>Parent</th>
-<th>Change</th>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Parent</th>
+<th style="text-align: left;">Change</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>alb</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">alb</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 </tbody>
 </table>
@@ -623,28 +701,28 @@ Table&nbsp;9: Model configurations.
 <div id="tbl-numerical-checks" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-numerical-checks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;10: Recorded numerical checks by model.
+Table&nbsp;15: Recorded numerical checks by model.
 </figcaption>
 <div aria-describedby="tbl-numerical-checks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Model</th>
-<th>Label</th>
-<th>Status</th>
-<th>Passed</th>
-<th>Failed</th>
-<th>Unknown</th>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Label</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: right;">Passed</th>
+<th style="text-align: right;">Failed</th>
+<th style="text-align: right;">Unknown</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>alb</td>
-<td>ALB reference</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">alb</td>
+<td style="text-align: left;">ALB reference</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 </tbody>
 </table>
@@ -655,7 +733,7 @@ Table&nbsp;10: Recorded numerical checks by model.
 <div id="tbl-composition-configuration" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-composition-configuration-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;11: Length-composition likelihood and weighting settings by fishery.
+Table&nbsp;16: Length-composition likelihood and weighting settings by fishery.
 </figcaption>
 <div aria-describedby="tbl-composition-configuration-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -669,150 +747,150 @@ Table&nbsp;11: Length-composition likelihood and weighting settings by fishery.
 </colgroup>
 <thead>
 <tr class="header">
-<th>fishery</th>
-<th>likelihood</th>
-<th>divisor</th>
-<th>record_cap</th>
-<th>epsilon_scale</th>
-<th>flag161</th>
+<th style="text-align: right;">Fishery</th>
+<th style="text-align: left;">Likelihood</th>
+<th style="text-align: right;">Divisor</th>
+<th style="text-align: right;">Record cap</th>
+<th style="text-align: right;">Epsilon scale</th>
+<th style="text-align: right;">Flag161</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>3</td>
-<td>square_fita</td>
-<td>51</td>
-<td>1000</td>
-<td>1</td>
-<td>0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">square_fita</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td>4</td>
-<td>square_fita</td>
-<td>164</td>
-<td>1000</td>
-<td>1</td>
-<td>0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">square_fita</td>
+<td style="text-align: right;">164</td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td>6</td>
-<td>square_fita</td>
-<td>89</td>
-<td>1000</td>
-<td>1</td>
-<td>0</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">square_fita</td>
+<td style="text-align: right;">89</td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td>7</td>
-<td>square_fita</td>
-<td>29</td>
-<td>1000</td>
-<td>1</td>
-<td>0</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">square_fita</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td>8</td>
-<td>square_fita</td>
-<td>372</td>
-<td>1000</td>
-<td>1</td>
-<td>0</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">square_fita</td>
+<td style="text-align: right;">372</td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td>9</td>
-<td>square_fita</td>
-<td>212</td>
-<td>1000</td>
-<td>1</td>
-<td>0</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">square_fita</td>
+<td style="text-align: right;">212</td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td>10</td>
-<td>square_fita</td>
-<td>125</td>
-<td>1000</td>
-<td>1</td>
-<td>0</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">square_fita</td>
+<td style="text-align: right;">125</td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td>11</td>
-<td>square_fita</td>
-<td>27</td>
-<td>1000</td>
-<td>1</td>
-<td>0</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">square_fita</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td>12</td>
-<td>square_fita</td>
-<td>37</td>
-<td>1000</td>
-<td>1</td>
-<td>0</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">square_fita</td>
+<td style="text-align: right;">37</td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td>13</td>
-<td>square_fita</td>
-<td>358</td>
-<td>1000</td>
-<td>1</td>
-<td>0</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">square_fita</td>
+<td style="text-align: right;">358</td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td>14</td>
-<td>square_fita</td>
-<td>123</td>
-<td>1000</td>
-<td>1</td>
-<td>0</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">square_fita</td>
+<td style="text-align: right;">123</td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td>15</td>
-<td>square_fita</td>
-<td>241</td>
-<td>1000</td>
-<td>1</td>
-<td>0</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: left;">square_fita</td>
+<td style="text-align: right;">241</td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td>16</td>
-<td>square_fita</td>
-<td>450</td>
-<td>1000</td>
-<td>1</td>
-<td>0</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: left;">square_fita</td>
+<td style="text-align: right;">450</td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td>17</td>
-<td>square_fita</td>
-<td>1</td>
-<td>1000</td>
-<td>1</td>
-<td>0</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: left;">square_fita</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td>18</td>
-<td>square_fita</td>
-<td>746</td>
-<td>1000</td>
-<td>1</td>
-<td>0</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: left;">square_fita</td>
+<td style="text-align: right;">746</td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td>19</td>
-<td>square_fita</td>
-<td>55</td>
-<td>1000</td>
-<td>1</td>
-<td>0</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: left;">square_fita</td>
+<td style="text-align: right;">55</td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td>20</td>
-<td>square_fita</td>
-<td>61</td>
-<td>1000</td>
-<td>1</td>
-<td>0</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: left;">square_fita</td>
+<td style="text-align: right;">61</td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
 </tr>
 </tbody>
 </table>
@@ -823,327 +901,327 @@ Table&nbsp;11: Length-composition likelihood and weighting settings by fishery.
 <div id="tbl-observation-summary" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-observation-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;12: Numbers of fitted observations and composition samples by series.
+Table&nbsp;17: Numbers of fitted observations and composition samples by series.
 </figcaption>
 <div aria-describedby="tbl-observation-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Kind</th>
-<th>Series</th>
-<th>First</th>
-<th>Last</th>
-<th>N</th>
+<th style="text-align: left;">Kind</th>
+<th style="text-align: left;">Series</th>
+<th style="text-align: right;">First</th>
+<th style="text-align: right;">Last</th>
+<th style="text-align: right;">N</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>catch</td>
-<td>F1_R1</td>
-<td>1954</td>
-<td>2022</td>
-<td>274</td>
+<td style="text-align: left;">catch</td>
+<td style="text-align: left;">F1_R1</td>
+<td style="text-align: right;">1954</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">274</td>
 </tr>
 <tr class="even">
-<td>catch</td>
-<td>F10_R1</td>
-<td>1985</td>
-<td>2022</td>
-<td>147</td>
+<td style="text-align: left;">catch</td>
+<td style="text-align: left;">F10_R1</td>
+<td style="text-align: right;">1985</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">147</td>
 </tr>
 <tr class="odd">
-<td>conditional_age</td>
-<td>F10_R1</td>
-<td>2010</td>
-<td>2010</td>
-<td>17</td>
+<td style="text-align: left;">conditional_age</td>
+<td style="text-align: left;">F10_R1</td>
+<td style="text-align: right;">2010</td>
+<td style="text-align: right;">2010</td>
+<td style="text-align: right;">17</td>
 </tr>
 <tr class="even">
-<td>length</td>
-<td>F10_R1</td>
-<td>1989</td>
-<td>2016</td>
-<td>74</td>
+<td style="text-align: left;">length</td>
+<td style="text-align: left;">F10_R1</td>
+<td style="text-align: right;">1989</td>
+<td style="text-align: right;">2016</td>
+<td style="text-align: right;">74</td>
 </tr>
 <tr class="odd">
-<td>catch</td>
-<td>F11_R1</td>
-<td>1982</td>
-<td>2022</td>
-<td>344</td>
+<td style="text-align: left;">catch</td>
+<td style="text-align: left;">F11_R1</td>
+<td style="text-align: right;">1982</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">344</td>
 </tr>
 <tr class="even">
-<td>conditional_age</td>
-<td>F11_R1</td>
-<td>2006</td>
-<td>2010</td>
-<td>63</td>
+<td style="text-align: left;">conditional_age</td>
+<td style="text-align: left;">F11_R1</td>
+<td style="text-align: right;">2006</td>
+<td style="text-align: right;">2010</td>
+<td style="text-align: right;">63</td>
 </tr>
 <tr class="odd">
-<td>length</td>
-<td>F11_R1</td>
-<td>1996</td>
-<td>2022</td>
-<td>143</td>
+<td style="text-align: left;">length</td>
+<td style="text-align: left;">F11_R1</td>
+<td style="text-align: right;">1996</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">143</td>
 </tr>
 <tr class="even">
-<td>catch</td>
-<td>F12_R1</td>
-<td>1987</td>
-<td>2022</td>
-<td>161</td>
+<td style="text-align: left;">catch</td>
+<td style="text-align: left;">F12_R1</td>
+<td style="text-align: right;">1987</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">161</td>
 </tr>
 <tr class="odd">
-<td>length</td>
-<td>F12_R1</td>
-<td>1987</td>
-<td>1998</td>
-<td>27</td>
+<td style="text-align: left;">length</td>
+<td style="text-align: left;">F12_R1</td>
+<td style="text-align: right;">1987</td>
+<td style="text-align: right;">1998</td>
+<td style="text-align: right;">27</td>
 </tr>
 <tr class="even">
-<td>catch</td>
-<td>F13_R1</td>
-<td>1983</td>
-<td>1990</td>
-<td>17</td>
+<td style="text-align: left;">catch</td>
+<td style="text-align: left;">F13_R1</td>
+<td style="text-align: right;">1983</td>
+<td style="text-align: right;">1990</td>
+<td style="text-align: right;">17</td>
 </tr>
 <tr class="odd">
-<td>length</td>
-<td>F13_R1</td>
-<td>1988</td>
-<td>1989</td>
-<td>2</td>
+<td style="text-align: left;">length</td>
+<td style="text-align: left;">F13_R1</td>
+<td style="text-align: right;">1988</td>
+<td style="text-align: right;">1989</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
-<td>catch</td>
-<td>F14_R2</td>
-<td>1957</td>
-<td>2022</td>
-<td>262</td>
+<td style="text-align: left;">catch</td>
+<td style="text-align: left;">F14_R2</td>
+<td style="text-align: right;">1957</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">262</td>
 </tr>
 <tr class="odd">
-<td>length</td>
-<td>F14_R2</td>
-<td>1966</td>
-<td>2022</td>
-<td>119</td>
+<td style="text-align: left;">length</td>
+<td style="text-align: left;">F14_R2</td>
+<td style="text-align: right;">1966</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">119</td>
 </tr>
 <tr class="even">
-<td>catch</td>
-<td>F15_R2</td>
-<td>1961</td>
-<td>2021</td>
-<td>229</td>
+<td style="text-align: left;">catch</td>
+<td style="text-align: left;">F15_R2</td>
+<td style="text-align: right;">1961</td>
+<td style="text-align: right;">2021</td>
+<td style="text-align: right;">229</td>
 </tr>
 <tr class="odd">
-<td>length</td>
-<td>F15_R2</td>
-<td>1968</td>
-<td>2021</td>
-<td>65</td>
+<td style="text-align: left;">length</td>
+<td style="text-align: left;">F15_R2</td>
+<td style="text-align: right;">1968</td>
+<td style="text-align: right;">2021</td>
+<td style="text-align: right;">65</td>
 </tr>
 <tr class="even">
-<td>catch</td>
-<td>F16_R2</td>
-<td>1963</td>
-<td>2021</td>
-<td>195</td>
+<td style="text-align: left;">catch</td>
+<td style="text-align: left;">F16_R2</td>
+<td style="text-align: right;">1963</td>
+<td style="text-align: right;">2021</td>
+<td style="text-align: right;">195</td>
 </tr>
 <tr class="odd">
-<td>length</td>
-<td>F16_R2</td>
-<td>1968</td>
-<td>2021</td>
-<td>17</td>
+<td style="text-align: left;">length</td>
+<td style="text-align: left;">F16_R2</td>
+<td style="text-align: right;">1968</td>
+<td style="text-align: right;">2021</td>
+<td style="text-align: right;">17</td>
 </tr>
 <tr class="even">
-<td>catch</td>
-<td>F17_R2</td>
-<td>1986</td>
-<td>2006</td>
-<td>22</td>
+<td style="text-align: left;">catch</td>
+<td style="text-align: left;">F17_R2</td>
+<td style="text-align: right;">1986</td>
+<td style="text-align: right;">2006</td>
+<td style="text-align: right;">22</td>
 </tr>
 <tr class="odd">
-<td>length</td>
-<td>F17_R2</td>
-<td>1992</td>
-<td>1992</td>
-<td>1</td>
+<td style="text-align: left;">length</td>
+<td style="text-align: left;">F17_R2</td>
+<td style="text-align: right;">1992</td>
+<td style="text-align: right;">1992</td>
+<td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
-<td>length</td>
-<td>F18_R1</td>
-<td>1965</td>
-<td>2022</td>
-<td>57</td>
+<td style="text-align: left;">length</td>
+<td style="text-align: left;">F18_R1</td>
+<td style="text-align: right;">1965</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">57</td>
 </tr>
 <tr class="odd">
-<td>index</td>
-<td>F18_R1_G18</td>
-<td>1954</td>
-<td>2022</td>
-<td>69</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">F18_R1_G18</td>
+<td style="text-align: right;">1954</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">69</td>
 </tr>
 <tr class="even">
-<td>length</td>
-<td>F19_R1</td>
-<td>1997</td>
-<td>2022</td>
-<td>25</td>
+<td style="text-align: left;">length</td>
+<td style="text-align: left;">F19_R1</td>
+<td style="text-align: right;">1997</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">25</td>
 </tr>
 <tr class="odd">
-<td>index</td>
-<td>F19_R1_G19</td>
-<td>1992</td>
-<td>2022</td>
-<td>31</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">F19_R1_G19</td>
+<td style="text-align: right;">1992</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">31</td>
 </tr>
 <tr class="even">
-<td>catch</td>
-<td>F2_R1</td>
-<td>1954</td>
-<td>2022</td>
-<td>274</td>
+<td style="text-align: left;">catch</td>
+<td style="text-align: left;">F2_R1</td>
+<td style="text-align: right;">1954</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">274</td>
 </tr>
 <tr class="odd">
-<td>length</td>
-<td>F20_R2</td>
-<td>1966</td>
-<td>2018</td>
-<td>39</td>
+<td style="text-align: left;">length</td>
+<td style="text-align: left;">F20_R2</td>
+<td style="text-align: right;">1966</td>
+<td style="text-align: right;">2018</td>
+<td style="text-align: right;">39</td>
 </tr>
 <tr class="even">
-<td>index</td>
-<td>F20_R2_G20</td>
-<td>1954</td>
-<td>2022</td>
-<td>69</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">F20_R2_G20</td>
+<td style="text-align: right;">1954</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">69</td>
 </tr>
 <tr class="odd">
-<td>catch</td>
-<td>F3_R1</td>
-<td>1954</td>
-<td>2022</td>
-<td>275</td>
+<td style="text-align: left;">catch</td>
+<td style="text-align: left;">F3_R1</td>
+<td style="text-align: right;">1954</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">275</td>
 </tr>
 <tr class="even">
-<td>conditional_age</td>
-<td>F3_R1</td>
-<td>2009</td>
-<td>2009</td>
-<td>4</td>
+<td style="text-align: left;">conditional_age</td>
+<td style="text-align: left;">F3_R1</td>
+<td style="text-align: right;">2009</td>
+<td style="text-align: right;">2009</td>
+<td style="text-align: right;">4</td>
 </tr>
 <tr class="odd">
-<td>length</td>
-<td>F3_R1</td>
-<td>1965</td>
-<td>2022</td>
-<td>178</td>
+<td style="text-align: left;">length</td>
+<td style="text-align: left;">F3_R1</td>
+<td style="text-align: right;">1965</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">178</td>
 </tr>
 <tr class="even">
-<td>catch</td>
-<td>F4_R1</td>
-<td>1954</td>
-<td>2022</td>
-<td>274</td>
+<td style="text-align: left;">catch</td>
+<td style="text-align: left;">F4_R1</td>
+<td style="text-align: right;">1954</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">274</td>
 </tr>
 <tr class="odd">
-<td>length</td>
-<td>F4_R1</td>
-<td>1965</td>
-<td>2022</td>
-<td>145</td>
+<td style="text-align: left;">length</td>
+<td style="text-align: left;">F4_R1</td>
+<td style="text-align: right;">1965</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">145</td>
 </tr>
 <tr class="even">
-<td>catch</td>
-<td>F5_R1</td>
-<td>1992</td>
-<td>2022</td>
-<td>121</td>
+<td style="text-align: left;">catch</td>
+<td style="text-align: left;">F5_R1</td>
+<td style="text-align: right;">1992</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">121</td>
 </tr>
 <tr class="odd">
-<td>catch</td>
-<td>F6_R1</td>
-<td>1982</td>
-<td>2022</td>
-<td>161</td>
+<td style="text-align: left;">catch</td>
+<td style="text-align: left;">F6_R1</td>
+<td style="text-align: right;">1982</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">161</td>
 </tr>
 <tr class="even">
-<td>conditional_age</td>
-<td>F6_R1</td>
-<td>2009</td>
-<td>2010</td>
-<td>81</td>
+<td style="text-align: left;">conditional_age</td>
+<td style="text-align: left;">F6_R1</td>
+<td style="text-align: right;">2009</td>
+<td style="text-align: right;">2010</td>
+<td style="text-align: right;">81</td>
 </tr>
 <tr class="odd">
-<td>length</td>
-<td>F6_R1</td>
-<td>1992</td>
-<td>2022</td>
-<td>116</td>
+<td style="text-align: left;">length</td>
+<td style="text-align: left;">F6_R1</td>
+<td style="text-align: right;">1992</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">116</td>
 </tr>
 <tr class="even">
-<td>catch</td>
-<td>F7_R1</td>
-<td>1987</td>
-<td>2022</td>
-<td>135</td>
+<td style="text-align: left;">catch</td>
+<td style="text-align: left;">F7_R1</td>
+<td style="text-align: right;">1987</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">135</td>
 </tr>
 <tr class="odd">
-<td>conditional_age</td>
-<td>F7_R1</td>
-<td>2009</td>
-<td>2010</td>
-<td>30</td>
+<td style="text-align: left;">conditional_age</td>
+<td style="text-align: left;">F7_R1</td>
+<td style="text-align: right;">2009</td>
+<td style="text-align: right;">2010</td>
+<td style="text-align: right;">30</td>
 </tr>
 <tr class="even">
-<td>length</td>
-<td>F7_R1</td>
-<td>1993</td>
-<td>2013</td>
-<td>25</td>
+<td style="text-align: left;">length</td>
+<td style="text-align: left;">F7_R1</td>
+<td style="text-align: right;">1993</td>
+<td style="text-align: right;">2013</td>
+<td style="text-align: right;">25</td>
 </tr>
 <tr class="odd">
-<td>catch</td>
-<td>F8_R1</td>
-<td>1954</td>
-<td>2022</td>
-<td>271</td>
+<td style="text-align: left;">catch</td>
+<td style="text-align: left;">F8_R1</td>
+<td style="text-align: right;">1954</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">271</td>
 </tr>
 <tr class="even">
-<td>conditional_age</td>
-<td>F8_R1</td>
-<td>2010</td>
-<td>2010</td>
-<td>15</td>
+<td style="text-align: left;">conditional_age</td>
+<td style="text-align: left;">F8_R1</td>
+<td style="text-align: right;">2010</td>
+<td style="text-align: right;">2010</td>
+<td style="text-align: right;">15</td>
 </tr>
 <tr class="odd">
-<td>length</td>
-<td>F8_R1</td>
-<td>1965</td>
-<td>2022</td>
-<td>89</td>
+<td style="text-align: left;">length</td>
+<td style="text-align: left;">F8_R1</td>
+<td style="text-align: right;">1965</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">89</td>
 </tr>
 <tr class="even">
-<td>catch</td>
-<td>F9_R1</td>
-<td>1984</td>
-<td>2022</td>
-<td>126</td>
+<td style="text-align: left;">catch</td>
+<td style="text-align: left;">F9_R1</td>
+<td style="text-align: right;">1984</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">126</td>
 </tr>
 <tr class="odd">
-<td>conditional_age</td>
-<td>F9_R1</td>
-<td>2007</td>
-<td>2013</td>
-<td>45</td>
+<td style="text-align: left;">conditional_age</td>
+<td style="text-align: left;">F9_R1</td>
+<td style="text-align: right;">2007</td>
+<td style="text-align: right;">2013</td>
+<td style="text-align: right;">45</td>
 </tr>
 <tr class="even">
-<td>length</td>
-<td>F9_R1</td>
-<td>1999</td>
-<td>2020</td>
-<td>17</td>
+<td style="text-align: left;">length</td>
+<td style="text-align: left;">F9_R1</td>
+<td style="text-align: right;">1999</td>
+<td style="text-align: right;">2020</td>
+<td style="text-align: right;">17</td>
 </tr>
 </tbody>
 </table>
@@ -1154,36 +1232,36 @@ Table&nbsp;12: Numbers of fitted observations and composition samples by series.
 <div id="tbl-index-fit" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-index-fit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;13: Index fit on the log scale; the first decade starts at each index’s first observation.
+Table&nbsp;18: Index fit on the log scale; the first decade starts at each index’s first observation.
 </figcaption>
 <div aria-describedby="tbl-index-fit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Index</th>
-<th>N</th>
-<th>Log_RMSE</th>
-<th>First_decade_RMSE</th>
+<th style="text-align: right;">Index</th>
+<th style="text-align: right;">N</th>
+<th style="text-align: right;">Log RMSE</th>
+<th style="text-align: right;">First-decade RMSE</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>18</td>
-<td>69</td>
-<td>0.180</td>
-<td>0.269</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">69</td>
+<td style="text-align: right;">0.180</td>
+<td style="text-align: right;">0.269</td>
 </tr>
 <tr class="even">
-<td>19</td>
-<td>31</td>
-<td>0.349</td>
-<td>0.502</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">0.349</td>
+<td style="text-align: right;">0.502</td>
 </tr>
 <tr class="odd">
-<td>20</td>
-<td>69</td>
-<td>0.209</td>
-<td>0.127</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">69</td>
+<td style="text-align: right;">0.209</td>
+<td style="text-align: right;">0.127</td>
 </tr>
 </tbody>
 </table>
@@ -1191,128 +1269,40 @@ Table&nbsp;13: Index fit on the log scale; the first decade starts at each index
 </figure>
 </div>
 <p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/index-fit.csv">Download complete table</a></p>
-<div id="tbl-study-inventory" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-study-inventory-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;14: Study inventory; auxiliary studies use illustrative display values.
-</figcaption>
-<div aria-describedby="tbl-study-inventory-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>study</th>
-<th>type</th>
-<th>models</th>
-<th>passed</th>
-<th>failed</th>
-<th>unknown</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>diagnostic</td>
-<td>comparison</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>stepwise</td>
-<td>stepwise</td>
-<td>4</td>
-<td>4</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>jitter</td>
-<td>jitter</td>
-<td>9</td>
-<td>8</td>
-<td>1</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>selftest</td>
-<td>selftest</td>
-<td>6</td>
-<td>6</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>retrospective</td>
-<td>retrospective</td>
-<td>6</td>
-<td>6</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>sensitivity</td>
-<td>sensitivity</td>
-<td>3</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>ensemble</td>
-<td>ensemble</td>
-<td>7</td>
-<td>7</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>formats</td>
-<td>comparison</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
-<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/study-inventory.csv">Download complete table</a></p>
 <div id="tbl-stepwise-models" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-stepwise-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;15: Model configurations.
+Table&nbsp;19: Model configurations.
 </figcaption>
 <div aria-describedby="tbl-stepwise-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Model</th>
-<th>Parent</th>
-<th>Change</th>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Parent</th>
+<th style="text-align: left;">Change</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>initial</td>
-<td></td>
-<td>Initial configuration</td>
+<td style="text-align: left;">initial</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Initial configuration</td>
 </tr>
 <tr class="even">
-<td>data-update</td>
-<td>initial</td>
-<td>Update observations</td>
+<td style="text-align: left;">data-update</td>
+<td style="text-align: left;">initial</td>
+<td style="text-align: left;">Update observations</td>
 </tr>
 <tr class="odd">
-<td>biology-update</td>
-<td>data-update</td>
-<td>Update biological assumptions</td>
+<td style="text-align: left;">biology-update</td>
+<td style="text-align: left;">data-update</td>
+<td style="text-align: left;">Update biological assumptions</td>
 </tr>
 <tr class="even">
-<td>reference</td>
-<td>biology-update</td>
-<td>Select diagnostic configuration</td>
+<td style="text-align: left;">reference</td>
+<td style="text-align: left;">biology-update</td>
+<td style="text-align: left;">Select diagnostic configuration</td>
 </tr>
 </tbody>
 </table>
@@ -1323,52 +1313,52 @@ Table&nbsp;15: Model configurations.
 <div id="tbl-stepwise-numerical-checks" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-stepwise-numerical-checks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;16: Recorded numerical checks by model.
+Table&nbsp;20: Recorded numerical checks by model.
 </figcaption>
 <div aria-describedby="tbl-stepwise-numerical-checks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Model</th>
-<th>Label</th>
-<th>Status</th>
-<th>Passed</th>
-<th>Failed</th>
-<th>Unknown</th>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Label</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: right;">Passed</th>
+<th style="text-align: right;">Failed</th>
+<th style="text-align: right;">Unknown</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>initial</td>
-<td>Initial</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">initial</td>
+<td style="text-align: left;">Initial</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td>data-update</td>
-<td>Data update</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">data-update</td>
+<td style="text-align: left;">Data update</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td>biology-update</td>
-<td>Biology update</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">biology-update</td>
+<td style="text-align: left;">Biology update</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td>reference</td>
-<td>Reference</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">reference</td>
+<td style="text-align: left;">Reference</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 </tbody>
 </table>
@@ -1379,40 +1369,40 @@ Table&nbsp;16: Recorded numerical checks by model.
 <div id="tbl-stepwise-observation-summary" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-stepwise-observation-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;17: Numbers of fitted observations and composition samples by series.
+Table&nbsp;21: Numbers of fitted observations and composition samples by series.
 </figcaption>
 <div aria-describedby="tbl-stepwise-observation-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Kind</th>
-<th>Series</th>
-<th>First</th>
-<th>Last</th>
-<th>N</th>
+<th style="text-align: left;">Kind</th>
+<th style="text-align: left;">Series</th>
+<th style="text-align: right;">First</th>
+<th style="text-align: right;">Last</th>
+<th style="text-align: right;">N</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>index</td>
-<td>F18_R1_G18</td>
-<td>1954</td>
-<td>2022</td>
-<td>69</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">F18_R1_G18</td>
+<td style="text-align: right;">1954</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">69</td>
 </tr>
 <tr class="even">
-<td>index</td>
-<td>F19_R1_G19</td>
-<td>1992</td>
-<td>2022</td>
-<td>31</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">F19_R1_G19</td>
+<td style="text-align: right;">1992</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">31</td>
 </tr>
 <tr class="odd">
-<td>index</td>
-<td>F20_R2_G20</td>
-<td>1954</td>
-<td>2022</td>
-<td>69</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">F20_R2_G20</td>
+<td style="text-align: right;">1954</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">69</td>
 </tr>
 </tbody>
 </table>
@@ -1420,106 +1410,65 @@ Table&nbsp;17: Numbers of fitted observations and composition samples by series.
 </figure>
 </div>
 <p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/stepwise/observation-summary.csv">Download complete table</a></p>
-<div id="tbl-development-sequence" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-development-sequence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;18: Illustrative model-development sequence.
-</figcaption>
-<div aria-describedby="tbl-development-sequence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>id</th>
-<th>parent</th>
-<th>change</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>initial</td>
-<td></td>
-<td>Initial configuration</td>
-</tr>
-<tr class="even">
-<td>data-update</td>
-<td>initial</td>
-<td>Update observations</td>
-</tr>
-<tr class="odd">
-<td>biology-update</td>
-<td>data-update</td>
-<td>Update biological assumptions</td>
-</tr>
-<tr class="even">
-<td>reference</td>
-<td>biology-update</td>
-<td>Select diagnostic configuration</td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
-<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/stepwise/development-sequence.csv">Download complete table</a></p>
 <div id="tbl-jitter-models" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-jitter-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;19: Model configurations.
+Table&nbsp;22: Model configurations.
 </figcaption>
 <div aria-describedby="tbl-jitter-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Model</th>
-<th>Parent</th>
-<th>Change</th>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Parent</th>
+<th style="text-align: left;">Change</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>reference</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">reference</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 <tr class="even">
-<td>trial-1</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">trial-1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 <tr class="odd">
-<td>trial-2</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">trial-2</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 <tr class="even">
-<td>trial-3</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">trial-3</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 <tr class="odd">
-<td>trial-4</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">trial-4</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 <tr class="even">
-<td>trial-5</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">trial-5</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 <tr class="odd">
-<td>trial-6</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">trial-6</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 <tr class="even">
-<td>trial-7</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">trial-7</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 <tr class="odd">
-<td>trial-8</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">trial-8</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 </tbody>
 </table>
@@ -1530,92 +1479,92 @@ Table&nbsp;19: Model configurations.
 <div id="tbl-jitter-numerical-checks" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-jitter-numerical-checks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;20: Recorded numerical checks by model.
+Table&nbsp;23: Recorded numerical checks by model.
 </figcaption>
 <div aria-describedby="tbl-jitter-numerical-checks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Model</th>
-<th>Label</th>
-<th>Status</th>
-<th>Passed</th>
-<th>Failed</th>
-<th>Unknown</th>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Label</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: right;">Passed</th>
+<th style="text-align: right;">Failed</th>
+<th style="text-align: right;">Unknown</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>reference</td>
-<td>Reference</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">reference</td>
+<td style="text-align: left;">Reference</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td>trial-1</td>
-<td>Trial 1</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">trial-1</td>
+<td style="text-align: left;">Trial 1</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td>trial-2</td>
-<td>Trial 2</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">trial-2</td>
+<td style="text-align: left;">Trial 2</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td>trial-3</td>
-<td>Trial 3</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">trial-3</td>
+<td style="text-align: left;">Trial 3</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td>trial-4</td>
-<td>Trial 4</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">trial-4</td>
+<td style="text-align: left;">Trial 4</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td>trial-5</td>
-<td>Trial 5</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">trial-5</td>
+<td style="text-align: left;">Trial 5</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td>trial-6</td>
-<td>Trial 6</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">trial-6</td>
+<td style="text-align: left;">Trial 6</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td>trial-7</td>
-<td>Trial 7</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">trial-7</td>
+<td style="text-align: left;">Trial 7</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td>trial-8</td>
-<td>Trial 8</td>
-<td>failed</td>
-<td>2</td>
-<td>1</td>
-<td>0</td>
+<td style="text-align: left;">trial-8</td>
+<td style="text-align: left;">Trial 8</td>
+<td style="text-align: left;">failed</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
 </tr>
 </tbody>
 </table>
@@ -1626,40 +1575,40 @@ Table&nbsp;20: Recorded numerical checks by model.
 <div id="tbl-jitter-observation-summary" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-jitter-observation-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;21: Numbers of fitted observations and composition samples by series.
+Table&nbsp;24: Numbers of fitted observations and composition samples by series.
 </figcaption>
 <div aria-describedby="tbl-jitter-observation-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Kind</th>
-<th>Series</th>
-<th>First</th>
-<th>Last</th>
-<th>N</th>
+<th style="text-align: left;">Kind</th>
+<th style="text-align: left;">Series</th>
+<th style="text-align: right;">First</th>
+<th style="text-align: right;">Last</th>
+<th style="text-align: right;">N</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>index</td>
-<td>F18_R1_G18</td>
-<td>1954</td>
-<td>2022</td>
-<td>69</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">F18_R1_G18</td>
+<td style="text-align: right;">1954</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">69</td>
 </tr>
 <tr class="even">
-<td>index</td>
-<td>F19_R1_G19</td>
-<td>1992</td>
-<td>2022</td>
-<td>31</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">F19_R1_G19</td>
+<td style="text-align: right;">1992</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">31</td>
 </tr>
 <tr class="odd">
-<td>index</td>
-<td>F20_R2_G20</td>
-<td>1954</td>
-<td>2022</td>
-<td>69</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">F20_R2_G20</td>
+<td style="text-align: right;">1954</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">69</td>
 </tr>
 </tbody>
 </table>
@@ -1670,47 +1619,47 @@ Table&nbsp;21: Numbers of fitted observations and composition samples by series.
 <div id="tbl-selftest-models" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-selftest-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;22: Model configurations.
+Table&nbsp;25: Model configurations.
 </figcaption>
 <div aria-describedby="tbl-selftest-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Model</th>
-<th>Parent</th>
-<th>Change</th>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Parent</th>
+<th style="text-align: left;">Change</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>truth</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">truth</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 <tr class="even">
-<td>replicate-1</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">replicate-1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 <tr class="odd">
-<td>replicate-2</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">replicate-2</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 <tr class="even">
-<td>replicate-3</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">replicate-3</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 <tr class="odd">
-<td>replicate-4</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">replicate-4</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 <tr class="even">
-<td>replicate-5</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">replicate-5</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 </tbody>
 </table>
@@ -1721,68 +1670,68 @@ Table&nbsp;22: Model configurations.
 <div id="tbl-selftest-numerical-checks" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-selftest-numerical-checks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;23: Recorded numerical checks by model.
+Table&nbsp;26: Recorded numerical checks by model.
 </figcaption>
 <div aria-describedby="tbl-selftest-numerical-checks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Model</th>
-<th>Label</th>
-<th>Status</th>
-<th>Passed</th>
-<th>Failed</th>
-<th>Unknown</th>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Label</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: right;">Passed</th>
+<th style="text-align: right;">Failed</th>
+<th style="text-align: right;">Unknown</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>truth</td>
-<td>Generating truth</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">truth</td>
+<td style="text-align: left;">Generating truth</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td>replicate-1</td>
-<td>Refit 1</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">replicate-1</td>
+<td style="text-align: left;">Refit 1</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td>replicate-2</td>
-<td>Refit 2</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">replicate-2</td>
+<td style="text-align: left;">Refit 2</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td>replicate-3</td>
-<td>Refit 3</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">replicate-3</td>
+<td style="text-align: left;">Refit 3</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td>replicate-4</td>
-<td>Refit 4</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">replicate-4</td>
+<td style="text-align: left;">Refit 4</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td>replicate-5</td>
-<td>Refit 5</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">replicate-5</td>
+<td style="text-align: left;">Refit 5</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 </tbody>
 </table>
@@ -1793,40 +1742,40 @@ Table&nbsp;23: Recorded numerical checks by model.
 <div id="tbl-selftest-observation-summary" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-selftest-observation-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;24: Numbers of fitted observations and composition samples by series.
+Table&nbsp;27: Numbers of fitted observations and composition samples by series.
 </figcaption>
 <div aria-describedby="tbl-selftest-observation-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Kind</th>
-<th>Series</th>
-<th>First</th>
-<th>Last</th>
-<th>N</th>
+<th style="text-align: left;">Kind</th>
+<th style="text-align: left;">Series</th>
+<th style="text-align: right;">First</th>
+<th style="text-align: right;">Last</th>
+<th style="text-align: right;">N</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>index</td>
-<td>F18_R1_G18</td>
-<td>1954</td>
-<td>2022</td>
-<td>69</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">F18_R1_G18</td>
+<td style="text-align: right;">1954</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">69</td>
 </tr>
 <tr class="even">
-<td>index</td>
-<td>F19_R1_G19</td>
-<td>1992</td>
-<td>2022</td>
-<td>31</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">F19_R1_G19</td>
+<td style="text-align: right;">1992</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">31</td>
 </tr>
 <tr class="odd">
-<td>index</td>
-<td>F20_R2_G20</td>
-<td>1954</td>
-<td>2022</td>
-<td>69</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">F20_R2_G20</td>
+<td style="text-align: right;">1954</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">69</td>
 </tr>
 </tbody>
 </table>
@@ -1837,47 +1786,47 @@ Table&nbsp;24: Numbers of fitted observations and composition samples by series.
 <div id="tbl-retrospective-models" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-retrospective-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;25: Model configurations.
+Table&nbsp;28: Model configurations.
 </figcaption>
 <div aria-describedby="tbl-retrospective-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Model</th>
-<th>Parent</th>
-<th>Change</th>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Parent</th>
+<th style="text-align: left;">Change</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>reference</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">reference</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 <tr class="even">
-<td>peel-1</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">peel-1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 <tr class="odd">
-<td>peel-2</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">peel-2</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 <tr class="even">
-<td>peel-3</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">peel-3</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 <tr class="odd">
-<td>peel-4</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">peel-4</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 <tr class="even">
-<td>peel-5</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">peel-5</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 </tbody>
 </table>
@@ -1888,68 +1837,68 @@ Table&nbsp;25: Model configurations.
 <div id="tbl-retrospective-numerical-checks" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-retrospective-numerical-checks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;26: Recorded numerical checks by model.
+Table&nbsp;29: Recorded numerical checks by model.
 </figcaption>
 <div aria-describedby="tbl-retrospective-numerical-checks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Model</th>
-<th>Label</th>
-<th>Status</th>
-<th>Passed</th>
-<th>Failed</th>
-<th>Unknown</th>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Label</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: right;">Passed</th>
+<th style="text-align: right;">Failed</th>
+<th style="text-align: right;">Unknown</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>reference</td>
-<td>Reference</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">reference</td>
+<td style="text-align: left;">Reference</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td>peel-1</td>
-<td>Peel 1</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">peel-1</td>
+<td style="text-align: left;">Peel 1</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td>peel-2</td>
-<td>Peel 2</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">peel-2</td>
+<td style="text-align: left;">Peel 2</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td>peel-3</td>
-<td>Peel 3</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">peel-3</td>
+<td style="text-align: left;">Peel 3</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td>peel-4</td>
-<td>Peel 4</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">peel-4</td>
+<td style="text-align: left;">Peel 4</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td>peel-5</td>
-<td>Peel 5</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">peel-5</td>
+<td style="text-align: left;">Peel 5</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 </tbody>
 </table>
@@ -1960,40 +1909,40 @@ Table&nbsp;26: Recorded numerical checks by model.
 <div id="tbl-retrospective-observation-summary" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-retrospective-observation-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;27: Numbers of fitted observations and composition samples by series.
+Table&nbsp;30: Numbers of fitted observations and composition samples by series.
 </figcaption>
 <div aria-describedby="tbl-retrospective-observation-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Kind</th>
-<th>Series</th>
-<th>First</th>
-<th>Last</th>
-<th>N</th>
+<th style="text-align: left;">Kind</th>
+<th style="text-align: left;">Series</th>
+<th style="text-align: right;">First</th>
+<th style="text-align: right;">Last</th>
+<th style="text-align: right;">N</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>index</td>
-<td>F18_R1_G18</td>
-<td>1954</td>
-<td>2022</td>
-<td>69</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">F18_R1_G18</td>
+<td style="text-align: right;">1954</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">69</td>
 </tr>
 <tr class="even">
-<td>index</td>
-<td>F19_R1_G19</td>
-<td>1992</td>
-<td>2022</td>
-<td>31</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">F19_R1_G19</td>
+<td style="text-align: right;">1992</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">31</td>
 </tr>
 <tr class="odd">
-<td>index</td>
-<td>F20_R2_G20</td>
-<td>1954</td>
-<td>2022</td>
-<td>69</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">F20_R2_G20</td>
+<td style="text-align: right;">1954</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">69</td>
 </tr>
 </tbody>
 </table>
@@ -2004,32 +1953,32 @@ Table&nbsp;27: Numbers of fitted observations and composition samples by series.
 <div id="tbl-sensitivity-models" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sensitivity-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;28: Model configurations.
+Table&nbsp;31: Model configurations.
 </figcaption>
 <div aria-describedby="tbl-sensitivity-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Model</th>
-<th>Parent</th>
-<th>Change</th>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Parent</th>
+<th style="text-align: left;">Change</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>reference</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">reference</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 <tr class="even">
-<td>lower</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">lower</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 <tr class="odd">
-<td>upper</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">upper</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 </tbody>
 </table>
@@ -2040,44 +1989,44 @@ Table&nbsp;28: Model configurations.
 <div id="tbl-sensitivity-numerical-checks" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sensitivity-numerical-checks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;29: Recorded numerical checks by model.
+Table&nbsp;32: Recorded numerical checks by model.
 </figcaption>
 <div aria-describedby="tbl-sensitivity-numerical-checks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Model</th>
-<th>Label</th>
-<th>Status</th>
-<th>Passed</th>
-<th>Failed</th>
-<th>Unknown</th>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Label</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: right;">Passed</th>
+<th style="text-align: right;">Failed</th>
+<th style="text-align: right;">Unknown</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>reference</td>
-<td>Reference</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">reference</td>
+<td style="text-align: left;">Reference</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td>lower</td>
-<td>Lower</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">lower</td>
+<td style="text-align: left;">Lower</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td>upper</td>
-<td>Upper</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">upper</td>
+<td style="text-align: left;">Upper</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 </tbody>
 </table>
@@ -2088,40 +2037,40 @@ Table&nbsp;29: Recorded numerical checks by model.
 <div id="tbl-sensitivity-observation-summary" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sensitivity-observation-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;30: Numbers of fitted observations and composition samples by series.
+Table&nbsp;33: Numbers of fitted observations and composition samples by series.
 </figcaption>
 <div aria-describedby="tbl-sensitivity-observation-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Kind</th>
-<th>Series</th>
-<th>First</th>
-<th>Last</th>
-<th>N</th>
+<th style="text-align: left;">Kind</th>
+<th style="text-align: left;">Series</th>
+<th style="text-align: right;">First</th>
+<th style="text-align: right;">Last</th>
+<th style="text-align: right;">N</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>index</td>
-<td>F18_R1_G18</td>
-<td>1954</td>
-<td>2022</td>
-<td>69</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">F18_R1_G18</td>
+<td style="text-align: right;">1954</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">69</td>
 </tr>
 <tr class="even">
-<td>index</td>
-<td>F19_R1_G19</td>
-<td>1992</td>
-<td>2022</td>
-<td>31</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">F19_R1_G19</td>
+<td style="text-align: right;">1992</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">31</td>
 </tr>
 <tr class="odd">
-<td>index</td>
-<td>F20_R2_G20</td>
-<td>1954</td>
-<td>2022</td>
-<td>69</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">F20_R2_G20</td>
+<td style="text-align: right;">1954</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">69</td>
 </tr>
 </tbody>
 </table>
@@ -2132,52 +2081,52 @@ Table&nbsp;30: Numbers of fitted observations and composition samples by series.
 <div id="tbl-ensemble-models" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ensemble-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;31: Model configurations.
+Table&nbsp;34: Model configurations.
 </figcaption>
 <div aria-describedby="tbl-ensemble-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Model</th>
-<th>Parent</th>
-<th>Change</th>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Parent</th>
+<th style="text-align: left;">Change</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>reference</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">reference</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 <tr class="even">
-<td>member-1</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">member-1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 <tr class="odd">
-<td>member-2</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">member-2</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 <tr class="even">
-<td>member-3</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">member-3</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 <tr class="odd">
-<td>member-4</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">member-4</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 <tr class="even">
-<td>member-5</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">member-5</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 <tr class="odd">
-<td>member-6</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">member-6</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 </tbody>
 </table>
@@ -2188,76 +2137,76 @@ Table&nbsp;31: Model configurations.
 <div id="tbl-ensemble-numerical-checks" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ensemble-numerical-checks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;32: Recorded numerical checks by model.
+Table&nbsp;35: Recorded numerical checks by model.
 </figcaption>
 <div aria-describedby="tbl-ensemble-numerical-checks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Model</th>
-<th>Label</th>
-<th>Status</th>
-<th>Passed</th>
-<th>Failed</th>
-<th>Unknown</th>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Label</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: right;">Passed</th>
+<th style="text-align: right;">Failed</th>
+<th style="text-align: right;">Unknown</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>reference</td>
-<td>Reference</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">reference</td>
+<td style="text-align: left;">Reference</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td>member-1</td>
-<td>Member 1</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">member-1</td>
+<td style="text-align: left;">Member 1</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td>member-2</td>
-<td>Member 2</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">member-2</td>
+<td style="text-align: left;">Member 2</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td>member-3</td>
-<td>Member 3</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">member-3</td>
+<td style="text-align: left;">Member 3</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td>member-4</td>
-<td>Member 4</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">member-4</td>
+<td style="text-align: left;">Member 4</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td>member-5</td>
-<td>Member 5</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">member-5</td>
+<td style="text-align: left;">Member 5</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td>member-6</td>
-<td>Member 6</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">member-6</td>
+<td style="text-align: left;">Member 6</td>
+<td style="text-align: left;">passed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 </tbody>
 </table>
@@ -2268,40 +2217,40 @@ Table&nbsp;32: Recorded numerical checks by model.
 <div id="tbl-ensemble-observation-summary" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ensemble-observation-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;33: Numbers of fitted observations and composition samples by series.
+Table&nbsp;36: Numbers of fitted observations and composition samples by series.
 </figcaption>
 <div aria-describedby="tbl-ensemble-observation-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Kind</th>
-<th>Series</th>
-<th>First</th>
-<th>Last</th>
-<th>N</th>
+<th style="text-align: left;">Kind</th>
+<th style="text-align: left;">Series</th>
+<th style="text-align: right;">First</th>
+<th style="text-align: right;">Last</th>
+<th style="text-align: right;">N</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>index</td>
-<td>F18_R1_G18</td>
-<td>1954</td>
-<td>2022</td>
-<td>69</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">F18_R1_G18</td>
+<td style="text-align: right;">1954</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">69</td>
 </tr>
 <tr class="even">
-<td>index</td>
-<td>F19_R1_G19</td>
-<td>1992</td>
-<td>2022</td>
-<td>31</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">F19_R1_G19</td>
+<td style="text-align: right;">1992</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">31</td>
 </tr>
 <tr class="odd">
-<td>index</td>
-<td>F20_R2_G20</td>
-<td>1954</td>
-<td>2022</td>
-<td>69</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">F20_R2_G20</td>
+<td style="text-align: right;">1954</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">69</td>
 </tr>
 </tbody>
 </table>
@@ -2309,25 +2258,104 @@ Table&nbsp;33: Numbers of fitted observations and composition samples by series.
 </figure>
 </div>
 <p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/ensemble/observation-summary.csv">Download complete table</a></p>
+<div id="tbl-profiles-models" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-profiles-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;37: Model configurations.
+</figcaption>
+<div aria-describedby="tbl-profiles-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Parent</th>
+<th style="text-align: left;">Change</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">profiles</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/profiles/models.csv">Download complete table</a></p>
+<div id="tbl-profiles-numerical-checks" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-profiles-numerical-checks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;38: Recorded numerical checks by model.
+</figcaption>
+<div aria-describedby="tbl-profiles-numerical-checks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Label</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: right;">Passed</th>
+<th style="text-align: right;">Failed</th>
+<th style="text-align: right;">Unknown</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">profiles</td>
+<td style="text-align: left;">Illustrative objective profiles</td>
+<td style="text-align: left;">unknown</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/profiles/numerical-checks.csv">Download complete table</a></p>
+<div id="tbl-profiles-observation-summary" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-profiles-observation-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;39: Numbers of fitted observations and composition samples by series.
+</figcaption>
+<div aria-describedby="tbl-profiles-observation-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Kind</th>
+<th style="text-align: left;">Series</th>
+<th style="text-align: left;">N</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/profiles/observation-summary.csv">Download complete table</a></p>
 <div id="tbl-formats-models" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-formats-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;34: Model configurations.
+Table&nbsp;40: Model configurations.
 </figcaption>
 <div aria-describedby="tbl-formats-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Model</th>
-<th>Parent</th>
-<th>Change</th>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Parent</th>
+<th style="text-align: left;">Change</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>formats</td>
-<td>NA</td>
-<td>No change description supplied</td>
+<td style="text-align: left;">formats</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">No change description supplied</td>
 </tr>
 </tbody>
 </table>
@@ -2338,28 +2366,28 @@ Table&nbsp;34: Model configurations.
 <div id="tbl-formats-numerical-checks" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-formats-numerical-checks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;35: Recorded numerical checks by model.
+Table&nbsp;41: Recorded numerical checks by model.
 </figcaption>
 <div aria-describedby="tbl-formats-numerical-checks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Model</th>
-<th>Label</th>
-<th>Status</th>
-<th>Passed</th>
-<th>Failed</th>
-<th>Unknown</th>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Label</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: right;">Passed</th>
+<th style="text-align: right;">Failed</th>
+<th style="text-align: right;">Unknown</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>formats</td>
-<td>Illustrative ALB outputs</td>
-<td>passed</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">formats</td>
+<td style="text-align: left;">Illustrative reporting inputs</td>
+<td style="text-align: left;">unknown</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
 </tr>
 </tbody>
 </table>
@@ -2367,44 +2395,85 @@ Table&nbsp;35: Recorded numerical checks by model.
 </figure>
 </div>
 <p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/numerical-checks.csv">Download complete table</a></p>
-<div id="tbl-formats-observation-summary" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="tbl-formats-composition-configuration" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-formats-observation-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;36: Numbers of fitted observations and composition samples by series.
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-formats-composition-configuration-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;42: Length-composition likelihood and weighting settings by fishery.
 </figcaption>
-<div aria-describedby="tbl-formats-observation-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="tbl-formats-composition-configuration-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Kind</th>
-<th>Series</th>
-<th>First</th>
-<th>Last</th>
-<th>N</th>
+<th style="text-align: left;">Fishery</th>
+<th style="text-align: left;">Likelihood</th>
+<th style="text-align: right;">Group</th>
+<th style="text-align: right;">Theta</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>index</td>
-<td>F18_R1_G18</td>
-<td>1954</td>
-<td>2022</td>
-<td>69</td>
+<td style="text-align: left;">Fishery A</td>
+<td style="text-align: left;">dirichlet_multinomial</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">20</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/composition-configuration.csv">Download complete table</a></p>
+<div id="tbl-formats-fisheries-definitions" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-formats-fisheries-definitions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;43: Illustrative output. Fishery definitions and observation units.
+</figcaption>
+<div aria-describedby="tbl-formats-fisheries-definitions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Fishery</th>
+<th style="text-align: left;">Unit</th>
+<th style="text-align: left;">Region</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Longline</td>
+<td style="text-align: left;">fish</td>
+<td style="text-align: left;">Region 1</td>
 </tr>
 <tr class="even">
-<td>index</td>
-<td>F19_R1_G19</td>
-<td>1992</td>
-<td>2022</td>
-<td>31</td>
+<td style="text-align: left;">Purse seine</td>
+<td style="text-align: left;">fish</td>
+<td style="text-align: left;">Region 1</td>
 </tr>
 <tr class="odd">
-<td>index</td>
-<td>F20_R2_G20</td>
-<td>1954</td>
-<td>2022</td>
-<td>69</td>
+<td style="text-align: left;">Other</td>
+<td style="text-align: left;">fish</td>
+<td style="text-align: left;">Region 1</td>
 </tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/fisheries-definitions.csv">Download complete table</a></p>
+<div id="tbl-formats-observation-summary" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-formats-observation-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;44: Numbers of fitted observations and composition samples by series.
+</figcaption>
+<div aria-describedby="tbl-formats-observation-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Kind</th>
+<th style="text-align: left;">Series</th>
+<th style="text-align: left;">N</th>
+</tr>
+</thead>
+<tbody>
 </tbody>
 </table>
 </div>
@@ -2414,13 +2483,35 @@ Table&nbsp;36: Numbers of fitted observations and composition samples by series.
 </section>
 <section id="figures" class="level1" data-number="10">
 <h1 data-number="10"><span class="header-section-number">10</span> Figures</h1>
+<div id="fig-map-5regions" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/formats/map-5regions.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-map-5regions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/formats/map-5regions.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-map-5regions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Illustrative output. Model regions.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/map-5regions.pdf">Download vector figure</a></p>
+<div id="fig-map-spatial-comparison" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/formats/map-spatial-comparison.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-map-spatial-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/formats/map-spatial-comparison.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-map-spatial-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Illustrative output. Comparison of model spatial structures.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/map-spatial-comparison.pdf">Download vector figure</a></p>
 <div id="fig-catch-hist-full" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/formats/catch-hist-full.pdf">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-catch-hist-full-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="artifacts/formats/catch-hist-full.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-catch-hist-full-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Annual catch by gear.
+Figure&nbsp;3: Illustrative output. Catch by fishing group.
 </figcaption>
 </figure>
 </div>
@@ -2431,29 +2522,95 @@ Figure&nbsp;1: Annual catch by gear.
 <img src="artifacts/formats/catch-hist-regional.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-catch-hist-regional-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Annual catch by model region and gear.
+Figure&nbsp;4: Illustrative output. Catch by fishing group and region.
 </figcaption>
 </figure>
 </div>
 <p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/catch-hist-regional.pdf">Download vector figure</a></p>
+<div id="fig-catch-map" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/formats/catch-map.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-catch-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/formats/catch-map.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-catch-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Illustrative output. Spatial catch distribution by fishing group.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/catch-map.pdf">Download vector figure</a></p>
 <div id="fig-data-coverage-tile" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/fig-data-coverage-tile.pdf">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-data-coverage-tile-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="artifacts/diagnostic/fig-data-coverage-tile.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-coverage-tile-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Availability of catch, abundance-index and composition observations by series and year.
+Figure&nbsp;6: Availability of catch, abundance-index and composition observations by series and year.
 </figcaption>
 </figure>
 </div>
 <p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/fig-data-coverage-tile.pdf">Download vector figure</a></p>
+<div id="fig-catch-by-fishery-longline" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/formats/catch-by-fishery-longline.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-catch-by-fishery-longline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/formats/catch-by-fishery-longline.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-catch-by-fishery-longline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Illustrative output. Observed and predicted catch by fishery.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/catch-by-fishery-longline.pdf">Download vector figure</a></p>
+<div id="fig-catch-by-fishery-ps" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/formats/catch-by-fishery-ps.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-catch-by-fishery-ps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/formats/catch-by-fishery-ps.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-catch-by-fishery-ps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Illustrative output. Observed and predicted catch by fishery.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/catch-by-fishery-ps.pdf">Download vector figure</a></p>
+<div id="fig-catch-by-fishery-other" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/formats/catch-by-fishery-other.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-catch-by-fishery-other-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/formats/catch-by-fishery-other.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-catch-by-fishery-other-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Illustrative output. Observed and predicted catch by fishery.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/catch-by-fishery-other.pdf">Download vector figure</a></p>
+<div id="fig-cpue-nom-maps" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/formats/cpue-nom-maps.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cpue-nom-maps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/formats/cpue-nom-maps.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cpue-nom-maps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10: Illustrative output. Spatial distribution of nominal abundance indices.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/cpue-nom-maps.pdf">Download vector figure</a></p>
+<div id="fig-tag-displacement-map" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/formats/tag-displacement-map.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tag-displacement-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/formats/tag-displacement-map.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tag-displacement-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11: Illustrative output. Tag-release and recapture displacements by programme.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/tag-displacement-map.pdf">Download vector figure</a></p>
 <div id="fig-tag-release-recapt" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/formats/tag-release-recapt.pdf">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tag-release-recapt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="artifacts/formats/tag-release-recapt.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tag-release-recapt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Tag releases and recaptures by year.
+Figure&nbsp;12: Illustrative output. Tag releases, recaptures and recapture fractions by cohort.
 </figcaption>
 </figure>
 </div>
@@ -2464,7 +2621,7 @@ Figure&nbsp;4: Tag releases and recaptures by year.
 <img src="artifacts/diagnostic/growth-curve.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-growth-curve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Mean length at the start of each model age class.
+Figure&nbsp;13: Mean length at the start of each model age class.
 </figcaption>
 </figure>
 </div>
@@ -2475,7 +2632,7 @@ Figure&nbsp;5: Mean length at the start of each model age class.
 <img src="artifacts/diagnostic/maturity-ogive.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-maturity-ogive-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Model reproductive coefficient at age.
+Figure&nbsp;14: Model reproductive coefficient at age.
 </figcaption>
 </figure>
 </div>
@@ -2486,7 +2643,7 @@ Figure&nbsp;6: Model reproductive coefficient at age.
 <img src="artifacts/diagnostic/natm-at-age.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-natm-at-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: Annual instantaneous natural mortality at age.
+Figure&nbsp;15: Annual instantaneous natural mortality at age.
 </figcaption>
 </figure>
 </div>
@@ -2497,62 +2654,51 @@ Figure&nbsp;7: Annual instantaneous natural mortality at age.
 <img src="artifacts/stepwise/stepwise-panel.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stepwise-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8: Stepwise model trajectories.
+Figure&nbsp;16: Stepwise model trajectories.
 </figcaption>
 </figure>
 </div>
 <p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/stepwise/stepwise-panel.pdf">Download vector figure</a></p>
+<div id="fig-stepwise-panel-reduce" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/stepwise/stepwise-panel-reduce.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-stepwise-panel-reduce-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/stepwise/stepwise-panel-reduce.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stepwise-panel-reduce-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;17: Selected model-development trajectories.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/stepwise/stepwise-panel-reduce.pdf">Download vector figure</a></p>
 <div id="fig-cpue-fit-residuals" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/cpue-fit-residuals.pdf">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cpue-fit-residuals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="artifacts/diagnostic/cpue-fit-residuals.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cpue-fit-residuals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9: Abundance-index log residuals, log(observed/predicted), by series.
+Figure&nbsp;18: Abundance-index fits and log residuals by series. Residuals are log(observed/predicted).
 </figcaption>
 </figure>
 </div>
 <p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/cpue-fit-residuals.pdf">Download vector figure</a></p>
-<div id="fig-length-fit-by-fishery" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/length-fit-by-fishery.pdf">
+<div id="fig-length-fit-by-fishery" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/formats/length-fit-by-fishery.pdf">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-length-fit-by-fishery-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="artifacts/diagnostic/length-fit-by-fishery.svg" class="img-fluid figure-img" style="width:100.0%">
+<img src="artifacts/formats/length-fit-by-fishery.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-length-fit-by-fishery-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10: Length composition residuals by fishery. Blue: observed exceeds predicted; red: predicted exceeds observed. Circle area is proportional to absolute residual. Terminal bins include compressed tails.
+Figure&nbsp;19: Illustrative output. Pooled observed and predicted length distributions.
 </figcaption>
 </figure>
 </div>
-<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/length-fit-by-fishery.pdf">Download vector figure</a></p>
-<div id="fig-length-fit-by-fishery-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/length-fit-by-fishery-2.pdf">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-length-fit-by-fishery-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="artifacts/diagnostic/length-fit-by-fishery-2.svg" class="img-fluid figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-length-fit-by-fishery-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;11: Length composition residuals by fishery. Blue: observed exceeds predicted; red: predicted exceeds observed. Circle area is proportional to absolute residual. Terminal bins include compressed tails.
-</figcaption>
-</figure>
-</div>
-<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/length-fit-by-fishery-2.pdf">Download vector figure</a></p>
-<div id="fig-length-fit-by-fishery-3" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/length-fit-by-fishery-3.pdf">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-length-fit-by-fishery-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="artifacts/diagnostic/length-fit-by-fishery-3.svg" class="img-fluid figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-length-fit-by-fishery-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12: Length composition residuals by fishery. Blue: observed exceeds predicted; red: predicted exceeds observed. Circle area is proportional to absolute residual. Terminal bins include compressed tails.
-</figcaption>
-</figure>
-</div>
-<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/length-fit-by-fishery-3.pdf">Download vector figure</a></p>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/length-fit-by-fishery.pdf">Download vector figure</a></p>
 <div id="fig-length-fit-by-region" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/formats/length-fit-by-region.pdf">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-length-fit-by-region-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="artifacts/formats/length-fit-by-region.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-length-fit-by-region-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;13: Observed and predicted length proportions by region.
+Figure&nbsp;20: Illustrative output. Pooled observed and predicted length distributions.
 </figcaption>
 </figure>
 </div>
@@ -2563,7 +2709,7 @@ Figure&nbsp;13: Observed and predicted length proportions by region.
 <img src="artifacts/formats/length-fit-timeseries-ll.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-length-fit-timeseries-ll-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14: Observed and predicted mean lengths by longline fishery.
+Figure&nbsp;21: Illustrative output. Observed and predicted length summaries through time.
 </figcaption>
 </figure>
 </div>
@@ -2574,7 +2720,7 @@ Figure&nbsp;14: Observed and predicted mean lengths by longline fishery.
 <img src="artifacts/formats/length-fit-timeseries-other.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-length-fit-timeseries-other-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;15: Observed and predicted mean lengths for other fisheries.
+Figure&nbsp;22: Illustrative output. Observed and predicted length summaries through time.
 </figcaption>
 </figure>
 </div>
@@ -2585,7 +2731,7 @@ Figure&nbsp;15: Observed and predicted mean lengths for other fisheries.
 <img src="artifacts/formats/tag-attrition-programmes.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tag-attrition-programmes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;16: Observed and predicted tag recaptures by time at liberty and release programme.
+Figure&nbsp;23: Illustrative output. Observed and predicted tag recaptures by time at liberty.
 </figcaption>
 </figure>
 </div>
@@ -2596,7 +2742,7 @@ Figure&nbsp;16: Observed and predicted tag recaptures by time at liberty and rel
 <img src="artifacts/formats/tag-recapture-fit-years-groups.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tag-recapture-fit-years-groups-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;17: Observed and predicted tag recaptures by year and programme.
+Figure&nbsp;24: Illustrative output. Observed and predicted tag recaptures through time.
 </figcaption>
 </figure>
 </div>
@@ -2607,7 +2753,7 @@ Figure&nbsp;17: Observed and predicted tag recaptures by year and programme.
 <img src="artifacts/formats/tag-reporting-rates-active.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tag-reporting-rates-active-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;18: Tag-reporting rates by fishery.
+Figure&nbsp;25: Illustrative output. Estimated tag-reporting rates and supplied priors.
 </figcaption>
 </figure>
 </div>
@@ -2618,29 +2764,18 @@ Figure&nbsp;18: Tag-reporting rates by fishery.
 <img src="artifacts/diagnostic/caal-fits-regions.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-caal-fits-regions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;19: Conditional age-at-length composition residuals by fishery. Blue: observed exceeds predicted; red: predicted exceeds observed. Circle area is proportional to absolute residual.
+Figure&nbsp;26: Observed and predicted age distributions conditional on length. Cells: predictions; circles: observations; solid and dashed lines: predicted and observed mean age.
 </figcaption>
 </figure>
 </div>
 <p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/caal-fits-regions.pdf">Download vector figure</a></p>
-<div id="fig-caal-fits-regions-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/caal-fits-regions-2.pdf">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-caal-fits-regions-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="artifacts/diagnostic/caal-fits-regions-2.svg" class="img-fluid figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-caal-fits-regions-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20: Conditional age-at-length composition residuals by fishery. Blue: observed exceeds predicted; red: predicted exceeds observed. Circle area is proportional to absolute residual.
-</figcaption>
-</figure>
-</div>
-<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/caal-fits-regions-2.pdf">Download vector figure</a></p>
 <div id="fig-jitter-scatter-plot" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/jitter/jitter-scatter-plot.pdf">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-jitter-scatter-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="artifacts/jitter/jitter-scatter-plot.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-jitter-scatter-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;21: Final objectives and maximum gradients for independent starting values. Filled points meet all recorded numerical checks.
+Figure&nbsp;27: Final objectives and maximum gradients for independent starting values. Filled points meet all recorded numerical checks.
 </figcaption>
 </figure>
 </div>
@@ -2651,7 +2786,7 @@ Figure&nbsp;21: Final objectives and maximum gradients for independent starting 
 <img src="artifacts/jitter/jitter-derived-values-diag-panel.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-jitter-derived-values-diag-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;22: Jitter model trajectories.
+Figure&nbsp;28: Jitter model trajectories.
 </figcaption>
 </figure>
 </div>
@@ -2662,7 +2797,7 @@ Figure&nbsp;22: Jitter model trajectories.
 <img src="artifacts/jitter/jitter-regional-depletion.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-jitter-regional-depletion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;23: Spawning depletion by model and region, relative to each model’s dynamic unfished reference.
+Figure&nbsp;29: Spawning depletion by model and region, relative to each model’s dynamic unfished reference.
 </figcaption>
 </figure>
 </div>
@@ -2673,7 +2808,7 @@ Figure&nbsp;23: Spawning depletion by model and region, relative to each model�
 <img src="artifacts/selftest/selftest-recovery.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-selftest-recovery-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;24: Relative recovery error in terminal quantities for converged simulated-data refits.
+Figure&nbsp;30: Relative recovery error in terminal quantities for converged simulated-data refits.
 </figcaption>
 </figure>
 </div>
@@ -2684,7 +2819,7 @@ Figure&nbsp;24: Relative recovery error in terminal quantities for converged sim
 <img src="artifacts/selftest/selftest-time-series.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-selftest-time-series-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;25: Selftest model trajectories.
+Figure&nbsp;31: Selftest model trajectories.
 </figcaption>
 </figure>
 </div>
@@ -2695,62 +2830,73 @@ Figure&nbsp;25: Selftest model trajectories.
 <img src="artifacts/retrospective/retro-analysis.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-retro-analysis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;26: Retrospective model trajectories.
+Figure&nbsp;32: Retrospective model trajectories.
 </figcaption>
 </figure>
 </div>
 <p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/retrospective/retro-analysis.pdf">Download vector figure</a></p>
-<div id="fig-diag-profile-data-sources" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/sensitivity/diag-profile-data-sources.pdf">
+<div id="fig-diag-profile-data-sources" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/profiles/diag-profile-data-sources.pdf">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-diag-profile-data-sources-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="artifacts/sensitivity/diag-profile-data-sources.svg" class="img-fluid figure-img" style="width:100.0%">
+<img src="artifacts/profiles/diag-profile-data-sources.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diag-profile-data-sources-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;27: Objective profiles by data component.
+Figure&nbsp;33: Objective profiles on the supplied parameter or quantity scale. Each curve is centered on its own minimum. Profile on the supplied parameter scale.; Total biomass averaged over the declared model periods, 2001-2020.
 </figcaption>
 </figure>
 </div>
-<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/sensitivity/diag-profile-data-sources.pdf">Download vector figure</a></p>
-<div id="fig-diag-profile-data-cpue" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/sensitivity/diag-profile-data-cpue.pdf">
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/profiles/diag-profile-data-sources.pdf">Download vector figure</a></p>
+<div id="fig-diag-profile-data-cpue" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/profiles/diag-profile-data-cpue.pdf">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-diag-profile-data-cpue-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="artifacts/sensitivity/diag-profile-data-cpue.svg" class="img-fluid figure-img" style="width:100.0%">
+<img src="artifacts/profiles/diag-profile-data-cpue.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diag-profile-data-cpue-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;28: Index component of the objective profile.
+Figure&nbsp;34: Objective profiles on the supplied parameter or quantity scale. Each curve is centered on its own minimum. Profile on the supplied parameter scale.; Total biomass averaged over the declared model periods, 2001-2020.
 </figcaption>
 </figure>
 </div>
-<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/sensitivity/diag-profile-data-cpue.pdf">Download vector figure</a></p>
-<div id="fig-diag-profile-data-lf" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/sensitivity/diag-profile-data-lf.pdf">
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/profiles/diag-profile-data-cpue.pdf">Download vector figure</a></p>
+<div id="fig-diag-profile-data-lf" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/profiles/diag-profile-data-lf.pdf">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-diag-profile-data-lf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="artifacts/sensitivity/diag-profile-data-lf.svg" class="img-fluid figure-img" style="width:100.0%">
+<img src="artifacts/profiles/diag-profile-data-lf.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diag-profile-data-lf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;29: Length component of the objective profile.
+Figure&nbsp;35: Objective profiles on the supplied parameter or quantity scale. Each curve is centered on its own minimum. Profile on the supplied parameter scale.; Total biomass averaged over the declared model periods, 2001-2020.
 </figcaption>
 </figure>
 </div>
-<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/sensitivity/diag-profile-data-lf.pdf">Download vector figure</a></p>
-<div id="fig-diag-profile-data-caal" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/sensitivity/diag-profile-data-caal.pdf">
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/profiles/diag-profile-data-lf.pdf">Download vector figure</a></p>
+<div id="fig-diag-profile-data-caal" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/profiles/diag-profile-data-caal.pdf">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-diag-profile-data-caal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="artifacts/sensitivity/diag-profile-data-caal.svg" class="img-fluid figure-img" style="width:100.0%">
+<img src="artifacts/profiles/diag-profile-data-caal.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diag-profile-data-caal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;30: Age at length component of the objective profile.
+Figure&nbsp;36: Objective profiles on the supplied parameter or quantity scale. Each curve is centered on its own minimum. Profile on the supplied parameter scale.; Total biomass averaged over the declared model periods, 2001-2020.
 </figcaption>
 </figure>
 </div>
-<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/sensitivity/diag-profile-data-caal.pdf">Download vector figure</a></p>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/profiles/diag-profile-data-caal.pdf">Download vector figure</a></p>
+<div id="fig-diag-profile-data-tag-prog" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/profiles/diag-profile-data-tag-prog.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-diag-profile-data-tag-prog-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/profiles/diag-profile-data-tag-prog.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diag-profile-data-tag-prog-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;37: Objective profiles on the supplied parameter or quantity scale. Each curve is centered on its own minimum. Profile on the supplied parameter scale.; Total biomass averaged over the declared model periods, 2001-2020.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/profiles/diag-profile-data-tag-prog.pdf">Download vector figure</a></p>
 <div id="fig-aspm-comparison" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/formats/aspm-comparison.pdf">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-aspm-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="artifacts/formats/aspm-comparison.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-aspm-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;31: Spawning depletion from the diagnostic and age-structured production models.
+Figure&nbsp;38: Illustrative output. Diagnostic and production-model trajectories.
 </figcaption>
 </figure>
 </div>
@@ -2761,7 +2907,7 @@ Figure&nbsp;31: Spawning depletion from the diagnostic and age-structured produc
 <img src="artifacts/diagnostic/diag-time-series.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diag-time-series-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;32: Estimated population trajectories.
+Figure&nbsp;39: Estimated population trajectories.
 </figcaption>
 </figure>
 </div>
@@ -2772,7 +2918,7 @@ Figure&nbsp;32: Estimated population trajectories.
 <img src="artifacts/diagnostic/select-age.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-select-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;33: Fishery selectivity at age.
+Figure&nbsp;40: Fishery selectivity at age.
 </figcaption>
 </figure>
 </div>
@@ -2783,7 +2929,7 @@ Figure&nbsp;33: Fishery selectivity at age.
 <img src="artifacts/diagnostic/select-age-2.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-select-age-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;34: Fishery selectivity at age.
+Figure&nbsp;41: Fishery selectivity at age.
 </figcaption>
 </figure>
 </div>
@@ -2794,7 +2940,7 @@ Figure&nbsp;34: Fishery selectivity at age.
 <img src="artifacts/diagnostic/select-age-3.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-select-age-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;35: Fishery selectivity at age.
+Figure&nbsp;42: Fishery selectivity at age.
 </figcaption>
 </figure>
 </div>
@@ -2805,7 +2951,7 @@ Figure&nbsp;35: Fishery selectivity at age.
 <img src="artifacts/diagnostic/select-age-4.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-select-age-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;36: Fishery selectivity at age.
+Figure&nbsp;43: Fishery selectivity at age.
 </figcaption>
 </figure>
 </div>
@@ -2816,7 +2962,7 @@ Figure&nbsp;36: Fishery selectivity at age.
 <img src="artifacts/formats/select-length.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-select-length-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;37: Selectivity at length by fishery.
+Figure&nbsp;44: Illustrative output. Selectivity at length by fishery.
 </figcaption>
 </figure>
 </div>
@@ -2827,7 +2973,7 @@ Figure&nbsp;37: Selectivity at length by fishery.
 <img src="artifacts/diagnostic/season-movement-coeff.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-season-movement-coeff-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;38: Probability of movement from source to destination region per movement event.
+Figure&nbsp;45: Probability of movement from source to destination region per movement event.
 </figcaption>
 </figure>
 </div>
@@ -2838,18 +2984,29 @@ Figure&nbsp;38: Probability of movement from source to destination region per mo
 <img src="artifacts/diagnostic/season-movement-coeff-2.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-season-movement-coeff-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;39: Probability of movement from source to destination region per movement event.
+Figure&nbsp;46: Probability of movement from source to destination region per movement event.
 </figcaption>
 </figure>
 </div>
 <p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/season-movement-coeff-2.pdf">Download vector figure</a></p>
+<div id="fig-recruitment-annual" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/recruitment-annual.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-recruitment-annual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/diagnostic/recruitment-annual.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-recruitment-annual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;47: Recruitment by model region.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/recruitment-annual.pdf">Download vector figure</a></p>
 <div id="fig-recruitment-regions" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/recruitment-regions.pdf">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-recruitment-regions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="artifacts/diagnostic/recruitment-regions.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-recruitment-regions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;40: Recruitment by model region.
+Figure&nbsp;48: Recruitment by model region.
 </figcaption>
 </figure>
 </div>
@@ -2860,29 +3017,29 @@ Figure&nbsp;40: Recruitment by model region.
 <img src="artifacts/formats/stock-rr.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stock-rr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;41: Stock–recruitment relationship.
+Figure&nbsp;49: Illustrative output. Stock–recruitment observations and fitted relationship.
 </figcaption>
 </figure>
 </div>
 <p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/stock-rr.pdf">Download vector figure</a></p>
-<div id="fig-timeseries-model-regions-stack" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/formats/timeseries-model-regions-stack.pdf">
+<div id="fig-timeseries-model-regions-stack" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/timeseries-model-regions-stack.pdf">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-timeseries-model-regions-stack-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="artifacts/formats/timeseries-model-regions-stack.svg" class="img-fluid figure-img" style="width:100.0%">
+<img src="artifacts/diagnostic/timeseries-model-regions-stack.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-timeseries-model-regions-stack-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;42: Regional proportions of spawning potential and recruitment.
+Figure&nbsp;50: Regional shares of population quantities.
 </figcaption>
 </figure>
 </div>
-<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/timeseries-model-regions-stack.pdf">Download vector figure</a></p>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/timeseries-model-regions-stack.pdf">Download vector figure</a></p>
 <div id="fig-total-biomass-with-without-fishing" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/total-biomass-with-without-fishing.pdf">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-total-biomass-with-without-fishing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="artifacts/diagnostic/total-biomass-with-without-fishing.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-total-biomass-with-without-fishing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;43: Total biomass under estimated fishing and the dynamic no-fishing counterfactual.
+Figure&nbsp;51: Total biomass under estimated fishing and the dynamic no-fishing counterfactual.
 </figcaption>
 </figure>
 </div>
@@ -2893,7 +3050,7 @@ Figure&nbsp;43: Total biomass under estimated fishing and the dynamic no-fishing
 <img src="artifacts/formats/juv-adult-F.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-juv-adult-F-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;44: Annual juvenile and adult fishing mortality by region.
+Figure&nbsp;52: Illustrative output. Fishing mortality by life stage and region.
 </figcaption>
 </figure>
 </div>
@@ -2904,7 +3061,7 @@ Figure&nbsp;44: Annual juvenile and adult fishing mortality by region.
 <img src="artifacts/sensitivity/sensitivity-steepness.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sensitivity-steepness-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;45: Spawning-depletion sensitivity to steepness.
+Figure&nbsp;53: Population trajectories across the stated sensitivity models.
 </figcaption>
 </figure>
 </div>
@@ -2915,7 +3072,7 @@ Figure&nbsp;45: Spawning-depletion sensitivity to steepness.
 <img src="artifacts/sensitivity/sensitivity-natural-mortality.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sensitivity-natural-mortality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;46: Spawning-depletion sensitivity to natural mortality.
+Figure&nbsp;54: Population trajectories across the stated sensitivity models.
 </figcaption>
 </figure>
 </div>
@@ -2926,7 +3083,7 @@ Figure&nbsp;46: Spawning-depletion sensitivity to natural mortality.
 <img src="artifacts/sensitivity/sensitivity-CAAL.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sensitivity-CAAL-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;47: Spawning-depletion sensitivity to CAAL.
+Figure&nbsp;55: Population trajectories across the stated sensitivity models.
 </figcaption>
 </figure>
 </div>
@@ -2937,7 +3094,7 @@ Figure&nbsp;47: Spawning-depletion sensitivity to CAAL.
 <img src="artifacts/sensitivity/sensitivity-effort-creep.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sensitivity-effort-creep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;48: Spawning-depletion sensitivity to effort creep.
+Figure&nbsp;56: Population trajectories across the stated sensitivity models.
 </figcaption>
 </figure>
 </div>
@@ -2948,7 +3105,7 @@ Figure&nbsp;48: Spawning-depletion sensitivity to effort creep.
 <img src="artifacts/sensitivity/sensitivity-regional-scaling.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sensitivity-regional-scaling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;49: Spawning-depletion sensitivity to regional scaling.
+Figure&nbsp;57: Population trajectories across the stated sensitivity models.
 </figcaption>
 </figure>
 </div>
@@ -2959,7 +3116,7 @@ Figure&nbsp;49: Spawning-depletion sensitivity to regional scaling.
 <img src="artifacts/sensitivity/sensitivity-tag-mixing-periods-Kstatistic-cutoff.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sensitivity-tag-mixing-periods-Kstatistic-cutoff-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;50: Spawning-depletion sensitivity to tag mixing periods Kstatistic cutoff.
+Figure&nbsp;58: Population trajectories across the stated sensitivity models.
 </figcaption>
 </figure>
 </div>
@@ -2970,7 +3127,7 @@ Figure&nbsp;50: Spawning-depletion sensitivity to tag mixing periods Kstatistic 
 <img src="artifacts/sensitivity/sensitivity-premixing-tag-reporting-rate.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sensitivity-premixing-tag-reporting-rate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;51: Spawning-depletion sensitivity to premixing tag reporting rate.
+Figure&nbsp;59: Population trajectories across the stated sensitivity models.
 </figcaption>
 </figure>
 </div>
@@ -2981,7 +3138,7 @@ Figure&nbsp;51: Spawning-depletion sensitivity to premixing tag reporting rate.
 <img src="artifacts/sensitivity/sensitivity-tag-overdispersion.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sensitivity-tag-overdispersion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;52: Spawning-depletion sensitivity to tag overdispersion.
+Figure&nbsp;60: Population trajectories across the stated sensitivity models.
 </figcaption>
 </figure>
 </div>
@@ -2992,7 +3149,7 @@ Figure&nbsp;52: Spawning-depletion sensitivity to tag overdispersion.
 <img src="artifacts/ensemble/ensemble-design-retention.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ensemble-design-retention-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;53: Retained model counts by design axis and level.
+Figure&nbsp;61: Planned and retained model inputs.
 </figcaption>
 </figure>
 </div>
@@ -3003,7 +3160,7 @@ Figure&nbsp;53: Retained model counts by design axis and level.
 <img src="artifacts/ensemble/management-uncertainty-continuous-axes-steep-M.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-management-uncertainty-continuous-axes-steep-M-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;54: Management quantities across selected design levels; bands show the supplied model range.
+Figure&nbsp;62: Weighted distributions of management quantities by design setting. Boxes: interquartile range; line: median; whiskers: 2.5th and 97.5th weighted percentiles.
 </figcaption>
 </figure>
 </div>
@@ -3014,7 +3171,7 @@ Figure&nbsp;54: Management quantities across selected design levels; bands show 
 <img src="artifacts/ensemble/management-uncertainty-discrete-axes-tau-mix.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-management-uncertainty-discrete-axes-tau-mix-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;55: Management quantities across selected design levels; bands show the supplied model range.
+Figure&nbsp;63: Weighted distributions of management quantities by design setting. Boxes: interquartile range; line: median; whiskers: 2.5th and 97.5th weighted percentiles.
 </figcaption>
 </figure>
 </div>
@@ -3025,7 +3182,7 @@ Figure&nbsp;55: Management quantities across selected design levels; bands show 
 <img src="artifacts/ensemble/management-uncertainty-discrete-axes-tag-rep-effcrp.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-management-uncertainty-discrete-axes-tag-rep-effcrp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;56: Management quantities across selected design levels; bands show the supplied model range.
+Figure&nbsp;64: Weighted distributions of management quantities by design setting. Boxes: interquartile range; line: median; whiskers: 2.5th and 97.5th weighted percentiles.
 </figcaption>
 </figure>
 </div>
@@ -3036,7 +3193,7 @@ Figure&nbsp;56: Management quantities across selected design levels; bands show 
 <img src="artifacts/ensemble/ensemble-individual.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ensemble-individual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;57: Ensemble model trajectories.
+Figure&nbsp;65: Ensemble model trajectories.
 </figcaption>
 </figure>
 </div>
@@ -3047,7 +3204,7 @@ Figure&nbsp;57: Ensemble model trajectories.
 <img src="artifacts/ensemble/ensemble-est-uncert-ribbon.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ensemble-est-uncert-ribbon-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;58: Median spawning depletion and range across the displayed models.
+Figure&nbsp;66: Population trajectories with supplied uncertainty intervals. Central 95% intervals (illustrative supplied quantiles).
 </figcaption>
 </figure>
 </div>
@@ -3058,7 +3215,7 @@ Figure&nbsp;58: Median spawning depletion and range across the displayed models.
 <img src="artifacts/ensemble/combined-kobe-majuro-status.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-combined-kobe-majuro-status-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;59: Stock-status trajectory relative to the supplied biomass and fishing-mortality reference points.
+Figure&nbsp;67: Stock status relative to the supplied spawning and fishing reference points.
 </figcaption>
 </figure>
 </div>
@@ -3069,7 +3226,7 @@ Figure&nbsp;59: Stock-status trajectory relative to the supplied biomass and fis
 <img src="artifacts/ensemble/time-dynamic-kobe-majuro.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-time-dynamic-kobe-majuro-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;60: Fishing intensity and spawning depletion through the displayed stock-status trajectory.
+Figure&nbsp;68: Stock status relative to the supplied spawning and fishing reference points.
 </figcaption>
 </figure>
 </div>
@@ -3080,7 +3237,7 @@ Figure&nbsp;60: Fishing intensity and spawning depletion through the displayed s
 <img src="artifacts/ensemble/dynamic-msy.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dynamic-msy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;61: Time-varying maximum sustainable yield.
+Figure&nbsp;69: Dynamic maximum sustainable yield and catch.
 </figcaption>
 </figure>
 </div>
@@ -3091,7 +3248,7 @@ Figure&nbsp;61: Time-varying maximum sustainable yield.
 <img src="artifacts/formats/impact-region.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-impact-region-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;62: Reduction in spawning potential attributed to each fishing group, by region.
+Figure&nbsp;70: Illustrative output. Contributions of fishing groups to reduced spawning potential.
 </figcaption>
 </figure>
 </div>
@@ -3102,7 +3259,7 @@ Figure&nbsp;62: Reduction in spawning potential attributed to each fishing group
 <img src="artifacts/ensemble/yield.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-yield-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;63: Equilibrium yield across fishing-mortality multipliers.
+Figure&nbsp;71: Equilibrium yield across fishing-mortality multipliers.
 </figcaption>
 </figure>
 </div>
@@ -3113,7 +3270,7 @@ Figure&nbsp;63: Equilibrium yield across fishing-mortality multipliers.
 <img src="artifacts/ensemble/projection-stock-trajectories.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-projection-stock-trajectories-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;64: Projected spawning depletion by catch scenario, with the supplied central interval.
+Figure&nbsp;72: Historical and projected quantities by scenario with supplied uncertainty intervals. Central 95% intervals (illustrative supplied quantiles).
 </figcaption>
 </figure>
 </div>
@@ -3124,7 +3281,7 @@ Figure&nbsp;64: Projected spawning depletion by catch scenario, with the supplie
 <img src="artifacts/diagnostic/spawning-biomass-regions.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spawning-biomass-regions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;65: Spawning potential by model region.
+Figure&nbsp;73: Spawning potential by model region.
 </figcaption>
 </figure>
 </div>
@@ -3135,7 +3292,7 @@ Figure&nbsp;65: Spawning potential by model region.
 <img src="artifacts/diagnostic/total-biomass-regions.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-total-biomass-regions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;66: Total biomass by model region.
+Figure&nbsp;74: Total biomass by model region.
 </figcaption>
 </figure>
 </div>
@@ -3146,7 +3303,7 @@ Figure&nbsp;66: Total biomass by model region.
 <img src="artifacts/diagnostic/dynamic-spawning-depletion-regions.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dynamic-spawning-depletion-regions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;67: Dynamic spawning depletion by model region.
+Figure&nbsp;75: Dynamic spawning depletion by model region.
 </figcaption>
 </figure>
 </div>
@@ -3157,7 +3314,7 @@ Figure&nbsp;67: Dynamic spawning depletion by model region.
 <img src="artifacts/diagnostic/weight-at-age.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-weight-at-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;68: Mean weight at the start of each model age class.
+Figure&nbsp;76: Mean weight at the start of each model age class.
 </figcaption>
 </figure>
 </div>
@@ -3168,7 +3325,7 @@ Figure&nbsp;68: Mean weight at the start of each model age class.
 <img src="artifacts/diagnostic/cpue-fit.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cpue-fit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;69: Index observations (points) and predictions (lines) by series.
+Figure&nbsp;77: Index observations (points) and predictions (lines) by series.
 </figcaption>
 </figure>
 </div>
@@ -3179,7 +3336,7 @@ Figure&nbsp;69: Index observations (points) and predictions (lines) by series.
 <img src="artifacts/diagnostic/catch-by-fishery.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-catch-by-fishery-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;70: Catch observations (points) and predictions (lines) by series.
+Figure&nbsp;78: Catch observations (points) and predictions (lines) by series.
 </figcaption>
 </figure>
 </div>
@@ -3190,7 +3347,7 @@ Figure&nbsp;70: Catch observations (points) and predictions (lines) by series.
 <img src="artifacts/diagnostic/catch-by-fishery-2.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-catch-by-fishery-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;71: Catch observations (points) and predictions (lines) by series.
+Figure&nbsp;79: Catch observations (points) and predictions (lines) by series.
 </figcaption>
 </figure>
 </div>
@@ -3201,18 +3358,73 @@ Figure&nbsp;71: Catch observations (points) and predictions (lines) by series.
 <img src="artifacts/diagnostic/catch-by-fishery-3.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-catch-by-fishery-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;72: Catch observations (points) and predictions (lines) by series.
+Figure&nbsp;80: Catch observations (points) and predictions (lines) by series.
 </figcaption>
 </figure>
 </div>
 <p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/catch-by-fishery-3.pdf">Download vector figure</a></p>
+<div id="fig-length-residuals-by-fishery" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/length-residuals-by-fishery.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-length-residuals-by-fishery-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/diagnostic/length-residuals-by-fishery.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-length-residuals-by-fishery-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;81: Length composition residuals by fishery. Blue: observed exceeds predicted; red: predicted exceeds observed. Circle area is proportional to absolute residual. Terminal bins include compressed tails.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/length-residuals-by-fishery.pdf">Download vector figure</a></p>
+<div id="fig-length-residuals-by-fishery-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/length-residuals-by-fishery-2.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-length-residuals-by-fishery-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/diagnostic/length-residuals-by-fishery-2.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-length-residuals-by-fishery-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;82: Length composition residuals by fishery. Blue: observed exceeds predicted; red: predicted exceeds observed. Circle area is proportional to absolute residual. Terminal bins include compressed tails.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/length-residuals-by-fishery-2.pdf">Download vector figure</a></p>
+<div id="fig-length-residuals-by-fishery-3" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/length-residuals-by-fishery-3.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-length-residuals-by-fishery-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/diagnostic/length-residuals-by-fishery-3.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-length-residuals-by-fishery-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;83: Length composition residuals by fishery. Blue: observed exceeds predicted; red: predicted exceeds observed. Circle area is proportional to absolute residual. Terminal bins include compressed tails.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/length-residuals-by-fishery-3.pdf">Download vector figure</a></p>
+<div id="fig-conditional-age-residuals-by-fishery" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/conditional-age-residuals-by-fishery.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-conditional-age-residuals-by-fishery-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/diagnostic/conditional-age-residuals-by-fishery.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-conditional-age-residuals-by-fishery-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;84: Conditional age-at-length composition residuals by fishery. Blue: observed exceeds predicted; red: predicted exceeds observed. Circle area is proportional to absolute residual.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/conditional-age-residuals-by-fishery.pdf">Download vector figure</a></p>
+<div id="fig-conditional-age-residuals-by-fishery-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/conditional-age-residuals-by-fishery-2.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-conditional-age-residuals-by-fishery-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/diagnostic/conditional-age-residuals-by-fishery-2.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-conditional-age-residuals-by-fishery-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;85: Conditional age-at-length composition residuals by fishery. Blue: observed exceeds predicted; red: predicted exceeds observed. Circle area is proportional to absolute residual.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/conditional-age-residuals-by-fishery-2.pdf">Download vector figure</a></p>
 <div id="fig-stepwise-regional-depletion" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/stepwise/stepwise-regional-depletion.pdf">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-stepwise-regional-depletion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="artifacts/stepwise/stepwise-regional-depletion.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stepwise-regional-depletion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;73: Spawning depletion by model and region, relative to each model’s dynamic unfished reference.
+Figure&nbsp;86: Spawning depletion by model and region, relative to each model’s dynamic unfished reference.
 </figcaption>
 </figure>
 </div>
@@ -3223,7 +3435,7 @@ Figure&nbsp;73: Spawning depletion by model and region, relative to each model�
 <img src="artifacts/selftest/selftest-regional-depletion.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-selftest-regional-depletion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;74: Spawning depletion by model and region, relative to each model’s dynamic unfished reference.
+Figure&nbsp;87: Spawning depletion by model and region, relative to each model’s dynamic unfished reference.
 </figcaption>
 </figure>
 </div>
@@ -3234,7 +3446,7 @@ Figure&nbsp;74: Spawning depletion by model and region, relative to each model�
 <img src="artifacts/retrospective/retrospective-regional-depletion.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-retrospective-regional-depletion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;75: Spawning depletion by model and region, relative to each model’s dynamic unfished reference.
+Figure&nbsp;88: Spawning depletion by model and region, relative to each model’s dynamic unfished reference.
 </figcaption>
 </figure>
 </div>
@@ -3245,7 +3457,7 @@ Figure&nbsp;75: Spawning depletion by model and region, relative to each model�
 <img src="artifacts/sensitivity/sensitivity-panel.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sensitivity-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;76: Sensitivity model trajectories.
+Figure&nbsp;89: Sensitivity model trajectories.
 </figcaption>
 </figure>
 </div>
@@ -3256,7 +3468,7 @@ Figure&nbsp;76: Sensitivity model trajectories.
 <img src="artifacts/sensitivity/sensitivity-regional-depletion.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sensitivity-regional-depletion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;77: Spawning depletion by model and region, relative to each model’s dynamic unfished reference.
+Figure&nbsp;90: Spawning depletion by model and region, relative to each model’s dynamic unfished reference.
 </figcaption>
 </figure>
 </div>
@@ -3267,11 +3479,22 @@ Figure&nbsp;77: Spawning depletion by model and region, relative to each model�
 <img src="artifacts/ensemble/ensemble-regional-depletion.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ensemble-regional-depletion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;78: Spawning depletion by model and region, relative to each model’s dynamic unfished reference.
+Figure&nbsp;91: Spawning depletion by model and region, relative to each model’s dynamic unfished reference.
 </figcaption>
 </figure>
 </div>
 <p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/ensemble/ensemble-regional-depletion.pdf">Download vector figure</a></p>
+<div id="fig-formats-caal-fits-regions" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/formats/caal-fits-regions.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-formats-caal-fits-regions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/formats/caal-fits-regions.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-formats-caal-fits-regions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;92: Illustrative output. Observed and predicted age distributions conditional on length.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/caal-fits-regions.pdf">Download vector figure</a></p>
 </section>
 <section id="supplementary-outputs" class="level1" data-number="11">
 <h1 data-number="11"><span class="header-section-number">11</span> Supplementary outputs</h1>
@@ -3289,8 +3512,10 @@ Figure&nbsp;78: Spawning depletion by model and region, relative to each model�
 <p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/sensitivity/report.html">ALB · Sensitivities figures and tables</a></p>
 <p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/ensemble/comparison.html">ALB · Uncertainty ensemble interactive comparison</a></p>
 <p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/ensemble/report.html">ALB · Uncertainty ensemble figures and tables</a></p>
-<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/comparison.html">ALB · Additional output formats interactive comparison</a></p>
-<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/report.html">ALB · Additional output formats figures and tables</a></p>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/profiles/comparison.html">Objective profiles · Display example interactive comparison</a></p>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/profiles/report.html">Objective profiles · Display example figures and tables</a></p>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/comparison.html">Additional output formats · Display examples interactive comparison</a></p>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/formats/report.html">Additional output formats · Display examples figures and tables</a></p>
 </section>
 <section id="sec-appendix-movement" class="level1" data-number="12">
 <h1 data-number="12"><span class="header-section-number">12</span> Appendix: supplementary methods</h1>
