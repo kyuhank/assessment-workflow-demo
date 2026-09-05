@@ -1,10 +1,10 @@
-"series","lead","unit","n","bias","rmse"
-"Index 18 (Region 1)",1,"geometric-mean-scaled index",1,-0.0235163586639294,0.0235163586639294
-"Index 19 (Region 1)",1,"geometric-mean-scaled index",1,-0.0933143944293546,0.0933143944293546
-"Index 20 (Region 2)",1,"geometric-mean-scaled index",1,-0.217470071978042,0.217470071978042
-"Index 18 (Region 1)",2,"geometric-mean-scaled index",1,-0.0418907628549741,0.0418907628549741
-"Index 19 (Region 1)",2,"geometric-mean-scaled index",1,-0.117008244857746,0.117008244857746
-"Index 20 (Region 2)",2,"geometric-mean-scaled index",1,-0.205602764326587,0.205602764326587
-"Index 18 (Region 1)",3,"geometric-mean-scaled index",1,-0.201009415218273,0.201009415218273
-"Index 19 (Region 1)",3,"geometric-mean-scaled index",1,0.182932743819561,0.182932743819561
-"Index 20 (Region 2)",3,"geometric-mean-scaled index",1,-0.466211292526037,0.466211292526037
+"kind","series","lead","unit","n","bias","rmse","mase","n_scaled"
+"index","Index 18 (Region 1)",1,"geometric-mean-scaled index",1,-0.0235163586639294,0.0235163586639294,0.105147236467446,1
+"index","Index 18 (Region 1)",2,"geometric-mean-scaled index",1,-0.0418907628549741,0.0418907628549741,0.187303570704159,1
+"index","Index 18 (Region 1)",3,"geometric-mean-scaled index",1,-0.201009415218273,0.201009415218273,0.898760935576207,1
+"index","Index 19 (Region 1)",1,"geometric-mean-scaled index",1,-0.0933143944293546,0.0933143944293546,0.311664419452566,1
+"index","Index 19 (Region 1)",2,"geometric-mean-scaled index",1,-0.117008244857746,0.117008244857746,0.390800443251672,1
+"index","Index 19 (Region 1)",3,"geometric-mean-scaled index",1,0.182932743819561,0.182932743819561,0.610984272577063,1
+"index","Index 20 (Region 2)",1,"geometric-mean-scaled index",1,-0.217470071978042,0.217470071978042,0.829364260654782,1
+"index","Index 20 (Region 2)",2,"geometric-mean-scaled index",1,-0.205602764326587,0.205602764326587,0.784105983289125,1
+"index","Index 20 (Region 2)",3,"geometric-mean-scaled index",1,-0.466211292526037,0.466211292526037,1.77798710607778,1

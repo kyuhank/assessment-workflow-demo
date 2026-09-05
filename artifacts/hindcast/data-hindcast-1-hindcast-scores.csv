@@ -1,10 +1,10 @@
-"series","lead","unit","n","bias","rmse"
-"Index 18 (Region 1)",1,"geometric-mean-scaled index",1,-0.147237439805658,0.147237439805658
-"Index 19 (Region 1)",1,"geometric-mean-scaled index",1,0.0378347507494305,0.0378347507494305
-"Index 20 (Region 2)",1,"geometric-mean-scaled index",1,-0.524749492822953,0.524749492822953
-"Index 18 (Region 1)",2,"geometric-mean-scaled index",1,-0.236672388317187,0.236672388317187
-"Index 19 (Region 1)",2,"geometric-mean-scaled index",1,-0.0278483191830147,0.0278483191830147
-"Index 20 (Region 2)",2,"geometric-mean-scaled index",1,-0.716174063520724,0.716174063520724
-"Index 18 (Region 1)",3,"geometric-mean-scaled index",1,-0.122818913435525,0.122818913435525
-"Index 19 (Region 1)",3,"geometric-mean-scaled index",1,-0.109593462232569,0.109593462232569
-"Index 20 (Region 2)",3,"geometric-mean-scaled index",1,-0.639271791641333,0.639271791641333
+"kind","series","lead","unit","n","bias","rmse","mase","n_scaled"
+"index","Index 18 (Region 1)",1,"geometric-mean-scaled index",1,-0.0739737166637118,0.0739737166637118,0.322497652229321,1
+"index","Index 18 (Region 1)",2,"geometric-mean-scaled index",1,-0.110812722879811,0.110812722879811,0.483101898588371,1
+"index","Index 18 (Region 1)",3,"geometric-mean-scaled index",1,-0.033042488638251,0.033042488638251,0.144052854044001,1
+"index","Index 19 (Region 1)",1,"geometric-mean-scaled index",1,-0.318483103916398,0.318483103916398,1.08325431795398,1
+"index","Index 19 (Region 1)",2,"geometric-mean-scaled index",1,-0.0780430523740002,0.0780430523740002,0.265447279403044,1
+"index","Index 19 (Region 1)",3,"geometric-mean-scaled index",1,-0.140592541022705,0.140592541022705,0.478196410616955,1
+"index","Index 20 (Region 2)",1,"geometric-mean-scaled index",1,-0.0830003364517859,0.0830003364517859,0.309651990137993,1
+"index","Index 20 (Region 2)",2,"geometric-mean-scaled index",1,-0.161441421522157,0.161441421522157,0.602294636408874,1
+"index","Index 20 (Region 2)",3,"geometric-mean-scaled index",1,-0.230469599332889,0.230469599332889,0.859820250743084,1

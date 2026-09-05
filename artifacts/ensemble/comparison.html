@@ -91,7 +91,7 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
 <header><div class="brand">KIMSA <span>view</span></div><div class="local">A view of your models</div></header>
 <div class="workspace"><aside aria-label="Model selection"><div class="side-title">Models <button id="toggle-all" type="button">Clear</button></div><p id="collection-kind"></p><div id="models"></div></aside>
 <main id="main"><div class="eyebrow" id="eyebrow"></div><h1 id="title"></h1>
-<p class="intro"><strong>Illustrative study.</strong> Display values demonstrate the workflow; these models have not been fitted.</p>
+<p class="intro"><strong>Illustrative study.</strong> These outputs demonstrate the workflow and are not assessment estimates.</p>
 <p class="intro">Workflow demonstration; not a stock assessment.</p>
 <div id="summary" class="summary"></div>
 <nav id="tabs" aria-label="Result views"></nav><section class="panel">
@@ -170,6 +170,8 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
   for (const name of ["series", "fits", "compositions", "composition_summaries"]) data[name] = new RowStore(data[name]);
   if (data.annual) for (const name of ["series", "fits"]) data.annual[name] = new RowStore(data.annual[name]);
   data.views = data.views || [];
+  const hindcastHistory = data.type === "hindcast" ?
+    unpack(data.tables.find(t => t.name === "hindcast_observations")?.rows) || [] : [];
   data.curves = new RowStore(data.tables.filter(t => t.name === "curves").flatMap(t =>
     unpack(t.rows).map(r => ({...r, model: t.model, label: t.label}))));
   const byId = id => document.getElementById(id);
@@ -425,7 +427,7 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
       tab === "fits" ? fitNames[scope] || `${pretty(scope)} fits` : tab === "compositions" ? axisNames[scope] || `${pretty(scope)} compositions` : "No data in this view";
     byId("definition").textContent = ["series", "curves", "reports"].includes(tab) ? rows[0]?.definition || "" :
       tab === "fits" ? (byId("residual").checked ? "Raw residuals: observed minus predicted, in original units." :
-        (data.type === "hindcast" ? "Withheld observations (points) and out-of-sample predictions (dashed lines), labelled by training cutoff." :
+        (data.type === "hindcast" ? "Observations (black) and held-out predictions (coloured dashed lines). Vertical marks identify training cutoffs; Study plots shows prediction skill." :
         `${scope === "index" ? "Observed index values" : scope === "catch" ? "Recorded catches" : scope === "tag" ? "Observed tag recaptures" : "Observed values"} (points) and model predictions (lines).`)) :
       tab === "compositions" ? (compositionOverview() ?
         "Observed bars and predicted lines. Common-bin samples are pooled using raw sample counts; other samples are shown separately. Choose a fishery to inspect individual samples." :
@@ -500,7 +502,7 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
     const split = new Map();
     for (const row of rows) {
       const key = tab === "series" ? row.group : tab === "fits" ? JSON.stringify([row.series, row.unit]) :
-        overview ? JSON.stringify([row.series, row.model, row.bin_unit]) : "all";
+        overview ? JSON.stringify([row.series, row.model, row.bin_unit]) : tab === "reports" && row.facet ? row.facet : "all";
       if (!split.has(key)) split.set(key, []);
       split.get(key).push(row);
     }
@@ -524,7 +526,7 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
     const compatible = tab === "series" && unique(rows.map(r => JSON.stringify([r.unit, r.axis_label || ""]))).length === 1;
     const charts = panels.map(part => {
       const row = part[0];
-      const label = tab === "series" ? groupLabel(row) : (row.series_label || row.series) +
+      const label = tab === "series" ? groupLabel(row) : tab === "reports" ? row.facet : (row.series_label || row.series) +
         (overview && selected.size > 1 ? ` / ${row.label}` : "") +
         (overview && row.condition_bin != null ? ` · ${format(row.condition_bin)} ${row.condition_unit || ""}` : "") +
         (overview && !row.pooled ? ` · ${format(row.time)} · ${row.record}` : "");
@@ -567,7 +569,17 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
     const xname = ["curves", "reports"].includes(tab) ? "x" : tab === "compositions" ? "bin" : "time";
     const yname = ["series", "curves", "reports"].includes(tab) ? "value" : residual ? "residual" : "predicted";
     const observations = ["fits", "compositions"].includes(tab) && !residual;
-    const axisRows = options.axisRows || rows;
+    let axisRows = options.axisRows || rows;
+    const hindcast = data.type === "hindcast" && tab === "fits" && !residual;
+    let history = [];
+    if (hindcast) {
+      const times = rows.map(r => r.time), cutoffs = rows.map(r => r.cutoff);
+      const window = Math.max(Math.max(...times) - Math.min(...times), ...rows.map(r => r.lead));
+      history = hindcastHistory.filter(r => r.series === rows[0].series &&
+        r.time >= Math.min(...cutoffs) - window && r.time <= Math.max(...times));
+      if (!history.length) history = [...new Map(rows.map(r => [r.time, r])).values()];
+      axisRows = [...axisRows, ...history, ...cutoffs.map(time => ({time}))];
+    }
     const values = axisRows.flatMap(r => observations ? [r.observed, r.predicted] : [r[yname], r.lower, r.upper]).filter(Number.isFinite);
     if (!values.length) { byId("chart").append(node("p", "No finite values to draw.", "empty")); byId("download-svg").hidden = true; return; }
     const magnitude = values.reduce((m, v) => Math.max(m, Math.abs(v)), 0);
@@ -605,7 +617,8 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
     }
     const totalHeight = options.legend === false ? height + 10 : legendY + 18;
     let [xmin, xmax] = extent(axisRows.map(r => r[xname]).filter(Number.isFinite));
-    let [ymin, ymax] = extent(values);
+    const references = unique(rows.map(r => r.reference_line).filter(Number.isFinite));
+    let [ymin, ymax] = extent([...values, ...references]);
     ymin = Math.min(0, ymin); ymax = Math.max(0, ymax);
     const binEdges = new Map();
     if (tab === "compositions") {
@@ -666,6 +679,22 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
     mathText(xAxisLabel, xLabel);
     axisLabel.setAttribute("transform", `rotate(-90 16 ${(height - bottom + top) / 2})`);
     if (residual) el("line", {x1: left, x2: width - right, y1: py(0), y2: py(0), stroke: "#839199", "stroke-dasharray": "4 4"});
+    for (const value of references) el("line", {x1: left, x2: width - right, y1: py(value), y2: py(value),
+      stroke: "#839199", "stroke-dasharray": "4 4", "data-reference": value});
+    if (hindcast) {
+      let path = "", segment = false;
+      for (const p of [...history].sort((a, b) => a.time - b.time)) {
+        if (!Number.isFinite(p.observed)) { segment = false; continue; }
+        path += `${segment ? "L" : "M"}${px(p.time)},${py(p.observed)} `; segment = true;
+        el("circle", {cx: px(p.time), cy: py(p.observed), r: 3, fill: "#283e48", "data-hindcast-observed": p.observed});
+      }
+      el("path", {d: path, fill: "none", stroke: "#283e48", "stroke-width": 1.3});
+      for (const model of lineModels) {
+        const cutoff = rows.find(r => r.model === model.id)?.cutoff;
+        if (Number.isFinite(cutoff)) el("line", {x1: px(cutoff), x2: px(cutoff), y1: top, y2: height - bottom,
+          stroke: lineColor(model.id), "stroke-opacity": .3, "stroke-dasharray": "3 4", "data-cutoff": cutoff});
+      }
+    }
     for (const model of lineModels) {
       const points = rows.filter(r => lineId(r) === model.id).sort((a, b) => a[xname] - b[xname]);
       if (!points.length) continue;
@@ -696,7 +725,7 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
         if (!Number.isFinite(p[yname])) { segment = false; continue; }
         path += `${segment ? "L" : "M"}${px(p[xname])},${py(p[yname])} `;
         segment = true;
-        if (residual || points.length === 1) el("circle", {cx: px(p[xname]), cy: py(p[yname]), r: 3, fill: lineColor(model.id)});
+        if (residual || hindcast || points.length === 1 || rows[0].metric === "MASE") el("circle", {cx: px(p[xname]), cy: py(p[yname]), r: 3, fill: hindcast ? "white" : lineColor(model.id), stroke: lineColor(model.id)});
       }
       if (!residual) el("path", {d: path, fill: "none", stroke: tab === "compositions" && lineModels.length === 1 ? "#756294" : lineColor(model.id), "stroke-width": 2.5,
         "data-predicted": tab === "compositions" ? "true" : "false",
@@ -705,7 +734,7 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
         const end = points[points.length - 1];
         if (Number.isFinite(end[yname])) el("circle", {cx: px(end[xname]), cy: py(end[yname]), r: 4, fill: lineColor(model.id)});
       }
-      if (observations && tab !== "compositions") points.filter(p => Number.isFinite(p.observed)).forEach(p =>
+      if (observations && tab !== "compositions" && !hindcast) points.filter(p => Number.isFinite(p.observed)).forEach(p =>
         el("circle", {cx: px(p[xname]), cy: py(p.observed), r: 3.5, fill: "white", stroke: lineColor(model.id), "stroke-width": 1.5}));
     }
     for (const item of legendPositions) {
