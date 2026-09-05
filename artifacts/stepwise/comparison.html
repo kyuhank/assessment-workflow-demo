@@ -740,6 +740,20 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
       }
     }
     const observedKeys = new Set();
+    const indexObservations = observations && tab === "fits" && rows[0].kind === "index" && !hindcast;
+    if (indexObservations) {
+      // One translucent layer keeps coincident observations light. Draw all
+      // observations before any prediction so model order cannot obscure a fit.
+      const layer = el("g", {"data-layer": "index-observations", opacity: .6});
+      for (const p of rows.filter(p => Number.isFinite(p.observed))) {
+        const key = JSON.stringify([p[xname], p.observed]);
+        if (observedKeys.has(key)) continue;
+        observedKeys.add(key);
+        layer.append(el("circle", {cx: px(p[xname]), cy: py(p.observed),
+          r: options.compact ? 2 : 2.4, fill: "white", stroke: "#65757d",
+          "stroke-width": .8, "data-observed": p.observed}));
+      }
+    }
     for (const model of lineModels) {
       const points = rows.filter(r => lineId(r) === model.id).sort((a, b) => a[xname] - b[xname]);
       if (!points.length) continue;
@@ -782,7 +796,7 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
         const end = points[points.length - 1];
         if (Number.isFinite(end[yname])) el("circle", {cx: px(end[xname]), cy: py(end[yname]), r: 4, fill: lineColor(model.id)});
       }
-      if (observations && tab !== "compositions" && !hindcast) points.filter(p => Number.isFinite(p.observed)).forEach(p => {
+      if (observations && tab !== "compositions" && !hindcast && !indexObservations) points.filter(p => Number.isFinite(p.observed)).forEach(p => {
         const key = JSON.stringify([p[xname], p.observed]);
         if (observedKeys.has(key)) return;
         observedKeys.add(key);
