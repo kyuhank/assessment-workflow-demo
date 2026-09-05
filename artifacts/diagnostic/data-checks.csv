@@ -1,0 +1,4 @@
+"check","status","value","threshold","detail","model","label"
+"optimization","passed",0,0,"Optimizer termination code; evaluate model adequacy separately","alb","ALB reference"
+"maximum_gradient","passed",4.86473008082501e-05,1e-04,"Maximum absolute gradient on the fitted parameter scale","alb","ALB reference"
+"catch_conditioning","passed",1.05409399620005e-06,0.001,"Maximum relative error of positive conditioned catches","alb","ALB reference"

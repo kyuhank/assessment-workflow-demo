@@ -1,0 +1,9 @@
+"study","type","models","passed","failed","unknown"
+"diagnostic","comparison",1,1,0,0
+"stepwise","stepwise",4,4,0,0
+"jitter","jitter",9,8,1,0
+"selftest","selftest",6,6,0,0
+"retrospective","retrospective",6,6,0,0
+"sensitivity","sensitivity",3,3,0,0
+"ensemble","ensemble",7,7,0,0
+"formats","comparison",1,1,0,0

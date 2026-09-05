@@ -1,0 +1,7 @@
+"level","quantity","value","lower","upper"
+1,"Spawning depletion",0.4,0.32,0.48
+2,"Spawning depletion",0.43,0.344,0.516
+3,"Spawning depletion",0.46,0.368,0.552
+1,"Fishing intensity",0.7,0.56,0.84
+2,"Fishing intensity",0.64,0.512,0.768
+3,"Fishing intensity",0.59,0.472,0.708

@@ -1,0 +1,5 @@
+"id","parent","change"
+"initial",,"Initial configuration"
+"data-update","initial","Update observations"
+"biology-update","data-update","Update biological assumptions"
+"reference","biology-update","Select diagnostic configuration"
