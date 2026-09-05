@@ -1,7 +1,7 @@
 "Resource","Figures and tables","Interactive output"
 "Workflow demonstration","[PDF report](https://kyuhank.github.io/assessment-workflow-demo/main.pdf)","[HTML report](https://kyuhank.github.io/assessment-workflow-demo/main.html)"
 "Diagnostic fit","[HTML supplement](https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/report.html)","[Model viewer](https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/comparison.html)"
-"Stepwise development","[HTML supplement](https://kyuhank.github.io/assessment-workflow-demo/artifacts/stepwise/report.html)","[Model viewer](https://kyuhank.github.io/assessment-workflow-demo/artifacts/stepwise/comparison.html)"
+"Stepwise development","[HTML supplement](https://kyuhank.github.io/assessment-workflow-demo/artifacts/stepwise/report.html)","[Compare development steps](https://kyuhank.github.io/assessment-workflow-demo/artifacts/stepwise/comparison.html#overview)"
 "Jitter","[HTML supplement](https://kyuhank.github.io/assessment-workflow-demo/artifacts/jitter/report.html)","[Model viewer](https://kyuhank.github.io/assessment-workflow-demo/artifacts/jitter/comparison.html)"
 "Self-test","[HTML supplement](https://kyuhank.github.io/assessment-workflow-demo/artifacts/selftest/report.html)","[Model viewer](https://kyuhank.github.io/assessment-workflow-demo/artifacts/selftest/comparison.html)"
 "Retrospective analysis","[HTML supplement](https://kyuhank.github.io/assessment-workflow-demo/artifacts/retrospective/report.html)","[Model viewer](https://kyuhank.github.io/assessment-workflow-demo/artifacts/retrospective/comparison.html)"
