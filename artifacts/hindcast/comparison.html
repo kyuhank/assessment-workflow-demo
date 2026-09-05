@@ -103,117 +103,13 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
 <button id="download-svg" type="button">Save figure</button><button id="download-csv" type="button">Download data</button></div>
 <h2 id="plot-title"></h2><p id="definition" class="muted"></p>
 <div id="chart" role="img" aria-label="Selected model comparison"></div>
+<div id="sample-pages" class="table-pages" hidden><button id="previous-samples" type="button">Previous samples</button><span id="sample-page-number"></span><button id="next-samples" type="button">Next samples</button></div>
 <div id="legend" class="legend"></div><p id="hover" class="hover" aria-live="polite"></p>
 <details id="data-details"><summary>View data</summary><p id="table-note" class="muted"></p><div class="table-pages"><button id="previous-page" type="button">Previous</button><span id="page-number"></span><button id="next-page" type="button">Next</button></div><div id="table" class="table-wrap" tabindex="0" role="region" aria-label="Selected result data"></div></details>
 </section><p class="footnote">Numerical checks describe the checks supplied with each result. They do not establish model adequacy.</p>
 </main></div>
-<script id="result-data" type="application/json">{"schema_version":"1.0","title":"Hindcasting","type":"hindcast","reference":"hindcast-1","models":[{"id":"hindcast-1","label":"Through 2013","metadata":{"training_end":2013,"horizon":3,"time_label":"Year","study":"hindcast","purpose":"workflow_demo","illustrative":true,"method":"Log-linear index extrapolation; a display example, not a stock assessment forecast"}},{"id":"hindcast-2","label":"Through 2016","metadata":{"training_end":2016,"horizon":3,"time_label":"Year","study":"hindcast","purpose":"workflow_demo","illustrative":true,"method":"Log-linear index extrapolation; a display example, not a stock assessment forecast"}},{"id":"hindcast-3","label":"Through 2019","metadata":{"training_end":2019,"horizon":3,"time_label":"Year","study":"hindcast","purpose":"workflow_demo","illustrative":true,"method":"Log-linear index extrapolation; a display example, not a stock assessment forecast"}}],"changes":{"encoding":"columns-v1","names":["id","parent","change"],"columns":[{"values":["hindcast-1","hindcast-2","hindcast-3"]},{"dictionary":[null],"index":[0,0,0]},{"dictionary":["No change description supplied"],"index":[0,0,0]}],"n":3},"series":{"encoding":"columns-v1","names":["time","metric","group","value","unit","definition","model","label"],"columns":[{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]}],"n":0},"fits":{"encoding":"columns-v1","names":["time","series","observed","unit","predicted","kind","cutoff","lead","model","label"],"columns":[{"dictionary":[2014,2015,2016,2017,2018,2019,2020,2021,2022],"index":[0,1,2,0,1,2,0,1,2,3,4,5,3,4,5,3,4,5,6,7,8,6,7,8,6,7,8]},{"dictionary":["Index 18 (Region 1)","Index 19 (Region 1)","Index 20 (Region 2)"],"index":[0,0,0,1,1,1,2,2,2,0,0,0,1,1,1,2,2,2,0,0,0,1,1,1,2,2,2]},{"values":[0.534249440170542,0.610459945494768,0.483833914957584,0.869128916645273,0.923487470227196,0.994049496935054,1.04373534993691,1.22377077691567,1.13572929605611,0.503585067785675,0.44199217333407,0.466975339471439,0.679637993540111,1.1614387047662,0.909406517143503,0.734357067400453,0.64550184014846,0.713722524698996,0.377731205082218,0.384903092509445,0.533173522636986,0.960523282163485,0.974737478989675,0.665420460916155,0.772716002092201,0.751048561936257,1.00202993070836]},{"dictionary":["geometric-mean-scaled index"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[0.387012000364884,0.373787557177581,0.361015001522059,0.906963667394703,0.895639151044182,0.884456034702485,0.518985857113952,0.50759671339495,0.496457504414775,0.373386491982264,0.361201844692789,0.34941481658011,0.888669766108376,0.878460114579775,0.868367758573438,0.563736104043877,0.553282231807705,0.543022215249653,0.354214846418289,0.343012329654471,0.332164107418713,0.86720888773413,0.857729234131929,0.848353204735716,0.555245930114159,0.54544579760967,0.535818638182328]},{"dictionary":["index"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":[2013,2016,2019],"index":[0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2]},{"dictionary":[1,2,3],"index":[0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2]},{"dictionary":["hindcast-1","hindcast-2","hindcast-3"],"index":[0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2]},{"dictionary":["Through 2013","Through 2016","Through 2019"],"index":[0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2]}],"n":27},"compositions":{"encoding":"columns-v1","names":["time","axis","series","bin","observed","predicted","sample_size","model","label"],"columns":[{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]}],"n":0},"annual":null,"checks":{"encoding":"columns-v1","names":["check","status","value","threshold","detail","model","label"],"columns":[{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]}],"n":0},"status":{"encoding":"columns-v1","names":["model","label","status","passed","failed","unknown"],"columns":[{"values":["hindcast-1","hindcast-2","hindcast-3"]},{"values":["Through 2013","Through 2016","Through 2019"]},{"dictionary":["unknown"],"index":[0,0,0]},{"dictionary":[0],"index":[0,0,0]},{"dictionary":[0],"index":[0,0,0]},{"dictionary":[0],"index":[0,0,0]}],"n":3},"tables":[{"model":"hindcast-1","label":"Through 2013","name":"hindcast_scores","columns":["series","lead","unit","n","bias","rmse"],"rows":{"encoding":"columns-v1","names":["series","lead","unit","n","bias","rmse"],"columns":[{"dictionary":["Index 18 (Region 1)","Index 19 (Region 1)","Index 20 (Region 2)"],"index":[0,1,2,0,1,2,0,1,2]},{"dictionary":[1,2,3],"index":[0,0,0,1,1,1,2,2,2]},{"dictionary":["geometric-mean-scaled index"],"index":[0,0,0,0,0,0,0,0,0]},{"dictionary":[1],"index":[0,0,0,0,0,0,0,0,0]},{"values":[-0.147237439805658,0.0378347507494305,-0.524749492822953,-0.236672388317187,-0.0278483191830147,-0.716174063520724,-0.122818913435525,-0.109593462232569,-0.639271791641333]},{"values":[0.147237439805658,0.0378347507494305,0.524749492822953,0.236672388317187,0.0278483191830147,0.716174063520724,0.122818913435525,0.109593462232569,0.639271791641333]}],"n":9}},{"model":"hindcast-2","label":"Through 2016","name":"hindcast_scores","columns":["series","lead","unit","n","bias","rmse"],"rows":{"encoding":"columns-v1","names":["series","lead","unit","n","bias","rmse"],"columns":[{"dictionary":["Index 18 (Region 1)","Index 19 (Region 1)","Index 20 (Region 2)"],"index":[0,1,2,0,1,2,0,1,2]},{"dictionary":[1,2,3],"index":[0,0,0,1,1,1,2,2,2]},{"dictionary":["geometric-mean-scaled index"],"index":[0,0,0,0,0,0,0,0,0]},{"dictionary":[1],"index":[0,0,0,0,0,0,0,0,0]},{"values":[-0.130198575803411,0.209031772568265,-0.170620963356576,-0.0807903286412809,-0.282978590186427,-0.0922196083407555,-0.117560522891329,-0.0410387585700646,-0.170700309449343]},{"values":[0.130198575803411,0.209031772568265,0.170620963356576,0.0807903286412809,0.282978590186427,0.0922196083407555,0.117560522891329,0.0410387585700646,0.170700309449343]}],"n":9}},{"model":"hindcast-3","label":"Through 2019","name":"hindcast_scores","columns":["series","lead","unit","n","bias","rmse"],"rows":{"encoding":"columns-v1","names":["series","lead","unit","n","bias","rmse"],"columns":[{"dictionary":["Index 18 (Region 1)","Index 19 (Region 1)","Index 20 (Region 2)"],"index":[0,1,2,0,1,2,0,1,2]},{"dictionary":[1,2,3],"index":[0,0,0,1,1,1,2,2,2]},{"dictionary":["geometric-mean-scaled index"],"index":[0,0,0,0,0,0,0,0,0]},{"dictionary":[1],"index":[0,0,0,0,0,0,0,0,0]},{"values":[-0.0235163586639294,-0.0933143944293546,-0.217470071978042,-0.0418907628549741,-0.117008244857746,-0.205602764326587,-0.201009415218273,0.182932743819561,-0.466211292526037]},{"values":[0.0235163586639294,0.0933143944293546,0.217470071978042,0.0418907628549741,0.117008244857746,0.205602764326587,0.201009415218273,0.182932743819561,0.466211292526037]}],"n":9}}],"views":[]}</script>
-<script>(() => {/* One column per original sample: no pooling across changing bin supports.
- * Rasterize only the display cells; exact values stay in the result payload.
- * Both observed and predicted panels use the same linear probability scale.
- */
-const compositionMap = (rows, options) => {
-  const ns = "http://www.w3.org/2000/svg";
-  const svg = document.createElementNS(ns, "svg");
-  const width = options.width, height = 355, left = 64, right = 18;
-  const mapWidth = width - left - right, mapHeight = 102;
-  svg.setAttribute("xmlns", ns); svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
-  svg.setAttribute("role", "img"); svg.setAttribute("aria-label", options.label);
-  const el = (tag, attrs, text) => {
-    const element = document.createElementNS(ns, tag);
-    for (const [name, value] of Object.entries(attrs)) element.setAttribute(name, value);
-    if (text !== undefined) element.textContent = text;
-    svg.append(element); return element;
-  };
-  const text = (x, y, label, anchor = "middle", size = 11) => el("text",
-    {x, y, "text-anchor": anchor, "font-family": "sans-serif", "font-size": size, fill: "#65757d"}, label);
-  el("rect", {width, height, fill: "white"});
-  const label = text(left, 15, options.label, "start", 12);
-  // Preserve the full accessible label while wrapping long supplied names.
-  const words = options.label.split(/\s+/); let line = "", lines = [];
-  const limit = Math.max(20, Math.floor(mapWidth / 6.5));
-  for (const word of words) {
-    if (line && (line + " " + word).length > limit) { lines.push(line); line = word; }
-    else line += (line ? " " : "") + word;
-  }
-  lines.push(line); label.replaceChildren();
-  for (const [i, content] of lines.slice(0, 2).entries()) {
-    const span = document.createElementNS(ns, "tspan"); span.setAttribute("x", left);
-    span.setAttribute("dy", i ? 13 : 0); span.textContent = content; label.append(span);
-  }
-  const sampleKey = row => JSON.stringify([row.time, row.record == null ? null : String(row.record)]);
-  const samples = new Map();
-  for (const row of rows) {
-    const key = sampleKey(row);
-    if (!samples.has(key)) samples.set(key, {row, values: new Map()});
-    samples.get(key).values.set(row.bin, row);
-  }
-  const ordered = [...samples.values()].sort((a, b) => a.row.time - b.row.time ||
-    (a.row.condition_bin || 0) - (b.row.condition_bin || 0) || String(a.row.record).localeCompare(String(b.row.record), "en", {numeric: true}));
-  const bins = [...new Set(rows.map(r => r.bin))].sort((a, b) => a - b);
-  const maximum = rows.reduce((m, row) => Math.max(m,
-    Number.isFinite(row.observed) ? row.observed : 0, Number.isFinite(row.predicted) ? row.predicted : 0), 0) || 1;
-  const shade = value => {
-    const p = Math.max(0, Math.min(1, value / maximum));
-    return `rgb(${[24, 126, 131].map(channel => Math.round(255 + (channel - 255) * p)).join(",")})`;
-  };
-  const sampleText = row => `${options.label} · ${options.timeLabel} ${row.time}` +
-    (row.condition_bin != null ? ` · length ${row.condition_bin} ${row.condition_unit || ""}` : "") +
-    (row.record != null ? ` · sample ${row.record}` : "");
-  svg.setAttribute("data-samples", ordered.length);
-  el("desc", {}, `${ordered.length} original samples. Observed and predicted proportions on a common scale; absent bins are grey.`);
-  for (const [k, field] of ["observed", "predicted"].entries()) {
-    const top = 48 + k * 136;
-    text(left, top - 7, field === "observed" ? "Observed" : "Predicted", "start");
-    const canvas = document.createElement("canvas");
-    const cellWidth = Math.max(1, Math.ceil(2 * mapWidth / ordered.length));
-    const cellHeight = Math.max(1, Math.ceil(2 * mapHeight / bins.length));
-    canvas.width = ordered.length * cellWidth; canvas.height = bins.length * cellHeight;
-    const context = canvas.getContext("2d");
-    context.fillStyle = "#edf1f3"; context.fillRect(0, 0, canvas.width, canvas.height);
-    for (const [i, sample] of ordered.entries()) for (const [j, bin] of bins.entries()) {
-      const value = sample.values.get(bin)?.[field];
-      if (!Number.isFinite(value)) continue;
-      context.fillStyle = shade(value);
-      context.fillRect(i * cellWidth, (bins.length - j - 1) * cellHeight, cellWidth, cellHeight);
-    }
-    const map = el("image", {x: left, y: top, width: mapWidth, height: mapHeight,
-      href: canvas.toDataURL("image/png"), preserveAspectRatio: "none", style: "image-rendering:pixelated;cursor:crosshair",
-      tabindex: 0, role: "button", "aria-label": `${field} proportions, ${options.label}; select a sample`});
-    const sampleAt = event => {
-      const rect = map.getBoundingClientRect();
-      const i = Math.max(0, Math.min(ordered.length - 1, Math.floor((event.clientX - rect.left) / rect.width * ordered.length)));
-      const j = Math.max(0, Math.min(bins.length - 1, bins.length - 1 - Math.floor((event.clientY - rect.top) / rect.height * bins.length)));
-      return {sample: ordered[i], bin: bins[j]};
-    };
-    map.addEventListener("pointermove", event => {
-      const {sample, bin} = sampleAt(event); const value = sample.values.get(bin)?.[field];
-      options.onHover(`${sampleText(sample.row)} · bin ${bin} · ${field}: ${Number.isFinite(value) ? value.toPrecision(4) : "not supplied"}`);
-    });
-    map.addEventListener("click", event => options.onSample(sampleAt(event).sample.row));
-    map.addEventListener("keydown", event => {
-      if (event.key === "Enter" || event.key === " ") { event.preventDefault(); options.onSample(ordered[0].row); }
-    });
-    const positions = [...new Set([0, Math.floor((bins.length - 1) / 2), bins.length - 1])];
-    for (const j of positions) text(left - 8, top + (bins.length - j - .5) / bins.length * mapHeight + 4, bins[j], "end");
-    const axis = rows[0].axis === "conditional_age" ? "Age" : rows[0].axis.charAt(0).toUpperCase() + rows[0].axis.slice(1);
-    const yLabel = text(14, top + mapHeight / 2, `${axis} bin${rows[0].bin_unit ? ` (${rows[0].bin_unit})` : ""}`);
-    yLabel.setAttribute("transform", `rotate(-90 14 ${top + mapHeight / 2})`);
-    const indices = [...new Set([0, Math.floor((ordered.length - 1) / 2), ordered.length - 1])];
-    for (const i of indices) text(left + (i + .5) / ordered.length * mapWidth, top + mapHeight + 15,
-      options.timeLabel === "Year" ? Math.floor(ordered[i].row.time) : Number(ordered[i].row.time.toPrecision(4)),
-      i === 0 ? "start" : i === ordered.length - 1 ? "end" : "middle", 10);
-  }
-  text(left + mapWidth / 2, 320, `Samples, ordered by ${options.timeLabel.toLowerCase()}`);
-  const barWidth = Math.min(100, mapWidth / 3);
-  for (let i = 0; i < 50; i++) el("rect", {x: left + i * barWidth / 50, y: 335,
-    width: barWidth / 50 + .2, height: 7, fill: shade(maximum * i / 49)});
-  text(left, 353, "0", "start", 9);
-  text(left + barWidth, 353, Number(maximum.toPrecision(2)), "end", 9);
-  text(left + barWidth + 10, 342, "Proportion", "start", 10);
-  return svg;
-};
-/* Offline viewer: data selection is separate from SVG drawing and downloads. */
+<script id="result-data" type="application/json">{"schema_version":"1.0","title":"Hindcasting","type":"hindcast","reference":"hindcast-1","models":[{"id":"hindcast-1","label":"Through 2013","metadata":{"training_end":2013,"horizon":3,"time_label":"Year","study":"hindcast","purpose":"workflow_demo","illustrative":true,"method":"Log-linear index extrapolation; a display example, not a stock assessment forecast"}},{"id":"hindcast-2","label":"Through 2016","metadata":{"training_end":2016,"horizon":3,"time_label":"Year","study":"hindcast","purpose":"workflow_demo","illustrative":true,"method":"Log-linear index extrapolation; a display example, not a stock assessment forecast"}},{"id":"hindcast-3","label":"Through 2019","metadata":{"training_end":2019,"horizon":3,"time_label":"Year","study":"hindcast","purpose":"workflow_demo","illustrative":true,"method":"Log-linear index extrapolation; a display example, not a stock assessment forecast"}}],"changes":{"encoding":"columns-v1","names":["id","parent","change"],"columns":[{"values":["hindcast-1","hindcast-2","hindcast-3"]},{"dictionary":[null],"index":[0,0,0]},{"dictionary":["No change description supplied"],"index":[0,0,0]}],"n":3},"series":{"encoding":"columns-v1","names":["time","metric","group","value","unit","definition","model","label"],"columns":[{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]}],"n":0},"fits":{"encoding":"columns-v1","names":["time","series","observed","unit","predicted","kind","cutoff","lead","model","label"],"columns":[{"dictionary":[2014,2015,2016,2017,2018,2019,2020,2021,2022],"index":[0,1,2,0,1,2,0,1,2,3,4,5,3,4,5,3,4,5,6,7,8,6,7,8,6,7,8]},{"dictionary":["Index 18 (Region 1)","Index 19 (Region 1)","Index 20 (Region 2)"],"index":[0,0,0,1,1,1,2,2,2,0,0,0,1,1,1,2,2,2,0,0,0,1,1,1,2,2,2]},{"values":[0.534249440170542,0.610459945494768,0.483833914957584,0.869128916645273,0.923487470227196,0.994049496935054,1.04373534993691,1.22377077691567,1.13572929605611,0.503585067785675,0.44199217333407,0.466975339471439,0.679637993540111,1.1614387047662,0.909406517143503,0.734357067400453,0.64550184014846,0.713722524698996,0.377731205082218,0.384903092509445,0.533173522636986,0.960523282163485,0.974737478989675,0.665420460916155,0.772716002092201,0.751048561936257,1.00202993070836]},{"dictionary":["geometric-mean-scaled index"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"values":[0.387012000364884,0.373787557177581,0.361015001522059,0.906963667394703,0.895639151044182,0.884456034702485,0.518985857113952,0.50759671339495,0.496457504414775,0.373386491982264,0.361201844692789,0.34941481658011,0.888669766108376,0.878460114579775,0.868367758573438,0.563736104043877,0.553282231807705,0.543022215249653,0.354214846418289,0.343012329654471,0.332164107418713,0.86720888773413,0.857729234131929,0.848353204735716,0.555245930114159,0.54544579760967,0.535818638182328]},{"dictionary":["index"],"index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"dictionary":[2013,2016,2019],"index":[0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2]},{"dictionary":[1,2,3],"index":[0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2]},{"dictionary":["hindcast-1","hindcast-2","hindcast-3"],"index":[0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2]},{"dictionary":["Through 2013","Through 2016","Through 2019"],"index":[0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2]}],"n":27},"compositions":{"encoding":"columns-v1","names":[],"columns":[],"n":0},"composition_summaries":{"encoding":"columns-v1","names":[],"columns":[],"n":0},"annual":null,"checks":{"encoding":"columns-v1","names":["check","status","value","threshold","detail","model","label"],"columns":[{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]},{"values":[]}],"n":0},"status":{"encoding":"columns-v1","names":["model","label","status","passed","failed","unknown"],"columns":[{"values":["hindcast-1","hindcast-2","hindcast-3"]},{"values":["Through 2013","Through 2016","Through 2019"]},{"dictionary":["unknown"],"index":[0,0,0]},{"dictionary":[0],"index":[0,0,0]},{"dictionary":[0],"index":[0,0,0]},{"dictionary":[0],"index":[0,0,0]}],"n":3},"tables":[{"model":"hindcast-1","label":"Through 2013","name":"hindcast_scores","columns":["series","lead","unit","n","bias","rmse"],"rows":{"encoding":"columns-v1","names":["series","lead","unit","n","bias","rmse"],"columns":[{"dictionary":["Index 18 (Region 1)","Index 19 (Region 1)","Index 20 (Region 2)"],"index":[0,1,2,0,1,2,0,1,2]},{"dictionary":[1,2,3],"index":[0,0,0,1,1,1,2,2,2]},{"dictionary":["geometric-mean-scaled index"],"index":[0,0,0,0,0,0,0,0,0]},{"dictionary":[1],"index":[0,0,0,0,0,0,0,0,0]},{"values":[-0.147237439805658,0.0378347507494305,-0.524749492822953,-0.236672388317187,-0.0278483191830147,-0.716174063520724,-0.122818913435525,-0.109593462232569,-0.639271791641333]},{"values":[0.147237439805658,0.0378347507494305,0.524749492822953,0.236672388317187,0.0278483191830147,0.716174063520724,0.122818913435525,0.109593462232569,0.639271791641333]}],"n":9}},{"model":"hindcast-2","label":"Through 2016","name":"hindcast_scores","columns":["series","lead","unit","n","bias","rmse"],"rows":{"encoding":"columns-v1","names":["series","lead","unit","n","bias","rmse"],"columns":[{"dictionary":["Index 18 (Region 1)","Index 19 (Region 1)","Index 20 (Region 2)"],"index":[0,1,2,0,1,2,0,1,2]},{"dictionary":[1,2,3],"index":[0,0,0,1,1,1,2,2,2]},{"dictionary":["geometric-mean-scaled index"],"index":[0,0,0,0,0,0,0,0,0]},{"dictionary":[1],"index":[0,0,0,0,0,0,0,0,0]},{"values":[-0.130198575803411,0.209031772568265,-0.170620963356576,-0.0807903286412809,-0.282978590186427,-0.0922196083407555,-0.117560522891329,-0.0410387585700646,-0.170700309449343]},{"values":[0.130198575803411,0.209031772568265,0.170620963356576,0.0807903286412809,0.282978590186427,0.0922196083407555,0.117560522891329,0.0410387585700646,0.170700309449343]}],"n":9}},{"model":"hindcast-3","label":"Through 2019","name":"hindcast_scores","columns":["series","lead","unit","n","bias","rmse"],"rows":{"encoding":"columns-v1","names":["series","lead","unit","n","bias","rmse"],"columns":[{"dictionary":["Index 18 (Region 1)","Index 19 (Region 1)","Index 20 (Region 2)"],"index":[0,1,2,0,1,2,0,1,2]},{"dictionary":[1,2,3],"index":[0,0,0,1,1,1,2,2,2]},{"dictionary":["geometric-mean-scaled index"],"index":[0,0,0,0,0,0,0,0,0]},{"dictionary":[1],"index":[0,0,0,0,0,0,0,0,0]},{"values":[-0.0235163586639294,-0.0933143944293546,-0.217470071978042,-0.0418907628549741,-0.117008244857746,-0.205602764326587,-0.201009415218273,0.182932743819561,-0.466211292526037]},{"values":[0.0235163586639294,0.0933143944293546,0.217470071978042,0.0418907628549741,0.117008244857746,0.205602764326587,0.201009415218273,0.182932743819561,0.466211292526037]}],"n":9}}],"views":[]}</script>
+<script>/* Offline viewer: data selection is separate from SVG drawing and downloads. */
 "use strict";
 (() => {
   const data = JSON.parse(document.getElementById("result-data").textContent);
@@ -271,7 +167,7 @@ const compositionMap = (rows, options) => {
     }
   }
   for (const name of ["changes", "checks", "status"]) data[name] = unpack(data[name]);
-  for (const name of ["series", "fits", "compositions"]) data[name] = new RowStore(data[name]);
+  for (const name of ["series", "fits", "compositions", "composition_summaries"]) data[name] = new RowStore(data[name]);
   if (data.annual) for (const name of ["series", "fits"]) data.annual[name] = new RowStore(data.annual[name]);
   data.views = data.views || [];
   data.curves = new RowStore(data.tables.filter(t => t.name === "curves").flatMap(t =>
@@ -402,7 +298,9 @@ const compositionMap = (rows, options) => {
   choices.tables = data.tables.map((t, i) => ({key: [i], label: `${t.label} / ${pretty(t.name)}`}));
   byId("quantity").addEventListener("change", () => { savedChoice[activeTab] = byId("quantity").value; tablePage = 0; groups(); samples(); render(); });
   byId("group").addEventListener("change", () => { savedGroup = byId("group").value; tablePage = 0; render(); });
-  byId("sample").addEventListener("change", () => { tablePage = 0; render(); });
+  byId("sample").addEventListener("change", () => { tablePage = 0; samplePage = 0; render(); });
+  byId("previous-samples").addEventListener("click", () => { samplePage--; render(); });
+  byId("next-samples").addEventListener("click", () => { samplePage++; render(); });
   byId("previous-page").addEventListener("click", () => { tablePage--; table(currentRows); });
   byId("next-page").addEventListener("click", () => { tablePage++; table(currentRows); });
   byId("residual").addEventListener("change", render);
@@ -449,14 +347,16 @@ const compositionMap = (rows, options) => {
     if (multiple && [...byId("group").options].some(o => o.value === savedGroup)) byId("group").value = savedGroup;
   }
 
+  let samplePage = 0;
   function samples() {
+    samplePage = 0;
     const show = tab === "compositions" && byId("quantity").value !== allSeries;
     byId("sample").hidden = !show; byId("sample-label").hidden = !show;
     byId("sample").replaceChildren();
     if (!show) return;
     const choice = choices.compositions[Number(byId("quantity").value)];
     if (!choice) return;
-    const all = node("option", "All samples"); all.value = allSeries; byId("sample").append(all);
+    const all = node("option", "All years / samples"); all.value = allSeries; byId("sample").append(all);
     const rows = data.compositions.representatives(["time", "record"], {axis: choice.key[0], series: choice.key[1]}).map(({row}) => row);
     const keys = unique(rows.map(r => JSON.stringify([r.time, r.record == null ? null : String(r.record)])))
       .sort((a, b) => JSON.parse(a)[0] - JSON.parse(b)[0]);
@@ -528,8 +428,8 @@ const compositionMap = (rows, options) => {
         (data.type === "hindcast" ? "Withheld observations (points) and out-of-sample predictions (dashed lines), labelled by training cutoff." :
         `${scope === "index" ? "Observed index values" : scope === "catch" ? "Recorded catches" : scope === "tag" ? "Observed tag recaptures" : "Observed values"} (points) and model predictions (lines).`)) :
       tab === "compositions" ? (compositionOverview() ?
-        "Observed and predicted proportions for every fitted sample. Select a sample in a panel to inspect its fit. Grey cells have no supplied bin." :
-        "Observed proportions (points) and predicted proportions (lines) for the selected sample.") :
+        "Observed bars and predicted lines. Common-bin samples are pooled using raw sample counts; other samples are shown separately. Choose a fishery to inspect individual samples." :
+        "Observed proportions (bars) and predicted proportions (line) for the selected sample.") :
       tab === "checks" ? "Inspect each recorded check and threshold. Unknown checks are not passes." : "Supplied model table.";
     mathText(byId("definition"), byId("definition").textContent);
     if (data.annual && byId("resolution").value === "annual" && tab === "fits" && !byId("residual").checked)
@@ -542,6 +442,7 @@ const compositionMap = (rows, options) => {
     byId("download-csv").disabled = !rows.length;
     byId("data-details").open = ["checks", "tables"].includes(tab);
     byId("data-details").hidden = !rows.length;
+    byId("sample-pages").hidden = true;
     if (chartable) drawPanels(rows);
     else if (!rows.length) {
       byId("chart").hidden = false;
@@ -558,7 +459,7 @@ const compositionMap = (rows, options) => {
     byId("page-number").textContent = `${tablePage + 1} / ${pages}`;
     byId("previous-page").disabled = tablePage === 0;
     byId("next-page").disabled = tablePage >= pages - 1;
-    document.querySelector(".table-pages").hidden = pages === 1;
+    document.querySelector("#data-details .table-pages").hidden = pages === 1;
     if (!rows.length) return;
     const table = node("table"); const head = node("thead"); const tr = node("tr");
     currentColumns.forEach(c => { const th = node("th", pretty(c)); th.scope = "col"; tr.append(th); });
@@ -573,11 +474,23 @@ const compositionMap = (rows, options) => {
   function compositionOverview() {
     return tab === "compositions" && (byId("quantity").value === allSeries || byId("sample").value === allSeries);
   }
-  function inspectSample(row) {
-    const index = choices.compositions.findIndex(c => c.key[0] === row.axis && c.key[1] === row.series);
-    savedChoice[activeTab] = String(index); controls();
-    byId("sample").value = JSON.stringify([row.time, row.record == null ? null : String(row.record)]);
-    tablePage = 0; render(); byId("quantity").focus();
+  function compositionPanels(rows) {
+    const key = row => JSON.stringify([row.model, row.axis, row.series, row.bin_unit, row.condition_bin]);
+    const pooled = new Map();
+    for (const row of data.composition_summaries.select({model: selected, axis: scope})) {
+      const id = key(row);
+      if (!pooled.has(id)) pooled.set(id, []);
+      pooled.get(id).push({...row, pooled: true});
+    }
+    const samples = new Map(), result = new Map();
+    for (const row of rows) {
+      const id = key(row);
+      if (pooled.has(id)) { result.set(id, pooled.get(id)); continue; }
+      const sample = JSON.stringify([id, row.time, row.record]);
+      if (!samples.has(sample)) { samples.set(sample, []); result.set(sample, samples.get(sample)); }
+      samples.get(sample).push(row);
+    }
+    return [...result.values()];
   }
 
   // Split by series before drawing: never connect different fisheries or
@@ -591,7 +504,17 @@ const compositionMap = (rows, options) => {
       if (!split.has(key)) split.set(key, []);
       split.get(key).push(row);
     }
-    const panels = [...split.values()];
+    let panels = overview ? compositionPanels(rows) : [...split.values()];
+    const pageSize = 18;
+    if (overview && panels.length > 24) {
+      const pages = Math.ceil(panels.length / pageSize);
+      samplePage = Math.max(0, Math.min(samplePage, pages - 1));
+      byId("sample-pages").hidden = false;
+      byId("sample-page-number").textContent = `${samplePage * pageSize + 1}–${Math.min(panels.length, (samplePage + 1) * pageSize)} of ${panels.length} panels`;
+      byId("previous-samples").disabled = samplePage === 0;
+      byId("next-samples").disabled = samplePage === pages - 1;
+      panels = panels.slice(samplePage * pageSize, (samplePage + 1) * pageSize);
+    }
     if (tab === "series") panels.sort((a, b) => (a[0].group === "all") - (b[0].group === "all"));
     if (panels.length < 2 && !overview) { draw(rows); return; }
     const width = Math.max(320, Math.min(1100, byId("chart").clientWidth || 900));
@@ -602,12 +525,11 @@ const compositionMap = (rows, options) => {
     const charts = panels.map(part => {
       const row = part[0];
       const label = tab === "series" ? groupLabel(row) : (row.series_label || row.series) +
-        (overview && selected.size > 1 ? ` / ${row.label}` : "");
-      if (overview) return compositionMap(part, {width: panelWidth, label,
-        timeLabel: data.models.find(m => m.id === row.model)?.metadata.time_label || "Time",
-        onSample: inspectSample, onHover: text => { byId("hover").textContent = text; }});
+        (overview && selected.size > 1 ? ` / ${row.label}` : "") +
+        (overview && row.condition_bin != null ? ` · ${format(row.condition_bin)} ${row.condition_unit || ""}` : "") +
+        (overview && !row.pooled ? ` · ${format(row.time)} · ${row.record}` : "");
       return draw(part, {width: panelWidth, label, axisRows: compatible ? rows : part,
-        compact: tab === "fits", legend: false});
+        compact: tab === "fits" || overview, legend: false});
     }).filter(Boolean);
     if (!charts.length) return;
     const tileHeight = Math.max(...charts.map(svg => svg.viewBox.baseVal.height));
@@ -649,7 +571,7 @@ const compositionMap = (rows, options) => {
     const values = axisRows.flatMap(r => observations ? [r.observed, r.predicted] : [r[yname], r.lower, r.upper]).filter(Number.isFinite);
     if (!values.length) { byId("chart").append(node("p", "No finite values to draw.", "empty")); byId("download-svg").hidden = true; return; }
     const magnitude = values.reduce((m, v) => Math.max(m, Math.abs(v)), 0);
-    const scalable = !rows[0].axis_label && ["t", "kg", "fish", "number", "model biomass units", "model abundance units"].includes(rows[0].unit);
+    const scalable = !rows[0].axis_label && ["t", "kg", "fish", "number", "model biomass units", "model abundance units", "count"].includes(rows[0].unit);
     const exponent = scalable ? (magnitude >= 1e6 ? 6 : magnitude >= 1e4 ? 3 : 0) : 0;
     const divisor = 10 ** exponent;
     const displayRow = {...rows[0], unit: exponent ? `10^${exponent} ${rows[0].unit}` : rows[0].unit};
@@ -671,9 +593,9 @@ const compositionMap = (rows, options) => {
     const lineModels = tab === "reports" ? unique(rows.map(lineId)).map(id => {
       const r = rows.find(r => lineId(r) === id);
       return {id, label: data.models.length > 1 ? `${r.label} / ${r.line}` : r.line};
-    }) : data.models.filter(m => selected.has(m.id));
+    }) : data.models.filter(m => selected.has(m.id) && rows.some(r => r.model === m.id));
     const lineColor = id => tab === "reports" ? palettes[lineModels.findIndex(m => m.id === id) % palettes.length] : color(id);
-    const legendModels = options.legend === false ? [] : lineModels.filter(m => rows.some(r => lineId(r) === m.id));
+    const legendModels = options.legend === false || (tab === "compositions" && lineModels.length === 1) ? [] : lineModels.filter(m => rows.some(r => lineId(r) === m.id));
     const legendPositions = [];
     let legendX = left, legendY = height + 18;
     for (const model of legendModels) {
@@ -685,6 +607,17 @@ const compositionMap = (rows, options) => {
     let [xmin, xmax] = extent(axisRows.map(r => r[xname]).filter(Number.isFinite));
     let [ymin, ymax] = extent(values);
     ymin = Math.min(0, ymin); ymax = Math.max(0, ymax);
+    const binEdges = new Map();
+    if (tab === "compositions") {
+      const bins = unique(rows.map(r => r.bin)).sort((a, b) => a - b);
+      bins.forEach((bin, i) => {
+        const row = rows.find(r => r.bin === bin);
+        const lower = Number.isFinite(row.bin_lower) ? row.bin_lower : bin - (i ? bin - bins[i-1] : bins.length > 1 ? bins[1] - bin : 1) / 2;
+        const upper = Number.isFinite(row.bin_upper) ? row.bin_upper : bin + (i < bins.length-1 ? bins[i+1] - bin : i ? bin - bins[i-1] : 1) / 2;
+        binEdges.set(bin, [lower, upper]);
+      });
+      [xmin, xmax] = extent([...binEdges.values()].flat());
+    }
     if (xmin === xmax) { xmin -= .5; xmax += .5; }
     const pad = (ymax - ymin || Math.max(Math.abs(ymax), 1)) * .08;
     if (ymin < 0) ymin -= pad;
@@ -719,14 +652,14 @@ const compositionMap = (rows, options) => {
       text(px(value * xDivisor), height - bottom + 25, value.toLocaleString("en", {useGrouping: false, maximumFractionDigits: 6}));
     const timeLabels = unique(data.models.map(m => m.metadata.time_label).filter(Boolean));
     let xLabel = tab === "reports" ? rows[0].x_label : tab === "curves" ? pretty(rows[0].x_unit) : xname === "time" ? (timeLabels.length === 1 ? timeLabels[0] : "Time") :
-      pretty(rows[0].axis) + (rows[0].bin_unit ? ` (${rows[0].bin_unit})` : "");
+      (rows[0].axis === "conditional_age" ? "Age" : pretty(rows[0].axis)) + (rows[0].bin_unit ? ` (${rows[0].bin_unit})` : "");
     if (xExponent) xLabel = xLabel.replace(`(${rows[0].x_unit})`, `(10^${xExponent} ${rows[0].x_unit})`);
     const xAxisLabel = text(width / 2, height - 5, xLabel);
     const fitLabel = residual ? "Residual" : rows[0].kind === "index" ?
       (displayRow.unit === "geometric-mean-scaled index" ? "Relative index" : "Abundance index") :
       rows[0].kind === "tag" ? "Tag recaptures" : rows[0].kind ? pretty(rows[0].kind) : "";
     const dimensionless = ["ratio", "relative", "probability", "relative abundance", "geometric-mean-scaled index"].includes(displayRow.unit);
-    const yLabel = ["series", "curves", "reports"].includes(tab) ? quantityLabel(displayRow) : tab === "compositions" ? "Proportion" :
+    const yLabel = ["series", "curves", "reports"].includes(tab) ? quantityLabel(displayRow) : tab === "compositions" ? (rows[0].unit === "count" ? `Sample count${exponent ? ` (10^${exponent})` : ""}` : "Proportion") :
       fitLabel + (dimensionless ? "" : ` (${displayRow.unit})`);
     const axisLabel = text(16, (height - bottom + top) / 2, yLabel);
     mathText(axisLabel, yLabel);
@@ -752,6 +685,12 @@ const compositionMap = (rows, options) => {
           flush();
         }
       }
+      if (tab === "compositions") for (const p of points.filter(p => Number.isFinite(p.observed))) {
+        const edge = binEdges.get(p.bin);
+        el("rect", {x: px(edge[0]), y: py(p.observed), width: Math.max(0, px(edge[1]) - px(edge[0])),
+          height: Math.max(0, py(0) - py(p.observed)), fill: "#a9cdd0", stroke: "white", "stroke-width": .5,
+          "data-observed": p.observed, "data-bin": p.bin, "fill-opacity": lineModels.length > 1 ? .55 : 1});
+      }
       let path = "", segment = false;
       for (const p of points) {
         if (!Number.isFinite(p[yname])) { segment = false; continue; }
@@ -759,18 +698,23 @@ const compositionMap = (rows, options) => {
         segment = true;
         if (residual || points.length === 1) el("circle", {cx: px(p[xname]), cy: py(p[yname]), r: 3, fill: lineColor(model.id)});
       }
-      if (!residual) el("path", {d: path, fill: "none", stroke: lineColor(model.id), "stroke-width": 2.5,
+      if (!residual) el("path", {d: path, fill: "none", stroke: tab === "compositions" && lineModels.length === 1 ? "#756294" : lineColor(model.id), "stroke-width": 2.5,
+        "data-predicted": tab === "compositions" ? "true" : "false",
         "stroke-dasharray": data.type === "hindcast" ? "6 4" : "none", "stroke-linejoin": "round"});
       if (data.type === "retrospective" && tab === "series") {
         const end = points[points.length - 1];
         if (Number.isFinite(end[yname])) el("circle", {cx: px(end[xname]), cy: py(end[yname]), r: 4, fill: lineColor(model.id)});
       }
-      if (observations) points.filter(p => Number.isFinite(p.observed)).forEach(p =>
+      if (observations && tab !== "compositions") points.filter(p => Number.isFinite(p.observed)).forEach(p =>
         el("circle", {cx: px(p[xname]), cy: py(p.observed), r: 3.5, fill: "white", stroke: lineColor(model.id), "stroke-width": 1.5}));
     }
     for (const item of legendPositions) {
       el("line", {x1: item.x, x2: item.x + 19, y1: item.y - 4, y2: item.y - 4, stroke: lineColor(item.model.id), "stroke-width": 2.5});
       text(item.x + 26, item.y, item.model.label, "start");
+    }
+    if (tab === "compositions" && rows[0].pooled) {
+      svg.setAttribute("data-samples", rows[0].n_samples);
+      svg.setAttribute("data-unit", rows[0].unit);
     }
     const cursor = el("line", {x1: 0, x2: 0, y1: top, y2: height - bottom, stroke: "#93a6af", visibility: "hidden"});
     svg.addEventListener("pointermove", event => {
@@ -811,5 +755,4 @@ const compositionMap = (rows, options) => {
   }
   window.addEventListener("hashchange", openRequestedTab);
   openRequestedTab();
-})();
 })();</script></body></html>
