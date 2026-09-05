@@ -1,5 +1,4 @@
 "Model","Parent","Change"
-"initial",,"Initial configuration"
-"data-update","initial","Update observations"
-"biology-update","data-update","Update biological assumptions"
-"reference","biology-update","Select diagnostic configuration"
+"native-1003",,"Native MFCL baseline, INI 1003"
+"native-1007","native-1003","Native MFCL current executable, INI 1007"
+"kimsa","native-1007","MFCL-compatible KIMSA with five-pass hybrid F"

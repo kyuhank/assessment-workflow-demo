@@ -1,2 +1,5 @@
-"Quantity","Estimate","Unit","Definition"
-"SB[MSY]",1e+06,"t","Spawning potential at MSY"
+"Quantity","Median","Lower","Upper","Unit"
+"MSY",60000,48000,72000,"t/year"
+"F[MSY]",0.3,0.24,0.36,"per year"
+"SB[MSY]",1e+06,8e+05,1200000,"t"
+"SB[MSY]/SB[0]",0.28,0.22,0.34,"ratio"

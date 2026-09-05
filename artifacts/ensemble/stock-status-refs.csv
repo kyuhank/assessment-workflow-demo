@@ -1,2 +1,4 @@
 "Condition","Probability"
+"SB/SB[F=0] < 0.20",0.01
 "F/F[MSY] > 1",0.05
+"SB/SB[MSY] < 1",0.04

@@ -1,5 +1,5 @@
 "slot","id","kind","family","source","variant","feature","requirements","caption","status","reason","exported"
-"tbl-open-science-resources","open-science-resources","table","table","resources","","","","Assessment resources and output provenance.","missing_data","Supply tables$resources",FALSE
+"tbl-open-science-resources","open-science-resources","table","table","resources","","","","Assessment resources and output provenance.","available","",TRUE
 "tbl-fisheries-definitions","fisheries-definitions","table","table","fisheries","","","","Fishery definitions and observation units.","available","",TRUE
 "tbl-dm-configuration","dm-configuration","table","table","composition_settings","","dm","","Dirichlet–multinomial composition settings.","missing_data","Supply tables$composition_settings",FALSE
 "tbl-dm-groups","dm-groups","table","table","composition_groups","","dm","","Groups sharing composition-weight parameters.","missing_data","Supply tables$composition_groups",FALSE
@@ -80,3 +80,5 @@
 "fig-impact-region","impact-region","figure","stack","fishery_impacts","","","time;metric;group;facet;value;unit;definition","Contributions of fishing groups to reduced spawning potential.","missing_data","Supply tables$fishery_impacts",FALSE
 "fig-yield","yield","figure","curve","yield_curve","","","x;value;group;facet;x_label;x_unit;label;unit;definition","Equilibrium yield across fishing-mortality multipliers.","missing_data","Supply tables$yield_curve",FALSE
 "fig-projection-stock-trajectories","projection-stock-trajectories","figure","interval","projections","","","time;metric;group;facet;value;unit;definition;lower;upper;probability;uncertainty","Historical and projected quantities by scenario with supplied uncertainty intervals.","missing_data","Supply tables$projections",FALSE
+"fig-hindcast-analysis","hindcast-analysis","figure","core","model outputs","","","","Withheld observations and predictions from successive training cutoffs.","missing_data","Requires the corresponding model quantities or study collection",FALSE
+"tbl-hindcast-skill","hindcast-skill","table","table","hindcast_summary","","","","Out-of-sample prediction bias and RMSE by series and forecast lead.","missing_data","Supply tables$hindcast_summary",FALSE

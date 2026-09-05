@@ -1,5 +1,4 @@
 "Model","Label","Status","Passed","Failed","Unknown"
-"initial","Initial","passed",3,0,0
-"data-update","Data update","passed",3,0,0
-"biology-update","Biology update","passed",3,0,0
-"reference","Reference","passed",3,0,0
+"native-1003","Native MFCL / INI 1003","passed",1,0,0
+"native-1007","Native MFCL / INI 1007","passed",1,0,0
+"kimsa","KIMSA / hybrid F","passed",1,0,0

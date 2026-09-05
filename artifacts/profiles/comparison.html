@@ -351,7 +351,8 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
     byId("plot-title").textContent = choice ? choice.label + (tab === "compositions" ? ` · ${byId("sample").selectedOptions[0]?.textContent || ""}` : "") : "No data in this view";
     byId("definition").textContent = ["series", "curves", "reports"].includes(tab) ? rows[0]?.definition || "" :
       tab === "fits" ? (byId("residual").checked ? "Raw residuals: observed minus predicted, in original units." :
-        `${scope === "index" ? "Observed index values" : scope === "catch" ? "Recorded catches" : scope === "tag" ? "Observed tag recaptures" : "Observed values"} (points) and model predictions (lines).`) :
+        (data.type === "hindcast" ? "Withheld observations (points) and out-of-sample predictions (dashed lines), labelled by training cutoff." :
+        `${scope === "index" ? "Observed index values" : scope === "catch" ? "Recorded catches" : scope === "tag" ? "Observed tag recaptures" : "Observed values"} (points) and model predictions (lines).`)) :
       tab === "compositions" ? "Observed proportions (points) and predicted proportions (lines) for the selected sample." :
       tab === "checks" ? "Inspect each recorded check and threshold. Unknown checks are not passes." : "Supplied model table.";
     byId("chart").replaceChildren(); byId("legend").replaceChildren(); byId("hover").textContent = "";
@@ -514,7 +515,12 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
         segment = true;
         if (residual || points.length === 1) el("circle", {cx: px(p[xname]), cy: py(p[yname]), r: 3, fill: lineColor(model.id)});
       }
-      if (!residual) el("path", {d: path, fill: "none", stroke: lineColor(model.id), "stroke-width": 2.5, "stroke-linejoin": "round"});
+      if (!residual) el("path", {d: path, fill: "none", stroke: lineColor(model.id), "stroke-width": 2.5,
+        "stroke-dasharray": data.type === "hindcast" ? "6 4" : "none", "stroke-linejoin": "round"});
+      if (data.type === "retrospective" && tab === "series") {
+        const end = points[points.length - 1];
+        if (Number.isFinite(end[yname])) el("circle", {cx: px(end[xname]), cy: py(end[yname]), r: 4, fill: lineColor(model.id)});
+      }
       if (observations) points.filter(p => Number.isFinite(p.observed)).forEach(p =>
         el("circle", {cx: px(p[xname]), cy: py(p.observed), r: 3.5, fill: "white", stroke: lineColor(model.id), "stroke-width": 1.5}));
     }

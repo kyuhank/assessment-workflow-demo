@@ -1,2 +1,5 @@
-"Source","Quantity","Lower","Upper"
-"Supplied illustrative quantiles","SB/SB[F=0]",0.35,0.55
+"Source","Quantity","Median","Lower","Upper"
+"Structural","SB/SB[F=0]",0.45,0.39,0.51
+"Structural","F/F[MSY]",0.68,0.57,0.79
+"Structural and estimation","SB/SB[F=0]",0.45,0.35,0.55
+"Structural and estimation","F/F[MSY]",0.68,0.51,0.85
