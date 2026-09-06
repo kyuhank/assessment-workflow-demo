@@ -1,37 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 230" role="img" aria-label="KIMSA Build: Visual model assembly">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 230" role="img" aria-label="KIMSA Build: visual model assembly">
   <defs>
-    <linearGradient id="kimsagui-sea" x1="0" y1="0" x2=".65" y2="1">
+    <linearGradient id="kimsa-build-sea" x1="0" y1="0" x2=".65" y2="1">
       <stop stop-color="#93ccb8"/>
       <stop offset="1" stop-color="#3f8179"/>
     </linearGradient>
-    <linearGradient id="kimsagui-pearl" x1="0" y1="0" x2=".3" y2="1">
+    <linearGradient id="kimsa-build-pearl" x1="0" y1="0" x2=".3" y2="1">
       <stop stop-color="#fff"/>
       <stop offset=".5" stop-color="#f5fafc"/>
       <stop offset="1" stop-color="#dfecef"/>
     </linearGradient>
-    <radialGradient id="kimsagui-light" cx=".15" cy="0" r=".9">
+    <radialGradient id="kimsa-build-light" cx=".15" cy="0" r=".9">
       <stop stop-color="#fff" stop-opacity=".57"/>
       <stop offset=".65" stop-color="#fff" stop-opacity=".04"/>
       <stop offset="1" stop-color="#fff" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="kimsagui-edge" x1="0" y1="0" x2=".6" y2="1">
+    <linearGradient id="kimsa-build-edge" x1="0" y1="0" x2=".6" y2="1">
       <stop stop-color="#fff" stop-opacity=".9"/>
       <stop offset=".5" stop-color="#fff" stop-opacity=".14"/>
       <stop offset="1" stop-color="#fff" stop-opacity=".4"/>
     </linearGradient>
-    <filter id="kimsagui-lift" x="-30%" y="-30%" width="160%" height="170%" color-interpolation-filters="sRGB">
+    <filter id="kimsa-build-lift" x="-30%" y="-30%" width="160%" height="170%" color-interpolation-filters="sRGB">
       <feDropShadow dx="0" dy="1.3" stdDeviation="1.4" flood-color="#15354d" flood-opacity=".19"/>
     </filter>
   </defs>
-  <path d="M106 5L192 55Q198 59 198 66V164Q198 171 192 175L106 225Q100 229 94 225L8 175Q2 171 2 164V66Q2 59 8 55L94 5Q100 1 106 5Z" fill="url(#kimsagui-sea)"/>
-  <path d="M106 5L192 55Q198 59 198 66V164Q198 171 192 175L106 225Q100 229 94 225L8 175Q2 171 2 164V66Q2 59 8 55L94 5Q100 1 106 5Z" fill="url(#kimsagui-light)" stroke="url(#kimsagui-edge)" stroke-width="2"/>
-  <path d="M100 12L188 63V166L100 218L12 166V63Z" fill="none" stroke="#fff" stroke-opacity=".2" stroke-width=".7"/>
+  <path d="M106 5L192 55Q198 59 198 66V164Q198 171 192 175L106 225Q100 229 94 225L8 175Q2 171 2 164V66Q2 59 8 55L94 5Q100 1 106 5Z" fill="url(#kimsa-build-sea)"/>
+  <path d="M106 5L192 55Q198 59 198 66V164Q198 171 192 175L106 225Q100 229 94 225L8 175Q2 171 2 164V66Q2 59 8 55L94 5Q100 1 106 5Z" fill="url(#kimsa-build-light)" stroke="url(#kimsa-build-edge)" stroke-width="1.5"/>
+  <path d="M100 12L188 63V166L100 218L12 166V63Z" fill="none" stroke="#fff" stroke-opacity=".15" stroke-width=".65"/>
   <g transform="translate(36 28) scale(2)">
-    <g filter="url(#kimsagui-lift)" stroke-linejoin="round">
-      <rect x="12" y="22" width="27" height="29" rx="6.5" fill="#dbf5ef" fill-opacity=".58" stroke="#e7fff8" stroke-opacity=".65"/>
-      <rect x="25" y="12" width="27" height="29" rx="6.5" fill="url(#kimsagui-pearl)"/>
-      <path d="M25 25H38V41" fill="none" stroke="#74b3a6" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-      <circle cx="38" cy="25" r="3.5" fill="#70b5a4"/>
+    <g filter="url(#kimsa-build-lift)" stroke-linejoin="round">
+      <rect x="8.5" y="13" width="47" height="38" rx="8.5" fill="url(#kimsa-build-pearl)"/>
+      <path d="M27.5 32.5H36" stroke="#7ba696" stroke-width="2" stroke-linecap="round"/>
+      <rect x="15" y="26" width="13" height="13" rx="3.8" fill="#a0c7b8"/>
+      <rect x="35.5" y="26" width="13" height="13" rx="3.8" fill="#5b9985"/>
+      <path d="M44 36.5L53.5 43.5Q54.2 44.1 53.3 44.4L49.2 45.5L47.4 49.3Q47 50.2 46.6 49.2L43.2 37.1Q42.9 35.9 44 36.5Z" fill="#fbfffd" stroke="#548473" stroke-width=".85"/>
     </g>
   </g>
   <text x="100" y="163" text-anchor="middle" font-family="Inter, system-ui, DejaVu Sans, sans-serif" font-size="11" font-weight="500" letter-spacing="2.2" fill="white" fill-opacity=".9">KIMSA</text>
