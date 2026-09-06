@@ -1,6 +1,6 @@
-"parameter","profile_id","x","target","actual","unit","target_tolerance","target_attained","converged","model","reference","status","maximum_gradient"
-"average_biomass","average_biomass:FALSE:",695904.35164949,695810,695904.35164949,"t",695.81,TRUE,TRUE,"profile-1",FALSE,"passed",
-"average_biomass","average_biomass:FALSE:",734506.987566125,734466,734506.987566125,"t",734.466,TRUE,TRUE,"profile-2",FALSE,"passed",
-"average_biomass","average_biomass:FALSE:",773121.999974775,773122,773121.999974775,"t",773.122,TRUE,TRUE,"profile-3",FALSE,"passed",
-"average_biomass","average_biomass:FALSE:",811746.03456382,811778,811746.03456382,"t",811.778,TRUE,FALSE,"profile-4",FALSE,"failed",
-"average_biomass","average_biomass:FALSE:",850376.692903456,850434,850376.692903456,"t",850.434,TRUE,TRUE,"profile-5",FALSE,"passed",
+"parameter","profile_id","x","target","actual","unit","target_tolerance","target_attained","converged","model","status","maximum_gradient"
+"average_biomass","average_biomass:FALSE:",695904.35164949,695810,695904.35164949,"t",695.81,TRUE,TRUE,"profile-1","passed",
+"average_biomass","average_biomass:FALSE:",734506.987566125,734466,734506.987566125,"t",734.466,TRUE,TRUE,"profile-2","passed",
+"average_biomass","average_biomass:FALSE:",773121.999974775,773122,773121.999974775,"t",773.122,TRUE,TRUE,"profile-3","passed",
+"average_biomass","average_biomass:FALSE:",811746.03456382,811778,811746.03456382,"t",811.778,TRUE,FALSE,"profile-4","failed",
+"average_biomass","average_biomass:FALSE:",850376.692903456,850434,850376.692903456,"t",850.434,TRUE,TRUE,"profile-5","passed",

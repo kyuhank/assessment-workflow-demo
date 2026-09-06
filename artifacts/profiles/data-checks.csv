@@ -1,7 +1,4 @@
 "check","status","value","threshold","detail","model","label"
-"catch_conditioning","passed",4.98242303796914e-05,0.001,"Maximum relative error of positive conditioned catches","reference","reference"
-"refit_convergence","passed",0,0,"converged","reference","reference"
-"refit_gradient","passed",2.24944743284919e-05,0.001,"Maximum absolute projected free gradient in the final phase","reference","reference"
 "catch_conditioning","passed",0.000896599140755461,0.001,"Maximum relative error of positive conditioned catches","profile-1","profile-1"
 "refit_convergence","passed",0,0,"converged","profile-1","profile-1"
 "refit_gradient","passed",1.35643284253062e-06,0.001,"Maximum absolute projected free gradient in the final phase","profile-1","profile-1"
