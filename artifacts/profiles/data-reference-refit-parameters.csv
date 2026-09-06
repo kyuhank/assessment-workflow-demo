@@ -1,0 +1,3 @@
+"phase","parameter","initial","start","estimate","fixed"
+"constraint1_fit","recruit_dev[1]",26.3618588811559,26.3618588811559,-108.848501371723,FALSE
+"constraint1_fit","log_mean_recruitment[1]",11.0889270912689,11.0889270912689,10.2437589517053,FALSE

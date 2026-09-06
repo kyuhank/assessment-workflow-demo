@@ -1,0 +1,7 @@
+"phase","parameter","initial","start","estimate","fixed"
+"constraint1_fit","recruit_dev[1]",-108.848501371723,-108.848501371723,-108.848501371723,FALSE
+"constraint1_fit","log_mean_recruitment[1]",10.2437589517054,10.2437589517054,10.2437589517054,FALSE
+"constraint2_fit","recruit_dev[1]",-108.848501371723,-108.848501371723,-108.848501371723,FALSE
+"constraint2_fit","log_mean_recruitment[1]",10.2437589517054,10.2437589517054,10.2437589517054,FALSE
+"constraint3_fit","recruit_dev[1]",-108.848501371723,-108.848501371723,-108.848501373699,FALSE
+"constraint3_fit","log_mean_recruitment[1]",10.2437589517054,10.2437589517054,10.2437587782514,FALSE

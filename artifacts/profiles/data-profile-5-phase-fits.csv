@@ -1,0 +1,4 @@
+"phase","objective","convergence","max_gradient","projected_gradient","n_free","message","optimizer","iterations","function_evaluations","gradient_evaluations"
+"constraint1_fit",-41725.6004125712,0,2.73554924304792e-05,2.73554924304792e-05,2,"converged","kimsa-fmm",5,7,8
+"constraint2_fit",-41722.7465695231,0,8.48608621585925e-05,8.48608621585925e-05,2,"converged","kimsa-fmm",5,9,10
+"constraint3_fit",-41722.7058891559,0,4.88477993889308e-07,4.88477993889308e-07,2,"converged","kimsa-fmm",3,5,6

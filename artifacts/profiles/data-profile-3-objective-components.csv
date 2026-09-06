@@ -1,0 +1,50 @@
+"component","value","parent","domain","label","fishery","region","fishery_name"
+"index",-94.4946758445852,,"total","CPUE",,,
+"age_length",784.277461527577,,"total","CAAL",,,
+"length_composition",-42455.7333879218,,"total","Length",,,
+"weight_composition",0,,"total","Weight",,,
+"catch_age",0,,"total","Catch at age",,,
+"catch",0,,"total","Catch",,,
+"recruitment_process",0,,"total","Recruitment process",,,
+"state_process",0,,"total","State process",,,
+"penalties",36.1984482578442,,"total","Penalties",,,
+"index/region/1",-45.6861417779609,"index","index_region","Region 1",,1,
+"index/region/1/fishery/18",-35.7144157383914,"index/region/1","index","18.L.INDEX.1abcd",18,1,"18.L.INDEX.1abcd"
+"index/region/1/fishery/19",-9.97172603956951,"index/region/1","index","19.TR.INDEX.1ef",19,1,"19.TR.INDEX.1ef"
+"index/region/2",-48.8085340666244,"index","index_region","Region 2",,2,
+"index/region/2/fishery/20",-48.8085340666244,"index/region/2","index","20.L.INDEX.2abc",20,2,"20.L.INDEX.2abc"
+"length_composition/region/1",-36989.7923628224,"length_composition","length_region","Region 1",,1,
+"length_composition/region/1/fishery/3",-8697.29501793378,"length_composition/region/1","length","3.LL.DWFN.1c",3,1,"3.LL.DWFN.1c"
+"length_composition/region/1/fishery/4",-4752.16841565693,"length_composition/region/1","length","4.LL.DWFN.1d",4,1,"4.LL.DWFN.1d"
+"length_composition/region/1/fishery/6",-8281.69637949561,"length_composition/region/1","length","6.LL.PICT.1ab",6,1,"6.LL.PICT.1ab"
+"length_composition/region/1/fishery/7",-929.094858165695,"length_composition/region/1","length","7.LL.AZ.1ab",7,1,"7.LL.AZ.1ab"
+"length_composition/region/1/fishery/8",-2365.29687469099,"length_composition/region/1","length","8.LL.DWFN.1cd",8,1,"8.LL.DWFN.1cd"
+"length_composition/region/1/fishery/9",-335.048768606896,"length_composition/region/1","length","9.LL.PICT.1cd",9,1,"9.LL.PICT.1cd"
+"length_composition/region/1/fishery/10",-2873.30322183497,"length_composition/region/1","length","10.LL.AZ.1cd",10,1,"10.LL.AZ.1cd"
+"length_composition/region/1/fishery/11",-4711.31881995194,"length_composition/region/1","length","11.TR.ALL1c",11,1,"11.TR.ALL1c"
+"length_composition/region/1/fishery/12",-1043.41997793794,"length_composition/region/1","length","12.TR.All.1d",12,1,"12.TR.All.1d"
+"length_composition/region/1/fishery/13",-60.847732140459,"length_composition/region/1","length","13.DN.All.1cd",13,1,"13.DN.All.1cd"
+"length_composition/region/1/fishery/18",-2066.59821376824,"length_composition/region/1","length","18.L.INDEX.1abcd",18,1,"18.L.INDEX.1abcd"
+"length_composition/region/1/fishery/19",-873.704082638934,"length_composition/region/1","length","19.TR.INDEX.1ef",19,1,"19.TR.INDEX.1ef"
+"length_composition/region/2",-5465.94102509944,"length_composition","length_region","Region 2",,2,
+"length_composition/region/2/fishery/14",-3105.75675686704,"length_composition/region/2","length","14.LL.EPO.2a",14,2,"14.LL.EPO.2a"
+"length_composition/region/2/fishery/15",-773.67390280361,"length_composition/region/2","length","15.LL.EPO.2b",15,2,"15.LL.EPO.2b"
+"length_composition/region/2/fishery/16",-256.454046226967,"length_composition/region/2","length","16.LL.EPO.2c",16,2,"16.LL.EPO.2c"
+"length_composition/region/2/fishery/17",-48.650185242077,"length_composition/region/2","length","17.TR.EPO.2abc",17,2,"17.TR.EPO.2abc"
+"length_composition/region/2/fishery/20",-1281.40613395974,"length_composition/region/2","length","20.L.INDEX.2abc",20,2,"20.L.INDEX.2abc"
+"age_length/region/1",784.277461527577,"age_length","conditional_age_region","Region 1",,1,
+"age_length/region/1/fishery/3",11.1627202661782,"age_length/region/1","conditional_age","3.LL.DWFN.1c",3,1,"3.LL.DWFN.1c"
+"age_length/region/1/fishery/6",303.457826002679,"age_length/region/1","conditional_age","6.LL.PICT.1ab",6,1,"6.LL.PICT.1ab"
+"age_length/region/1/fishery/7",45.1558713610266,"age_length/region/1","conditional_age","7.LL.AZ.1ab",7,1,"7.LL.AZ.1ab"
+"age_length/region/1/fishery/8",21.9916204350044,"age_length/region/1","conditional_age","8.LL.DWFN.1cd",8,1,"8.LL.DWFN.1cd"
+"age_length/region/1/fishery/9",141.572892112727,"age_length/region/1","conditional_age","9.LL.PICT.1cd",9,1,"9.LL.PICT.1cd"
+"age_length/region/1/fishery/10",57.5290294491768,"age_length/region/1","conditional_age","10.LL.AZ.1cd",10,1,"10.LL.AZ.1cd"
+"age_length/region/1/fishery/11",203.407501900785,"age_length/region/1","conditional_age","11.TR.ALL1c",11,1,"11.TR.ALL1c"
+"penalties/no_penalty",0,"penalties","penalties","Regional recruitment",,,
+"penalties/good_penalty",0,"penalties","penalties","Movement",,,
+"penalties/call_penalty_base",14.5862117552343,"penalties","penalties","Configured penalties",,,
+"penalties/bh_steep_penalty",21.6122309163765,"penalties","penalties","Steepness",,,
+"penalties/fish_mortality_average_penalty",0,"penalties","penalties","Mean fishing mortality",,,
+"penalties/z_cutoff_penalty",0,"penalties","penalties","Mortality bound",,,
+"penalties/parameter_bound_penalty",5.58623336986649e-06,"penalties","penalties","Parameter bounds",,,
+"penalties/static",0,"penalties","penalties","Static terms",,,

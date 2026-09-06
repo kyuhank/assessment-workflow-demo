@@ -1,0 +1,2 @@
+"quantity","axis_label","unit","definition","requested_target","target","actual","penalty","weight","first_period","last_period","first_time","last_time","adult","objective"
+"average_biomass","Average total biomass","t","Total biomass summed over regions and averaged across model periods in 1954-2022",0,0,773122.021963487,0,0,1,544,1954.08333333333,2022.58333333333,FALSE,-41729.752153981

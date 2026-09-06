@@ -7,3 +7,12 @@ figcaption, .table-caption { color: #566d77; font-size: .9rem; line-height: 1.6;
 .software-credit { color: #65757d; font-size: .72rem; margin-top: 3rem; border-top: 1px solid #e2e9ec; padding-top: 1rem; }
 table { font-size: .8rem; }
 img { border-radius: 4px; }
+/* Keep long references, equations and wide tables within the reading column. */
+.csl-entry a { overflow-wrap: anywhere; }
+.quarto-float-tbl { overflow-x: auto; }
+@media (max-width: 600px) {
+  mjx-container[display="true"] {
+    max-width: 100%; overflow-x: auto; overflow-y: hidden;
+    text-align: left !important; padding-block: .25em;
+  }
+}

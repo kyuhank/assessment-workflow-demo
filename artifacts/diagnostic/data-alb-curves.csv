@@ -1,385 +1,385 @@
-"metric","x","value","group","x_unit","unit","definition","display_name"
-"maturity",1,0.000578111311353546,"all","model age class","relative","Model reproductive coefficient at age","Reproductive coefficient"
-"maturity",2,0.000578073038798088,"all","model age class","relative","Model reproductive coefficient at age","Reproductive coefficient"
-"maturity",3,0.0048644853396056,"all","model age class","relative","Model reproductive coefficient at age","Reproductive coefficient"
-"maturity",4,0.257206668803637,"all","model age class","relative","Model reproductive coefficient at age","Reproductive coefficient"
-"maturity",5,0.738878372083691,"all","model age class","relative","Model reproductive coefficient at age","Reproductive coefficient"
-"maturity",6,0.954760122329888,"all","model age class","relative","Model reproductive coefficient at age","Reproductive coefficient"
-"maturity",7,0.99949998416818,"all","model age class","relative","Model reproductive coefficient at age","Reproductive coefficient"
-"maturity",8,0.990174777359729,"all","model age class","relative","Model reproductive coefficient at age","Reproductive coefficient"
-"maturity",9,0.968486619323625,"all","model age class","relative","Model reproductive coefficient at age","Reproductive coefficient"
-"maturity",10,0.947986919753718,"all","model age class","relative","Model reproductive coefficient at age","Reproductive coefficient"
-"maturity",11,0.931674667803792,"all","model age class","relative","Model reproductive coefficient at age","Reproductive coefficient"
-"maturity",12,0.919471043628136,"all","model age class","relative","Model reproductive coefficient at age","Reproductive coefficient"
-"natural_mortality",1,0.67377355619087,"all","model age class","per year","Annual instantaneous natural mortality at age",
-"natural_mortality",2,0.537720990521196,"all","model age class","per year","Annual instantaneous natural mortality at age",
-"natural_mortality",3,0.452567267674763,"all","model age class","per year","Annual instantaneous natural mortality at age",
-"natural_mortality",4,0.392393308751968,"all","model age class","per year","Annual instantaneous natural mortality at age",
-"natural_mortality",5,0.346436580055244,"all","model age class","per year","Annual instantaneous natural mortality at age",
-"natural_mortality",6,0.331516117359363,"all","model age class","per year","Annual instantaneous natural mortality at age",
-"natural_mortality",7,0.321887435616761,"all","model age class","per year","Annual instantaneous natural mortality at age",
-"natural_mortality",8,0.31552246030897,"all","model age class","per year","Annual instantaneous natural mortality at age",
-"natural_mortality",9,0.311247784090315,"all","model age class","per year","Annual instantaneous natural mortality at age",
-"natural_mortality",10,0.308346328115821,"all","model age class","per year","Annual instantaneous natural mortality at age",
-"natural_mortality",11,0.30636274715619,"all","model age class","per year","Annual instantaneous natural mortality at age",
-"natural_mortality",12,0.305000000114291,"all","model age class","per year","Annual instantaneous natural mortality at age",
-"growth",1,45.53826,"all","model age class","cm","Mean length at the start of each model age class",
-"growth",2,57.0602151000371,"all","model age class","cm","Mean length at the start of each model age class",
-"growth",3,67.7964969508011,"all","model age class","cm","Mean length at the start of each model age class",
-"growth",4,78.1931666483611,"all","model age class","cm","Mean length at the start of each model age class",
-"growth",5,88.5659227384467,"all","model age class","cm","Mean length at the start of each model age class",
-"growth",6,92.5519869964111,"all","model age class","cm","Mean length at the start of each model age class",
-"growth",7,95.320512663548,"all","model age class","cm","Mean length at the start of each model age class",
-"growth",8,97.2433954555856,"all","model age class","cm","Mean length at the start of each model age class",
-"growth",9,98.5789359838184,"all","model age class","cm","Mean length at the start of each model age class",
-"growth",10,99.5065372447681,"all","model age class","cm","Mean length at the start of each model age class",
-"growth",11,100.150803802859,"all","model age class","cm","Mean length at the start of each model age class",
-"growth",12,100.598279906383,"all","model age class","cm","Mean length at the start of each model age class",
-"weight_at_age",1,1.95009969988434,"all","model age class","kg","Mean weight at the start of each model age class",
-"weight_at_age",2,3.88449393594261,"all","model age class","kg","Mean weight at the start of each model age class",
-"weight_at_age",3,6.57691412630932,"all","model age class","kg","Mean weight at the start of each model age class",
-"weight_at_age",4,10.163993398999,"all","model age class","kg","Mean weight at the start of each model age class",
-"weight_at_age",5,14.8555835492328,"all","model age class","kg","Mean weight at the start of each model age class",
-"weight_at_age",6,17.0000182321396,"all","model age class","kg","Mean weight at the start of each model age class",
-"weight_at_age",7,18.6073543794083,"all","model age class","kg","Mean weight at the start of each model age class",
-"weight_at_age",8,19.7826863419621,"all","model age class","kg","Mean weight at the start of each model age class",
-"weight_at_age",9,20.6281597080184,"all","model age class","kg","Mean weight at the start of each model age class",
-"weight_at_age",10,21.2296830694553,"all","model age class","kg","Mean weight at the start of each model age class",
-"weight_at_age",11,21.6544504508149,"all","model age class","kg","Mean weight at the start of each model age class",
-"weight_at_age",12,21.9528668918561,"all","model age class","kg","Mean weight at the start of each model age class",
-"selectivity",1,2.06115362243856e-09,"Fishery 1","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",2,2.06115362243856e-09,"Fishery 1","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",3,2.06112551600758e-09,"Fishery 1","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",4,7.25489157607301e-05,"Fishery 1","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",5,0.610521568327061,"Fishery 1","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",6,5.23687011300716,"Fishery 1","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",7,5.55222422913296,"Fishery 1","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",8,4.21216177442251,"Fishery 1","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",9,3.38360155982066,"Fishery 1","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",10,2.99156746565566,"Fishery 1","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",11,2.82457647702534,"Fishery 1","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",12,2.82457647702534,"Fishery 1","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",1,2.06115362243856e-09,"Fishery 2","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",2,2.06115362243856e-09,"Fishery 2","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",3,2.0611414472043e-09,"Fishery 2","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",4,4.52121193126729e-06,"Fishery 2","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",5,0.011440388894676,"Fishery 2","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",6,0.327762734072198,"Fishery 2","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",7,1.23763791760156,"Fishery 2","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",8,2.11354311431675,"Fishery 2","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",9,2.62493865175863,"Fishery 2","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",10,2.86197048687466,"Fishery 2","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",11,2.95722470632208,"Fishery 2","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",12,2.95722470632208,"Fishery 2","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",1,2.06115362243856e-09,"Fishery 3","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",2,2.06115362243856e-09,"Fishery 3","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",3,2.06112551600758e-09,"Fishery 3","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",4,7.25489157607301e-05,"Fishery 3","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",5,0.610521568327061,"Fishery 3","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",6,5.23687011300716,"Fishery 3","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",7,5.55222422913296,"Fishery 3","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",8,4.21216177442251,"Fishery 3","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",9,3.38360155982066,"Fishery 3","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",10,2.99156746565566,"Fishery 3","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",11,2.82457647702534,"Fishery 3","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",12,2.82457647702534,"Fishery 3","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",1,2.06115362243856e-09,"Fishery 4","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",2,2.06115362243856e-09,"Fishery 4","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",3,2.0611414472043e-09,"Fishery 4","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",4,4.52121193126729e-06,"Fishery 4","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",5,0.011440388894676,"Fishery 4","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",6,0.327762734072198,"Fishery 4","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",7,1.23763791760156,"Fishery 4","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",8,2.11354311431675,"Fishery 4","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",9,2.62493865175863,"Fishery 4","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",10,2.86197048687466,"Fishery 4","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",11,2.95722470632208,"Fishery 4","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",12,2.95722470632208,"Fishery 4","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",1,2.06115362243856e-09,"Fishery 5","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",2,2.06115362243856e-09,"Fishery 5","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",3,2.06115362243856e-09,"Fishery 5","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",4,0.0417922852049031,"Fishery 5","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",5,0.162081533418379,"Fishery 5","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",6,0.690672093237283,"Fishery 5","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",7,1.38211005811996,"Fishery 5","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",8,1.88132867087561,"Fishery 5","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",9,2.15741424036249,"Fishery 5","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",10,2.29081289171394,"Fishery 5","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",11,2.34987333956878,"Fishery 5","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",12,2.34987333956878,"Fishery 5","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",1,2.06115362243856e-09,"Fishery 6","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",2,2.06115362243856e-09,"Fishery 6","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",3,2.06115362243856e-09,"Fishery 6","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",4,0.0417922852049031,"Fishery 6","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",5,0.162081533418379,"Fishery 6","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",6,0.690672093237283,"Fishery 6","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",7,1.38211005811996,"Fishery 6","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",8,1.88132867087561,"Fishery 6","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",9,2.15741424036249,"Fishery 6","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",10,2.29081289171394,"Fishery 6","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",11,2.34987333956878,"Fishery 6","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",12,2.34987333956878,"Fishery 6","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",1,2.06115362243856e-09,"Fishery 7","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",2,2.06115362243856e-09,"Fishery 7","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",3,2.06115362243856e-09,"Fishery 7","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",4,0.021470005171524,"Fishery 7","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",5,0.0352035823065937,"Fishery 7","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",6,0.123120785151439,"Fishery 7","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",7,0.464698071150439,"Fishery 7","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",8,1.1326518260945,"Fishery 7","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",9,1.86159383777359,"Fishery 7","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",10,2.39162679968023,"Fishery 7","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",11,2.68691551030889,"Fishery 7","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",12,2.68691551030889,"Fishery 7","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",1,2.06115362243856e-09,"Fishery 8","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",2,0.0709635500007081,"Fishery 8","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",3,0.607377532505296,"Fishery 8","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",4,1.24181510316149,"Fishery 8","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",5,1.32691299808262,"Fishery 8","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",6,1.52162671089754,"Fishery 8","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",7,1.7041427177397,"Fishery 8","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",8,1.82160376439592,"Fishery 8","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",9,1.88371161295774,"Fishery 8","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",10,1.91178248775324,"Fishery 8","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",11,1.92212251619389,"Fishery 8","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",12,1.92212251619389,"Fishery 8","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",1,2.06115362243856e-09,"Fishery 9","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",2,0.000102301052592339,"Fishery 9","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",3,0.0280237318653814,"Fishery 9","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",4,0.867175312829134,"Fishery 9","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",5,2.09576059892755,"Fishery 9","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",6,2.32696781545932,"Fishery 9","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",7,2.19999294974279,"Fishery 9","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",8,2.0763224799203,"Fishery 9","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",9,2.00530374174254,"Fishery 9","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",10,1.97205108331762,"Fishery 9","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",11,1.95948430986681,"Fishery 9","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",12,1.95948430986681,"Fishery 9","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",1,2.06115362243856e-09,"Fishery 10","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",2,0.122416111363833,"Fishery 10","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",3,0.800311009350395,"Fishery 10","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",4,1.47438814239536,"Fishery 10","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",5,1.43822660665192,"Fishery 10","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",6,1.45511802314191,"Fishery 10","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",7,1.48946605448011,"Fishery 10","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",8,1.51365192747201,"Fishery 10","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",9,1.52679902407535,"Fishery 10","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",10,1.53283640226018,"Fishery 10","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",11,1.53508733673793,"Fishery 10","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",12,1.53508733673793,"Fishery 10","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",1,0.283150683094956,"Fishery 11","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",2,2.18360436782684,"Fishery 11","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",3,2.0891758359556,"Fishery 11","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",4,0.216223748801447,"Fishery 11","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",5,0.0312447327780869,"Fishery 11","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",6,0.00968693337814605,"Fishery 11","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",7,0.00524074859787093,"Fishery 11","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",8,0.00391426982838175,"Fishery 11","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",9,0.00345555598709346,"Fishery 11","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",10,0.00330494157891711,"Fishery 11","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",11,0.00327458449481761,"Fishery 11","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",12,0.00327458449481761,"Fishery 11","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",1,0.114677537468991,"Fishery 12","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",2,1.07842384945244,"Fishery 12","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",3,2.65099051135908,"Fishery 12","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",4,0.900994996746583,"Fishery 12","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",5,0.299328315380291,"Fishery 12","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",6,0.148793436221734,"Fishery 12","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",7,0.10234055977469,"Fishery 12","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",8,0.0855037723286075,"Fishery 12","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",9,0.079145983543915,"Fishery 12","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",10,0.076980974012163,"Fishery 12","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",11,0.0765390518858157,"Fishery 12","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",12,0.0765390518858157,"Fishery 12","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",1,2.06115362243856e-09,"Fishery 13","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",2,0.849300678000429,"Fishery 13","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",3,2.55259412400824,"Fishery 13","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",4,1.69129562441467,"Fishery 13","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",5,0.28000205993902,"Fishery 13","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",6,0.0650560246730116,"Fishery 13","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",7,0.0272409429656234,"Fishery 13","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",8,0.0173079999366135,"Fishery 13","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",9,0.0139642918150045,"Fishery 13","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",10,0.0127434937623909,"Fishery 13","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",11,0.012333982378803,"Fishery 13","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",12,0.012333982378803,"Fishery 13","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",1,2.06115362243856e-09,"Fishery 14","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",2,2.06115362243856e-09,"Fishery 14","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",3,2.06115362243856e-09,"Fishery 14","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",4,2.06114257791568e-09,"Fishery 14","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",5,0.000107817211680118,"Fishery 14","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",6,1.06374499603911,"Fishery 14","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",7,7.54052163001491,"Fishery 14","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",8,6.58005684059892,"Fishery 14","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",9,4.41188573819896,"Fishery 14","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",10,3.31723262210367,"Fishery 14","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",11,2.84119216785787,"Fishery 14","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",12,2.84119216785787,"Fishery 14","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",1,2.06115362243856e-09,"Fishery 15","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",2,0.020834430188141,"Fishery 15","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",3,0.471859301135735,"Fishery 15","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",4,2.96472831615479,"Fishery 15","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",5,1.57631167651509,"Fishery 15","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",6,0.638514987185454,"Fishery 15","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",7,0.346533579404666,"Fishery 15","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",8,0.247678422392905,"Fishery 15","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",9,0.210325704349038,"Fishery 15","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",10,0.195946182508917,"Fishery 15","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",11,0.191004763553761,"Fishery 15","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",12,0.191004763553761,"Fishery 15","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",1,2.06115362243856e-09,"Fishery 16","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",2,0.0466018797611375,"Fishery 16","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",3,0.572181200302225,"Fishery 16","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",4,2.72616073630678,"Fishery 16","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",5,1.85894945378602,"Fishery 16","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",6,0.984173431746605,"Fishery 16","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",7,0.634265173453787,"Fishery 16","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",8,0.49724171580243,"Fishery 16","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",9,0.441475520681296,"Fishery 16","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",10,0.41925186746697,"Fishery 16","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",11,0.411503134118026,"Fishery 16","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",12,0.411503134118026,"Fishery 16","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",1,0.114677537468991,"Fishery 17","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",2,1.07842384945244,"Fishery 17","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",3,2.65099051135908,"Fishery 17","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",4,0.900994996746583,"Fishery 17","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",5,0.299328315380291,"Fishery 17","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",6,0.148793436221734,"Fishery 17","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",7,0.10234055977469,"Fishery 17","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",8,0.0855037723286075,"Fishery 17","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",9,0.079145983543915,"Fishery 17","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",10,0.076980974012163,"Fishery 17","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",11,0.0765390518858157,"Fishery 17","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",12,0.0765390518858157,"Fishery 17","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",1,2.06115362243856e-09,"Fishery 18","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",2,2.06115362243856e-09,"Fishery 18","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",3,0.0128179569298535,"Fishery 18","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",4,0.0309794319548548,"Fishery 18","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",5,0.143223391888088,"Fishery 18","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",6,0.538716226294419,"Fishery 18","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",7,1.23908222487906,"Fishery 18","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",8,1.94734420198241,"Fishery 18","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",9,2.43809917871391,"Fishery 18","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",10,2.70417101071733,"Fishery 18","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",11,2.82419516534036,"Fishery 18","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",12,2.82419516534036,"Fishery 18","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",1,0.254607788863572,"Fishery 19","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",2,2.45289597632478,"Fishery 19","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",3,1.97123670958392,"Fishery 19","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",4,0.123837822722321,"Fishery 19","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",5,0.0120759633856852,"Fishery 19","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",6,0.00296761665515548,"Fishery 19","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",7,0.00142318847551171,"Fishery 19","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",8,0.00100415578117943,"Fishery 19","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",9,0.00086526508579648,"Fishery 19","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",10,0.000820432263284465,"Fishery 19","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",11,0.000811445328492908,"Fishery 19","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",12,0.000811445328492908,"Fishery 19","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",1,2.06115362243856e-09,"Fishery 20","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",2,2.06115362243856e-09,"Fishery 20","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",3,2.06115362243856e-09,"Fishery 20","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",4,2.06115362243856e-09,"Fishery 20","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",5,1.00458065443225,"Fishery 20","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",6,1.0027584689274,"Fishery 20","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",7,0.999938092626668,"Fishery 20","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",8,0.997710783754387,"Fishery 20","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",9,0.99635998704358,"Fishery 20","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",10,0.995638777340613,"Fishery 20","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",11,0.995283404292054,"Fishery 20","model age class","relative selectivity","Fishery selectivity at age",
-"selectivity",12,0.995283404292054,"Fishery 20","model age class","relative selectivity","Fishery selectivity at age",
-"movement",1,0.0187098768,"Season 1: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",2,0.0144535533,"Season 1: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",3,0.020832468,"Season 1: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",4,0.0311356506,"Season 1: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",5,0.0391977155,"Season 1: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",6,0.0450119348,"Season 1: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",7,0.0492982361,"Season 1: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",8,0.0529633456,"Season 1: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",9,0.0561331314,"Season 1: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",10,0.0589000893,"Season 1: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",11,0.061278245,"Season 1: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",12,0.0662457342,"Season 1: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",1,0.1178444146,"Season 1: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",2,0.0817068412,"Season 1: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",3,0.0747256038,"Season 1: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",4,0.0882539745,"Season 1: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",5,0.1079844784,"Season 1: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",6,0.1161814814,"Season 1: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",7,0.1174968513,"Season 1: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",8,0.1168634577,"Season 1: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",9,0.1158795503,"Season 1: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",10,0.115006998,"Season 1: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",11,0.1141465857,"Season 1: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",12,0.1131661912,"Season 1: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",1,0.0212057418,"Season 2: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",2,0.0160191081,"Season 2: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",3,0.0215915525,"Season 2: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",4,0.031402154,"Season 2: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",5,0.0394005845,"Season 2: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",6,0.0447725317,"Season 2: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",7,0.048744526,"Season 2: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",8,0.0521873715,"Season 2: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",9,0.0551941101,"Season 2: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",10,0.0578555368,"Season 2: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",11,0.0601352936,"Season 2: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",12,0.064911623,"Season 2: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",1,0.1068326726,"Season 2: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",2,0.0773715969,"Season 2: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",3,0.0746342745,"Season 2: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",4,0.0874956921,"Season 2: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",5,0.1036019393,"Season 2: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",6,0.1110475468,"Season 2: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",7,0.1128376146,"Season 2: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",8,0.1126196878,"Season 2: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",9,0.1118748516,"Season 2: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",10,0.1111473833,"Season 2: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",11,0.1104089247,"Season 2: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",12,0.1094863068,"Season 2: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",1,0.018553443,"Season 3: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",2,0.0147008281,"Season 3: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",3,0.020086057,"Season 3: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",4,0.0298209164,"Season 3: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",5,0.0370781555,"Season 3: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",6,0.0420311159,"Season 3: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",7,0.0458229607,"Season 3: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",8,0.0490912362,"Season 3: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",9,0.0519262942,"Season 3: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",10,0.0544562075,"Season 3: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",11,0.0566146231,"Season 3: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",12,0.0611202443,"Season 3: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",1,0.1109394867,"Season 3: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",2,0.0777575492,"Season 3: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",3,0.074757452,"Season 3: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",4,0.087480735,"Season 3: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",5,0.0992604147,"Season 3: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",6,0.1070897757,"Season 3: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",7,0.1086718963,"Season 3: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",8,0.1082755343,"Season 3: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",9,0.1074012905,"Season 3: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",10,0.1065806858,"Season 3: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",11,0.1057340888,"Season 3: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",12,0.1048606825,"Season 3: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",1,0.0184494664,"Season 4: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",2,0.0140565544,"Season 4: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",3,0.0194730338,"Season 4: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",4,0.0298902028,"Season 4: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",5,0.0379265611,"Season 4: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",6,0.0435308555,"Season 4: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",7,0.0476025859,"Season 4: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",8,0.0510095348,"Season 4: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",9,0.0539499224,"Season 4: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",10,0.0565522482,"Season 4: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",11,0.0587680183,"Season 4: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",12,0.0632810658,"Season 4: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",1,0.1110735445,"Season 4: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",2,0.0770159263,"Season 4: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",3,0.0727379942,"Season 4: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",4,0.0860487878,"Season 4: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",5,0.0976112542,"Season 4: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",6,0.1054664495,"Season 4: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",7,0.106875884,"Season 4: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",8,0.1064041023,"Season 4: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",9,0.1055965854,"Season 4: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",10,0.1048258332,"Season 4: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",11,0.1039860834,"Season 4: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
-"movement",12,0.1033412816,"Season 4: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",
+"metric","x","value","group","x_unit","unit","definition","display_name","fishery","fishery_name","group_label"
+"maturity",1,0.000578111311353546,"all","model age class","relative","Model reproductive coefficient at age","Reproductive coefficient",,,"all"
+"maturity",2,0.000578073038798088,"all","model age class","relative","Model reproductive coefficient at age","Reproductive coefficient",,,"all"
+"maturity",3,0.0048644853396056,"all","model age class","relative","Model reproductive coefficient at age","Reproductive coefficient",,,"all"
+"maturity",4,0.257206668803637,"all","model age class","relative","Model reproductive coefficient at age","Reproductive coefficient",,,"all"
+"maturity",5,0.738878372083691,"all","model age class","relative","Model reproductive coefficient at age","Reproductive coefficient",,,"all"
+"maturity",6,0.954760122329888,"all","model age class","relative","Model reproductive coefficient at age","Reproductive coefficient",,,"all"
+"maturity",7,0.99949998416818,"all","model age class","relative","Model reproductive coefficient at age","Reproductive coefficient",,,"all"
+"maturity",8,0.990174777359729,"all","model age class","relative","Model reproductive coefficient at age","Reproductive coefficient",,,"all"
+"maturity",9,0.968486619323625,"all","model age class","relative","Model reproductive coefficient at age","Reproductive coefficient",,,"all"
+"maturity",10,0.947986919753718,"all","model age class","relative","Model reproductive coefficient at age","Reproductive coefficient",,,"all"
+"maturity",11,0.931674667803792,"all","model age class","relative","Model reproductive coefficient at age","Reproductive coefficient",,,"all"
+"maturity",12,0.919471043628136,"all","model age class","relative","Model reproductive coefficient at age","Reproductive coefficient",,,"all"
+"natural_mortality",1,0.67377355619087,"all","model age class","per year","Annual instantaneous natural mortality at age",,,,"all"
+"natural_mortality",2,0.537720990521196,"all","model age class","per year","Annual instantaneous natural mortality at age",,,,"all"
+"natural_mortality",3,0.452567267674763,"all","model age class","per year","Annual instantaneous natural mortality at age",,,,"all"
+"natural_mortality",4,0.392393308751968,"all","model age class","per year","Annual instantaneous natural mortality at age",,,,"all"
+"natural_mortality",5,0.346436580055244,"all","model age class","per year","Annual instantaneous natural mortality at age",,,,"all"
+"natural_mortality",6,0.331516117359363,"all","model age class","per year","Annual instantaneous natural mortality at age",,,,"all"
+"natural_mortality",7,0.321887435616761,"all","model age class","per year","Annual instantaneous natural mortality at age",,,,"all"
+"natural_mortality",8,0.31552246030897,"all","model age class","per year","Annual instantaneous natural mortality at age",,,,"all"
+"natural_mortality",9,0.311247784090315,"all","model age class","per year","Annual instantaneous natural mortality at age",,,,"all"
+"natural_mortality",10,0.308346328115821,"all","model age class","per year","Annual instantaneous natural mortality at age",,,,"all"
+"natural_mortality",11,0.30636274715619,"all","model age class","per year","Annual instantaneous natural mortality at age",,,,"all"
+"natural_mortality",12,0.305000000114291,"all","model age class","per year","Annual instantaneous natural mortality at age",,,,"all"
+"growth",1,45.53826,"all","model age class","cm","Mean length at the start of each model age class",,,,"all"
+"growth",2,57.0602151000371,"all","model age class","cm","Mean length at the start of each model age class",,,,"all"
+"growth",3,67.7964969508011,"all","model age class","cm","Mean length at the start of each model age class",,,,"all"
+"growth",4,78.1931666483611,"all","model age class","cm","Mean length at the start of each model age class",,,,"all"
+"growth",5,88.5659227384467,"all","model age class","cm","Mean length at the start of each model age class",,,,"all"
+"growth",6,92.5519869964111,"all","model age class","cm","Mean length at the start of each model age class",,,,"all"
+"growth",7,95.320512663548,"all","model age class","cm","Mean length at the start of each model age class",,,,"all"
+"growth",8,97.2433954555856,"all","model age class","cm","Mean length at the start of each model age class",,,,"all"
+"growth",9,98.5789359838184,"all","model age class","cm","Mean length at the start of each model age class",,,,"all"
+"growth",10,99.5065372447681,"all","model age class","cm","Mean length at the start of each model age class",,,,"all"
+"growth",11,100.150803802859,"all","model age class","cm","Mean length at the start of each model age class",,,,"all"
+"growth",12,100.598279906383,"all","model age class","cm","Mean length at the start of each model age class",,,,"all"
+"weight_at_age",1,1.95009969988434,"all","model age class","kg","Mean weight at the start of each model age class",,,,"all"
+"weight_at_age",2,3.88449393594261,"all","model age class","kg","Mean weight at the start of each model age class",,,,"all"
+"weight_at_age",3,6.57691412630932,"all","model age class","kg","Mean weight at the start of each model age class",,,,"all"
+"weight_at_age",4,10.163993398999,"all","model age class","kg","Mean weight at the start of each model age class",,,,"all"
+"weight_at_age",5,14.8555835492328,"all","model age class","kg","Mean weight at the start of each model age class",,,,"all"
+"weight_at_age",6,17.0000182321396,"all","model age class","kg","Mean weight at the start of each model age class",,,,"all"
+"weight_at_age",7,18.6073543794083,"all","model age class","kg","Mean weight at the start of each model age class",,,,"all"
+"weight_at_age",8,19.7826863419621,"all","model age class","kg","Mean weight at the start of each model age class",,,,"all"
+"weight_at_age",9,20.6281597080184,"all","model age class","kg","Mean weight at the start of each model age class",,,,"all"
+"weight_at_age",10,21.2296830694553,"all","model age class","kg","Mean weight at the start of each model age class",,,,"all"
+"weight_at_age",11,21.6544504508149,"all","model age class","kg","Mean weight at the start of each model age class",,,,"all"
+"weight_at_age",12,21.9528668918561,"all","model age class","kg","Mean weight at the start of each model age class",,,,"all"
+"selectivity",1,2.06115362243856e-09,"Fishery 1","model age class","relative selectivity","Fishery selectivity at age",,1,"1.LL.DWFN.1a","1.LL.DWFN.1a"
+"selectivity",2,2.06115362243856e-09,"Fishery 1","model age class","relative selectivity","Fishery selectivity at age",,1,"1.LL.DWFN.1a","1.LL.DWFN.1a"
+"selectivity",3,2.06112551600758e-09,"Fishery 1","model age class","relative selectivity","Fishery selectivity at age",,1,"1.LL.DWFN.1a","1.LL.DWFN.1a"
+"selectivity",4,7.25489157607301e-05,"Fishery 1","model age class","relative selectivity","Fishery selectivity at age",,1,"1.LL.DWFN.1a","1.LL.DWFN.1a"
+"selectivity",5,0.610521568327061,"Fishery 1","model age class","relative selectivity","Fishery selectivity at age",,1,"1.LL.DWFN.1a","1.LL.DWFN.1a"
+"selectivity",6,5.23687011300716,"Fishery 1","model age class","relative selectivity","Fishery selectivity at age",,1,"1.LL.DWFN.1a","1.LL.DWFN.1a"
+"selectivity",7,5.55222422913296,"Fishery 1","model age class","relative selectivity","Fishery selectivity at age",,1,"1.LL.DWFN.1a","1.LL.DWFN.1a"
+"selectivity",8,4.21216177442251,"Fishery 1","model age class","relative selectivity","Fishery selectivity at age",,1,"1.LL.DWFN.1a","1.LL.DWFN.1a"
+"selectivity",9,3.38360155982066,"Fishery 1","model age class","relative selectivity","Fishery selectivity at age",,1,"1.LL.DWFN.1a","1.LL.DWFN.1a"
+"selectivity",10,2.99156746565566,"Fishery 1","model age class","relative selectivity","Fishery selectivity at age",,1,"1.LL.DWFN.1a","1.LL.DWFN.1a"
+"selectivity",11,2.82457647702534,"Fishery 1","model age class","relative selectivity","Fishery selectivity at age",,1,"1.LL.DWFN.1a","1.LL.DWFN.1a"
+"selectivity",12,2.82457647702534,"Fishery 1","model age class","relative selectivity","Fishery selectivity at age",,1,"1.LL.DWFN.1a","1.LL.DWFN.1a"
+"selectivity",1,2.06115362243856e-09,"Fishery 2","model age class","relative selectivity","Fishery selectivity at age",,2,"2.LL.DWFN.1b","2.LL.DWFN.1b"
+"selectivity",2,2.06115362243856e-09,"Fishery 2","model age class","relative selectivity","Fishery selectivity at age",,2,"2.LL.DWFN.1b","2.LL.DWFN.1b"
+"selectivity",3,2.0611414472043e-09,"Fishery 2","model age class","relative selectivity","Fishery selectivity at age",,2,"2.LL.DWFN.1b","2.LL.DWFN.1b"
+"selectivity",4,4.52121193126729e-06,"Fishery 2","model age class","relative selectivity","Fishery selectivity at age",,2,"2.LL.DWFN.1b","2.LL.DWFN.1b"
+"selectivity",5,0.011440388894676,"Fishery 2","model age class","relative selectivity","Fishery selectivity at age",,2,"2.LL.DWFN.1b","2.LL.DWFN.1b"
+"selectivity",6,0.327762734072198,"Fishery 2","model age class","relative selectivity","Fishery selectivity at age",,2,"2.LL.DWFN.1b","2.LL.DWFN.1b"
+"selectivity",7,1.23763791760156,"Fishery 2","model age class","relative selectivity","Fishery selectivity at age",,2,"2.LL.DWFN.1b","2.LL.DWFN.1b"
+"selectivity",8,2.11354311431675,"Fishery 2","model age class","relative selectivity","Fishery selectivity at age",,2,"2.LL.DWFN.1b","2.LL.DWFN.1b"
+"selectivity",9,2.62493865175863,"Fishery 2","model age class","relative selectivity","Fishery selectivity at age",,2,"2.LL.DWFN.1b","2.LL.DWFN.1b"
+"selectivity",10,2.86197048687466,"Fishery 2","model age class","relative selectivity","Fishery selectivity at age",,2,"2.LL.DWFN.1b","2.LL.DWFN.1b"
+"selectivity",11,2.95722470632208,"Fishery 2","model age class","relative selectivity","Fishery selectivity at age",,2,"2.LL.DWFN.1b","2.LL.DWFN.1b"
+"selectivity",12,2.95722470632208,"Fishery 2","model age class","relative selectivity","Fishery selectivity at age",,2,"2.LL.DWFN.1b","2.LL.DWFN.1b"
+"selectivity",1,2.06115362243856e-09,"Fishery 3","model age class","relative selectivity","Fishery selectivity at age",,3,"3.LL.DWFN.1c","3.LL.DWFN.1c"
+"selectivity",2,2.06115362243856e-09,"Fishery 3","model age class","relative selectivity","Fishery selectivity at age",,3,"3.LL.DWFN.1c","3.LL.DWFN.1c"
+"selectivity",3,2.06112551600758e-09,"Fishery 3","model age class","relative selectivity","Fishery selectivity at age",,3,"3.LL.DWFN.1c","3.LL.DWFN.1c"
+"selectivity",4,7.25489157607301e-05,"Fishery 3","model age class","relative selectivity","Fishery selectivity at age",,3,"3.LL.DWFN.1c","3.LL.DWFN.1c"
+"selectivity",5,0.610521568327061,"Fishery 3","model age class","relative selectivity","Fishery selectivity at age",,3,"3.LL.DWFN.1c","3.LL.DWFN.1c"
+"selectivity",6,5.23687011300716,"Fishery 3","model age class","relative selectivity","Fishery selectivity at age",,3,"3.LL.DWFN.1c","3.LL.DWFN.1c"
+"selectivity",7,5.55222422913296,"Fishery 3","model age class","relative selectivity","Fishery selectivity at age",,3,"3.LL.DWFN.1c","3.LL.DWFN.1c"
+"selectivity",8,4.21216177442251,"Fishery 3","model age class","relative selectivity","Fishery selectivity at age",,3,"3.LL.DWFN.1c","3.LL.DWFN.1c"
+"selectivity",9,3.38360155982066,"Fishery 3","model age class","relative selectivity","Fishery selectivity at age",,3,"3.LL.DWFN.1c","3.LL.DWFN.1c"
+"selectivity",10,2.99156746565566,"Fishery 3","model age class","relative selectivity","Fishery selectivity at age",,3,"3.LL.DWFN.1c","3.LL.DWFN.1c"
+"selectivity",11,2.82457647702534,"Fishery 3","model age class","relative selectivity","Fishery selectivity at age",,3,"3.LL.DWFN.1c","3.LL.DWFN.1c"
+"selectivity",12,2.82457647702534,"Fishery 3","model age class","relative selectivity","Fishery selectivity at age",,3,"3.LL.DWFN.1c","3.LL.DWFN.1c"
+"selectivity",1,2.06115362243856e-09,"Fishery 4","model age class","relative selectivity","Fishery selectivity at age",,4,"4.LL.DWFN.1d","4.LL.DWFN.1d"
+"selectivity",2,2.06115362243856e-09,"Fishery 4","model age class","relative selectivity","Fishery selectivity at age",,4,"4.LL.DWFN.1d","4.LL.DWFN.1d"
+"selectivity",3,2.0611414472043e-09,"Fishery 4","model age class","relative selectivity","Fishery selectivity at age",,4,"4.LL.DWFN.1d","4.LL.DWFN.1d"
+"selectivity",4,4.52121193126729e-06,"Fishery 4","model age class","relative selectivity","Fishery selectivity at age",,4,"4.LL.DWFN.1d","4.LL.DWFN.1d"
+"selectivity",5,0.011440388894676,"Fishery 4","model age class","relative selectivity","Fishery selectivity at age",,4,"4.LL.DWFN.1d","4.LL.DWFN.1d"
+"selectivity",6,0.327762734072198,"Fishery 4","model age class","relative selectivity","Fishery selectivity at age",,4,"4.LL.DWFN.1d","4.LL.DWFN.1d"
+"selectivity",7,1.23763791760156,"Fishery 4","model age class","relative selectivity","Fishery selectivity at age",,4,"4.LL.DWFN.1d","4.LL.DWFN.1d"
+"selectivity",8,2.11354311431675,"Fishery 4","model age class","relative selectivity","Fishery selectivity at age",,4,"4.LL.DWFN.1d","4.LL.DWFN.1d"
+"selectivity",9,2.62493865175863,"Fishery 4","model age class","relative selectivity","Fishery selectivity at age",,4,"4.LL.DWFN.1d","4.LL.DWFN.1d"
+"selectivity",10,2.86197048687466,"Fishery 4","model age class","relative selectivity","Fishery selectivity at age",,4,"4.LL.DWFN.1d","4.LL.DWFN.1d"
+"selectivity",11,2.95722470632208,"Fishery 4","model age class","relative selectivity","Fishery selectivity at age",,4,"4.LL.DWFN.1d","4.LL.DWFN.1d"
+"selectivity",12,2.95722470632208,"Fishery 4","model age class","relative selectivity","Fishery selectivity at age",,4,"4.LL.DWFN.1d","4.LL.DWFN.1d"
+"selectivity",1,2.06115362243856e-09,"Fishery 5","model age class","relative selectivity","Fishery selectivity at age",,5,"5.LL.PICT.1ab","5.LL.PICT.1ab"
+"selectivity",2,2.06115362243856e-09,"Fishery 5","model age class","relative selectivity","Fishery selectivity at age",,5,"5.LL.PICT.1ab","5.LL.PICT.1ab"
+"selectivity",3,2.06115362243856e-09,"Fishery 5","model age class","relative selectivity","Fishery selectivity at age",,5,"5.LL.PICT.1ab","5.LL.PICT.1ab"
+"selectivity",4,0.0417922852049031,"Fishery 5","model age class","relative selectivity","Fishery selectivity at age",,5,"5.LL.PICT.1ab","5.LL.PICT.1ab"
+"selectivity",5,0.162081533418379,"Fishery 5","model age class","relative selectivity","Fishery selectivity at age",,5,"5.LL.PICT.1ab","5.LL.PICT.1ab"
+"selectivity",6,0.690672093237283,"Fishery 5","model age class","relative selectivity","Fishery selectivity at age",,5,"5.LL.PICT.1ab","5.LL.PICT.1ab"
+"selectivity",7,1.38211005811996,"Fishery 5","model age class","relative selectivity","Fishery selectivity at age",,5,"5.LL.PICT.1ab","5.LL.PICT.1ab"
+"selectivity",8,1.88132867087561,"Fishery 5","model age class","relative selectivity","Fishery selectivity at age",,5,"5.LL.PICT.1ab","5.LL.PICT.1ab"
+"selectivity",9,2.15741424036249,"Fishery 5","model age class","relative selectivity","Fishery selectivity at age",,5,"5.LL.PICT.1ab","5.LL.PICT.1ab"
+"selectivity",10,2.29081289171394,"Fishery 5","model age class","relative selectivity","Fishery selectivity at age",,5,"5.LL.PICT.1ab","5.LL.PICT.1ab"
+"selectivity",11,2.34987333956878,"Fishery 5","model age class","relative selectivity","Fishery selectivity at age",,5,"5.LL.PICT.1ab","5.LL.PICT.1ab"
+"selectivity",12,2.34987333956878,"Fishery 5","model age class","relative selectivity","Fishery selectivity at age",,5,"5.LL.PICT.1ab","5.LL.PICT.1ab"
+"selectivity",1,2.06115362243856e-09,"Fishery 6","model age class","relative selectivity","Fishery selectivity at age",,6,"6.LL.PICT.1ab","6.LL.PICT.1ab"
+"selectivity",2,2.06115362243856e-09,"Fishery 6","model age class","relative selectivity","Fishery selectivity at age",,6,"6.LL.PICT.1ab","6.LL.PICT.1ab"
+"selectivity",3,2.06115362243856e-09,"Fishery 6","model age class","relative selectivity","Fishery selectivity at age",,6,"6.LL.PICT.1ab","6.LL.PICT.1ab"
+"selectivity",4,0.0417922852049031,"Fishery 6","model age class","relative selectivity","Fishery selectivity at age",,6,"6.LL.PICT.1ab","6.LL.PICT.1ab"
+"selectivity",5,0.162081533418379,"Fishery 6","model age class","relative selectivity","Fishery selectivity at age",,6,"6.LL.PICT.1ab","6.LL.PICT.1ab"
+"selectivity",6,0.690672093237283,"Fishery 6","model age class","relative selectivity","Fishery selectivity at age",,6,"6.LL.PICT.1ab","6.LL.PICT.1ab"
+"selectivity",7,1.38211005811996,"Fishery 6","model age class","relative selectivity","Fishery selectivity at age",,6,"6.LL.PICT.1ab","6.LL.PICT.1ab"
+"selectivity",8,1.88132867087561,"Fishery 6","model age class","relative selectivity","Fishery selectivity at age",,6,"6.LL.PICT.1ab","6.LL.PICT.1ab"
+"selectivity",9,2.15741424036249,"Fishery 6","model age class","relative selectivity","Fishery selectivity at age",,6,"6.LL.PICT.1ab","6.LL.PICT.1ab"
+"selectivity",10,2.29081289171394,"Fishery 6","model age class","relative selectivity","Fishery selectivity at age",,6,"6.LL.PICT.1ab","6.LL.PICT.1ab"
+"selectivity",11,2.34987333956878,"Fishery 6","model age class","relative selectivity","Fishery selectivity at age",,6,"6.LL.PICT.1ab","6.LL.PICT.1ab"
+"selectivity",12,2.34987333956878,"Fishery 6","model age class","relative selectivity","Fishery selectivity at age",,6,"6.LL.PICT.1ab","6.LL.PICT.1ab"
+"selectivity",1,2.06115362243856e-09,"Fishery 7","model age class","relative selectivity","Fishery selectivity at age",,7,"7.LL.AZ.1ab","7.LL.AZ.1ab"
+"selectivity",2,2.06115362243856e-09,"Fishery 7","model age class","relative selectivity","Fishery selectivity at age",,7,"7.LL.AZ.1ab","7.LL.AZ.1ab"
+"selectivity",3,2.06115362243856e-09,"Fishery 7","model age class","relative selectivity","Fishery selectivity at age",,7,"7.LL.AZ.1ab","7.LL.AZ.1ab"
+"selectivity",4,0.021470005171524,"Fishery 7","model age class","relative selectivity","Fishery selectivity at age",,7,"7.LL.AZ.1ab","7.LL.AZ.1ab"
+"selectivity",5,0.0352035823065937,"Fishery 7","model age class","relative selectivity","Fishery selectivity at age",,7,"7.LL.AZ.1ab","7.LL.AZ.1ab"
+"selectivity",6,0.123120785151439,"Fishery 7","model age class","relative selectivity","Fishery selectivity at age",,7,"7.LL.AZ.1ab","7.LL.AZ.1ab"
+"selectivity",7,0.464698071150439,"Fishery 7","model age class","relative selectivity","Fishery selectivity at age",,7,"7.LL.AZ.1ab","7.LL.AZ.1ab"
+"selectivity",8,1.1326518260945,"Fishery 7","model age class","relative selectivity","Fishery selectivity at age",,7,"7.LL.AZ.1ab","7.LL.AZ.1ab"
+"selectivity",9,1.86159383777359,"Fishery 7","model age class","relative selectivity","Fishery selectivity at age",,7,"7.LL.AZ.1ab","7.LL.AZ.1ab"
+"selectivity",10,2.39162679968023,"Fishery 7","model age class","relative selectivity","Fishery selectivity at age",,7,"7.LL.AZ.1ab","7.LL.AZ.1ab"
+"selectivity",11,2.68691551030889,"Fishery 7","model age class","relative selectivity","Fishery selectivity at age",,7,"7.LL.AZ.1ab","7.LL.AZ.1ab"
+"selectivity",12,2.68691551030889,"Fishery 7","model age class","relative selectivity","Fishery selectivity at age",,7,"7.LL.AZ.1ab","7.LL.AZ.1ab"
+"selectivity",1,2.06115362243856e-09,"Fishery 8","model age class","relative selectivity","Fishery selectivity at age",,8,"8.LL.DWFN.1cd","8.LL.DWFN.1cd"
+"selectivity",2,0.0709635500007081,"Fishery 8","model age class","relative selectivity","Fishery selectivity at age",,8,"8.LL.DWFN.1cd","8.LL.DWFN.1cd"
+"selectivity",3,0.607377532505296,"Fishery 8","model age class","relative selectivity","Fishery selectivity at age",,8,"8.LL.DWFN.1cd","8.LL.DWFN.1cd"
+"selectivity",4,1.24181510316149,"Fishery 8","model age class","relative selectivity","Fishery selectivity at age",,8,"8.LL.DWFN.1cd","8.LL.DWFN.1cd"
+"selectivity",5,1.32691299808262,"Fishery 8","model age class","relative selectivity","Fishery selectivity at age",,8,"8.LL.DWFN.1cd","8.LL.DWFN.1cd"
+"selectivity",6,1.52162671089754,"Fishery 8","model age class","relative selectivity","Fishery selectivity at age",,8,"8.LL.DWFN.1cd","8.LL.DWFN.1cd"
+"selectivity",7,1.7041427177397,"Fishery 8","model age class","relative selectivity","Fishery selectivity at age",,8,"8.LL.DWFN.1cd","8.LL.DWFN.1cd"
+"selectivity",8,1.82160376439592,"Fishery 8","model age class","relative selectivity","Fishery selectivity at age",,8,"8.LL.DWFN.1cd","8.LL.DWFN.1cd"
+"selectivity",9,1.88371161295774,"Fishery 8","model age class","relative selectivity","Fishery selectivity at age",,8,"8.LL.DWFN.1cd","8.LL.DWFN.1cd"
+"selectivity",10,1.91178248775324,"Fishery 8","model age class","relative selectivity","Fishery selectivity at age",,8,"8.LL.DWFN.1cd","8.LL.DWFN.1cd"
+"selectivity",11,1.92212251619389,"Fishery 8","model age class","relative selectivity","Fishery selectivity at age",,8,"8.LL.DWFN.1cd","8.LL.DWFN.1cd"
+"selectivity",12,1.92212251619389,"Fishery 8","model age class","relative selectivity","Fishery selectivity at age",,8,"8.LL.DWFN.1cd","8.LL.DWFN.1cd"
+"selectivity",1,2.06115362243856e-09,"Fishery 9","model age class","relative selectivity","Fishery selectivity at age",,9,"9.LL.PICT.1cd","9.LL.PICT.1cd"
+"selectivity",2,0.000102301052592339,"Fishery 9","model age class","relative selectivity","Fishery selectivity at age",,9,"9.LL.PICT.1cd","9.LL.PICT.1cd"
+"selectivity",3,0.0280237318653814,"Fishery 9","model age class","relative selectivity","Fishery selectivity at age",,9,"9.LL.PICT.1cd","9.LL.PICT.1cd"
+"selectivity",4,0.867175312829134,"Fishery 9","model age class","relative selectivity","Fishery selectivity at age",,9,"9.LL.PICT.1cd","9.LL.PICT.1cd"
+"selectivity",5,2.09576059892755,"Fishery 9","model age class","relative selectivity","Fishery selectivity at age",,9,"9.LL.PICT.1cd","9.LL.PICT.1cd"
+"selectivity",6,2.32696781545932,"Fishery 9","model age class","relative selectivity","Fishery selectivity at age",,9,"9.LL.PICT.1cd","9.LL.PICT.1cd"
+"selectivity",7,2.19999294974279,"Fishery 9","model age class","relative selectivity","Fishery selectivity at age",,9,"9.LL.PICT.1cd","9.LL.PICT.1cd"
+"selectivity",8,2.0763224799203,"Fishery 9","model age class","relative selectivity","Fishery selectivity at age",,9,"9.LL.PICT.1cd","9.LL.PICT.1cd"
+"selectivity",9,2.00530374174254,"Fishery 9","model age class","relative selectivity","Fishery selectivity at age",,9,"9.LL.PICT.1cd","9.LL.PICT.1cd"
+"selectivity",10,1.97205108331762,"Fishery 9","model age class","relative selectivity","Fishery selectivity at age",,9,"9.LL.PICT.1cd","9.LL.PICT.1cd"
+"selectivity",11,1.95948430986681,"Fishery 9","model age class","relative selectivity","Fishery selectivity at age",,9,"9.LL.PICT.1cd","9.LL.PICT.1cd"
+"selectivity",12,1.95948430986681,"Fishery 9","model age class","relative selectivity","Fishery selectivity at age",,9,"9.LL.PICT.1cd","9.LL.PICT.1cd"
+"selectivity",1,2.06115362243856e-09,"Fishery 10","model age class","relative selectivity","Fishery selectivity at age",,10,"10.LL.AZ.1cd","10.LL.AZ.1cd"
+"selectivity",2,0.122416111363833,"Fishery 10","model age class","relative selectivity","Fishery selectivity at age",,10,"10.LL.AZ.1cd","10.LL.AZ.1cd"
+"selectivity",3,0.800311009350395,"Fishery 10","model age class","relative selectivity","Fishery selectivity at age",,10,"10.LL.AZ.1cd","10.LL.AZ.1cd"
+"selectivity",4,1.47438814239536,"Fishery 10","model age class","relative selectivity","Fishery selectivity at age",,10,"10.LL.AZ.1cd","10.LL.AZ.1cd"
+"selectivity",5,1.43822660665192,"Fishery 10","model age class","relative selectivity","Fishery selectivity at age",,10,"10.LL.AZ.1cd","10.LL.AZ.1cd"
+"selectivity",6,1.45511802314191,"Fishery 10","model age class","relative selectivity","Fishery selectivity at age",,10,"10.LL.AZ.1cd","10.LL.AZ.1cd"
+"selectivity",7,1.48946605448011,"Fishery 10","model age class","relative selectivity","Fishery selectivity at age",,10,"10.LL.AZ.1cd","10.LL.AZ.1cd"
+"selectivity",8,1.51365192747201,"Fishery 10","model age class","relative selectivity","Fishery selectivity at age",,10,"10.LL.AZ.1cd","10.LL.AZ.1cd"
+"selectivity",9,1.52679902407535,"Fishery 10","model age class","relative selectivity","Fishery selectivity at age",,10,"10.LL.AZ.1cd","10.LL.AZ.1cd"
+"selectivity",10,1.53283640226018,"Fishery 10","model age class","relative selectivity","Fishery selectivity at age",,10,"10.LL.AZ.1cd","10.LL.AZ.1cd"
+"selectivity",11,1.53508733673793,"Fishery 10","model age class","relative selectivity","Fishery selectivity at age",,10,"10.LL.AZ.1cd","10.LL.AZ.1cd"
+"selectivity",12,1.53508733673793,"Fishery 10","model age class","relative selectivity","Fishery selectivity at age",,10,"10.LL.AZ.1cd","10.LL.AZ.1cd"
+"selectivity",1,0.283150683094956,"Fishery 11","model age class","relative selectivity","Fishery selectivity at age",,11,"11.TR.ALL1c","11.TR.ALL1c"
+"selectivity",2,2.18360436782684,"Fishery 11","model age class","relative selectivity","Fishery selectivity at age",,11,"11.TR.ALL1c","11.TR.ALL1c"
+"selectivity",3,2.0891758359556,"Fishery 11","model age class","relative selectivity","Fishery selectivity at age",,11,"11.TR.ALL1c","11.TR.ALL1c"
+"selectivity",4,0.216223748801447,"Fishery 11","model age class","relative selectivity","Fishery selectivity at age",,11,"11.TR.ALL1c","11.TR.ALL1c"
+"selectivity",5,0.0312447327780869,"Fishery 11","model age class","relative selectivity","Fishery selectivity at age",,11,"11.TR.ALL1c","11.TR.ALL1c"
+"selectivity",6,0.00968693337814605,"Fishery 11","model age class","relative selectivity","Fishery selectivity at age",,11,"11.TR.ALL1c","11.TR.ALL1c"
+"selectivity",7,0.00524074859787093,"Fishery 11","model age class","relative selectivity","Fishery selectivity at age",,11,"11.TR.ALL1c","11.TR.ALL1c"
+"selectivity",8,0.00391426982838175,"Fishery 11","model age class","relative selectivity","Fishery selectivity at age",,11,"11.TR.ALL1c","11.TR.ALL1c"
+"selectivity",9,0.00345555598709346,"Fishery 11","model age class","relative selectivity","Fishery selectivity at age",,11,"11.TR.ALL1c","11.TR.ALL1c"
+"selectivity",10,0.00330494157891711,"Fishery 11","model age class","relative selectivity","Fishery selectivity at age",,11,"11.TR.ALL1c","11.TR.ALL1c"
+"selectivity",11,0.00327458449481761,"Fishery 11","model age class","relative selectivity","Fishery selectivity at age",,11,"11.TR.ALL1c","11.TR.ALL1c"
+"selectivity",12,0.00327458449481761,"Fishery 11","model age class","relative selectivity","Fishery selectivity at age",,11,"11.TR.ALL1c","11.TR.ALL1c"
+"selectivity",1,0.114677537468991,"Fishery 12","model age class","relative selectivity","Fishery selectivity at age",,12,"12.TR.All.1d","12.TR.All.1d"
+"selectivity",2,1.07842384945244,"Fishery 12","model age class","relative selectivity","Fishery selectivity at age",,12,"12.TR.All.1d","12.TR.All.1d"
+"selectivity",3,2.65099051135908,"Fishery 12","model age class","relative selectivity","Fishery selectivity at age",,12,"12.TR.All.1d","12.TR.All.1d"
+"selectivity",4,0.900994996746583,"Fishery 12","model age class","relative selectivity","Fishery selectivity at age",,12,"12.TR.All.1d","12.TR.All.1d"
+"selectivity",5,0.299328315380291,"Fishery 12","model age class","relative selectivity","Fishery selectivity at age",,12,"12.TR.All.1d","12.TR.All.1d"
+"selectivity",6,0.148793436221734,"Fishery 12","model age class","relative selectivity","Fishery selectivity at age",,12,"12.TR.All.1d","12.TR.All.1d"
+"selectivity",7,0.10234055977469,"Fishery 12","model age class","relative selectivity","Fishery selectivity at age",,12,"12.TR.All.1d","12.TR.All.1d"
+"selectivity",8,0.0855037723286075,"Fishery 12","model age class","relative selectivity","Fishery selectivity at age",,12,"12.TR.All.1d","12.TR.All.1d"
+"selectivity",9,0.079145983543915,"Fishery 12","model age class","relative selectivity","Fishery selectivity at age",,12,"12.TR.All.1d","12.TR.All.1d"
+"selectivity",10,0.076980974012163,"Fishery 12","model age class","relative selectivity","Fishery selectivity at age",,12,"12.TR.All.1d","12.TR.All.1d"
+"selectivity",11,0.0765390518858157,"Fishery 12","model age class","relative selectivity","Fishery selectivity at age",,12,"12.TR.All.1d","12.TR.All.1d"
+"selectivity",12,0.0765390518858157,"Fishery 12","model age class","relative selectivity","Fishery selectivity at age",,12,"12.TR.All.1d","12.TR.All.1d"
+"selectivity",1,2.06115362243856e-09,"Fishery 13","model age class","relative selectivity","Fishery selectivity at age",,13,"13.DN.All.1cd","13.DN.All.1cd"
+"selectivity",2,0.849300678000429,"Fishery 13","model age class","relative selectivity","Fishery selectivity at age",,13,"13.DN.All.1cd","13.DN.All.1cd"
+"selectivity",3,2.55259412400824,"Fishery 13","model age class","relative selectivity","Fishery selectivity at age",,13,"13.DN.All.1cd","13.DN.All.1cd"
+"selectivity",4,1.69129562441467,"Fishery 13","model age class","relative selectivity","Fishery selectivity at age",,13,"13.DN.All.1cd","13.DN.All.1cd"
+"selectivity",5,0.28000205993902,"Fishery 13","model age class","relative selectivity","Fishery selectivity at age",,13,"13.DN.All.1cd","13.DN.All.1cd"
+"selectivity",6,0.0650560246730116,"Fishery 13","model age class","relative selectivity","Fishery selectivity at age",,13,"13.DN.All.1cd","13.DN.All.1cd"
+"selectivity",7,0.0272409429656234,"Fishery 13","model age class","relative selectivity","Fishery selectivity at age",,13,"13.DN.All.1cd","13.DN.All.1cd"
+"selectivity",8,0.0173079999366135,"Fishery 13","model age class","relative selectivity","Fishery selectivity at age",,13,"13.DN.All.1cd","13.DN.All.1cd"
+"selectivity",9,0.0139642918150045,"Fishery 13","model age class","relative selectivity","Fishery selectivity at age",,13,"13.DN.All.1cd","13.DN.All.1cd"
+"selectivity",10,0.0127434937623909,"Fishery 13","model age class","relative selectivity","Fishery selectivity at age",,13,"13.DN.All.1cd","13.DN.All.1cd"
+"selectivity",11,0.012333982378803,"Fishery 13","model age class","relative selectivity","Fishery selectivity at age",,13,"13.DN.All.1cd","13.DN.All.1cd"
+"selectivity",12,0.012333982378803,"Fishery 13","model age class","relative selectivity","Fishery selectivity at age",,13,"13.DN.All.1cd","13.DN.All.1cd"
+"selectivity",1,2.06115362243856e-09,"Fishery 14","model age class","relative selectivity","Fishery selectivity at age",,14,"14.LL.EPO.2a","14.LL.EPO.2a"
+"selectivity",2,2.06115362243856e-09,"Fishery 14","model age class","relative selectivity","Fishery selectivity at age",,14,"14.LL.EPO.2a","14.LL.EPO.2a"
+"selectivity",3,2.06115362243856e-09,"Fishery 14","model age class","relative selectivity","Fishery selectivity at age",,14,"14.LL.EPO.2a","14.LL.EPO.2a"
+"selectivity",4,2.06114257791568e-09,"Fishery 14","model age class","relative selectivity","Fishery selectivity at age",,14,"14.LL.EPO.2a","14.LL.EPO.2a"
+"selectivity",5,0.000107817211680118,"Fishery 14","model age class","relative selectivity","Fishery selectivity at age",,14,"14.LL.EPO.2a","14.LL.EPO.2a"
+"selectivity",6,1.06374499603911,"Fishery 14","model age class","relative selectivity","Fishery selectivity at age",,14,"14.LL.EPO.2a","14.LL.EPO.2a"
+"selectivity",7,7.54052163001491,"Fishery 14","model age class","relative selectivity","Fishery selectivity at age",,14,"14.LL.EPO.2a","14.LL.EPO.2a"
+"selectivity",8,6.58005684059892,"Fishery 14","model age class","relative selectivity","Fishery selectivity at age",,14,"14.LL.EPO.2a","14.LL.EPO.2a"
+"selectivity",9,4.41188573819896,"Fishery 14","model age class","relative selectivity","Fishery selectivity at age",,14,"14.LL.EPO.2a","14.LL.EPO.2a"
+"selectivity",10,3.31723262210367,"Fishery 14","model age class","relative selectivity","Fishery selectivity at age",,14,"14.LL.EPO.2a","14.LL.EPO.2a"
+"selectivity",11,2.84119216785787,"Fishery 14","model age class","relative selectivity","Fishery selectivity at age",,14,"14.LL.EPO.2a","14.LL.EPO.2a"
+"selectivity",12,2.84119216785787,"Fishery 14","model age class","relative selectivity","Fishery selectivity at age",,14,"14.LL.EPO.2a","14.LL.EPO.2a"
+"selectivity",1,2.06115362243856e-09,"Fishery 15","model age class","relative selectivity","Fishery selectivity at age",,15,"15.LL.EPO.2b","15.LL.EPO.2b"
+"selectivity",2,0.020834430188141,"Fishery 15","model age class","relative selectivity","Fishery selectivity at age",,15,"15.LL.EPO.2b","15.LL.EPO.2b"
+"selectivity",3,0.471859301135735,"Fishery 15","model age class","relative selectivity","Fishery selectivity at age",,15,"15.LL.EPO.2b","15.LL.EPO.2b"
+"selectivity",4,2.96472831615479,"Fishery 15","model age class","relative selectivity","Fishery selectivity at age",,15,"15.LL.EPO.2b","15.LL.EPO.2b"
+"selectivity",5,1.57631167651509,"Fishery 15","model age class","relative selectivity","Fishery selectivity at age",,15,"15.LL.EPO.2b","15.LL.EPO.2b"
+"selectivity",6,0.638514987185454,"Fishery 15","model age class","relative selectivity","Fishery selectivity at age",,15,"15.LL.EPO.2b","15.LL.EPO.2b"
+"selectivity",7,0.346533579404666,"Fishery 15","model age class","relative selectivity","Fishery selectivity at age",,15,"15.LL.EPO.2b","15.LL.EPO.2b"
+"selectivity",8,0.247678422392905,"Fishery 15","model age class","relative selectivity","Fishery selectivity at age",,15,"15.LL.EPO.2b","15.LL.EPO.2b"
+"selectivity",9,0.210325704349038,"Fishery 15","model age class","relative selectivity","Fishery selectivity at age",,15,"15.LL.EPO.2b","15.LL.EPO.2b"
+"selectivity",10,0.195946182508917,"Fishery 15","model age class","relative selectivity","Fishery selectivity at age",,15,"15.LL.EPO.2b","15.LL.EPO.2b"
+"selectivity",11,0.191004763553761,"Fishery 15","model age class","relative selectivity","Fishery selectivity at age",,15,"15.LL.EPO.2b","15.LL.EPO.2b"
+"selectivity",12,0.191004763553761,"Fishery 15","model age class","relative selectivity","Fishery selectivity at age",,15,"15.LL.EPO.2b","15.LL.EPO.2b"
+"selectivity",1,2.06115362243856e-09,"Fishery 16","model age class","relative selectivity","Fishery selectivity at age",,16,"16.LL.EPO.2c","16.LL.EPO.2c"
+"selectivity",2,0.0466018797611375,"Fishery 16","model age class","relative selectivity","Fishery selectivity at age",,16,"16.LL.EPO.2c","16.LL.EPO.2c"
+"selectivity",3,0.572181200302225,"Fishery 16","model age class","relative selectivity","Fishery selectivity at age",,16,"16.LL.EPO.2c","16.LL.EPO.2c"
+"selectivity",4,2.72616073630678,"Fishery 16","model age class","relative selectivity","Fishery selectivity at age",,16,"16.LL.EPO.2c","16.LL.EPO.2c"
+"selectivity",5,1.85894945378602,"Fishery 16","model age class","relative selectivity","Fishery selectivity at age",,16,"16.LL.EPO.2c","16.LL.EPO.2c"
+"selectivity",6,0.984173431746605,"Fishery 16","model age class","relative selectivity","Fishery selectivity at age",,16,"16.LL.EPO.2c","16.LL.EPO.2c"
+"selectivity",7,0.634265173453787,"Fishery 16","model age class","relative selectivity","Fishery selectivity at age",,16,"16.LL.EPO.2c","16.LL.EPO.2c"
+"selectivity",8,0.49724171580243,"Fishery 16","model age class","relative selectivity","Fishery selectivity at age",,16,"16.LL.EPO.2c","16.LL.EPO.2c"
+"selectivity",9,0.441475520681296,"Fishery 16","model age class","relative selectivity","Fishery selectivity at age",,16,"16.LL.EPO.2c","16.LL.EPO.2c"
+"selectivity",10,0.41925186746697,"Fishery 16","model age class","relative selectivity","Fishery selectivity at age",,16,"16.LL.EPO.2c","16.LL.EPO.2c"
+"selectivity",11,0.411503134118026,"Fishery 16","model age class","relative selectivity","Fishery selectivity at age",,16,"16.LL.EPO.2c","16.LL.EPO.2c"
+"selectivity",12,0.411503134118026,"Fishery 16","model age class","relative selectivity","Fishery selectivity at age",,16,"16.LL.EPO.2c","16.LL.EPO.2c"
+"selectivity",1,0.114677537468991,"Fishery 17","model age class","relative selectivity","Fishery selectivity at age",,17,"17.TR.EPO.2abc","17.TR.EPO.2abc"
+"selectivity",2,1.07842384945244,"Fishery 17","model age class","relative selectivity","Fishery selectivity at age",,17,"17.TR.EPO.2abc","17.TR.EPO.2abc"
+"selectivity",3,2.65099051135908,"Fishery 17","model age class","relative selectivity","Fishery selectivity at age",,17,"17.TR.EPO.2abc","17.TR.EPO.2abc"
+"selectivity",4,0.900994996746583,"Fishery 17","model age class","relative selectivity","Fishery selectivity at age",,17,"17.TR.EPO.2abc","17.TR.EPO.2abc"
+"selectivity",5,0.299328315380291,"Fishery 17","model age class","relative selectivity","Fishery selectivity at age",,17,"17.TR.EPO.2abc","17.TR.EPO.2abc"
+"selectivity",6,0.148793436221734,"Fishery 17","model age class","relative selectivity","Fishery selectivity at age",,17,"17.TR.EPO.2abc","17.TR.EPO.2abc"
+"selectivity",7,0.10234055977469,"Fishery 17","model age class","relative selectivity","Fishery selectivity at age",,17,"17.TR.EPO.2abc","17.TR.EPO.2abc"
+"selectivity",8,0.0855037723286075,"Fishery 17","model age class","relative selectivity","Fishery selectivity at age",,17,"17.TR.EPO.2abc","17.TR.EPO.2abc"
+"selectivity",9,0.079145983543915,"Fishery 17","model age class","relative selectivity","Fishery selectivity at age",,17,"17.TR.EPO.2abc","17.TR.EPO.2abc"
+"selectivity",10,0.076980974012163,"Fishery 17","model age class","relative selectivity","Fishery selectivity at age",,17,"17.TR.EPO.2abc","17.TR.EPO.2abc"
+"selectivity",11,0.0765390518858157,"Fishery 17","model age class","relative selectivity","Fishery selectivity at age",,17,"17.TR.EPO.2abc","17.TR.EPO.2abc"
+"selectivity",12,0.0765390518858157,"Fishery 17","model age class","relative selectivity","Fishery selectivity at age",,17,"17.TR.EPO.2abc","17.TR.EPO.2abc"
+"selectivity",1,2.06115362243856e-09,"Fishery 18","model age class","relative selectivity","Fishery selectivity at age",,18,"18.L.INDEX.1abcd","18.L.INDEX.1abcd"
+"selectivity",2,2.06115362243856e-09,"Fishery 18","model age class","relative selectivity","Fishery selectivity at age",,18,"18.L.INDEX.1abcd","18.L.INDEX.1abcd"
+"selectivity",3,0.0128179569298535,"Fishery 18","model age class","relative selectivity","Fishery selectivity at age",,18,"18.L.INDEX.1abcd","18.L.INDEX.1abcd"
+"selectivity",4,0.0309794319548548,"Fishery 18","model age class","relative selectivity","Fishery selectivity at age",,18,"18.L.INDEX.1abcd","18.L.INDEX.1abcd"
+"selectivity",5,0.143223391888088,"Fishery 18","model age class","relative selectivity","Fishery selectivity at age",,18,"18.L.INDEX.1abcd","18.L.INDEX.1abcd"
+"selectivity",6,0.538716226294419,"Fishery 18","model age class","relative selectivity","Fishery selectivity at age",,18,"18.L.INDEX.1abcd","18.L.INDEX.1abcd"
+"selectivity",7,1.23908222487906,"Fishery 18","model age class","relative selectivity","Fishery selectivity at age",,18,"18.L.INDEX.1abcd","18.L.INDEX.1abcd"
+"selectivity",8,1.94734420198241,"Fishery 18","model age class","relative selectivity","Fishery selectivity at age",,18,"18.L.INDEX.1abcd","18.L.INDEX.1abcd"
+"selectivity",9,2.43809917871391,"Fishery 18","model age class","relative selectivity","Fishery selectivity at age",,18,"18.L.INDEX.1abcd","18.L.INDEX.1abcd"
+"selectivity",10,2.70417101071733,"Fishery 18","model age class","relative selectivity","Fishery selectivity at age",,18,"18.L.INDEX.1abcd","18.L.INDEX.1abcd"
+"selectivity",11,2.82419516534036,"Fishery 18","model age class","relative selectivity","Fishery selectivity at age",,18,"18.L.INDEX.1abcd","18.L.INDEX.1abcd"
+"selectivity",12,2.82419516534036,"Fishery 18","model age class","relative selectivity","Fishery selectivity at age",,18,"18.L.INDEX.1abcd","18.L.INDEX.1abcd"
+"selectivity",1,0.254607788863572,"Fishery 19","model age class","relative selectivity","Fishery selectivity at age",,19,"19.TR.INDEX.1ef","19.TR.INDEX.1ef"
+"selectivity",2,2.45289597632478,"Fishery 19","model age class","relative selectivity","Fishery selectivity at age",,19,"19.TR.INDEX.1ef","19.TR.INDEX.1ef"
+"selectivity",3,1.97123670958392,"Fishery 19","model age class","relative selectivity","Fishery selectivity at age",,19,"19.TR.INDEX.1ef","19.TR.INDEX.1ef"
+"selectivity",4,0.123837822722321,"Fishery 19","model age class","relative selectivity","Fishery selectivity at age",,19,"19.TR.INDEX.1ef","19.TR.INDEX.1ef"
+"selectivity",5,0.0120759633856852,"Fishery 19","model age class","relative selectivity","Fishery selectivity at age",,19,"19.TR.INDEX.1ef","19.TR.INDEX.1ef"
+"selectivity",6,0.00296761665515548,"Fishery 19","model age class","relative selectivity","Fishery selectivity at age",,19,"19.TR.INDEX.1ef","19.TR.INDEX.1ef"
+"selectivity",7,0.00142318847551171,"Fishery 19","model age class","relative selectivity","Fishery selectivity at age",,19,"19.TR.INDEX.1ef","19.TR.INDEX.1ef"
+"selectivity",8,0.00100415578117943,"Fishery 19","model age class","relative selectivity","Fishery selectivity at age",,19,"19.TR.INDEX.1ef","19.TR.INDEX.1ef"
+"selectivity",9,0.00086526508579648,"Fishery 19","model age class","relative selectivity","Fishery selectivity at age",,19,"19.TR.INDEX.1ef","19.TR.INDEX.1ef"
+"selectivity",10,0.000820432263284465,"Fishery 19","model age class","relative selectivity","Fishery selectivity at age",,19,"19.TR.INDEX.1ef","19.TR.INDEX.1ef"
+"selectivity",11,0.000811445328492908,"Fishery 19","model age class","relative selectivity","Fishery selectivity at age",,19,"19.TR.INDEX.1ef","19.TR.INDEX.1ef"
+"selectivity",12,0.000811445328492908,"Fishery 19","model age class","relative selectivity","Fishery selectivity at age",,19,"19.TR.INDEX.1ef","19.TR.INDEX.1ef"
+"selectivity",1,2.06115362243856e-09,"Fishery 20","model age class","relative selectivity","Fishery selectivity at age",,20,"20.L.INDEX.2abc","20.L.INDEX.2abc"
+"selectivity",2,2.06115362243856e-09,"Fishery 20","model age class","relative selectivity","Fishery selectivity at age",,20,"20.L.INDEX.2abc","20.L.INDEX.2abc"
+"selectivity",3,2.06115362243856e-09,"Fishery 20","model age class","relative selectivity","Fishery selectivity at age",,20,"20.L.INDEX.2abc","20.L.INDEX.2abc"
+"selectivity",4,2.06115362243856e-09,"Fishery 20","model age class","relative selectivity","Fishery selectivity at age",,20,"20.L.INDEX.2abc","20.L.INDEX.2abc"
+"selectivity",5,1.00458065443225,"Fishery 20","model age class","relative selectivity","Fishery selectivity at age",,20,"20.L.INDEX.2abc","20.L.INDEX.2abc"
+"selectivity",6,1.0027584689274,"Fishery 20","model age class","relative selectivity","Fishery selectivity at age",,20,"20.L.INDEX.2abc","20.L.INDEX.2abc"
+"selectivity",7,0.999938092626668,"Fishery 20","model age class","relative selectivity","Fishery selectivity at age",,20,"20.L.INDEX.2abc","20.L.INDEX.2abc"
+"selectivity",8,0.997710783754387,"Fishery 20","model age class","relative selectivity","Fishery selectivity at age",,20,"20.L.INDEX.2abc","20.L.INDEX.2abc"
+"selectivity",9,0.99635998704358,"Fishery 20","model age class","relative selectivity","Fishery selectivity at age",,20,"20.L.INDEX.2abc","20.L.INDEX.2abc"
+"selectivity",10,0.995638777340613,"Fishery 20","model age class","relative selectivity","Fishery selectivity at age",,20,"20.L.INDEX.2abc","20.L.INDEX.2abc"
+"selectivity",11,0.995283404292054,"Fishery 20","model age class","relative selectivity","Fishery selectivity at age",,20,"20.L.INDEX.2abc","20.L.INDEX.2abc"
+"selectivity",12,0.995283404292054,"Fishery 20","model age class","relative selectivity","Fishery selectivity at age",,20,"20.L.INDEX.2abc","20.L.INDEX.2abc"
+"movement",1,0.0187098768,"Season 1: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 1: 1 to 2"
+"movement",2,0.0144535533,"Season 1: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 1: 1 to 2"
+"movement",3,0.020832468,"Season 1: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 1: 1 to 2"
+"movement",4,0.0311356506,"Season 1: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 1: 1 to 2"
+"movement",5,0.0391977155,"Season 1: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 1: 1 to 2"
+"movement",6,0.0450119348,"Season 1: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 1: 1 to 2"
+"movement",7,0.0492982361,"Season 1: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 1: 1 to 2"
+"movement",8,0.0529633456,"Season 1: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 1: 1 to 2"
+"movement",9,0.0561331314,"Season 1: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 1: 1 to 2"
+"movement",10,0.0589000893,"Season 1: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 1: 1 to 2"
+"movement",11,0.061278245,"Season 1: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 1: 1 to 2"
+"movement",12,0.0662457342,"Season 1: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 1: 1 to 2"
+"movement",1,0.1178444146,"Season 1: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 1: 2 to 1"
+"movement",2,0.0817068412,"Season 1: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 1: 2 to 1"
+"movement",3,0.0747256038,"Season 1: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 1: 2 to 1"
+"movement",4,0.0882539745,"Season 1: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 1: 2 to 1"
+"movement",5,0.1079844784,"Season 1: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 1: 2 to 1"
+"movement",6,0.1161814814,"Season 1: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 1: 2 to 1"
+"movement",7,0.1174968513,"Season 1: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 1: 2 to 1"
+"movement",8,0.1168634577,"Season 1: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 1: 2 to 1"
+"movement",9,0.1158795503,"Season 1: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 1: 2 to 1"
+"movement",10,0.115006998,"Season 1: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 1: 2 to 1"
+"movement",11,0.1141465857,"Season 1: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 1: 2 to 1"
+"movement",12,0.1131661912,"Season 1: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 1: 2 to 1"
+"movement",1,0.0212057418,"Season 2: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 2: 1 to 2"
+"movement",2,0.0160191081,"Season 2: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 2: 1 to 2"
+"movement",3,0.0215915525,"Season 2: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 2: 1 to 2"
+"movement",4,0.031402154,"Season 2: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 2: 1 to 2"
+"movement",5,0.0394005845,"Season 2: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 2: 1 to 2"
+"movement",6,0.0447725317,"Season 2: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 2: 1 to 2"
+"movement",7,0.048744526,"Season 2: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 2: 1 to 2"
+"movement",8,0.0521873715,"Season 2: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 2: 1 to 2"
+"movement",9,0.0551941101,"Season 2: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 2: 1 to 2"
+"movement",10,0.0578555368,"Season 2: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 2: 1 to 2"
+"movement",11,0.0601352936,"Season 2: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 2: 1 to 2"
+"movement",12,0.064911623,"Season 2: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 2: 1 to 2"
+"movement",1,0.1068326726,"Season 2: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 2: 2 to 1"
+"movement",2,0.0773715969,"Season 2: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 2: 2 to 1"
+"movement",3,0.0746342745,"Season 2: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 2: 2 to 1"
+"movement",4,0.0874956921,"Season 2: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 2: 2 to 1"
+"movement",5,0.1036019393,"Season 2: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 2: 2 to 1"
+"movement",6,0.1110475468,"Season 2: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 2: 2 to 1"
+"movement",7,0.1128376146,"Season 2: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 2: 2 to 1"
+"movement",8,0.1126196878,"Season 2: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 2: 2 to 1"
+"movement",9,0.1118748516,"Season 2: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 2: 2 to 1"
+"movement",10,0.1111473833,"Season 2: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 2: 2 to 1"
+"movement",11,0.1104089247,"Season 2: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 2: 2 to 1"
+"movement",12,0.1094863068,"Season 2: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 2: 2 to 1"
+"movement",1,0.018553443,"Season 3: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 3: 1 to 2"
+"movement",2,0.0147008281,"Season 3: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 3: 1 to 2"
+"movement",3,0.020086057,"Season 3: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 3: 1 to 2"
+"movement",4,0.0298209164,"Season 3: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 3: 1 to 2"
+"movement",5,0.0370781555,"Season 3: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 3: 1 to 2"
+"movement",6,0.0420311159,"Season 3: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 3: 1 to 2"
+"movement",7,0.0458229607,"Season 3: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 3: 1 to 2"
+"movement",8,0.0490912362,"Season 3: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 3: 1 to 2"
+"movement",9,0.0519262942,"Season 3: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 3: 1 to 2"
+"movement",10,0.0544562075,"Season 3: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 3: 1 to 2"
+"movement",11,0.0566146231,"Season 3: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 3: 1 to 2"
+"movement",12,0.0611202443,"Season 3: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 3: 1 to 2"
+"movement",1,0.1109394867,"Season 3: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 3: 2 to 1"
+"movement",2,0.0777575492,"Season 3: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 3: 2 to 1"
+"movement",3,0.074757452,"Season 3: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 3: 2 to 1"
+"movement",4,0.087480735,"Season 3: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 3: 2 to 1"
+"movement",5,0.0992604147,"Season 3: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 3: 2 to 1"
+"movement",6,0.1070897757,"Season 3: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 3: 2 to 1"
+"movement",7,0.1086718963,"Season 3: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 3: 2 to 1"
+"movement",8,0.1082755343,"Season 3: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 3: 2 to 1"
+"movement",9,0.1074012905,"Season 3: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 3: 2 to 1"
+"movement",10,0.1065806858,"Season 3: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 3: 2 to 1"
+"movement",11,0.1057340888,"Season 3: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 3: 2 to 1"
+"movement",12,0.1048606825,"Season 3: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 3: 2 to 1"
+"movement",1,0.0184494664,"Season 4: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 4: 1 to 2"
+"movement",2,0.0140565544,"Season 4: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 4: 1 to 2"
+"movement",3,0.0194730338,"Season 4: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 4: 1 to 2"
+"movement",4,0.0298902028,"Season 4: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 4: 1 to 2"
+"movement",5,0.0379265611,"Season 4: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 4: 1 to 2"
+"movement",6,0.0435308555,"Season 4: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 4: 1 to 2"
+"movement",7,0.0476025859,"Season 4: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 4: 1 to 2"
+"movement",8,0.0510095348,"Season 4: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 4: 1 to 2"
+"movement",9,0.0539499224,"Season 4: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 4: 1 to 2"
+"movement",10,0.0565522482,"Season 4: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 4: 1 to 2"
+"movement",11,0.0587680183,"Season 4: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 4: 1 to 2"
+"movement",12,0.0632810658,"Season 4: 1 to 2","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 4: 1 to 2"
+"movement",1,0.1110735445,"Season 4: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 4: 2 to 1"
+"movement",2,0.0770159263,"Season 4: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 4: 2 to 1"
+"movement",3,0.0727379942,"Season 4: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 4: 2 to 1"
+"movement",4,0.0860487878,"Season 4: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 4: 2 to 1"
+"movement",5,0.0976112542,"Season 4: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 4: 2 to 1"
+"movement",6,0.1054664495,"Season 4: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 4: 2 to 1"
+"movement",7,0.106875884,"Season 4: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 4: 2 to 1"
+"movement",8,0.1064041023,"Season 4: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 4: 2 to 1"
+"movement",9,0.1055965854,"Season 4: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 4: 2 to 1"
+"movement",10,0.1048258332,"Season 4: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 4: 2 to 1"
+"movement",11,0.1039860834,"Season 4: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 4: 2 to 1"
+"movement",12,0.1033412816,"Season 4: 2 to 1","model age class","probability","Probability of movement from source to destination region per movement event",,,,"Season 4: 2 to 1"
