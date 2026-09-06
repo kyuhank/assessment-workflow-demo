@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="KIMSA Build: Visual model assembly">
+  <defs>
+    <linearGradient id="kimsagui-sea" x1="0" y1="0" x2=".65" y2="1">
+      <stop stop-color="#93ccb8"/>
+      <stop offset="1" stop-color="#3f8179"/>
+    </linearGradient>
+    <linearGradient id="kimsagui-pearl" x1="0" y1="0" x2=".3" y2="1">
+      <stop stop-color="#fff"/>
+      <stop offset=".5" stop-color="#f5fafc"/>
+      <stop offset="1" stop-color="#dfecef"/>
+    </linearGradient>
+    <radialGradient id="kimsagui-light" cx=".15" cy="0" r=".9">
+      <stop stop-color="#fff" stop-opacity=".57"/>
+      <stop offset=".65" stop-color="#fff" stop-opacity=".04"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="kimsagui-edge" x1="0" y1="0" x2=".6" y2="1">
+      <stop stop-color="#fff" stop-opacity=".9"/>
+      <stop offset=".5" stop-color="#fff" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#fff" stop-opacity=".4"/>
+    </linearGradient>
+    <filter id="kimsagui-lift" x="-30%" y="-30%" width="160%" height="170%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="1.3" stdDeviation="1.4" flood-color="#15354d" flood-opacity=".19"/>
+    </filter>
+  </defs>
+  <rect x="1" y="1" width="62" height="62" rx="17" fill="url(#kimsagui-sea)"/>
+  <rect x="1.6" y="1.6" width="60.8" height="60.8" rx="16.4" fill="url(#kimsagui-light)" stroke="url(#kimsagui-edge)" stroke-width=".9"/>
+  <path d="M7 23V19C7 11 12 7 20 7H39" fill="none" stroke="#fff" stroke-width=".8" stroke-opacity=".24" stroke-linecap="round"/>
+  <g filter="url(#kimsagui-lift)" stroke-linejoin="round">
+    <rect x="12" y="22" width="27" height="29" rx="6.5" fill="#dbf5ef" fill-opacity=".58" stroke="#e7fff8" stroke-opacity=".65"/>
+    <rect x="25" y="12" width="27" height="29" rx="6.5" fill="url(#kimsagui-pearl)"/>
+    <path d="M25 25H38V41" fill="none" stroke="#74b3a6" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="38" cy="25" r="3.5" fill="#70b5a4"/>
+  </g>
+</svg>

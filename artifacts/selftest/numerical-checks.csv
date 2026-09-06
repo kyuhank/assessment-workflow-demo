@@ -1,7 +1,7 @@
 "Model","Label","Status","Passed","Failed","Unknown"
 "truth","Generating truth","passed",3,0,0
-"replicate-1","Refit 1","passed",3,0,0
-"replicate-2","Refit 2","passed",3,0,0
-"replicate-3","Refit 3","passed",3,0,0
-"replicate-4","Refit 4","passed",3,0,0
-"replicate-5","Refit 5","passed",3,0,0
+"replicate-1","Self-test 1","passed",3,0,0
+"replicate-2","Self-test 2","passed",3,0,0
+"replicate-3","Self-test 3","passed",3,0,0
+"replicate-4","Self-test 4","passed",3,0,0
+"replicate-5","Self-test 5","passed",3,0,0

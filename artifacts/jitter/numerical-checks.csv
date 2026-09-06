@@ -1,10 +1,10 @@
 "Model","Label","Status","Passed","Failed","Unknown"
 "reference","Diagnostic model","passed",3,0,0
-"trial-1","Trial 1","passed",3,0,0
-"trial-2","Trial 2","passed",3,0,0
-"trial-3","Trial 3","passed",3,0,0
-"trial-4","Trial 4","passed",3,0,0
-"trial-5","Trial 5","passed",3,0,0
-"trial-6","Trial 6","passed",3,0,0
-"trial-7","Trial 7","passed",3,0,0
-"trial-8","Trial 8","failed",2,1,0
+"trial-1","Jitter 1","passed",3,0,0
+"trial-2","Jitter 2","passed",3,0,0
+"trial-3","Jitter 3","passed",3,0,0
+"trial-4","Jitter 4","passed",3,0,0
+"trial-5","Jitter 5","passed",3,0,0
+"trial-6","Jitter 6","passed",3,0,0
+"trial-7","Jitter 7","passed",3,0,0
+"trial-8","Jitter 8","failed",2,1,0

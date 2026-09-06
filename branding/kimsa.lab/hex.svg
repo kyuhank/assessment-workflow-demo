@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 230" role="img" aria-label="KIMSA Lab: Experiments and diagnostics">
+  <defs>
+    <linearGradient id="kimsalab-sea" x1="0" y1="0" x2=".65" y2="1">
+      <stop stop-color="#b2a5df"/>
+      <stop offset="1" stop-color="#6d5caa"/>
+    </linearGradient>
+    <linearGradient id="kimsalab-pearl" x1="0" y1="0" x2=".3" y2="1">
+      <stop stop-color="#fff"/>
+      <stop offset=".5" stop-color="#f5fafc"/>
+      <stop offset="1" stop-color="#dfecef"/>
+    </linearGradient>
+    <radialGradient id="kimsalab-light" cx=".15" cy="0" r=".9">
+      <stop stop-color="#fff" stop-opacity=".57"/>
+      <stop offset=".65" stop-color="#fff" stop-opacity=".04"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="kimsalab-edge" x1="0" y1="0" x2=".6" y2="1">
+      <stop stop-color="#fff" stop-opacity=".9"/>
+      <stop offset=".5" stop-color="#fff" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#fff" stop-opacity=".4"/>
+    </linearGradient>
+    <filter id="kimsalab-lift" x="-30%" y="-30%" width="160%" height="170%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="1.3" stdDeviation="1.4" flood-color="#15354d" flood-opacity=".19"/>
+    </filter>
+  </defs>
+  <path d="M106 5L192 55Q198 59 198 66V164Q198 171 192 175L106 225Q100 229 94 225L8 175Q2 171 2 164V66Q2 59 8 55L94 5Q100 1 106 5Z" fill="url(#kimsalab-sea)"/>
+  <path d="M106 5L192 55Q198 59 198 66V164Q198 171 192 175L106 225Q100 229 94 225L8 175Q2 171 2 164V66Q2 59 8 55L94 5Q100 1 106 5Z" fill="url(#kimsalab-light)" stroke="url(#kimsalab-edge)" stroke-width="2"/>
+  <path d="M100 12L188 63V166L100 218L12 166V63Z" fill="none" stroke="#fff" stroke-opacity=".2" stroke-width=".7"/>
+  <g transform="translate(36 28) scale(2)">
+    <g filter="url(#kimsalab-lift)" stroke-linejoin="round">
+      <path d="M26 14H38V28L48 45C51 50 48 53 44 53H20C15 53 13 50 16 45L26 28Z" fill="url(#kimsalab-pearl)"/>
+      <path d="M24 14H40" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M24 38Q29 35 35 38Q39 40 42 39L47 47Q49 50 44 50H20Q16 50 18 47Z" fill="#a297d3"/>
+      <circle cx="28" cy="44" r="2" fill="#f8f5ff"/>
+      <circle cx="37" cy="46" r="1.3" fill="#eae4fd"/>
+    </g>
+  </g>
+  <text x="100" y="163" text-anchor="middle" font-family="Inter, system-ui, DejaVu Sans, sans-serif" font-size="11" font-weight="500" letter-spacing="2.2" fill="white" fill-opacity=".9">KIMSA</text>
+  <text x="100" y="191" text-anchor="middle" font-family="Inter, system-ui, DejaVu Sans, sans-serif" font-size="29" font-weight="600" letter-spacing="-.6" fill="white">Lab</text>
+</svg>
