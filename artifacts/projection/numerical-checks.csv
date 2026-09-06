@@ -1,61 +1,61 @@
 "Model","Label","Status","Passed","Failed","Unknown"
-"fixed-catch-1","fixed-catch 1","unknown",0,0,0
-"fixed-catch-2","fixed-catch 2","unknown",0,0,0
-"fixed-catch-3","fixed-catch 3","unknown",0,0,0
-"fixed-catch-4","fixed-catch 4","unknown",0,0,0
-"fixed-catch-5","fixed-catch 5","unknown",0,0,0
-"fixed-catch-6","fixed-catch 6","unknown",0,0,0
-"fixed-catch-7","fixed-catch 7","unknown",0,0,0
-"fixed-catch-8","fixed-catch 8","unknown",0,0,0
-"fixed-catch-9","fixed-catch 9","unknown",0,0,0
-"fixed-catch-10","fixed-catch 10","unknown",0,0,0
-"fixed-catch-11","fixed-catch 11","unknown",0,0,0
-"fixed-catch-12","fixed-catch 12","unknown",0,0,0
-"fixed-catch-13","fixed-catch 13","unknown",0,0,0
-"fixed-catch-14","fixed-catch 14","unknown",0,0,0
-"fixed-catch-15","fixed-catch 15","unknown",0,0,0
-"fixed-catch-16","fixed-catch 16","unknown",0,0,0
-"fixed-catch-17","fixed-catch 17","unknown",0,0,0
-"fixed-catch-18","fixed-catch 18","unknown",0,0,0
-"fixed-catch-19","fixed-catch 19","unknown",0,0,0
-"fixed-catch-20","fixed-catch 20","unknown",0,0,0
-"lower-F-1","lower-F 1","unknown",0,0,0
-"lower-F-2","lower-F 2","unknown",0,0,0
-"lower-F-3","lower-F 3","unknown",0,0,0
-"lower-F-4","lower-F 4","unknown",0,0,0
-"lower-F-5","lower-F 5","unknown",0,0,0
-"lower-F-6","lower-F 6","unknown",0,0,0
-"lower-F-7","lower-F 7","unknown",0,0,0
-"lower-F-8","lower-F 8","unknown",0,0,0
-"lower-F-9","lower-F 9","unknown",0,0,0
-"lower-F-10","lower-F 10","unknown",0,0,0
-"lower-F-11","lower-F 11","unknown",0,0,0
-"lower-F-12","lower-F 12","unknown",0,0,0
-"lower-F-13","lower-F 13","unknown",0,0,0
-"lower-F-14","lower-F 14","unknown",0,0,0
-"lower-F-15","lower-F 15","unknown",0,0,0
-"lower-F-16","lower-F 16","unknown",0,0,0
-"lower-F-17","lower-F 17","unknown",0,0,0
-"lower-F-18","lower-F 18","unknown",0,0,0
-"lower-F-19","lower-F 19","unknown",0,0,0
-"lower-F-20","lower-F 20","unknown",0,0,0
-"higher-F-1","higher-F 1","unknown",0,0,0
-"higher-F-2","higher-F 2","unknown",0,0,0
-"higher-F-3","higher-F 3","unknown",0,0,0
-"higher-F-4","higher-F 4","unknown",0,0,0
-"higher-F-5","higher-F 5","unknown",0,0,0
-"higher-F-6","higher-F 6","unknown",0,0,0
-"higher-F-7","higher-F 7","unknown",0,0,0
-"higher-F-8","higher-F 8","unknown",0,0,0
-"higher-F-9","higher-F 9","unknown",0,0,0
-"higher-F-10","higher-F 10","unknown",0,0,0
-"higher-F-11","higher-F 11","unknown",0,0,0
-"higher-F-12","higher-F 12","unknown",0,0,0
-"higher-F-13","higher-F 13","unknown",0,0,0
-"higher-F-14","higher-F 14","unknown",0,0,0
-"higher-F-15","higher-F 15","unknown",0,0,0
-"higher-F-16","higher-F 16","unknown",0,0,0
-"higher-F-17","higher-F 17","unknown",0,0,0
-"higher-F-18","higher-F 18","unknown",0,0,0
-"higher-F-19","higher-F 19","unknown",0,0,0
-"higher-F-20","higher-F 20","unknown",0,0,0
+"fixed-catch-1","Fixed catch 1","unknown",0,0,0
+"fixed-catch-2","Fixed catch 2","unknown",0,0,0
+"fixed-catch-3","Fixed catch 3","unknown",0,0,0
+"fixed-catch-4","Fixed catch 4","unknown",0,0,0
+"fixed-catch-5","Fixed catch 5","unknown",0,0,0
+"fixed-catch-6","Fixed catch 6","unknown",0,0,0
+"fixed-catch-7","Fixed catch 7","unknown",0,0,0
+"fixed-catch-8","Fixed catch 8","unknown",0,0,0
+"fixed-catch-9","Fixed catch 9","unknown",0,0,0
+"fixed-catch-10","Fixed catch 10","unknown",0,0,0
+"fixed-catch-11","Fixed catch 11","unknown",0,0,0
+"fixed-catch-12","Fixed catch 12","unknown",0,0,0
+"fixed-catch-13","Fixed catch 13","unknown",0,0,0
+"fixed-catch-14","Fixed catch 14","unknown",0,0,0
+"fixed-catch-15","Fixed catch 15","unknown",0,0,0
+"fixed-catch-16","Fixed catch 16","unknown",0,0,0
+"fixed-catch-17","Fixed catch 17","unknown",0,0,0
+"fixed-catch-18","Fixed catch 18","unknown",0,0,0
+"fixed-catch-19","Fixed catch 19","unknown",0,0,0
+"fixed-catch-20","Fixed catch 20","unknown",0,0,0
+"lower-F-1","F = 0.04 1","unknown",0,0,0
+"lower-F-2","F = 0.04 2","unknown",0,0,0
+"lower-F-3","F = 0.04 3","unknown",0,0,0
+"lower-F-4","F = 0.04 4","unknown",0,0,0
+"lower-F-5","F = 0.04 5","unknown",0,0,0
+"lower-F-6","F = 0.04 6","unknown",0,0,0
+"lower-F-7","F = 0.04 7","unknown",0,0,0
+"lower-F-8","F = 0.04 8","unknown",0,0,0
+"lower-F-9","F = 0.04 9","unknown",0,0,0
+"lower-F-10","F = 0.04 10","unknown",0,0,0
+"lower-F-11","F = 0.04 11","unknown",0,0,0
+"lower-F-12","F = 0.04 12","unknown",0,0,0
+"lower-F-13","F = 0.04 13","unknown",0,0,0
+"lower-F-14","F = 0.04 14","unknown",0,0,0
+"lower-F-15","F = 0.04 15","unknown",0,0,0
+"lower-F-16","F = 0.04 16","unknown",0,0,0
+"lower-F-17","F = 0.04 17","unknown",0,0,0
+"lower-F-18","F = 0.04 18","unknown",0,0,0
+"lower-F-19","F = 0.04 19","unknown",0,0,0
+"lower-F-20","F = 0.04 20","unknown",0,0,0
+"higher-F-1","F = 0.08 1","unknown",0,0,0
+"higher-F-2","F = 0.08 2","unknown",0,0,0
+"higher-F-3","F = 0.08 3","unknown",0,0,0
+"higher-F-4","F = 0.08 4","unknown",0,0,0
+"higher-F-5","F = 0.08 5","unknown",0,0,0
+"higher-F-6","F = 0.08 6","unknown",0,0,0
+"higher-F-7","F = 0.08 7","unknown",0,0,0
+"higher-F-8","F = 0.08 8","unknown",0,0,0
+"higher-F-9","F = 0.08 9","unknown",0,0,0
+"higher-F-10","F = 0.08 10","unknown",0,0,0
+"higher-F-11","F = 0.08 11","unknown",0,0,0
+"higher-F-12","F = 0.08 12","unknown",0,0,0
+"higher-F-13","F = 0.08 13","unknown",0,0,0
+"higher-F-14","F = 0.08 14","unknown",0,0,0
+"higher-F-15","F = 0.08 15","unknown",0,0,0
+"higher-F-16","F = 0.08 16","unknown",0,0,0
+"higher-F-17","F = 0.08 17","unknown",0,0,0
+"higher-F-18","F = 0.08 18","unknown",0,0,0
+"higher-F-19","F = 0.08 19","unknown",0,0,0
+"higher-F-20","F = 0.08 20","unknown",0,0,0

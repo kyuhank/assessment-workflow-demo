@@ -1,0 +1,1 @@
+body::before{content:"WORKFLOW DEMO";position:fixed;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-35deg);font:700 clamp(24px,7vw,96px)/1 system-ui,sans-serif;white-space:nowrap;color:#667780;opacity:.07;pointer-events:none;z-index:999;}

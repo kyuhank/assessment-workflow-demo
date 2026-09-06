@@ -1,4 +1,4 @@
-"Fishery","Unit","Region"
-"Longline","fish","Region 1"
-"Purse seine","fish","Region 1"
-"Other","fish","Region 1"
+"Fishery","Region","Unit"
+"Longline","Region 1","fish"
+"Purse seine","Region 1","fish"
+"Other","Region 1","fish"

@@ -1,5 +1,5 @@
 "Model","Label","Status","Passed","Failed","Unknown"
-"reference","Reference","passed",3,0,0
+"reference","Diagnostic model","passed",3,0,0
 "trial-1","Trial 1","passed",3,0,0
 "trial-2","Trial 2","passed",3,0,0
 "trial-3","Trial 3","passed",3,0,0

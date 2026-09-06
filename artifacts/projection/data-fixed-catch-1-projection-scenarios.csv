@@ -1,0 +1,4 @@
+"Scenario","Control","Target","Unit"
+"Fixed catch","Catch",45145.9157404822,"t/year"
+"F = 0.04","F",0.04,"per year"
+"F = 0.08","F",0.08,"per year"
