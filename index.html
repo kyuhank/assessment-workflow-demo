@@ -344,7 +344,7 @@ and any sex, region or time effects. Explain the basis for fixed inputs. -->
 <p>In a spatial model, movement redistributes fish among regions. The resulting transitions depend on age, season and the sequence of population processes within a time step. Movement rates and transition probabilities describe different parts of that calculation.</p>
 <!-- Describe the connections, parameterisation and sources of movement
 information. Remove this subsection for a pooled population. -->
-<p>Regional movement probabilities are shown in <a href="#fig-season-movement-coeff" class="quarto-xref">Figure&nbsp;33</a>.</p>
+<p>Regional movement probabilities are shown in <a href="#fig-season-movement-coeff" class="quarto-xref">Figure&nbsp;31</a>.</p>
 </section>
 <section id="sec-reproduction" class="level3" data-number="5.2.4">
 <h3 data-number="5.2.4" class="anchored" data-anchor-id="sec-reproduction"><span class="header-section-number">5.2.4</span> Reproductive potential</h3>
@@ -360,7 +360,7 @@ female proportion, body mass or fecundity enter the calculation. -->
 <!-- Specify selectivity, parameter sharing and time variation. Describe index
 catchability and the calculation of fishing mortality. For catch conditioning,
 record the catch equation, solver bounds and achieved tolerance. -->
-<p>Fishery selectivity at age is shown in <a href="#fig-select-age" class="quarto-xref">Figure&nbsp;31</a>. Selectivity expressed by length is shown in <a href="#fig-select-length" class="quarto-xref">Figure&nbsp;32</a>.</p>
+<p>Fishery selectivity at age is shown in <a href="#fig-select-age" class="quarto-xref">Figure&nbsp;29</a>. Selectivity expressed by length is shown in <a href="#fig-select-length" class="quarto-xref">Figure&nbsp;30</a>.</p>
 </section>
 <section id="observation-models" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="observation-models"><span class="header-section-number">5.4</span> Observation models</h2>
@@ -389,14 +389,14 @@ uncertainty calculations. Add equations specific to the chosen model here. -->
 <h2 data-number="6.2" class="anchored" data-anchor-id="sensitivity-analyses"><span class="header-section-number">6.2</span> Sensitivity analyses</h2>
 <p>Sensitivity analyses examine assumptions that could affect the assessment’s conclusions. Changing one assumption at a time clarifies its influence; combinations of changes reveal interactions. The alternatives should reflect the uncertainties relevant to the data and model.</p>
 <!-- Define the alternatives, their rationale and which parameters are refitted. -->
-<p>Sensitivity to stock-recruitment steepness is shown in <a href="#fig-sensitivity-steepness" class="quarto-xref">Figure&nbsp;41</a>. Sensitivity to natural mortality is shown in <a href="#fig-sensitivity-natural-mortality" class="quarto-xref">Figure&nbsp;42</a>. The effect of regional index scaling is shown in <a href="#fig-sensitivity-regional-scaling" class="quarto-xref">Figure&nbsp;43</a>.</p>
+<p>Sensitivity to stock-recruitment steepness is shown in <a href="#fig-sensitivity-steepness" class="quarto-xref">Figure&nbsp;38</a>. Sensitivity to natural mortality is shown in <a href="#fig-sensitivity-natural-mortality" class="quarto-xref">Figure&nbsp;39</a>. The effect of regional index scaling is shown in <a href="#fig-sensitivity-regional-scaling" class="quarto-xref">Figure&nbsp;40</a>.</p>
 </section>
 <section id="model-ensemble" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="model-ensemble"><span class="header-section-number">6.3</span> Model ensemble</h2>
 <p>An ensemble brings the selected assumptions together. Its distribution of results depends on the models retained, their weights and the treatment of uncertainty within each model. These decisions define what the ensemble summaries represent.</p>
 <!-- Describe the ensemble design, retention criteria, weights and combination
 of structural and estimation uncertainty. Account for excluded fits. -->
-<p>The ensemble design and model retention are summarised in <a href="#fig-ensemble-design-retention" class="quarto-xref">Figure&nbsp;44</a>.</p>
+<p>The ensemble design and model retention are summarised in <a href="#fig-ensemble-design-retention" class="quarto-xref">Figure&nbsp;41</a>.</p>
 </section>
 </section>
 <section id="sec-diagnostics" class="level1" data-number="7">
@@ -407,28 +407,28 @@ of structural and estimation uncertainty. Account for excluded fits. -->
 <p>Jitter trials refit the same model and data from different starting values. Agreement in final objectives and population estimates indicates that the solution is reproducible across those trials. Gradients help distinguish converged solutions from runs that stopped before reaching an optimum.</p>
 <!-- Give the perturbation scheme, trial count and acceptance criteria.
 Describe the observed agreement or alternative solutions. -->
-<p>Objectives and gradients are compared in <a href="#fig-jitter-scatter-plot" class="quarto-xref">Figure&nbsp;19</a>. The corresponding population estimates are shown in <a href="#fig-jitter-derived-values-diag-panel" class="quarto-xref">Figure&nbsp;20</a>. Regional depletion is compared in <a href="#fig-jitter-regional-depletion" class="quarto-xref">Figure&nbsp;21</a>.</p>
+<p>Objectives and gradients are compared in <a href="#fig-jitter-scatter-plot" class="quarto-xref">Figure&nbsp;17</a>. The corresponding population estimates are shown in <a href="#fig-jitter-derived-values-diag-panel" class="quarto-xref">Figure&nbsp;18</a>. Regional depletion is compared in <a href="#fig-jitter-regional-depletion" class="quarto-xref">Figure&nbsp;19</a>.</p>
 </section>
 <section id="simulation-estimation-tests-self-test" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="simulation-estimation-tests-self-test"><span class="header-section-number">7.2</span> Simulation-estimation tests (self-test)</h2>
 <p>A self-test generates data from a known model and then estimates that model from the simulated observations. Comparing the estimates with their generating values reveals bias and variability in recovery under the assumed processes. Where uncertainty intervals are available, their coverage can also be examined.</p>
 <!-- Specify what is simulated, the replicates, refitting procedure and handling
 of failed fits. Interpret recovery relative to the generating assumptions. -->
-<p>Recovery of selected quantities is summarised in <a href="#fig-selftest-recovery" class="quarto-xref">Figure&nbsp;22</a>. Recovery through time is shown in <a href="#fig-selftest-time-series" class="quarto-xref">Figure&nbsp;23</a>.</p>
+<p>Recovery of selected quantities is summarised in <a href="#fig-selftest-recovery" class="quarto-xref">Figure&nbsp;20</a>. Recovery through time is shown in <a href="#fig-selftest-time-series" class="quarto-xref">Figure&nbsp;21</a>.</p>
 </section>
 <section id="retrospective-analysis" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="retrospective-analysis"><span class="header-section-number">7.3</span> Retrospective analysis</h2>
 <p>Retrospective analysis examines how estimates change as terminal observations are removed. Each reduced-data fit is compared with the full-data fit over their shared years <span class="citation" data-cites="cadigan_local_2005">(<a href="#ref-cadigan_local_2005" role="doc-biblioref">Cadigan and Farrell, 2005</a>)</span>. Repeated shifts in the same direction can reveal a systematic pattern in recent estimates.</p>
 <!-- Define the peels, data truncation and any summary statistic. Interpret the
 pattern and the uncertainty in terminal estimates. -->
-<p>Population trajectories for the retrospective fits are compared in <a href="#fig-retro-analysis" class="quarto-xref">Figure&nbsp;24</a>.</p>
+<p>Population trajectories for the retrospective fits are compared in <a href="#fig-retro-analysis" class="quarto-xref">Figure&nbsp;22</a>.</p>
 </section>
 <section id="hindcast-evaluation" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="hindcast-evaluation"><span class="header-section-number">7.4</span> Hindcast evaluation</h2>
 <p>Hindcasts assess predictions against observations withheld from fitting. At each cutoff, the model is fitted using the information available up to that point and predicts subsequent observations. The comparison measures predictive performance at the specified horizons.</p>
 <!-- State the cutoffs, horizons, future inputs and benchmark. Estimate any
 skill-score scaling from training data and report errors on a defined scale. -->
-<p>Predictions and withheld observations are compared in <a href="#fig-hindcast-analysis" class="quarto-xref">Figure&nbsp;54</a>. Prediction errors and skill measures are summarised in <a href="#tbl-hindcast-skill" class="quarto-xref">Table&nbsp;7</a>.</p>
+<p>Predictions and withheld observations are compared in <a href="#fig-hindcast-analysis" class="quarto-xref">Figure&nbsp;51</a>. Prediction errors and skill measures are summarised in <a href="#tbl-hindcast-skill" class="quarto-xref">Table&nbsp;7</a>.</p>
 </section>
 <section id="likelihood-profiles-and-identifiability" class="level2" data-number="7.5">
 <h2 data-number="7.5" class="anchored" data-anchor-id="likelihood-profiles-and-identifiability"><span class="header-section-number">7.5</span> Likelihood profiles and identifiability</h2>
@@ -436,7 +436,7 @@ skill-score scaling from training data and report errors on a defined scale. -->
 <!-- Define the profiled quantity, units and period. Report convergence and
 constraint methods. Account for penalties when interpreting thresholds, and
 relate the profile to Hessian diagnostics and parameter bounds. -->
-<p>The total profile and contributions by data source are shown in <a href="#fig-diag-profile-data-sources" class="quarto-xref">Figure&nbsp;25</a>. Index contributions are shown in <a href="#fig-diag-profile-data-cpue" class="quarto-xref">Figure&nbsp;26</a>. Length-composition contributions are shown in <a href="#fig-diag-profile-data-lf" class="quarto-xref">Figure&nbsp;27</a>. Age-data contributions are shown in <a href="#fig-diag-profile-data-caal" class="quarto-xref">Figure&nbsp;28</a>.</p>
+<p>The total profile and contributions by data source are shown in <a href="#fig-diag-profile-data-sources" class="quarto-xref">Figure&nbsp;23</a>. Index contributions are shown in <a href="#fig-diag-profile-data-cpue" class="quarto-xref">Figure&nbsp;24</a>. Length-composition contributions are shown in <a href="#fig-diag-profile-data-lf" class="quarto-xref">Figure&nbsp;25</a>. Age-data contributions are shown in <a href="#fig-diag-profile-data-caal" class="quarto-xref">Figure&nbsp;26</a>.</p>
 </section>
 </section>
 <section id="sec-results" class="level1" data-number="8">
@@ -446,19 +446,19 @@ relate the profile to Hessian diagnostics and parameter bounds. -->
 <h2 data-number="8.1" class="anchored" data-anchor-id="data-fit"><span class="header-section-number">8.1</span> Data fit</h2>
 <!-- Interpret the patterns in observed and predicted data. Explain persistent
 residuals and their implications, including early periods with sparse coverage. -->
-<p>Abundance-index fits and residuals are shown in <a href="#fig-cpue-fit-residuals" class="quarto-xref">Figure&nbsp;11</a>. Pooled length-composition fits are compared by fishery in <a href="#fig-length-fit-by-fishery" class="quarto-xref">Figure&nbsp;12</a>. Regional length-composition fits are shown in <a href="#fig-length-fit-by-region" class="quarto-xref">Figure&nbsp;15</a>. Length summaries through time for longline fisheries are shown in <a href="#fig-length-fit-timeseries-ll" class="quarto-xref">Figure&nbsp;16</a>. Length summaries for other fisheries are shown in <a href="#fig-length-fit-timeseries-other" class="quarto-xref">Figure&nbsp;17</a>. Conditional age-at-length fits are shown in <a href="#fig-caal-fits-regions" class="quarto-xref">Figure&nbsp;18</a>.</p>
+<p>Abundance-index fits and residuals are shown in <a href="#fig-cpue-fit-residuals" class="quarto-xref">Figure&nbsp;11</a>. Pooled length-composition fits are compared by fishery in <a href="#fig-length-fit-by-fishery" class="quarto-xref">Figure&nbsp;12</a>. Regional length-composition fits are shown in <a href="#fig-length-fit-by-region" class="quarto-xref">Figure&nbsp;13</a>. Length summaries through time for longline fisheries are shown in <a href="#fig-length-fit-timeseries-ll" class="quarto-xref">Figure&nbsp;14</a>. Length summaries for other fisheries are shown in <a href="#fig-length-fit-timeseries-other" class="quarto-xref">Figure&nbsp;15</a>. Conditional age-at-length fits are shown in <a href="#fig-caal-fits-regions" class="quarto-xref">Figure&nbsp;16</a>.</p>
 </section>
 <section id="population-estimates" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="population-estimates"><span class="header-section-number">8.2</span> Population estimates</h2>
 <!-- Describe recruitment, spawning potential, depletion and fishing mortality.
 Explain regional differences and uncertainty in recent estimates. -->
-<p>The diagnostic model’s population trajectories are shown in <a href="#fig-diag-time-series" class="quarto-xref">Figure&nbsp;30</a>. Annual recruitment is shown by region and overall in <a href="#fig-recruitment-annual" class="quarto-xref">Figure&nbsp;35</a>. Recruitment allocation among regions and seasons is shown in <a href="#fig-recruitment-regions" class="quarto-xref">Figure&nbsp;36</a>. The relationship between spawning potential and recruitment is shown in <a href="#fig-stock-rr" class="quarto-xref">Figure&nbsp;37</a>. Regional contributions to population quantities are shown in <a href="#fig-timeseries-model-regions-stack" class="quarto-xref">Figure&nbsp;38</a>. Biomass under fitted fishing and the no-fishing calculation is compared in <a href="#fig-total-biomass-with-without-fishing" class="quarto-xref">Figure&nbsp;39</a>. Juvenile and adult fishing mortality is shown in <a href="#fig-juv-adult-F" class="quarto-xref">Figure&nbsp;40</a>.</p>
+<p>The diagnostic model’s population trajectories are shown in <a href="#fig-diag-time-series" class="quarto-xref">Figure&nbsp;28</a>. Annual recruitment is shown by region and overall in <a href="#fig-recruitment-annual" class="quarto-xref">Figure&nbsp;32</a>. Recruitment allocation among regions and seasons is shown in <a href="#fig-recruitment-regions" class="quarto-xref">Figure&nbsp;33</a>. The relationship between spawning potential and recruitment is shown in <a href="#fig-stock-rr" class="quarto-xref">Figure&nbsp;34</a>. Regional contributions to population quantities are shown in <a href="#fig-timeseries-model-regions-stack" class="quarto-xref">Figure&nbsp;35</a>. Biomass under fitted fishing and the no-fishing calculation is compared in <a href="#fig-total-biomass-with-without-fishing" class="quarto-xref">Figure&nbsp;36</a>. Juvenile and adult fishing mortality is shown in <a href="#fig-juv-adult-F" class="quarto-xref">Figure&nbsp;37</a>.</p>
 </section>
 <section id="robustness-and-uncertainty" class="level2" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="robustness-and-uncertainty"><span class="header-section-number">8.3</span> Robustness and uncertainty</h2>
 <!-- Bring together the diagnostic and sensitivity findings. Explain which
 assumptions drive uncertainty and how that affects interpretation. -->
-<p>The comparison with an age-structured production model is shown in <a href="#fig-aspm-comparison" class="quarto-xref">Figure&nbsp;29</a>. Trajectories from the retained ensemble models are shown in <a href="#fig-ensemble-individual" class="quarto-xref">Figure&nbsp;46</a>. Ensemble estimates and uncertainty are summarised in <a href="#fig-ensemble-est-uncert-ribbon" class="quarto-xref">Figure&nbsp;47</a>. Stock-status variation across biological assumptions is shown in <a href="#fig-management-uncertainty-continuous-axes-steep-M" class="quarto-xref">Figure&nbsp;45</a>.</p>
+<p>The comparison with an age-structured production model is shown in <a href="#fig-aspm-comparison" class="quarto-xref">Figure&nbsp;27</a>. Trajectories from the retained ensemble models are shown in <a href="#fig-ensemble-individual" class="quarto-xref">Figure&nbsp;43</a>. Ensemble estimates and uncertainty are summarised in <a href="#fig-ensemble-est-uncert-ribbon" class="quarto-xref">Figure&nbsp;44</a>. Stock-status variation across biological assumptions is shown in <a href="#fig-management-uncertainty-continuous-axes-steep-M" class="quarto-xref">Figure&nbsp;42</a>.</p>
 </section>
 </section>
 <section id="sec-status" class="level1" data-number="9">
@@ -474,21 +474,21 @@ D_t=\frac{SB_t}{SB_{t,F=0}},
 <p>Management measures may use averages over specified periods instead. The numerator, denominator and time windows then define the quantity being reported. Averaging depletion ratios and taking a ratio of mean spawning potentials generally give different results.</p>
 <!-- Define the reported metrics and periods, recruitment treatment and spatial
 scope. Describe how any fishery-group impacts are calculated and attributed. -->
-<p>Fishery impacts on spawning potential are shown in <a href="#fig-impact-region" class="quarto-xref">Figure&nbsp;51</a>.</p>
+<p>Fishery impacts on spawning potential are shown in <a href="#fig-impact-region" class="quarto-xref">Figure&nbsp;48</a>.</p>
 </section>
 <section id="yield-and-reference-points" class="level2" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="yield-and-reference-points"><span class="header-section-number">9.2</span> Yield and reference points</h2>
 <p>Equilibrium yield analysis compares the long-term catch supported by different levels of fishing under a stated fishing pattern and stock-recruitment relationship. Its maximum defines <span class="math inline">\(\mathrm{MSY}\)</span>, with associated quantities <span class="math inline">\(F_{\mathrm{MSY}}\)</span> and <span class="math inline">\(SB_{\mathrm{MSY}}\)</span> <span class="citation" data-cites="kleiber_multifan-cl_2019">(<a href="#ref-kleiber_multifan-cl_2019" role="doc-biblioref">Kleiber et al., 2019</a>)</span>. These reference points depend on the biological assumptions and the ages exposed to fishing.</p>
 <!-- Specify the fishing pattern, averaging period, spatial scope and current
 reference-point definitions. Add their adopted sources and numerical values. -->
-<p>Equilibrium yield is shown in <a href="#fig-yield" class="quarto-xref">Figure&nbsp;52</a>. Changes in yield reference points under historical fishing patterns are shown in <a href="#fig-dynamic-msy" class="quarto-xref">Figure&nbsp;50</a>. Reference-point estimates and definitions are given in <a href="#tbl-ref-points" class="quarto-xref">Table&nbsp;5</a>.</p>
+<p>Equilibrium yield is shown in <a href="#fig-yield" class="quarto-xref">Figure&nbsp;49</a>. Changes in yield reference points under historical fishing patterns are shown in <a href="#fig-dynamic-msy" class="quarto-xref">Figure&nbsp;47</a>. Reference-point estimates and definitions are given in <a href="#tbl-ref-points" class="quarto-xref">Table&nbsp;5</a>.</p>
 </section>
 <section id="stock-status" class="level2" data-number="9.3">
 <h2 data-number="9.3" class="anchored" data-anchor-id="stock-status"><span class="header-section-number">9.3</span> Stock status</h2>
 <p>Stock-status summaries relate estimated spawning potential and fishing mortality to the chosen reference points. Kobe plots use <span class="math inline">\(SB/SB_{\mathrm{MSY}}\)</span> and <span class="math inline">\(F/F_{\mathrm{MSY}}\)</span>; Majuro plots use a defined depletion measure alongside <span class="math inline">\(F/F_{\mathrm{MSY}}\)</span>. Ensemble probabilities depend on the weighting of models and the uncertainty included in the comparison.</p>
 <!-- Write the stock-status findings using the specified periods, areas and
 reference points. Report uncertainty and the evidence supporting conclusions. -->
-<p>Management quantities are summarised in <a href="#tbl-manage-quant" class="quarto-xref">Table&nbsp;3</a>. Probabilities relative to the reference points are given in <a href="#tbl-stock-status-refs" class="quarto-xref">Table&nbsp;4</a>. The stock-status comparison is shown in <a href="#fig-combined-kobe-majuro-status" class="quarto-xref">Figure&nbsp;48</a>. Changes in stock status through time are shown in <a href="#fig-time-dynamic-kobe-majuro" class="quarto-xref">Figure&nbsp;49</a>.</p>
+<p>Management quantities are summarised in <a href="#tbl-manage-quant" class="quarto-xref">Table&nbsp;3</a>. Probabilities relative to the reference points are given in <a href="#tbl-stock-status-refs" class="quarto-xref">Table&nbsp;4</a>. The stock-status comparison is shown in <a href="#fig-combined-kobe-majuro-status" class="quarto-xref">Figure&nbsp;45</a>. Changes in stock status through time are shown in <a href="#fig-time-dynamic-kobe-majuro" class="quarto-xref">Figure&nbsp;46</a>.</p>
 </section>
 </section>
 <section id="sec-projections" class="level1" data-number="10">
@@ -505,7 +505,7 @@ projected years. Use the stock-status section's reference-point definitions. -->
 <h2 data-number="10.2" class="anchored" data-anchor-id="projected-outcomes"><span class="header-section-number">10.2</span> Projected outcomes</h2>
 <!-- Compare scenarios and their uncertainty. State which sources of variation
 are represented and the assumptions behind the comparison. -->
-<p>Historical and projected trajectories are shown in <a href="#fig-projection-stock-trajectories" class="quarto-xref">Figure&nbsp;53</a>. Projected management quantities are summarised in <a href="#tbl-stock-projections" class="quarto-xref">Table&nbsp;6</a>.</p>
+<p>Historical and projected trajectories are shown in <a href="#fig-projection-stock-trajectories" class="quarto-xref">Figure&nbsp;50</a>. Projected management quantities are summarised in <a href="#tbl-stock-projections" class="quarto-xref">Table&nbsp;6</a>.</p>
 </section>
 </section>
 <section id="sec-discussion" class="level1" data-number="11">
@@ -1565,7 +1565,7 @@ Figure&nbsp;10: Stepwise model trajectories.
 <img src="artifacts/diagnostic/cpue-fit-residuals.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cpue-fit-residuals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;11: Abundance-index fits and log residuals by series. Residuals are log(observed/predicted).
+Figure&nbsp;11: Abundance-index fits and log residuals by series. Shading: central 95% conditional observation intervals. Residuals use the supplied log-scale standard deviations.
 </figcaption>
 </figure>
 </div>
@@ -1581,35 +1581,13 @@ Figure&nbsp;12: Length-composition fits by fishery. Observed sample counts (bars
 </figure>
 </div>
 <p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/length-fit-by-fishery.pdf">Download vector figure</a></p>
-<div id="fig-length-fit-by-fishery-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/length-fit-by-fishery-2.pdf">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-length-fit-by-fishery-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="artifacts/diagnostic/length-fit-by-fishery-2.svg" class="img-fluid figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-length-fit-by-fishery-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;13: Length-composition fits by fishery. Observed sample counts (bars) and predictions (lines), pooled over years.
-</figcaption>
-</figure>
-</div>
-<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/length-fit-by-fishery-2.pdf">Download vector figure</a></p>
-<div id="fig-length-fit-by-fishery-3" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/length-fit-by-fishery-3.pdf">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-length-fit-by-fishery-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="artifacts/diagnostic/length-fit-by-fishery-3.svg" class="img-fluid figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-length-fit-by-fishery-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14: Length-composition fits by fishery. Observed sample counts (bars) and predictions (lines), pooled over years.
-</figcaption>
-</figure>
-</div>
-<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/length-fit-by-fishery-3.pdf">Download vector figure</a></p>
 <div id="fig-length-fit-by-region" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/length-fit-by-region.pdf">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-length-fit-by-region-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="artifacts/diagnostic/length-fit-by-region.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-length-fit-by-region-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;15: Length-composition fits by region. Observed sample counts (bars) and predictions (lines), pooled over years.
+Figure&nbsp;13: Length-composition fits by region. Observed sample counts (bars) and predictions (lines), pooled over years.
 </figcaption>
 </figure>
 </div>
@@ -1620,7 +1598,7 @@ Figure&nbsp;15: Length-composition fits by region. Observed sample counts (bars)
 <img src="artifacts/formats/length-fit-timeseries-ll.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-length-fit-timeseries-ll-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;16: Illustrative output. Observed and predicted length summaries for longline fisheries.
+Figure&nbsp;14: Illustrative output. Observed and predicted length summaries for longline fisheries.
 </figcaption>
 </figure>
 </div>
@@ -1631,7 +1609,7 @@ Figure&nbsp;16: Illustrative output. Observed and predicted length summaries for
 <img src="artifacts/formats/length-fit-timeseries-other.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-length-fit-timeseries-other-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;17: Illustrative output. Observed and predicted length summaries for other fisheries.
+Figure&nbsp;15: Illustrative output. Observed and predicted length summaries for other fisheries.
 </figcaption>
 </figure>
 </div>
@@ -1642,7 +1620,7 @@ Figure&nbsp;17: Illustrative output. Observed and predicted length summaries for
 <img src="artifacts/diagnostic/caal-fits-regions.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-caal-fits-regions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;18: Observed and predicted age distributions conditional on length. Cells: predictions; circles: observations; solid and dashed lines: predicted and observed mean age.
+Figure&nbsp;16: Observed and predicted age distributions conditional on length. Cells: predictions; circles: observations; solid and dashed lines: predicted and observed mean age.
 </figcaption>
 </figure>
 </div>
@@ -1653,7 +1631,7 @@ Figure&nbsp;18: Observed and predicted age distributions conditional on length. 
 <img src="artifacts/jitter/jitter-scatter-plot.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-jitter-scatter-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;19: Final objectives and maximum gradients for independent starting values. Filled points meet all recorded numerical checks.
+Figure&nbsp;17: Final objectives and maximum gradients for independent starting values. Filled points meet all recorded numerical checks.
 </figcaption>
 </figure>
 </div>
@@ -1664,7 +1642,7 @@ Figure&nbsp;19: Final objectives and maximum gradients for independent starting 
 <img src="artifacts/jitter/jitter-derived-values-diag-panel.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-jitter-derived-values-diag-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20: Jitter model trajectories.
+Figure&nbsp;18: Jitter model trajectories.
 </figcaption>
 </figure>
 </div>
@@ -1675,7 +1653,7 @@ Figure&nbsp;20: Jitter model trajectories.
 <img src="artifacts/jitter/jitter-regional-depletion.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-jitter-regional-depletion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;21: Spawning depletion by model and region, relative to each model’s dynamic unfished reference.
+Figure&nbsp;19: Spawning depletion by model and region, relative to each model’s dynamic unfished reference.
 </figcaption>
 </figure>
 </div>
@@ -1686,7 +1664,7 @@ Figure&nbsp;21: Spawning depletion by model and region, relative to each model�
 <img src="artifacts/selftest/selftest-recovery.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-selftest-recovery-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;22: Relative recovery error in terminal quantities for converged simulated-data refits.
+Figure&nbsp;20: Relative recovery error in terminal quantities for converged simulated-data refits.
 </figcaption>
 </figure>
 </div>
@@ -1697,7 +1675,7 @@ Figure&nbsp;22: Relative recovery error in terminal quantities for converged sim
 <img src="artifacts/selftest/selftest-time-series.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-selftest-time-series-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;23: Selftest model trajectories.
+Figure&nbsp;21: Selftest model trajectories.
 </figcaption>
 </figure>
 </div>
@@ -1708,7 +1686,7 @@ Figure&nbsp;23: Selftest model trajectories.
 <img src="artifacts/retrospective/retro-analysis.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-retro-analysis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;24: Population trajectories for the full-data fit and retrospective peels. Points mark terminal years; rho is Mohn’s mean terminal relative difference for peels passing the recorded numerical checks.
+Figure&nbsp;22: Population trajectories for the full-data fit and retrospective peels. Points mark terminal years; rho is Mohn’s mean terminal relative difference for peels passing the recorded numerical checks.
 </figcaption>
 </figure>
 </div>
@@ -1719,7 +1697,7 @@ Figure&nbsp;24: Population trajectories for the full-data fit and retrospective 
 <img src="artifacts/profiles/diag-profile-data-sources.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diag-profile-data-sources-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;25: Total negative log-likelihood and component profiles. Each curve is centered on its own minimum. Total biomass summed over regions and averaged across model periods in 1954-2022.
+Figure&nbsp;23: Total negative log-likelihood and component profiles. Each curve is centered on its own minimum. Total biomass summed over regions and averaged across model periods in 1954-2022.
 </figcaption>
 </figure>
 </div>
@@ -1730,7 +1708,7 @@ Figure&nbsp;25: Total negative log-likelihood and component profiles. Each curve
 <img src="artifacts/profiles/diag-profile-data-cpue.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diag-profile-data-cpue-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;26: Negative log-likelihood profiles for abundance-index components. Each curve is centered on its own minimum. Total biomass summed over regions and averaged across model periods in 1954-2022.
+Figure&nbsp;24: Negative log-likelihood profiles for abundance-index components. Each curve is centered on its own minimum. Total biomass summed over regions and averaged across model periods in 1954-2022.
 </figcaption>
 </figure>
 </div>
@@ -1741,7 +1719,7 @@ Figure&nbsp;26: Negative log-likelihood profiles for abundance-index components.
 <img src="artifacts/profiles/diag-profile-data-lf.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diag-profile-data-lf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;27: Negative log-likelihood profiles for length-composition components. Each curve is centered on its own minimum. Total biomass summed over regions and averaged across model periods in 1954-2022.
+Figure&nbsp;25: Negative log-likelihood profiles for length-composition components. Each curve is centered on its own minimum. Total biomass summed over regions and averaged across model periods in 1954-2022.
 </figcaption>
 </figure>
 </div>
@@ -1752,7 +1730,7 @@ Figure&nbsp;27: Negative log-likelihood profiles for length-composition componen
 <img src="artifacts/profiles/diag-profile-data-caal.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diag-profile-data-caal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;28: Negative log-likelihood profiles for conditional age-at-length components. Each curve is centered on its own minimum. Total biomass summed over regions and averaged across model periods in 1954-2022.
+Figure&nbsp;26: Negative log-likelihood profiles for conditional age-at-length components. Each curve is centered on its own minimum. Total biomass summed over regions and averaged across model periods in 1954-2022.
 </figcaption>
 </figure>
 </div>
@@ -1763,7 +1741,7 @@ Figure&nbsp;28: Negative log-likelihood profiles for conditional age-at-length c
 <img src="artifacts/formats/aspm-comparison.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-aspm-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;29: Illustrative output. Diagnostic and production-model trajectories.
+Figure&nbsp;27: Illustrative output. Diagnostic and production-model trajectories.
 </figcaption>
 </figure>
 </div>
@@ -1774,7 +1752,7 @@ Figure&nbsp;29: Illustrative output. Diagnostic and production-model trajectorie
 <img src="artifacts/diagnostic/diag-time-series.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diag-time-series-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;30: Estimated population trajectories.
+Figure&nbsp;28: Estimated population trajectories.
 </figcaption>
 </figure>
 </div>
@@ -1785,7 +1763,7 @@ Figure&nbsp;30: Estimated population trajectories.
 <img src="artifacts/diagnostic/select-age.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-select-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;31: Fishery selectivity at age.
+Figure&nbsp;29: Fishery selectivity at age.
 </figcaption>
 </figure>
 </div>
@@ -1796,7 +1774,7 @@ Figure&nbsp;31: Fishery selectivity at age.
 <img src="artifacts/formats/select-length.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-select-length-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;32: Illustrative output. Selectivity at length by fishery.
+Figure&nbsp;30: Illustrative output. Selectivity at length by fishery.
 </figcaption>
 </figure>
 </div>
@@ -1807,29 +1785,18 @@ Figure&nbsp;32: Illustrative output. Selectivity at length by fishery.
 <img src="artifacts/diagnostic/season-movement-coeff.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-season-movement-coeff-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;33: Probability of movement from source to destination region per movement event.
+Figure&nbsp;31: Probability of movement from source to destination region per movement event.
 </figcaption>
 </figure>
 </div>
 <p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/season-movement-coeff.pdf">Download vector figure</a></p>
-<div id="fig-season-movement-coeff-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/season-movement-coeff-2.pdf">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-season-movement-coeff-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="artifacts/diagnostic/season-movement-coeff-2.svg" class="img-fluid figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-season-movement-coeff-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;34: Probability of movement from source to destination region per movement event.
-</figcaption>
-</figure>
-</div>
-<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/season-movement-coeff-2.pdf">Download vector figure</a></p>
 <div id="fig-recruitment-annual" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/recruitment-annual.pdf">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-recruitment-annual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="artifacts/diagnostic/recruitment-annual.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-recruitment-annual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;35: Annual recruitment.
+Figure&nbsp;32: Annual recruitment.
 </figcaption>
 </figure>
 </div>
@@ -1840,7 +1807,7 @@ Figure&nbsp;35: Annual recruitment.
 <img src="artifacts/diagnostic/recruitment-regions.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-recruitment-regions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;36: Recruitment by model region.
+Figure&nbsp;33: Recruitment by model region.
 </figcaption>
 </figure>
 </div>
@@ -1851,7 +1818,7 @@ Figure&nbsp;36: Recruitment by model region.
 <img src="artifacts/formats/stock-rr.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stock-rr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;37: Illustrative output. Stock–recruitment observations and fitted relationship.
+Figure&nbsp;34: Illustrative output. Stock–recruitment observations and fitted relationship.
 </figcaption>
 </figure>
 </div>
@@ -1862,7 +1829,7 @@ Figure&nbsp;37: Illustrative output. Stock–recruitment observations and fitted
 <img src="artifacts/diagnostic/timeseries-model-regions-stack.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-timeseries-model-regions-stack-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;38: Regional shares of population quantities.
+Figure&nbsp;35: Regional shares of population quantities.
 </figcaption>
 </figure>
 </div>
@@ -1873,7 +1840,7 @@ Figure&nbsp;38: Regional shares of population quantities.
 <img src="artifacts/diagnostic/total-biomass-with-without-fishing.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-total-biomass-with-without-fishing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;39: Total biomass under estimated fishing (solid) and the dynamic no-fishing counterfactual (dashed), by region and overall.
+Figure&nbsp;36: Total biomass under estimated fishing (solid) and the dynamic no-fishing counterfactual (dashed), by region and overall.
 </figcaption>
 </figure>
 </div>
@@ -1884,7 +1851,7 @@ Figure&nbsp;39: Total biomass under estimated fishing (solid) and the dynamic no
 <img src="artifacts/formats/juv-adult-F.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-juv-adult-F-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;40: Illustrative output. Fishing mortality by life stage and region.
+Figure&nbsp;37: Illustrative output. Fishing mortality by life stage and region.
 </figcaption>
 </figure>
 </div>
@@ -1895,7 +1862,7 @@ Figure&nbsp;40: Illustrative output. Fishing mortality by life stage and region.
 <img src="artifacts/sensitivity/sensitivity-steepness.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sensitivity-steepness-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;41: Sensitivity of population trajectories to steepness.
+Figure&nbsp;38: Sensitivity of population trajectories to steepness.
 </figcaption>
 </figure>
 </div>
@@ -1906,7 +1873,7 @@ Figure&nbsp;41: Sensitivity of population trajectories to steepness.
 <img src="artifacts/sensitivity/sensitivity-natural-mortality.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sensitivity-natural-mortality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;42: Sensitivity of population trajectories to natural mortality.
+Figure&nbsp;39: Sensitivity of population trajectories to natural mortality.
 </figcaption>
 </figure>
 </div>
@@ -1917,7 +1884,7 @@ Figure&nbsp;42: Sensitivity of population trajectories to natural mortality.
 <img src="artifacts/sensitivity/sensitivity-regional-scaling.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sensitivity-regional-scaling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;43: Sensitivity of population trajectories to regional scaling.
+Figure&nbsp;40: Sensitivity of population trajectories to regional scaling.
 </figcaption>
 </figure>
 </div>
@@ -1928,7 +1895,7 @@ Figure&nbsp;43: Sensitivity of population trajectories to regional scaling.
 <img src="artifacts/ensemble/ensemble-design-retention.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ensemble-design-retention-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;44: Planned and retained model inputs.
+Figure&nbsp;41: Planned and retained model inputs.
 </figcaption>
 </figure>
 </div>
@@ -1939,7 +1906,7 @@ Figure&nbsp;44: Planned and retained model inputs.
 <img src="artifacts/ensemble/management-uncertainty-continuous-axes-steep-M.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-management-uncertainty-continuous-axes-steep-M-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;45: Weighted distributions of management quantities by design setting. Boxes: interquartile range; line: median; whiskers: 2.5th and 97.5th weighted percentiles.
+Figure&nbsp;42: Weighted distributions of management quantities by design setting. Boxes: interquartile range; line: median; whiskers: 2.5th and 97.5th weighted percentiles.
 </figcaption>
 </figure>
 </div>
@@ -1950,7 +1917,7 @@ Figure&nbsp;45: Weighted distributions of management quantities by design settin
 <img src="artifacts/ensemble/ensemble-individual.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ensemble-individual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;46: Population trajectories across ensemble models (thin lines) and the reference model (red).
+Figure&nbsp;43: Population trajectories across ensemble models (thin lines) and the reference model (red).
 </figcaption>
 </figure>
 </div>
@@ -1961,7 +1928,7 @@ Figure&nbsp;46: Population trajectories across ensemble models (thin lines) and 
 <img src="artifacts/ensemble/ensemble-est-uncert-ribbon.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ensemble-est-uncert-ribbon-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;47: Population trajectories with supplied uncertainty intervals. Central 50, 80, 95% intervals (illustrative model spread and parameter perturbations).
+Figure&nbsp;44: Population trajectories with supplied uncertainty intervals. Central 50, 80, 95% intervals (illustrative model spread and parameter perturbations).
 </figcaption>
 </figure>
 </div>
@@ -1972,7 +1939,7 @@ Figure&nbsp;47: Population trajectories with supplied uncertainty intervals. Cen
 <img src="artifacts/ensemble/combined-kobe-majuro-status.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-combined-kobe-majuro-status-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;48: Stock status relative to the supplied spawning and fishing reference points.
+Figure&nbsp;45: Stock status relative to the supplied spawning and fishing reference points.
 </figcaption>
 </figure>
 </div>
@@ -1983,7 +1950,7 @@ Figure&nbsp;48: Stock status relative to the supplied spawning and fishing refer
 <img src="artifacts/ensemble/time-dynamic-kobe-majuro.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-time-dynamic-kobe-majuro-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;49: Stock status relative to the supplied spawning and fishing reference points.
+Figure&nbsp;46: Stock status relative to the supplied spawning and fishing reference points.
 </figcaption>
 </figure>
 </div>
@@ -1994,7 +1961,7 @@ Figure&nbsp;49: Stock status relative to the supplied spawning and fishing refer
 <img src="artifacts/ensemble/dynamic-msy.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dynamic-msy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;50: Dynamic maximum sustainable yield and catch.
+Figure&nbsp;47: Dynamic maximum sustainable yield and catch.
 </figcaption>
 </figure>
 </div>
@@ -2005,7 +1972,7 @@ Figure&nbsp;50: Dynamic maximum sustainable yield and catch.
 <img src="artifacts/formats/impact-region.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-impact-region-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;51: Illustrative output. Contributions of fishing groups to reduced spawning potential.
+Figure&nbsp;48: Illustrative output. Contributions of fishing groups to reduced spawning potential.
 </figcaption>
 </figure>
 </div>
@@ -2016,7 +1983,7 @@ Figure&nbsp;51: Illustrative output. Contributions of fishing groups to reduced 
 <img src="artifacts/ensemble/yield.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-yield-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;52: Equilibrium yield across fishing-mortality multipliers.
+Figure&nbsp;49: Equilibrium yield across fishing-mortality multipliers.
 </figcaption>
 </figure>
 </div>
@@ -2027,7 +1994,7 @@ Figure&nbsp;52: Equilibrium yield across fishing-mortality multipliers.
 <img src="artifacts/projection/projection-stock-trajectories.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-projection-stock-trajectories-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;53: Illustrative surplus-production projections under fixed catch and two F scenarios. Lines are medians; bands span the central 50%, 80% and 95% of production-variability replicates.
+Figure&nbsp;50: Illustrative surplus-production projections under fixed catch and two F scenarios. Lines are medians; bands span the central 50%, 80% and 95% of production-variability replicates.
 </figcaption>
 </figure>
 </div>
@@ -2038,7 +2005,7 @@ Figure&nbsp;53: Illustrative surplus-production projections under fixed catch an
 <img src="artifacts/hindcast/hindcast-analysis.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hindcast-analysis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;54: Observations (black) and held-out predictions (coloured dashed lines); vertical marks identify training cutoffs. Right panels show mean absolute scaled error (MASE) by forecast lead. The dotted line marks the training naive-error scale of one; lower values indicate smaller errors.
+Figure&nbsp;51: Observations (black) and held-out predictions (coloured dashed lines); vertical marks identify training cutoffs. Right panels show mean absolute scaled error (MASE) by forecast lead. The dotted line marks the training naive-error scale of one; lower values indicate smaller errors.
 </figcaption>
 </figure>
 </div>
