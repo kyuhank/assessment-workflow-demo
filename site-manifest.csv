@@ -677,7 +677,7 @@ styles/report.css,990,c884a9851c752a63c5749b08be45135b
 styles/watermark.css,247,2e9167ac4b5a33896ef5ae1e697516cc
 styles/WCPFC-logo.png,18822,b57c321d1fb51b7eeb8baf6f5478d757
 alb.pdf,1456003,ca5ae0fb3bb8fd17a82d26b8aa5e9d8b
-branding.html,4714,30b1a341fea2dd56ea412149db978f79
+branding.html,5434,3b9fd5f46fd77719597d7fb4998ac7ee
 branding/kimsa/hex.svg,2666,86a16e670651bb8067a8dfb9327aa3d6
 branding/kimsa/icon.svg,2273,978cd658ac44285ee5463d8de8fa2e97
 branding/kimsa/logo.svg,2493,58c45949f8ba8e8318388838b8bd1755
@@ -693,3 +693,6 @@ branding/kimsa.report/logo.svg,2591,1d42062bdb476a079f56aebe5d717b67
 branding/kimsa.view/hex.svg,2675,e4cfdaf0552e4575c3e6921a1dc37f48
 branding/kimsa.view/icon.svg,2093,e7377f384c70764b09e4c77d4af5356a
 branding/kimsa.view/logo.svg,2471,4ed86e236479f719a598d4ba73f89ceb
+branding/kimsa.learn/hex.svg,2763,dc2985d560c50ae45789307cda7f75dc
+branding/kimsa.learn/icon.svg,2176,74d2616c6ec0e22b1489e89b5c2e2e3c
+branding/kimsa.learn/logo.svg,2555,7a6b74f754c64d4cf2e0f549d324e6a2
