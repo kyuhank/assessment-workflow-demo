@@ -1,5 +1,5 @@
-"Quantity","Estimate","Unit"
-"MSY",86054.7,"t/year"
-"FMSY",0.1484581,"per year"
-"BMSY",579656.6,"t"
-"SBMSY",136938.6,"t"
+"Quantity","Period","Unit","Mean","Median","Minimum","10%","90%","Maximum"
+"BMSY","Reference point","t",784953.308,661623.5,329914.9,423327.5,1294901,2209265
+"FMSY","Reference point","per year",0.154933618,0.1585739,0.1063391,0.1227731,0.1820457,0.2029142
+"MSY","Reference point","t/year",114723.1877,103156.2,62908.92,75065.68,177164.5,235183.7
+"SBMSY","Reference point","t",113584.9672,113994.6,60584.37,83583.84,146075.9,167242.3

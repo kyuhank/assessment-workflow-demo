@@ -589,7 +589,7 @@ function drawStatusRegions(view, rows, host, hover, mathText) {
   const color = id => data.run_scale ? (id === data.reference ? "#b43e36" : runColors.get(id)) : palettes[data.models.findIndex(m => m.id === id) % palettes.length];
   const modelDash = id => (data.run_scale || (tab === "series" && currentBands.length)) && id === data.reference ? "6 3" :
     data.run_scale && ["jitter", "selftest"].includes(data.type) && data.status.some(r=>r.model===id && r.status!=="passed") ? "4 3" :
-    ["comparison", "stepwise"].includes(data.type) && !data.run_scale && !(tab === "series" && currentBands.length) ? ["none", "7 4", "2 3"][data.models.findIndex(m => m.id === id) % 3] : "none";
+    data.type === "comparison" && !data.run_scale && !(tab === "series" && currentBands.length) ? ["none", "7 4", "2 3"][data.models.findIndex(m => m.id === id) % 3] : "none";
   const overviewMetrics = data.overview?.metrics || [];
   // Open the complete collection; users can narrow it with the model controls.
   const selected = new Set(data.models.map(m => m.id));

@@ -6,9 +6,9 @@
 "tbl-tag-definitions","tag-definitions","table","table","tag_definitions","","tagging","","Tag-release and reporting groups.","missing_data","Supply tables$tag_definitions",FALSE
 "tbl-parameter-bounds","parameter-bounds","table","table","parameter_bounds","","","","Parameters on or near their declared bounds.","missing_data","Supply tables$parameter_bounds",FALSE
 "tbl-parameter-correlations","parameter-correlations","table","table","parameter_correlations","","","","Parameter correlations from the supplied covariance estimate.","missing_data","Supply tables$parameter_correlations",FALSE
-"tbl-manage-quant","manage-quant","table","table","management_summary","","","","Management quantities and supplied uncertainty summaries.","missing_data","Supply tables$management_summary",FALSE
+"tbl-manage-quant","manage-quant","table","table","management_summary","","","","Management quantities and supplied uncertainty summaries.","available","",TRUE
 "tbl-cmm-depletion","cmm-depletion","table","table","depletion_comparison","","","","Spawning-depletion comparisons for the declared reference periods.","missing_data","Supply tables$depletion_comparison",FALSE
-"tbl-stock-status-refs","stock-status-refs","table","table","status_probabilities","","","","Stock-status probabilities for the declared reference points.","missing_data","Supply tables$status_probabilities",FALSE
+"tbl-stock-status-refs","stock-status-refs","table","table","status_probabilities","","","","Stock-status probabilities for the declared reference points.","available","",TRUE
 "tbl-ref-points","ref-points","table","table","reference_points","","","","Model reference points and their definitions.","available","",TRUE
 "tbl-est-uncertainty","est-uncertainty","table","table","uncertainty_summary","","","","Comparison of supplied uncertainty summaries.","missing_data","Supply tables$uncertainty_summary",FALSE
 "tbl-stock-projections","stock-projections","table","table","projection_summary","","","","Projected quantities by scenario and reporting period.","missing_data","Supply tables$projection_summary",FALSE
