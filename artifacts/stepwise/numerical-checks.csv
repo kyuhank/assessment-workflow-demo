@@ -1,4 +1,9 @@
 "Model","Label","Status","Passed","Failed","Unknown"
-"native-1003","Native MFCL / INI 1003","passed",1,0,0
-"native-1007","Native MFCL / INI 1007","passed",1,0,0
-"kimsa","KIMSA / hybrid F","passed",1,0,0
+"model-01","Starting alternative","passed",2,0,0
+"model-02","Francis LF weights","passed",2,0,0
+"model-03","Three selectivity nodes","passed",2,0,0
+"model-04","Time-varying index CV","passed",2,0,0
+"model-05","Lorenzen natural mortality","passed",2,0,0
+"model-06","VB growth offsets","passed",2,0,0
+"model-07","Southern longline flexibility","passed",2,0,0
+"model-08","2024 diagnostic settings","passed",2,0,0

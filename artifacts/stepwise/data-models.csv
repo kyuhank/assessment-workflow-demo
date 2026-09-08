@@ -1,4 +1,0 @@
-"id","parent","change"
-"native-1003",,"Native MFCL baseline, INI 1003"
-"native-1007","native-1003","Native MFCL current executable, INI 1007"
-"kimsa","native-1007","MFCL-compatible KIMSA with five-pass hybrid F"

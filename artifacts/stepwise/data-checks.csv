@@ -1,4 +1,0 @@
-"check","status","value","threshold","detail","model","label"
-"maximum_gradient","passed",4.71294829372437e-05,1e-04,"Final optimizer PAR footer","native-1003","Native MFCL / INI 1003"
-"maximum_gradient","passed",9.69571600809634e-05,1e-04,"Final optimizer PAR footer","native-1007","Native MFCL / INI 1007"
-"maximum_gradient","passed",4.86472887940075e-05,1e-04,"Final optimizer PAR footer","kimsa","KIMSA / hybrid F"
