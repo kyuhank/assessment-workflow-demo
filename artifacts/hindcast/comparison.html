@@ -26,8 +26,8 @@ header { height: 76px; display: flex; align-items: center; justify-content: spac
 .brand span { font-weight: 400; color: var(--accent); padding-left: 6px; }
 .local { font-size: 12px; color: var(--muted); }
 .workspace { display: grid; grid-template-columns: 248px minmax(0, 1fr); max-width: 1600px; margin: auto; }
-.profile-mode .workspace { grid-template-columns: minmax(0, 1fr); max-width: 1350px; }
-.profile-mode aside { display: none; }
+.profile-mode .workspace, .single-result .workspace { grid-template-columns: minmax(0, 1fr); max-width: 1350px; }
+.profile-mode aside, .single-result aside { display: none; }
 aside { padding: 32px 20px; border-right: 1px solid var(--line); min-height: calc(100vh - 76px); min-width: 0; }
 .side-title { display: flex; justify-content: space-between; align-items: center; font-size: 14px; font-weight: 650; }
 .side-title button { border: 0; color: var(--accent); background: transparent; padding-right: 0; font-size: 12px; }
@@ -572,6 +572,8 @@ function drawStatusRegions(view, rows, host, hover, mathText) {
   if (data.annual) for (const name of ["series", "fits"]) data.annual[name] = new RowStore(data.annual[name]);
   data.views = data.views || [];
   const profileOnly = data.view === "profile";
+  const singleResult = data.models.length === 1 && !profileOnly;
+  document.body.classList.toggle("single-result", singleResult);
   const hindcastHistory = data.type === "hindcast" ?
     unpack(data.tables.find(t => t.name === "hindcast_observations")?.rows) || [] : [];
   data.curves = new RowStore(data.tables.filter(t => t.name === "curves").flatMap(t =>
@@ -646,7 +648,9 @@ function drawStatusRegions(view, rows, host, hover, mathText) {
   let currentRows = [];
   let currentColumns = [];
   byId("title").textContent = data.title;
-  byId("eyebrow").textContent = `${data.type} / ${data.models.length} model${data.models.length === 1 ? "" : "s"}`;
+  const studyLabel = pretty(data.type);
+  byId("eyebrow").textContent = singleResult ? studyLabel :
+    `${studyLabel} / ${data.models.length} models`;
   byId("collection-kind").textContent = `${data.type} · in supplied order`;
 
   for (const [i, model] of (profileOnly ? [] : data.models).entries()) {
@@ -683,15 +687,22 @@ function drawStatusRegions(view, rows, host, hover, mathText) {
 
   const fitNames = {index: "Index fits", catch: "Catch fits", tag: "Tag recaptures", effort: "Effort fits"};
   const axisNames = {length: "Length fits", weight: "Weight fits", age: "Age fits", conditional_age: "Age-at-length fits"};
+  const seriesTitles = {selftest: "Simulations", jitter: "Trials", ensemble: "Trajectories",
+    retrospective: "Trajectories", hindcast: "Forecasts", stepwise: "Trajectories"};
+  const reportTitles = {selftest: "Recovery", jitter: "Starting-value results",
+    ensemble: "Ensemble results", retrospective: "Retrospective", hindcast: "Validation",
+    projection: "Projection", stepwise: "Stepwise comparison", comparison: "Diagnostics"};
   const tabs = [
-    ...(data.series.length ? [{type: "series", title: "Population"}] : []),
+    ...(data.series.length && !(data.type === "projection" && data.views.length) ?
+      [{type: "series", title: seriesTitles[data.type] || "Population"}] : []),
     ...(data.curves.length ? [{type: "curves", title: "Biology"}] : []),
     ...data.fits.unique("kind").map(kind => ({type: "fits", scope: kind, title: fitNames[kind] || `${pretty(kind)} fits`})),
     ...data.compositions.unique("axis").map(axis => ({type: "compositions", scope: axis, title: axisNames[axis] || `${pretty(axis)} compositions`})),
-    ...(data.views.length ? [{type: "reports", title: profileOnly ? "Likelihood profile" : data.type === "hindcast" ? "Hindcast validation" : "Diagnostics"}] : []),
-    {type: "checks", title: profileOnly ? "Point checks" : "Model checks"}, ...(data.tables.length ? [{type: "tables", title: "Tables"}] : [])
+    ...(data.views.length ? [{type: "reports", title: profileOnly ? "Likelihood profile" : reportTitles[data.type] || "Diagnostics"}] : []),
+    {type: "checks", title: profileOnly ? "Point checks" : "Checks"},
+    ...(data.tables.length ? [{type: "tables", title: "Data"}] : [])
   ];
-  if (data.type === "hindcast" && tabs.some(t => t.type === "reports"))
+  if (["hindcast", "projection", "selftest"].includes(data.type) && tabs.some(t => t.type === "reports"))
     tabs.unshift(tabs.splice(tabs.findIndex(t => t.type === "reports"), 1)[0]);
   const tabId = view => view.id || view.type + (view.scope ? `-${view.scope}` : "");
   tab = tabs[0].type; scope = tabs[0].scope || null; activeTab = tabId(tabs[0]);
@@ -828,15 +839,16 @@ function drawStatusRegions(view, rows, host, hover, mathText) {
       profileOnly ? new Set((data.profile_points || []).map(row => row.model)) : selected;
     document.body.classList.toggle("profile-mode", profileMode);
     document.body.classList.toggle("profile-curves-visible", reportView?.family === "profile");
-    byId("eyebrow").textContent = profileMode ? "Likelihood profile" :
-      `${data.type} / ${data.models.length} model${data.models.length === 1 ? "" : "s"}`;
+    byId("eyebrow").textContent = profileMode ? "Likelihood profile" : singleResult ?
+      studyLabel : `${studyLabel} / ${data.models.length} models`;
     byId("toggle-all").textContent = selected.size ? "Clear" : "Select all";
     byId("summary").replaceChildren();
     const statuses = data.status.filter(s => activeModels.has(s.model));
-    for (const [count, label] of [[activeModels.size, profileMode ? "profile points" : "selected"],
+    const summaryItems = [[activeModels.size, profileMode ? "profile points" : "selected"],
       [statuses.filter(s => s.status === "passed").length, "checks passed"],
       [statuses.filter(s => s.status === "failed").length, "checks failed"],
-      [statuses.filter(s => s.status === "unknown").length, "unchecked"]]) {
+      [statuses.filter(s => s.status === "unknown").length, "unchecked"]];
+    for (const [count, label] of singleResult ? summaryItems.slice(1) : summaryItems) {
       const item = node("span"); item.append(node("b", String(count)), document.createTextNode(label));
       byId("summary").append(item);
     }
@@ -920,6 +932,7 @@ function drawStatusRegions(view, rows, host, hover, mathText) {
     byId("data-details").hidden = !rows.length;
     byId("sample-pages").hidden = true;
     if (chartable && reportView?.family === "status") drawStatusRegions(reportView, rows, byId("chart"), byId("hover"), mathText);
+    else if (chartable && reportView?.family === "recovery") drawRecovery(reportView, rows);
     else if (chartable) drawPanels(rows);
     else if (!rows.length) {
       byId("chart").hidden = false;
@@ -950,6 +963,96 @@ function drawStatusRegions(view, rows, host, hover, mathText) {
 
   function compositionOverview() {
     return tab === "compositions" && (byId("quantity").value === allSeries || byId("sample").value === allSeries);
+  }
+
+  function drawRecovery(view, rows) {
+    const finite = rows.filter(r => Number.isFinite(r.relative_error_percent));
+    if (!finite.length) return;
+    const panels = unique(finite.map(r => r.panel));
+    const width = Math.max(320, Math.min(1100, byId("chart").clientWidth || 900));
+    const measure = document.createElement("canvas").getContext("2d");
+    measure.font = "11px sans-serif";
+    const labelWidth = panel => Math.max(...unique(finite.filter(r => r.panel === panel)
+      .map(r => r.label || pretty(r.item))).map(label => measure.measureText(label).width));
+    let columns = width >= 900 && panels.length > 1 ? 2 : 1;
+    if (columns === 2 && panels.some(panel => labelWidth(panel) + 250 > (width - 22) / 2)) columns = 1;
+    const gap = 22, panelWidth = (width - gap * (columns - 1)) / columns;
+    const panelItems = panels.map(panel => unique(finite.filter(r => r.panel === panel).map(r => r.item)));
+    const rowHeight = 42;
+    const panelHeight = Math.max(...panelItems.map(items => 92 + rowHeight * items.length));
+    const height = Math.ceil(panels.length / columns) * (panelHeight + gap) - gap;
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+    svg.setAttribute("role", "img");
+    svg.setAttribute("aria-label", view.label);
+    const make = (tag, attrs, content) => {
+      const element = document.createElementNS(svg.namespaceURI, tag);
+      Object.entries(attrs).forEach(([name, value]) => element.setAttribute(name, String(value)));
+      if (content !== undefined) element.textContent = content;
+      svg.append(element); return element;
+    };
+    make("rect", {width, height, fill: "white"});
+    const sorted = values => [...values].sort((a, b) => a - b);
+    const quantile = (values, probability) => {
+      const a = sorted(values); const at = (a.length - 1) * probability;
+      const lo = Math.floor(at), hi = Math.ceil(at);
+      return a[lo] + (a[hi] - a[lo]) * (at - lo);
+    };
+    panels.forEach((panel, panelIndex) => {
+      const x0 = (panelIndex % columns) * (panelWidth + gap);
+      const y0 = Math.floor(panelIndex / columns) * (panelHeight + gap);
+      const items = panelItems[panelIndex];
+      const part = finite.filter(r => r.panel === panel);
+      const values = part.map(r => r.relative_error_percent);
+      let lo = Math.min(-5, ...values), hi = Math.max(5, ...values);
+      const pad = Math.max(1, (hi - lo) * .07); lo -= pad; hi += pad;
+      const labelSpace = Math.min(panelWidth * .48, Math.max(118, labelWidth(panel) + 18));
+      const left = x0 + labelSpace, right = x0 + panelWidth - 18;
+      const top = y0 + 42, bottom = y0 + panelHeight - 45;
+      const px = value => left + (value - lo) / (hi - lo) * (right - left);
+      const py = index => top + (index + .5) * (bottom - top) / items.length;
+      make("text", {x: x0 + 8, y: y0 + 20, fill: "#24363f", "font-size": 13,
+        "font-family": "sans-serif", "font-weight": 650}, panel);
+      ticks(lo, hi).forEach(value => {
+        make("line", {x1: px(value), x2: px(value), y1: top, y2: bottom,
+          stroke: value === 0 ? "#a34e43" : "#e8edef", "stroke-width": value === 0 ? 1.2 : .8,
+          "stroke-dasharray": value === 0 ? "5 4" : "none"});
+        make("text", {x: px(value), y: bottom + 19, fill: "#65757d", "font-size": 11,
+          "font-family": "sans-serif", "text-anchor": "middle"}, format(value));
+      });
+      for (const guide of [-5, 5]) if (guide > lo && guide < hi)
+        make("line", {x1: px(guide), x2: px(guide), y1: top, y2: bottom,
+          stroke: "#aebbc0", "stroke-dasharray": "2 4"});
+      items.forEach((item, index) => {
+        const group = part.filter(r => r.item === item);
+        const values = group.map(r => r.relative_error_percent);
+        const q1 = quantile(values, .25), median = quantile(values, .5), q3 = quantile(values, .75);
+        const iqr = q3 - q1;
+        const whiskerLo = Math.min(...values.filter(value => value >= q1 - 1.5 * iqr));
+        const whiskerHi = Math.max(...values.filter(value => value <= q3 + 1.5 * iqr));
+        const y = py(index);
+        make("line", {x1: left, x2: right, y1: y, y2: y, stroke: "#edf1f2"});
+        make("text", {x: left - 9, y: y + 4, fill: "#52616a", "font-size": 11,
+          "font-family": "sans-serif", "text-anchor": "end"}, group[0].label || pretty(item));
+        make("line", {x1: px(whiskerLo), x2: px(whiskerHi), y1: y, y2: y,
+          stroke: "#17677a", "stroke-width": 1.2});
+        make("rect", {x: px(q1), y: y - 8, width: Math.max(1, px(q3) - px(q1)), height: 16,
+          fill: "#dcecef", stroke: "#17677a", "data-recovery-box": item});
+        make("line", {x1: px(median), x2: px(median), y1: y - 8, y2: y + 8,
+          stroke: "#17677a", "stroke-width": 2});
+        group.forEach((row, pointIndex) => {
+          const offset = group.length === 1 ? 0 : (((pointIndex + 1) * .61803398875) % 1 - .5) * 12;
+          make("circle", {cx: px(row.relative_error_percent), cy: y + offset, r: 2.3,
+            fill: row.recorded_status === "failed" ? "#c46a54" : "#17677a", "fill-opacity": .62,
+            "data-recovery-point": row.model, "data-recovery-item": item});
+        });
+      });
+      make("text", {x: (left + right) / 2, y: y0 + panelHeight - 7, fill: "#52616a",
+        "font-size": 12, "font-family": "sans-serif", "text-anchor": "middle"},
+        "Relative recovery error (%)");
+    });
+    byId("chart").append(svg);
   }
   function compositionPanels(rows) {
     const key = row => JSON.stringify([row.model, row.axis, row.series, row.bin_unit, row.condition_bin]);
@@ -1099,11 +1202,14 @@ function drawStatusRegions(view, rows, host, hover, mathText) {
       const inset = (width - left - right - side) / 2;
       left += inset; right += inset; height = side + top + bottom;
     }
-    const lineId = r => tab === "reports" ? JSON.stringify(r.curve_id ? ["curve", r.curve_id] : [r.model, r.line]) : r.model;
+    const lineId = r => tab === "reports" ? JSON.stringify(r.curve_id ? ["curve", r.curve_id] :
+      [r.model, r.line, r.series_role === "draw" ? r.draw : "summary"]) : r.model;
     const lineModels = tab === "reports" ? unique(rows.map(lineId)).map(id => {
       const r = rows.find(r => lineId(r) === id);
-      return {id, label: r.curve_label || (data.models.length > 1 ? `${r.label} / ${r.line}` : r.line)};
-    }) : data.models.filter(m => selected.has(m.id) && rows.some(r => r.model === m.id));
+      return {id, label: r.curve_label || (data.models.length > 1 ? `${r.label} / ${r.line}` : r.line),
+        role: r.series_role || "summary"};
+    }).sort((a, b) => (a.role === "draw" ? 0 : 1) - (b.role === "draw" ? 0 : 1)) :
+      data.models.filter(m => selected.has(m.id) && rows.some(r => r.model === m.id));
     const sourceView = tab === "reports" ? data.views[Number(byId("quantity").value)] : null;
     const timePositions = sourceView?.time_keys ? new Map(sourceView.time_keys.map((time, i) => [time, i])) : null;
     const profileIds = sourceView?.profileRows ? unique(sourceView.profileRows.map(lineId)) : [];
@@ -1122,7 +1228,8 @@ function drawStatusRegions(view, rows, host, hover, mathText) {
       return row?.line_dash || (data.type === "hindcast" ? "6 4" : modelDash(row?.model || id));
     };
     const continuousLegend = Boolean(data.run_scale) && tab !== "reports" && options.legend !== false;
-    const legendModels = continuousLegend || options.legend === false || (tab === "compositions" && lineModels.length === 1) ? [] : lineModels.filter(m => rows.some(r => lineId(r) === m.id));
+    const legendModels = continuousLegend || options.legend === false || (tab === "compositions" && lineModels.length === 1) ? [] :
+      lineModels.filter(m => m.role !== "draw" && rows.some(r => lineId(r) === m.id));
     const legendPositions = [];
     let legendX = left, legendY = height + 18;
     for (const model of legendModels) {
@@ -1231,6 +1338,27 @@ function drawStatusRegions(view, rows, host, hover, mathText) {
     const bands = tab === "series" ? currentBands.filter(r => r.metric === rows[0].metric &&
       r.group === rows[0].group && r.unit === rows[0].unit) : [];
     drawTrajectoryBand(bands, el, px, py);
+    // Report intervals sit behind the individual paths and central estimates.
+    // This order keeps a small trajectory sample visible without obscuring the
+    // interval or making overlapping paths look like the reported median.
+    if (tab === "reports") for (const model of lineModels.filter(m => m.role !== "draw")) {
+      const points = rows.filter(r => lineId(r) === model.id).sort((a, b) => a[xname] - b[xname]);
+      if (!points.some(p => Number.isFinite(p.lower) && Number.isFinite(p.upper))) continue;
+      for (const probability of unique(points.map(p => p.probability).filter(Number.isFinite))) {
+        const band = points.filter(p => p.probability === probability);
+        let run = [];
+        const flush = () => {
+          if (run.length > 1) el("polygon", {points: [...run.map(p => `${px(p[xname])},${py(p.lower)}`),
+            ...[...run].reverse().map(p => `${px(p[xname])},${py(p.upper)}`)].join(" "),
+            fill: lineColor(model.id), "fill-opacity": .13, stroke: "none", "data-report-interval": "true"});
+          run = [];
+        };
+        for (const p of band) {
+          if (Number.isFinite(p.lower) && Number.isFinite(p.upper)) run.push(p); else flush();
+        }
+        flush();
+      }
+    }
     const indexObservations = observations && tab === "fits" && rows[0].kind === "index" && !hindcast;
     if (indexObservations) {
       // One translucent layer keeps coincident observations light. Draw all
@@ -1261,22 +1389,6 @@ function drawStatusRegions(view, rows, host, hover, mathText) {
         }
         flush();
       }
-      if (tab === "reports" && points.some(p => Number.isFinite(p.lower) && Number.isFinite(p.upper))) {
-        for (const probability of unique(points.map(p => p.probability))) {
-          const band = points.filter(p => p.probability === probability);
-          let run = [];
-          const flush = () => {
-            if (run.length > 1) el("polygon", {points: [...run.map(p => `${px(p[xname])},${py(p.lower)}`),
-              ...[...run].reverse().map(p => `${px(p[xname])},${py(p.upper)}`)].join(" "),
-              fill: lineColor(model.id), "fill-opacity": .13, stroke: "none"});
-            run = [];
-          };
-          for (const p of band) {
-            if (Number.isFinite(p.lower) && Number.isFinite(p.upper)) run.push(p); else flush();
-          }
-          flush();
-        }
-      }
       if (tab === "compositions") for (const p of points.filter(p => Number.isFinite(p.observed))) {
         const observedKey = JSON.stringify([p.bin, p.observed]);
         if (observedKeys.has(observedKey)) continue;
@@ -1289,8 +1401,24 @@ function drawStatusRegions(view, rows, host, hover, mathText) {
       let path = "", segment = false;
       if (tab === "compositions") {
         let run=[];
-        const flush=()=>{if(run.length>1) el("polygon",{points:[...run.map(p=>`${px(p.bin)},${py(p.lower)}`),
-          ...[...run].reverse().map(p=>`${px(p.bin)},${py(p.upper)}`)].join(" "),fill:"#756294","fill-opacity":.22,stroke:"none","data-composition-interval":"true"});run=[];};
+        const flush=()=>{
+          if(run.length>1) {
+            const band=[...run], first=points.indexOf(run[0]), last=points.indexOf(run[run.length-1]);
+            if(first>0 && Number.isFinite(points[first-1].predicted)) {
+              const previous=points[first-1], current=run[0];
+              band.unshift({...current,bin:(previous.bin+current.bin)/2,
+                lower:(previous.predicted+current.predicted)/2,upper:(previous.predicted+current.predicted)/2});
+            }
+            if(last<points.length-1 && Number.isFinite(points[last+1].predicted)) {
+              const current=run[run.length-1], next=points[last+1];
+              band.push({...current,bin:(current.bin+next.bin)/2,
+                lower:(current.predicted+next.predicted)/2,upper:(current.predicted+next.predicted)/2});
+            }
+            el("polygon",{points:[...band.map(p=>`${px(p.bin)},${py(p.lower)}`),
+              ...[...band].reverse().map(p=>`${px(p.bin)},${py(p.upper)}`)].join(" "),fill:"#756294","fill-opacity":.22,stroke:"none","data-composition-interval":"true"});
+          }
+          run=[];
+        };
         for(const p of points) {if(Number.isFinite(p.lower)&&Number.isFinite(p.upper)) run.push(p);else flush();}flush();
       }
       let previousTimePosition = -2;
@@ -1310,11 +1438,12 @@ function drawStatusRegions(view, rows, host, hover, mathText) {
           fill: hindcast ? "white" : lineColor(model.id), stroke: lineColor(model.id),
           ...(profilePoint ? {"data-profile-point": p[xname], "data-profile-value": p[yname]} : {})});
       }
+      const reportDraw = tab === "reports" && points[0].series_role === "draw";
       if (!residual && points[0].geometry !== "points" && !(bands.length && model.id === data.reference)) el("path", {d: path, fill: "none", stroke: tab === "compositions" && lineModels.length === 1 ? "#756294" : lineColor(model.id),
-        "stroke-width": bands.length || data.run_scale ? .8 : tab === "series" && ["jitter", "selftest", "ensemble"].includes(data.type) ? 1 : 2.5,
-        "stroke-opacity": (bands.length || data.run_scale) && model.id !== data.reference ? .65 : 1,
+        "stroke-width": reportDraw ? .65 : bands.length || data.run_scale ? .8 : tab === "series" && ["jitter", "selftest", "ensemble"].includes(data.type) ? 1 : 2.5,
+        "stroke-opacity": reportDraw ? .24 : (bands.length || data.run_scale) && model.id !== data.reference ? .65 : 1,
         "data-model": points[0].model, "data-predicted": tab === "compositions" ? "true" : "false",
-        "stroke-dasharray": lineDash(model.id), "stroke-linejoin": "round"});
+        "stroke-dasharray": reportDraw ? "" : lineDash(model.id), "stroke-linejoin": "round"});
       if (data.type === "retrospective" && tab === "series") {
         const end = points[points.length - 1];
         if (Number.isFinite(end[yname])) el("circle", {cx: px(end[xname]), cy: py(end[yname]), r: 4, fill: lineColor(model.id)});

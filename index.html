@@ -9,7 +9,7 @@
 <meta name="author" content="K. Kim">
 <meta name="dcterms.date" content="2026-09-09">
 
-<title>South Pacific albacore 2024: KIMSA assessment</title>
+<title>South Pacific albacore 2024 assessment: a KIMSA workflow demonstration</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -58,7 +58,7 @@ div.csl-indent {
 <link href="main_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="main_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="main_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="main_files/libs/bootstrap/bootstrap-a26723e6b78859f6db4002e91a2e8bb6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="main_files/libs/bootstrap/bootstrap-2f8554e66b69c83dab1edb555f015635.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -101,16 +101,36 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#kimsa-assessment-software" id="toc-kimsa-assessment-software" class="nav-link active" data-scroll-target="#kimsa-assessment-software"><span class="header-section-number">0.1</span> KIMSA assessment software</a></li>
-  <li><a href="#stepwise-development" id="toc-stepwise-development" class="nav-link" data-scroll-target="#stepwise-development"><span class="header-section-number">0.2</span> Stepwise development</a></li>
-  <li><a href="#model-ensemble" id="toc-model-ensemble" class="nav-link" data-scroll-target="#model-ensemble"><span class="header-section-number">0.3</span> Model ensemble</a></li>
-  <li><a href="#data-fit" id="toc-data-fit" class="nav-link" data-scroll-target="#data-fit"><span class="header-section-number">0.4</span> Data fit</a></li>
-  <li><a href="#population-estimates" id="toc-population-estimates" class="nav-link" data-scroll-target="#population-estimates"><span class="header-section-number">0.5</span> Population estimates</a></li>
-  <li><a href="#stock-status" id="toc-stock-status" class="nav-link" data-scroll-target="#stock-status"><span class="header-section-number">0.6</span> Stock status</a></li>
-  <li><a href="#sec-references" id="toc-sec-references" class="nav-link" data-scroll-target="#sec-references"><span class="header-section-number">1</span> References</a></li>
-  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables"><span class="header-section-number">2</span> Tables</a></li>
-  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures"><span class="header-section-number">3</span> Figures</a></li>
-  <li><a href="#supplementary-outputs" id="toc-supplementary-outputs" class="nav-link" data-scroll-target="#supplementary-outputs"><span class="header-section-number">4</span> Supplementary outputs</a></li>
+  <li><a href="#sec-summary" id="toc-sec-summary" class="nav-link active" data-scroll-target="#sec-summary"><span class="header-section-number">1</span> Executive summary</a></li>
+  <li><a href="#sec-introduction" id="toc-sec-introduction" class="nav-link" data-scroll-target="#sec-introduction"><span class="header-section-number">2</span> Introduction</a></li>
+  <li><a href="#sec-background" id="toc-sec-background" class="nav-link" data-scroll-target="#sec-background"><span class="header-section-number">3</span> Background</a></li>
+  <li><a href="#sec-data" id="toc-sec-data" class="nav-link" data-scroll-target="#sec-data"><span class="header-section-number">4</span> Data compilation</a></li>
+  <li><a href="#sec-model" id="toc-sec-model" class="nav-link" data-scroll-target="#sec-model"><span class="header-section-number">5</span> Model description</a>
+  <ul class="collapse">
+  <li><a href="#kimsa-assessment-software" id="toc-kimsa-assessment-software" class="nav-link" data-scroll-target="#kimsa-assessment-software"><span class="header-section-number">5.1</span> KIMSA assessment software</a></li>
+  </ul></li>
+  <li><a href="#sec-development" id="toc-sec-development" class="nav-link" data-scroll-target="#sec-development"><span class="header-section-number">6</span> Model development</a>
+  <ul class="collapse">
+  <li><a href="#stepwise-development" id="toc-stepwise-development" class="nav-link" data-scroll-target="#stepwise-development"><span class="header-section-number">6.1</span> Stepwise development</a></li>
+  <li><a href="#model-ensemble" id="toc-model-ensemble" class="nav-link" data-scroll-target="#model-ensemble"><span class="header-section-number">6.2</span> Model ensemble</a></li>
+  </ul></li>
+  <li><a href="#sec-diagnostics" id="toc-sec-diagnostics" class="nav-link" data-scroll-target="#sec-diagnostics"><span class="header-section-number">7</span> Model diagnostics</a></li>
+  <li><a href="#sec-results" id="toc-sec-results" class="nav-link" data-scroll-target="#sec-results"><span class="header-section-number">8</span> Results</a>
+  <ul class="collapse">
+  <li><a href="#data-fit" id="toc-data-fit" class="nav-link" data-scroll-target="#data-fit"><span class="header-section-number">8.1</span> Data fit</a></li>
+  <li><a href="#population-estimates" id="toc-population-estimates" class="nav-link" data-scroll-target="#population-estimates"><span class="header-section-number">8.2</span> Population estimates</a></li>
+  </ul></li>
+  <li><a href="#sec-status" id="toc-sec-status" class="nav-link" data-scroll-target="#sec-status"><span class="header-section-number">9</span> Stock status and interpretation</a>
+  <ul class="collapse">
+  <li><a href="#stock-status" id="toc-stock-status" class="nav-link" data-scroll-target="#stock-status"><span class="header-section-number">9.1</span> Stock status</a></li>
+  </ul></li>
+  <li><a href="#sec-projections" id="toc-sec-projections" class="nav-link" data-scroll-target="#sec-projections"><span class="header-section-number">10</span> Projections</a></li>
+  <li><a href="#sec-discussion" id="toc-sec-discussion" class="nav-link" data-scroll-target="#sec-discussion"><span class="header-section-number">11</span> Discussion</a></li>
+  <li><a href="#sec-acknowledgements" id="toc-sec-acknowledgements" class="nav-link" data-scroll-target="#sec-acknowledgements"><span class="header-section-number">12</span> Acknowledgements</a></li>
+  <li><a href="#sec-references" id="toc-sec-references" class="nav-link" data-scroll-target="#sec-references"><span class="header-section-number">13</span> References</a></li>
+  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables"><span class="header-section-number">14</span> Tables</a></li>
+  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures"><span class="header-section-number">15</span> Figures</a></li>
+  <li><a href="#supplementary-outputs" id="toc-supplementary-outputs" class="nav-link" data-scroll-target="#supplementary-outputs"><span class="header-section-number">16</span> Supplementary outputs</a></li>
   </ul>
 </nav>
 </div>
@@ -118,7 +138,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">South Pacific albacore 2024: KIMSA assessment</h1>
+<h1 class="title">South Pacific albacore 2024 assessment: a KIMSA workflow demonstration</h1>
 </div>
 
 
@@ -147,49 +167,97 @@ window.Quarto = {
 </header>
 
 
+<section id="sec-summary" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Executive summary</h1>
+<!-- Edit this section for the current assessment. -->
 <p>This demonstration rebuilds the South Pacific albacore 2024 assessment with KIMSA. It combines one diagnostic fit, eight cumulative full-workflow model-development fits, 100 independently refitted ensemble members, 30 starting-value trials, 20 simulation-estimation refits, five retrospective peels, five one-year index hindcasts, an average-adult-biomass likelihood profile and 5,000 reference-catch projection paths. All supplied finite results are carried into the displays; recorded numerical checks remain available in the interactive outputs.</p>
 <p>The fitted period ends in 2022 and projections cover 2023–2042. Management summaries use 2019–2022 for recent spawning quantities and 2018–2021 for recent fishing mortality.</p>
 <p>The supplementary interactive viewer provides the detailed study, fitted-data and portable-result views from one entry page.</p>
+</section>
+<section id="sec-introduction" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Introduction</h1>
+<!-- Edit this section for the current assessment. -->
 <p>This report demonstrates a complete KIMSA assessment workflow for South Pacific albacore using the public 2024 assessment inputs. The analysis spans the stock from the equator to 50°S and retains the four-region assessment structure shown in <a href="#fig-map-5regions" class="quarto-xref">Figure&nbsp;1</a>. The fitted time series ends in 2022.</p>
 <p>The diagnostic fit, model-development sequence, Monte Carlo ensemble, robustness studies and projections are connected through portable KIMSA result contracts. The public Pacific Community repositories were used as read-only sources; this demonstration does not modify or replace the official assessment.</p>
+</section>
+<section id="sec-background" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Background</h1>
+<!-- Edit this section for the current assessment. -->
 <p>The 2024 assessment builds on the spatial structure used for the preceding South Pacific albacore assessment. WCPO regions are separated at 10°S and 25°S, and the eastern Pacific is represented as a fourth region. The model-development and ensemble inputs follow the 2024 assessment and its published ensemble archive <span class="citation" data-cites="teears2024 pacificcommunity2024ensemble">(<a href="#ref-pacificcommunity2024ensemble" role="doc-biblioref">Pacific Community, 2024</a>; <a href="#ref-teears2024" role="doc-biblioref">Teears et al., 2024</a>)</span>.</p>
 <p>The purpose of this workflow is to keep each fitted model, diagnostic study, figure, table and report linked to its exact input and package revision. Model outputs are reported as supplied; the interactive viewer exposes the underlying series and fits.</p>
+</section>
+<section id="sec-data" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Data compilation</h1>
+<!-- Edit this section for the current assessment. -->
 <p>Catch, abundance indices, length compositions, weight compositions and conditional age-at-length observations are carried from the assessment inputs into the diagnostic result. <a href="#tbl-fisheries-definitions" class="quarto-xref">Table&nbsp;1</a> records the fishery roles, regions, observation periods and units used by the model.</p>
 <p>Abundance-index panels pair each observation with its fitted value, conditional uncertainty band and residual. Composition panels retain the original samples and their model predictions. Records are grouped only for display; the fitted model uses the complete observations provided to its doitall workflow.</p>
+</section>
+<section id="sec-model" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Model description</h1>
+<!-- Edit this section for the current assessment. -->
 <p>The diagnostic model uses the four-region, age- and size-structured ALB 2024 inputs with the <code>mfcl_no_tag</code> KIMSA specification. Catch is conditioned through the hybrid-F solver with five passes and a maximum F of 6. Each independent model starts from its declared input and executes the complete phase 1–9 doitall sequence.</p>
-<section id="kimsa-assessment-software" class="level2" data-number="0.1">
-<h2 data-number="0.1" class="anchored" data-anchor-id="kimsa-assessment-software"><span class="header-section-number">0.1</span> KIMSA assessment software</h2>
+<section id="kimsa-assessment-software" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="kimsa-assessment-software"><span class="header-section-number">5.1</span> KIMSA assessment software</h2>
 <p>KIMSA (Kit for Integrated Modular Stock Assessment) is the RTMB-based engine used to assemble and fit the population, fishing and observation components in this analysis. RTMB supplies automatic differentiation and Laplace-approximation tools to the fitted model <span class="citation" data-cites="kristensen2026rtmb">(<a href="#ref-kristensen2026rtmb" role="doc-biblioref">Kristensen, 2026</a>)</span>. <code>kimsa.lab</code> runs the stepwise, ensemble and diagnostic studies; <code>kimsa.view</code> turns their validated result tables into publication figures and one interactive viewer; and <code>kimsa.report</code> assembles those outputs into this editable manuscript. The report reads portable result contracts, so rendering does not require an MFCL executable or a live fit.</p>
 </section>
-<section id="stepwise-development" class="level2" data-number="0.2">
-<h2 data-number="0.2" class="anchored" data-anchor-id="stepwise-development"><span class="header-section-number">0.2</span> Stepwise development</h2>
-<p>Eight cumulative model configurations were each fitted through their complete declared doitall sequence. Colours identify configurations and all trajectories use solid lines. The four panels in <a href="#fig-stepwise-panel" class="quarto-xref">Figure&nbsp;6</a> show spawning depletion, aggregate fishing mortality, recruitment and spawning potential.</p>
 </section>
-<section id="model-ensemble" class="level2" data-number="0.3">
-<h2 data-number="0.3" class="anchored" data-anchor-id="model-ensemble"><span class="header-section-number">0.3</span> Model ensemble</h2>
+<section id="sec-development" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Model development</h1>
+<!-- Edit this section for the current assessment. -->
+<section id="stepwise-development" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="stepwise-development"><span class="header-section-number">6.1</span> Stepwise development</h2>
+<p>Eight cumulative model configurations were each fitted through their complete declared doitall sequence. Colours identify configurations and all trajectories use solid lines. The four panels in <a href="#fig-stepwise-panel" class="quarto-xref">Figure&nbsp;3</a> show spawning depletion, aggregate fishing mortality, recruitment and spawning potential.</p>
+</section>
+<section id="model-ensemble" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="model-ensemble"><span class="header-section-number">6.2</span> Model ensemble</h2>
 <p>The ensemble contains 100 member-specific official 2024 inputs. Each member was refitted independently with KIMSA before its derived quantities were combined.</p>
+</section>
+</section>
+<section id="sec-diagnostics" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Model diagnostics</h1>
+<!-- Describe the methods and findings for this assessment. -->
 <p>Thirty phase-aware starting-value trials perturb eligible optimizer coordinates when they first become active and then finish the unchanged doitall. Their objective, gradient and trajectory results retain every finite refit and identify recorded check status separately.</p>
-<p>Twenty simulation-estimation tests simulate the declared observation components from the diagnostic KIMSA fit and refit each generated data set through the full workflow. <a href="#fig-selftest-recovery" class="quarto-xref">Figure&nbsp;13</a> summarises relative recovery error for derived quantities and available key parameter blocks, while <a href="#fig-selftest-time-series" class="quarto-xref">Figure&nbsp;14</a> shows trajectory spread.</p>
+<p>Twenty simulation-estimation tests simulate the declared observation components from the diagnostic KIMSA fit and refit each generated data set through the full workflow. <a href="#fig-selftest-recovery" class="quarto-xref">Figure&nbsp;10</a> summarises relative recovery error for derived quantities and available key parameter blocks, while <a href="#fig-selftest-time-series" class="quarto-xref">Figure&nbsp;11</a> shows trajectory spread.</p>
 <p>Five retrospective peels, five one-year-ahead index hindcasts and a two-arm likelihood profile examine time-series stability, prediction and objective support. In the hindcast panels, the dashed series is predicted using only data before each held-out year; closer tracking and points nearer the one-to-one line indicate better out-of-sample prediction. Bias near zero and smaller RMSE are preferred; MASE below one is reported only when a valid training-history naive scale is available. The profile starts at the diagnostic centre; lower and upper arms advance sequentially in 2.5% steps within each arm and run concurrently with each other.</p>
 </section>
-<section id="data-fit" class="level2" data-number="0.4">
-<h2 data-number="0.4" class="anchored" data-anchor-id="data-fit"><span class="header-section-number">0.4</span> Data fit</h2>
-<p>Observed abundance indices, fitted values, supplied log-scale uncertainty and standardised residuals are paired by index in <a href="#fig-cpue-fit-residuals" class="quarto-xref">Figure&nbsp;7</a>. Composition figures use the observation and prediction records carried by the diagnostic fit.</p>
+<section id="sec-results" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Results</h1>
+<!-- Edit this section for the current assessment. -->
+<section id="data-fit" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="data-fit"><span class="header-section-number">8.1</span> Data fit</h2>
+<p>Observed abundance indices, fitted values, supplied log-scale uncertainty and standardised residuals are paired by index in <a href="#fig-cpue-fit-residuals" class="quarto-xref">Figure&nbsp;4</a>. Composition figures use the observation and prediction records carried by the diagnostic fit.</p>
 </section>
-<section id="population-estimates" class="level2" data-number="0.5">
-<h2 data-number="0.5" class="anchored" data-anchor-id="population-estimates"><span class="header-section-number">0.5</span> Population estimates</h2>
-<p>The diagnostic population trajectories are shown in <a href="#fig-diag-time-series" class="quarto-xref">Figure&nbsp;20</a>. Regional shares are calculated only where regional quantities sum to the supplied all-region value; they are not inferred from fishery labels.</p>
+<section id="population-estimates" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="population-estimates"><span class="header-section-number">8.2</span> Population estimates</h2>
+<p>The diagnostic population trajectories are shown in <a href="#fig-diag-time-series" class="quarto-xref">Figure&nbsp;17</a>. Regional shares are calculated only where regional quantities sum to the supplied all-region value; they are not inferred from fishery labels.</p>
 </section>
-<section id="stock-status" class="level2" data-number="0.6">
-<h2 data-number="0.6" class="anchored" data-anchor-id="stock-status"><span class="header-section-number">0.6</span> Stock status</h2>
-<p>Terminal ensemble uncertainty is shown in Kobe and Majuro coordinates in <a href="#fig-combined-kobe-majuro-status" class="quarto-xref">Figure&nbsp;27</a>. Annual status in <a href="#fig-time-dynamic-kobe-majuro" class="quarto-xref">Figure&nbsp;28</a> compares the diagnostic path with the year-specific median across all ensemble members. Individual member paths remain in the supplementary viewer. Management quantities and reference-point probabilities use the explicit periods stated in the summary and are reported in <a href="#tbl-manage-quant" class="quarto-xref">Table&nbsp;2</a> and <a href="#tbl-stock-status-refs" class="quarto-xref">Table&nbsp;3</a>.</p>
-<p>The reference-catch projection follows the 2024 assessment specification and spans 2023–2042. Each of 100 independently refitted ensemble members contributes 50 stochastic recruitment paths. <a href="#fig-projection-stock-trajectories" class="quarto-xref">Figure&nbsp;30</a> joins compatible historical ensemble summaries to the projected period, marks the transition, shows 2.5%–97.5% intervals and overlays three coherent individual paths selected across the terminal depletion distribution. Regional and catch-attainment results remain in the portable result tables. Terminal quantities are listed in <a href="#tbl-stock-projections" class="quarto-xref">Table&nbsp;5</a>.</p>
+</section>
+<section id="sec-status" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Stock status and interpretation</h1>
+<!-- Edit this section for the current assessment. -->
+<section id="stock-status" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="stock-status"><span class="header-section-number">9.1</span> Stock status</h2>
+<p>Terminal ensemble uncertainty is shown in Kobe and Majuro coordinates in <a href="#fig-combined-kobe-majuro-status" class="quarto-xref">Figure&nbsp;24</a>. Annual status in <a href="#fig-time-dynamic-kobe-majuro" class="quarto-xref">Figure&nbsp;25</a> compares the diagnostic path with the year-specific median across all ensemble members. Individual member paths remain in the supplementary viewer. Management quantities and reference-point probabilities use the explicit periods stated in the summary and are reported in <a href="#tbl-manage-quant" class="quarto-xref">Table&nbsp;2</a> and <a href="#tbl-stock-status-refs" class="quarto-xref">Table&nbsp;3</a>.</p>
+</section>
+</section>
+<section id="sec-projections" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Projections</h1>
+<!-- Describe the methods and findings for this assessment. -->
+<p>The reference-catch projection follows the 2024 assessment specification and spans 2023–2042. Each of 100 independently refitted ensemble members contributes 50 stochastic recruitment paths. <a href="#fig-projection-stock-trajectories" class="quarto-xref">Figure&nbsp;27</a> joins compatible historical ensemble summaries to the projected period, marks the transition, shows 2.5%–97.5% intervals and overlays ten coherent individual paths selected across the terminal depletion distribution. Regional and catch-attainment results remain in the portable result tables. Terminal quantities are listed in <a href="#tbl-stock-projections" class="quarto-xref">Table&nbsp;5</a>.</p>
+</section>
+<section id="sec-discussion" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Discussion</h1>
+<!-- Edit this section for the current assessment. -->
 <p>The diagnostic, stepwise and ensemble views answer different questions. The diagnostic shows one detailed fit, the cumulative stepwise sequence isolates reproducible model choices, and the independently refitted ensemble describes variation among the supplied 2024 model members. Median trajectories and central run ranges summarise the ensemble without hiding the member-level paths retained in the viewer.</p>
 <p>Starting-value, simulation-estimation, retrospective, hindcast and likelihood-profile results should be read together. They expose optimisation sensitivity, recovery under the fitted model, time-series dependence, predictive behaviour and local objective shape. The projections are a 20-year workflow demonstration under the declared reference-catch scenario and carry model-member and stochastic recruitment variation forward.</p>
+</section>
+<section id="sec-acknowledgements" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Acknowledgements</h1>
+<!-- Edit this section for the current assessment. -->
 <p>The public assessment design and write-up were provided by the Pacific Community. All model fitting, diagnostic assembly, visualisation and report generation in this demonstration use the pinned KIMSA companion package revisions recorded with the outputs.</p>
 </section>
-<section id="sec-references" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> References</h1>
+<section id="sec-references" class="level1" data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span> References</h1>
 <!-- Edit this section for the current assessment. -->
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-kristensen2026rtmb" class="csl-entry" role="listitem">
@@ -205,8 +273,8 @@ Teears, T., Castillo-Jordán, C., Davies, N., Day, J., Hampton, J., Magnusson, A
 <!-- Generated entry point; edit sections/artifacts.qmd to arrange results. -->
 <!-- Generated report slots; source order retained. -->
 </section>
-<section id="tables" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Tables</h1>
+<section id="tables" class="level1" data-number="14">
+<h1 data-number="14"><span class="header-section-number">14</span> Tables</h1>
 <div id="tbl-fisheries-definitions" class="quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[12.68,36.62,11.27,9.86,15.49,14.08]">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-fisheries-definitions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -399,213 +467,87 @@ Table&nbsp;1: Fishery definitions and observation units.
 </figure>
 </div>
 <p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/fisheries-definitions.csv">Download complete table</a></p>
-<div id="tbl-manage-quant" class="quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[15.38,14.53,8.55,10.26,10.26,10.26,10.26,10.26,10.26]">
+<div id="tbl-manage-quant" class="quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[30.51,9.32,8.47,8.47,14.41,14.41,14.41]">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-manage-quant-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2: Management quantities and supplied uncertainty summaries.
+Table&nbsp;2: Recent management quantities with declared reporting periods and empirical uncertainty summaries.
 </figcaption>
 <div aria-describedby="tbl-manage-quant-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 15%">
-<col style="width: 14%">
+<col style="width: 31%">
 <col style="width: 9%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Quantity</th>
 <th style="text-align: left;">Period</th>
 <th style="text-align: left;">Unit</th>
-<th style="text-align: right;">Mean</th>
 <th style="text-align: right;">Median</th>
-<th style="text-align: right;">Minimum</th>
-<th style="text-align: right;">10%</th>
-<th style="text-align: right;">90%</th>
-<th style="text-align: right;">Maximum</th>
+<th style="text-align: left;">50% interval</th>
+<th style="text-align: left;">80% interval</th>
+<th style="text-align: left;">95% interval</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Aggregate F</td>
-<td style="text-align: left;">2018–2021</td>
-<td style="text-align: left;">per year</td>
-<td style="text-align: right;">0.0728</td>
-<td style="text-align: right;">0.0666</td>
-<td style="text-align: right;">0.0222</td>
-<td style="text-align: right;">0.0332</td>
-<td style="text-align: right;">0.108</td>
-<td style="text-align: right;">0.156</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Aggregate F</td>
-<td style="text-align: left;">2022</td>
-<td style="text-align: left;">per year</td>
-<td style="text-align: right;">0.0692</td>
-<td style="text-align: right;">0.0619</td>
-<td style="text-align: right;">0.0206</td>
-<td style="text-align: right;">0.0314</td>
-<td style="text-align: right;">0.104</td>
-<td style="text-align: right;">0.151</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">BMSY</td>
-<td style="text-align: left;">Reference point</td>
+<td style="text-align: left;">Spawning potential</td>
+<td style="text-align: left;">2019–2022</td>
 <td style="text-align: left;">t</td>
-<td style="text-align: right;">785000</td>
-<td style="text-align: right;">662000</td>
-<td style="text-align: right;">330000</td>
-<td style="text-align: right;">423000</td>
-<td style="text-align: right;">1290000</td>
-<td style="text-align: right;">2210000</td>
+<td style="text-align: right;">335090</td>
+<td style="text-align: left;">285,400–379,100</td>
+<td style="text-align: left;">262,400–488,300</td>
+<td style="text-align: left;">227,500–553,400</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Dynamic unfished spawning potential</td>
 <td style="text-align: left;">2019–2022</td>
 <td style="text-align: left;">t</td>
-<td style="text-align: right;">678000</td>
-<td style="text-align: right;">668000</td>
-<td style="text-align: right;">601000</td>
-<td style="text-align: right;">624000</td>
-<td style="text-align: right;">748000</td>
-<td style="text-align: right;">813000</td>
+<td style="text-align: right;">668470</td>
+<td style="text-align: left;">655,800–690,200</td>
+<td style="text-align: left;">623,900–748,200</td>
+<td style="text-align: left;">607,700–809,300</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Dynamic unfished spawning potential</td>
-<td style="text-align: left;">2022</td>
-<td style="text-align: left;">t</td>
-<td style="text-align: right;">705000</td>
-<td style="text-align: right;">690000</td>
-<td style="text-align: right;">616000</td>
-<td style="text-align: right;">651000</td>
-<td style="text-align: right;">799000</td>
-<td style="text-align: right;">901000</td>
+<td style="text-align: left;"><span class="math inline">\(SB/SB_{F=0}\)</span></td>
+<td style="text-align: left;">2019–2022</td>
+<td style="text-align: left;">ratio</td>
+<td style="text-align: right;">0.5124</td>
+<td style="text-align: left;">0.4344–0.5737</td>
+<td style="text-align: left;">0.3903–0.6683</td>
+<td style="text-align: left;">0.2911–0.7193</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;"><span class="math inline">\(SB/SB_{MSY}\)</span></td>
+<td style="text-align: left;">2019–2022</td>
+<td style="text-align: left;">ratio</td>
+<td style="text-align: right;">3.0257</td>
+<td style="text-align: left;">2.404–3.727</td>
+<td style="text-align: left;">2.103–4.890</td>
+<td style="text-align: left;">1.608–5.880</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(F/F_{MSY}\)</span></td>
 <td style="text-align: left;">2018–2021</td>
 <td style="text-align: left;">ratio</td>
-<td style="text-align: right;">0.458</td>
-<td style="text-align: right;">0.448</td>
-<td style="text-align: right;">0.205</td>
-<td style="text-align: right;">0.253</td>
-<td style="text-align: right;">0.638</td>
-<td style="text-align: right;">0.85</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(F/F_{MSY}\)</span></td>
-<td style="text-align: left;">2022</td>
-<td style="text-align: left;">ratio</td>
-<td style="text-align: right;">0.435</td>
-<td style="text-align: right;">0.429</td>
-<td style="text-align: right;">0.189</td>
-<td style="text-align: right;">0.232</td>
-<td style="text-align: right;">0.613</td>
-<td style="text-align: right;">0.818</td>
+<td style="text-align: right;">0.44848</td>
+<td style="text-align: left;">0.3512–0.5392</td>
+<td style="text-align: left;">0.2530–0.6383</td>
+<td style="text-align: left;">0.2094–0.8062</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">FMSY</td>
-<td style="text-align: left;">Reference point</td>
+<td style="text-align: left;">Aggregate F</td>
+<td style="text-align: left;">2018–2021</td>
 <td style="text-align: left;">per year</td>
-<td style="text-align: right;">0.155</td>
-<td style="text-align: right;">0.159</td>
-<td style="text-align: right;">0.106</td>
-<td style="text-align: right;">0.123</td>
-<td style="text-align: right;">0.182</td>
-<td style="text-align: right;">0.203</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">MSY</td>
-<td style="text-align: left;">Reference point</td>
-<td style="text-align: left;">t/year</td>
-<td style="text-align: right;">115000</td>
-<td style="text-align: right;">103000</td>
-<td style="text-align: right;">62900</td>
-<td style="text-align: right;">75100</td>
-<td style="text-align: right;">177000</td>
-<td style="text-align: right;">235000</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><span class="math inline">\(SB/SB_{F=0}\)</span></td>
-<td style="text-align: left;">2019–2022</td>
-<td style="text-align: left;">ratio</td>
-<td style="text-align: right;">0.513</td>
-<td style="text-align: right;">0.512</td>
-<td style="text-align: right;">0.274</td>
-<td style="text-align: right;">0.39</td>
-<td style="text-align: right;">0.668</td>
-<td style="text-align: right;">0.742</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(SB/SB_{F=0}\)</span></td>
-<td style="text-align: left;">2022</td>
-<td style="text-align: left;">ratio</td>
-<td style="text-align: right;">0.548</td>
-<td style="text-align: right;">0.542</td>
-<td style="text-align: right;">0.292</td>
-<td style="text-align: right;">0.422</td>
-<td style="text-align: right;">0.703</td>
-<td style="text-align: right;">0.781</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><span class="math inline">\(SB/SB_{MSY}\)</span></td>
-<td style="text-align: left;">2019–2022</td>
-<td style="text-align: left;">ratio</td>
-<td style="text-align: right;">3.22</td>
-<td style="text-align: right;">3.03</td>
-<td style="text-align: right;">1.55</td>
-<td style="text-align: right;">2.1</td>
-<td style="text-align: right;">4.89</td>
-<td style="text-align: right;">6.01</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(SB/SB_{MSY}\)</span></td>
-<td style="text-align: left;">2022</td>
-<td style="text-align: left;">ratio</td>
-<td style="text-align: right;">3.58</td>
-<td style="text-align: right;">3.32</td>
-<td style="text-align: right;">1.67</td>
-<td style="text-align: right;">2.28</td>
-<td style="text-align: right;">5.47</td>
-<td style="text-align: right;">6.97</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">SBMSY</td>
-<td style="text-align: left;">Reference point</td>
-<td style="text-align: left;">t</td>
-<td style="text-align: right;">114000</td>
-<td style="text-align: right;">114000</td>
-<td style="text-align: right;">60600</td>
-<td style="text-align: right;">83600</td>
-<td style="text-align: right;">146000</td>
-<td style="text-align: right;">167000</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Spawning potential</td>
-<td style="text-align: left;">2019–2022</td>
-<td style="text-align: left;">t</td>
-<td style="text-align: right;">349000</td>
-<td style="text-align: right;">335000</td>
-<td style="text-align: right;">222000</td>
-<td style="text-align: right;">262000</td>
-<td style="text-align: right;">488000</td>
-<td style="text-align: right;">604000</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Spawning potential</td>
-<td style="text-align: left;">2022</td>
-<td style="text-align: left;">t</td>
-<td style="text-align: right;">389000</td>
-<td style="text-align: right;">369000</td>
-<td style="text-align: right;">238000</td>
-<td style="text-align: right;">287000</td>
-<td style="text-align: right;">546000</td>
-<td style="text-align: right;">704000</td>
+<td style="text-align: right;">0.066647</td>
+<td style="text-align: left;">0.05065–0.09420</td>
+<td style="text-align: left;">0.03322–0.10810</td>
+<td style="text-align: left;">0.02596–0.13910</td>
 </tr>
 </tbody>
 </table>
@@ -695,17 +637,17 @@ Table&nbsp;4: Model reference points and their definitions.
 <td style="text-align: left;">t/year</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">FMSY</td>
+<td style="text-align: left;"><span class="math inline">\(F_{MSY}\)</span></td>
 <td style="text-align: right;">0.14846</td>
 <td style="text-align: left;">per year</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">BMSY</td>
+<td style="text-align: left;"><span class="math inline">\(B_{MSY}\)</span></td>
 <td style="text-align: right;">579660</td>
 <td style="text-align: left;">t</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">SBMSY</td>
+<td style="text-align: left;"><span class="math inline">\(SB_{MSY}\)</span></td>
 <td style="text-align: right;">136940</td>
 <td style="text-align: left;">t</td>
 </tr>
@@ -849,8 +791,8 @@ Table&nbsp;6: Held-out prediction bias (predicted minus observed), RMSE and MASE
 </div>
 <p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/hindcast/hindcast-skill.csv">Download complete table</a></p>
 </section>
-<section id="figures" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Figures</h1>
+<section id="figures" class="level1" data-number="15">
+<h1 data-number="15"><span class="header-section-number">15</span> Figures</h1>
 <div id="fig-map-5regions" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/map-5regions.pdf">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-map-5regions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -873,46 +815,13 @@ Figure&nbsp;2: Observation availability by data type and fishery. Coloured cells
 </figure>
 </div>
 <p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/fig-data-coverage-tile.pdf">Download vector figure</a></p>
-<div id="fig-growth-curve" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/growth-curve.pdf">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-growth-curve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="artifacts/diagnostic/growth-curve.svg" class="img-fluid figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-growth-curve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Mean length at the start of each model age class.
-</figcaption>
-</figure>
-</div>
-<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/growth-curve.pdf">Download vector figure</a></p>
-<div id="fig-maturity-ogive" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/maturity-ogive.pdf">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-maturity-ogive-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="artifacts/diagnostic/maturity-ogive.svg" class="img-fluid figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-maturity-ogive-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Model reproductive coefficient at age.
-</figcaption>
-</figure>
-</div>
-<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/maturity-ogive.pdf">Download vector figure</a></p>
-<div id="fig-natm-at-age" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/natm-at-age.pdf">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-natm-at-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="artifacts/diagnostic/natm-at-age.svg" class="img-fluid figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-natm-at-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Annual instantaneous natural mortality at age.
-</figcaption>
-</figure>
-</div>
-<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/natm-at-age.pdf">Download vector figure</a></p>
 <div id="fig-stepwise-panel" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/stepwise/stepwise-panel.pdf">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-stepwise-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="artifacts/stepwise/stepwise-panel.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stepwise-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Stepwise model trajectories.
+Figure&nbsp;3: Stepwise model trajectories.
 </figcaption>
 </figure>
 </div>
@@ -923,7 +832,7 @@ Figure&nbsp;6: Stepwise model trajectories.
 <img src="artifacts/diagnostic/cpue-fit-residuals.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cpue-fit-residuals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: Abundance-index fits and log residuals by series. Shading: central 95% conditional observation intervals. Residuals use the supplied log-scale standard deviations.
+Figure&nbsp;4: Abundance-index fits and log residuals by series. Shading: central 95% conditional observation intervals. Residuals use the supplied log-scale standard deviations.
 </figcaption>
 </figure>
 </div>
@@ -934,7 +843,7 @@ Figure&nbsp;7: Abundance-index fits and log residuals by series. Shading: centra
 <img src="artifacts/diagnostic/length-fit-by-fishery.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-length-fit-by-fishery-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8: Length-composition fits by fishery. Observed sample counts (bars) and predictions (lines), pooled over years.
+Figure&nbsp;5: Length-composition fits by fishery. Observed sample counts (bars) and predictions (lines), pooled over years. Shading: central 95% pointwise square-fita working-normal reference ranges, using record weights and fixed within-tail shape. Shading is limited to bins with an identified within-tail allocation and tapers at that support boundary; no interval is inferred outside it. ΣESS sums the original record working sample sizes.
 </figcaption>
 </figure>
 </div>
@@ -945,7 +854,7 @@ Figure&nbsp;8: Length-composition fits by fishery. Observed sample counts (bars)
 <img src="artifacts/diagnostic/length-fit-by-region.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-length-fit-by-region-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9: Length-composition fits by region. Observed sample counts (bars) and predictions (lines), pooled over years.
+Figure&nbsp;6: Length-composition fits by region. Observed sample counts (bars) and predictions (lines), pooled over years. Shading: central 95% pointwise square-fita working-normal reference ranges, using record weights and fixed within-tail shape. Shading is limited to bins with an identified within-tail allocation and tapers at that support boundary; no interval is inferred outside it. ΣESS sums the original record working sample sizes.
 </figcaption>
 </figure>
 </div>
@@ -956,7 +865,7 @@ Figure&nbsp;9: Length-composition fits by region. Observed sample counts (bars) 
 <img src="artifacts/diagnostic/caal-fits-regions.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-caal-fits-regions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10: Observed and predicted age distributions conditional on length. Cells: predictions; circles: observations; solid and dashed lines: predicted and observed mean age.
+Figure&nbsp;7: Observed and predicted age distributions conditional on length. Cells: predictions; circles: observations; solid and dashed lines: predicted and observed mean age.
 </figcaption>
 </figure>
 </div>
@@ -967,7 +876,7 @@ Figure&nbsp;10: Observed and predicted age distributions conditional on length. 
 <img src="artifacts/jitter/jitter-derived-values-diag-panel.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-jitter-derived-values-diag-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;11: Population trajectories across models (thin lines) and the reference model (red). Shading shows central 80% pointwise run ranges; the dark line is the median and the dashed red line is the reference model. Where isolated outer ranges dominate, upward triangles mark values beyond the robust static axis; complete values remain in the viewer. The reference model is excluded from these summaries.
+Figure&nbsp;8: Population trajectories across models (thin lines) and the reference model (red). Shading shows central 80% pointwise run ranges; the dark line is the median and the dashed red line is the reference model. Where isolated outer ranges dominate, upward triangles mark values beyond the robust static axis; complete values remain in the viewer. The reference model is excluded from these summaries.
 </figcaption>
 </figure>
 </div>
@@ -978,7 +887,7 @@ Figure&nbsp;11: Population trajectories across models (thin lines) and the refer
 <img src="artifacts/jitter/jitter-regional-depletion.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-jitter-regional-depletion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12: Spawning depletion by model and region, relative to each model’s dynamic unfished reference. Shading shows central 80% pointwise run ranges; the dark line is the median and the dashed red line is the reference model. Where isolated outer ranges dominate, upward triangles mark values beyond the robust static axis; complete values remain in the viewer. The reference model is excluded from these summaries.
+Figure&nbsp;9: Spawning depletion by model and region, relative to each model’s dynamic unfished reference. Shading shows central 80% pointwise run ranges; the dark line is the median and the dashed red line is the reference model. Where isolated outer ranges dominate, upward triangles mark values beyond the robust static axis; complete values remain in the viewer. The reference model is excluded from these summaries.
 </figcaption>
 </figure>
 </div>
@@ -989,7 +898,7 @@ Figure&nbsp;12: Spawning depletion by model and region, relative to each model�
 <img src="artifacts/selftest/selftest-recovery.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-selftest-recovery-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;13: Relative recovery error for terminal quantities and supplied key parameters in simulated-data refits. Boxes summarize replicates and points retain every finite result.
+Figure&nbsp;10: Relative recovery error for terminal quantities and supplied key parameters in simulated-data refits. Boxes summarize replicates and points retain every finite result; replicate-level values remain in the supplementary interactive viewer.
 </figcaption>
 </figure>
 </div>
@@ -1000,7 +909,7 @@ Figure&nbsp;13: Relative recovery error for terminal quantities and supplied key
 <img src="artifacts/selftest/selftest-time-series.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-selftest-time-series-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14: Population trajectories across models (thin lines) and the reference model (red). Shading shows central 50, 80, 95% pointwise run ranges; the dark line is the median and the dashed red line is the reference model. Where isolated outer ranges dominate, upward triangles mark values beyond the robust static axis; complete values remain in the viewer. The reference model is excluded from these summaries.
+Figure&nbsp;11: Population trajectories across models (thin lines) and the reference model (red). Shading shows central 50, 80, 95% pointwise run ranges; the dark line is the median and the dashed red line is the reference model. Where isolated outer ranges dominate, upward triangles mark values beyond the robust static axis; complete values remain in the viewer. The reference model is excluded from these summaries.
 </figcaption>
 </figure>
 </div>
@@ -1011,7 +920,7 @@ Figure&nbsp;14: Population trajectories across models (thin lines) and the refer
 <img src="artifacts/retrospective/retro-analysis.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-retro-analysis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;15: Population trajectories for the full-data fit and retrospective peels. Points mark terminal years; rho is Mohn’s mean terminal relative difference for peels passing the recorded numerical checks.
+Figure&nbsp;12: Population trajectories for the full-data fit and retrospective peels. Points mark terminal years; rho is Mohn’s mean terminal relative difference for peels passing the recorded numerical checks.
 </figcaption>
 </figure>
 </div>
@@ -1022,7 +931,7 @@ Figure&nbsp;15: Population trajectories for the full-data fit and retrospective 
 <img src="artifacts/profile/diag-profile-data-sources.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diag-profile-data-sources-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;16: Total negative log-likelihood and component profiles. Each curve is centered on its own minimum. Reproductively weighted biomass summed over regions and averaged across model periods in 1954-2022.
+Figure&nbsp;13: Total negative log-likelihood and component profiles. Each curve is centered on its own minimum. Reproductively weighted biomass summed over regions and averaged across model periods in 1954-2022.
 </figcaption>
 </figure>
 </div>
@@ -1033,7 +942,7 @@ Figure&nbsp;16: Total negative log-likelihood and component profiles. Each curve
 <img src="artifacts/profile/diag-profile-data-cpue.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diag-profile-data-cpue-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;17: Negative log-likelihood profiles for abundance-index components. Each curve is centered on its own minimum. Reproductively weighted biomass summed over regions and averaged across model periods in 1954-2022.
+Figure&nbsp;14: Negative log-likelihood profiles for abundance-index components. Each curve is centered on its own minimum. Reproductively weighted biomass summed over regions and averaged across model periods in 1954-2022.
 </figcaption>
 </figure>
 </div>
@@ -1044,7 +953,7 @@ Figure&nbsp;17: Negative log-likelihood profiles for abundance-index components.
 <img src="artifacts/profile/diag-profile-data-lf.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diag-profile-data-lf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;18: Negative log-likelihood profiles for length-composition components. Each curve is centered on its own minimum. Reproductively weighted biomass summed over regions and averaged across model periods in 1954-2022.
+Figure&nbsp;15: Negative log-likelihood profiles for length-composition components. Each curve is centered on its own minimum. Reproductively weighted biomass summed over regions and averaged across model periods in 1954-2022.
 </figcaption>
 </figure>
 </div>
@@ -1055,7 +964,7 @@ Figure&nbsp;18: Negative log-likelihood profiles for length-composition componen
 <img src="artifacts/profile/diag-profile-data-caal.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diag-profile-data-caal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;19: Negative log-likelihood profiles for conditional age-at-length components. Each curve is centered on its own minimum. Reproductively weighted biomass summed over regions and averaged across model periods in 1954-2022.
+Figure&nbsp;16: Negative log-likelihood profiles for conditional age-at-length components. Each curve is centered on its own minimum. Reproductively weighted biomass summed over regions and averaged across model periods in 1954-2022.
 </figcaption>
 </figure>
 </div>
@@ -1066,7 +975,7 @@ Figure&nbsp;19: Negative log-likelihood profiles for conditional age-at-length c
 <img src="artifacts/diagnostic/diag-time-series.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diag-time-series-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20: Estimated population trajectories.
+Figure&nbsp;17: Estimated population trajectories.
 </figcaption>
 </figure>
 </div>
@@ -1077,7 +986,7 @@ Figure&nbsp;20: Estimated population trajectories.
 <img src="artifacts/diagnostic/select-age.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-select-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;21: Fishery selectivity at age.
+Figure&nbsp;18: Fishery selectivity at age.
 </figcaption>
 </figure>
 </div>
@@ -1088,7 +997,7 @@ Figure&nbsp;21: Fishery selectivity at age.
 <img src="artifacts/diagnostic/season-movement-coeff.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-season-movement-coeff-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;22: Mean movement probabilities across supplied model age classes, by season and source-to-destination region. Diagonal cells retain the probability of remaining in the source region.
+Figure&nbsp;19: Mean movement probabilities across supplied model age classes, by season and source-to-destination region. Diagonal cells retain the probability of remaining in the source region.
 </figcaption>
 </figure>
 </div>
@@ -1099,7 +1008,7 @@ Figure&nbsp;22: Mean movement probabilities across supplied model age classes, b
 <img src="artifacts/diagnostic/recruitment-annual.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-recruitment-annual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;23: Annual recruitment overall and by model region.
+Figure&nbsp;20: Annual recruitment overall and by model region.
 </figcaption>
 </figure>
 </div>
@@ -1110,7 +1019,7 @@ Figure&nbsp;23: Annual recruitment overall and by model region.
 <img src="artifacts/diagnostic/timeseries-model-regions-stack.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-timeseries-model-regions-stack-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;24: Regional shares of population quantities.
+Figure&nbsp;21: Regional shares of population quantities.
 </figcaption>
 </figure>
 </div>
@@ -1121,7 +1030,7 @@ Figure&nbsp;24: Regional shares of population quantities.
 <img src="artifacts/diagnostic/total-biomass-with-without-fishing.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-total-biomass-with-without-fishing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;25: Total biomass under estimated fishing (solid) and the dynamic no-fishing counterfactual (dashed), by region and overall.
+Figure&nbsp;22: Total biomass under the fitted fishing history (Fished; solid) and the dynamic unfished counterfactual (Dynamic unfished; dashed), by region and overall.
 </figcaption>
 </figure>
 </div>
@@ -1132,7 +1041,7 @@ Figure&nbsp;25: Total biomass under estimated fishing (solid) and the dynamic no
 <img src="artifacts/ensemble/ensemble-individual.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ensemble-individual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;26: Empirical ensemble ranges and medians with the reference model (red dashed). Individual trajectories remain selectable in the supplementary viewer. Shading shows central 50, 80, 95% pointwise run ranges; the dark line is the median and the dashed red line is the reference model. Where isolated outer ranges dominate, upward triangles mark values beyond the robust static axis; complete values remain in the viewer.
+Figure&nbsp;23: Empirical ensemble ranges and medians with the reference model (red dashed). Individual trajectories remain selectable in the supplementary interactive viewer. Shading shows central 50, 80, 95% pointwise run ranges; the dark line is the median and the dashed red line is the reference model. Where isolated outer ranges dominate, upward triangles mark values beyond the robust static axis; complete values remain in the viewer.
 </figcaption>
 </figure>
 </div>
@@ -1143,7 +1052,7 @@ Figure&nbsp;26: Empirical ensemble ranges and medians with the reference model (
 <img src="artifacts/ensemble/combined-kobe-majuro-status.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-combined-kobe-majuro-status-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;27: Kobe (upper) and Majuro (lower) status in 2022. Open points: model estimates; percentages: weighted status probabilities. Contours: 50%, 80% and 95% smoothed joint highest-density regions of structural model spread; smoothing can cross a management boundary even when its empirical percentage rounds to zero. Majuro probabilities distinguish depletion below the limit, and F above or below FMSY when the depletion criterion is met.
+Figure&nbsp;24: Kobe (upper) and Majuro (lower) status in 2022. Open points: model estimates; percentages: weighted status probabilities. Contours: 50%, 80% and 95% smoothed joint highest-density regions of structural model spread; smoothing can cross a management boundary even when its empirical percentage rounds to zero. Majuro probabilities distinguish depletion below the limit, and <span class="math inline">\(F/F_{MSY}\)</span> above or below 1 when the depletion criterion is met.
 </figcaption>
 </figure>
 </div>
@@ -1154,7 +1063,7 @@ Figure&nbsp;27: Kobe (upper) and Majuro (lower) status in 2022. Open points: mod
 <img src="artifacts/ensemble/time-dynamic-kobe-majuro.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-time-dynamic-kobe-majuro-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;28: Stock status relative to the supplied spawning and fishing reference points. Rows show Kobe and Majuro coordinates; columns compare the diagnostic path with the annual ensemble median. Older years are muted, the latest ten years are emphasized and the terminal year is labelled. Individual ensemble-member paths remain selectable in the interactive viewer.
+Figure&nbsp;25: Stock status relative to the supplied spawning and fishing reference points. Rows show Kobe and Majuro coordinates; columns compare the diagnostic path with the annual ensemble median. Older years are muted, the latest ten years are emphasized and the terminal year is labelled. Individual ensemble-member paths remain selectable in the supplementary interactive viewer.
 </figcaption>
 </figure>
 </div>
@@ -1165,7 +1074,7 @@ Figure&nbsp;28: Stock status relative to the supplied spawning and fishing refer
 <img src="artifacts/diagnostic/yield.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-yield-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;29: Equilibrium yield across fishing-mortality multipliers.
+Figure&nbsp;26: Equilibrium yield across fishing-mortality multipliers.
 </figcaption>
 </figure>
 </div>
@@ -1176,7 +1085,7 @@ Figure&nbsp;29: Equilibrium yield across fishing-mortality multipliers.
 <img src="artifacts/projection/projection-stock-trajectories.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-projection-stock-trajectories-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;30: Historical and projected quantities by scenario with supplied uncertainty intervals. Central 95% intervals (2.5% to 97.5% quantiles across Monte Carlo ensemble members and recruitment replicates). Thin lines are a declared subset of individual projection paths. Static panels pair the full projection with a history window of equal duration; the viewer retains the complete history. Where isolated outer intervals dominate, upward triangles mark values beyond the robust static axis; complete values remain in the viewer.
+Figure&nbsp;27: Historical and projected quantities by scenario with supplied uncertainty intervals. Central 95% intervals (2.5% to 97.5% quantiles across Monte Carlo ensemble members and recruitment replicates). Thin lines are a declared subset of individual projection paths. Static panels pair the full projection with a history window of equal duration; the supplementary interactive viewer retains the complete history. Where isolated outer intervals dominate, upward triangles mark values beyond the robust static axis; complete values remain in the supplementary interactive viewer.
 </figcaption>
 </figure>
 </div>
@@ -1187,7 +1096,7 @@ Figure&nbsp;30: Historical and projected quantities by scenario with supplied un
 <img src="artifacts/hindcast/hindcast-analysis.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hindcast-analysis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;31: Observed values (black) and rolling 1-year-ahead predictions (teal); shading marks the held-out evaluation period. Right panels compare predictions with observations against the 1:1 line. MASE scales forecast errors by each origin’s training naive MAE; n is the number of evaluated predictions.
+Figure&nbsp;28: Observed values (black) and rolling 1-year-ahead predictions (teal); shading marks the held-out evaluation period. Right panels compare predictions with observations against the 1:1 line. MASE scales forecast errors by each origin’s training naive MAE; n is the number of evaluated predictions.
 </figcaption>
 </figure>
 </div>
@@ -1198,14 +1107,14 @@ Figure&nbsp;31: Observed values (black) and rolling 1-year-ahead predictions (te
 <img src="artifacts/hindcast/hindcast-skill-plot.svg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hindcast-skill-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;32: Out-of-sample hindcast error by index series and forecast lead. Points show bias and RMSE; MASE is scaled by the training-history naive mean absolute error and the dashed line marks one. The dashed bias reference marks zero. Values use only observations withheld at each rolling origin; n is retained in the accompanying table.
+Figure&nbsp;29: Out-of-sample hindcast error by index series and forecast lead. Points show bias and RMSE; MASE is scaled by the training-history naive mean absolute error and the dashed line marks one. The dashed bias reference marks zero. Values use only observations withheld at each rolling origin; n is retained in the accompanying table.
 </figcaption>
 </figure>
 </div>
 <p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/hindcast/hindcast-skill-plot.pdf">Download vector figure</a></p>
 </section>
-<section id="supplementary-outputs" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Supplementary outputs</h1>
+<section id="supplementary-outputs" class="level1" data-number="16">
+<h1 data-number="16"><span class="header-section-number">16</span> Supplementary outputs</h1>
 <p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/index.html">Supplementary interactive viewer</a></p>
 <p class="software-credit">
 Prepared with KIMSA companion tools · Developed by Kyuhan Kim
