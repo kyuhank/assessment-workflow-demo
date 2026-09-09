@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="K. Kim">
+<meta name="dcterms.date" content="2026-09-09">
+
+<title>South Pacific albacore 2024: KIMSA assessment</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="main_files/libs/clipboard/clipboard.min.js"></script>
+<script src="main_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="main_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="main_files/libs/quarto-html/popper.min.js"></script>
+<script src="main_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="main_files/libs/quarto-html/anchor.min.js"></script>
+<link href="main_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="main_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="main_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="main_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="main_files/libs/bootstrap/bootstrap-2f8554e66b69c83dab1edb555f015635.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles/report.css">
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#kimsa-assessment-software" id="toc-kimsa-assessment-software" class="nav-link active" data-scroll-target="#kimsa-assessment-software"><span class="header-section-number">0.1</span> KIMSA assessment software</a></li>
+  <li><a href="#stepwise-development" id="toc-stepwise-development" class="nav-link" data-scroll-target="#stepwise-development"><span class="header-section-number">0.2</span> Stepwise development</a></li>
+  <li><a href="#model-ensemble" id="toc-model-ensemble" class="nav-link" data-scroll-target="#model-ensemble"><span class="header-section-number">0.3</span> Model ensemble</a></li>
+  <li><a href="#data-fit" id="toc-data-fit" class="nav-link" data-scroll-target="#data-fit"><span class="header-section-number">0.4</span> Data fit</a></li>
+  <li><a href="#population-estimates" id="toc-population-estimates" class="nav-link" data-scroll-target="#population-estimates"><span class="header-section-number">0.5</span> Population estimates</a></li>
+  <li><a href="#stock-status" id="toc-stock-status" class="nav-link" data-scroll-target="#stock-status"><span class="header-section-number">0.6</span> Stock status</a></li>
+  <li><a href="#sec-references" id="toc-sec-references" class="nav-link" data-scroll-target="#sec-references"><span class="header-section-number">1</span> References</a></li>
+  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables"><span class="header-section-number">2</span> Tables</a></li>
+  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures"><span class="header-section-number">3</span> Figures</a></li>
+  <li><a href="#supplementary-outputs" id="toc-supplementary-outputs" class="nav-link" data-scroll-target="#supplementary-outputs"><span class="header-section-number">4</span> Supplementary outputs</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">South Pacific albacore 2024: KIMSA assessment</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>K. Kim </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 9, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This demonstration rebuilds the South Pacific albacore 2024 assessment with KIMSA. It combines one diagnostic fit, eight cumulative full-workflow model-development fits, 100 independently refitted ensemble members, 30 starting-value trials, 20 simulation-estimation refits, five retrospective peels, five one-year index hindcasts, an average-adult-biomass likelihood profile and 5,000 reference-catch projection paths. All supplied finite results are carried into the displays; recorded numerical checks remain available in the interactive outputs.</p>
+<p>The fitted period ends in 2022 and projections cover 2023–2042. Management summaries use 2019–2022 for recent spawning quantities and 2018–2021 for recent fishing mortality.</p>
+<p>The supplementary interactive viewer provides the detailed study, fitted-data and portable-result views from one entry page.</p>
+<p>This report demonstrates a complete KIMSA assessment workflow for South Pacific albacore using the public 2024 assessment inputs. The analysis spans the stock from the equator to 50°S and retains the four-region assessment structure shown in <a href="#fig-map-5regions" class="quarto-xref">Figure&nbsp;1</a>. The fitted time series ends in 2022.</p>
+<p>The diagnostic fit, model-development sequence, Monte Carlo ensemble, robustness studies and projections are connected through portable KIMSA result contracts. The public Pacific Community repositories were used as read-only sources; this demonstration does not modify or replace the official assessment.</p>
+<p>The 2024 assessment builds on the spatial structure used for the preceding South Pacific albacore assessment. WCPO regions are separated at 10°S and 25°S, and the eastern Pacific is represented as a fourth region. The model-development and ensemble inputs follow the 2024 assessment and its published ensemble archive <span class="citation" data-cites="teears2024 pacificcommunity2024ensemble">(<a href="#ref-pacificcommunity2024ensemble" role="doc-biblioref">Pacific Community, 2024</a>; <a href="#ref-teears2024" role="doc-biblioref">Teears et al., 2024</a>)</span>.</p>
+<p>The purpose of this workflow is to keep each fitted model, diagnostic study, figure, table and report linked to its exact input and package revision. Model outputs are reported as supplied; the interactive viewer exposes the underlying series and fits.</p>
+<p>Catch, abundance indices, length compositions, weight compositions and conditional age-at-length observations are carried from the assessment inputs into the diagnostic result. <a href="#tbl-fisheries-definitions" class="quarto-xref">Table&nbsp;1</a> records the fishery roles, regions, observation periods and units used by the model.</p>
+<p>Abundance-index panels pair each observation with its fitted value, conditional uncertainty band and residual. Composition panels retain the original samples and their model predictions. Records are grouped only for display; the fitted model uses the complete observations provided to its doitall workflow.</p>
+<p>The diagnostic model uses the four-region, age- and size-structured ALB 2024 inputs with the <code>mfcl_no_tag</code> KIMSA specification. Catch is conditioned through the hybrid-F solver with five passes and a maximum F of 6. Each independent model starts from its declared input and executes the complete phase 1–9 doitall sequence.</p>
+<section id="kimsa-assessment-software" class="level2" data-number="0.1">
+<h2 data-number="0.1" class="anchored" data-anchor-id="kimsa-assessment-software"><span class="header-section-number">0.1</span> KIMSA assessment software</h2>
+<p>KIMSA (Kit for Integrated Modular Stock Assessment) is the RTMB-based engine used to assemble and fit the population, fishing and observation components in this analysis. RTMB supplies automatic differentiation and Laplace-approximation tools to the fitted model <span class="citation" data-cites="kristensen2026rtmb">(<a href="#ref-kristensen2026rtmb" role="doc-biblioref">Kristensen, 2026</a>)</span>. <code>kimsa.lab</code> runs the stepwise, ensemble and diagnostic studies; <code>kimsa.view</code> turns their validated result tables into publication figures and one interactive viewer; and <code>kimsa.report</code> assembles those outputs into this editable manuscript. The report reads portable result contracts, so rendering does not require an MFCL executable or a live fit.</p>
+</section>
+<section id="stepwise-development" class="level2" data-number="0.2">
+<h2 data-number="0.2" class="anchored" data-anchor-id="stepwise-development"><span class="header-section-number">0.2</span> Stepwise development</h2>
+<p>Eight cumulative model configurations were each fitted through their complete declared doitall sequence. Colours identify configurations and all trajectories use solid lines. The four panels in <a href="#fig-stepwise-panel" class="quarto-xref">Figure&nbsp;6</a> show spawning depletion, aggregate fishing mortality, recruitment and spawning potential.</p>
+</section>
+<section id="model-ensemble" class="level2" data-number="0.3">
+<h2 data-number="0.3" class="anchored" data-anchor-id="model-ensemble"><span class="header-section-number">0.3</span> Model ensemble</h2>
+<p>The ensemble contains 100 member-specific official 2024 inputs. Each member was refitted independently with KIMSA before its derived quantities were combined.</p>
+<p>Thirty phase-aware starting-value trials perturb eligible optimizer coordinates when they first become active and then finish the unchanged doitall. Their objective, gradient and trajectory results retain every finite refit and identify recorded check status separately.</p>
+<p>Twenty simulation-estimation tests simulate the declared observation components from the diagnostic KIMSA fit and refit each generated data set through the full workflow. <a href="#fig-selftest-recovery" class="quarto-xref">Figure&nbsp;13</a> summarises relative recovery error for derived quantities and available key parameter blocks, while <a href="#fig-selftest-time-series" class="quarto-xref">Figure&nbsp;14</a> shows trajectory spread.</p>
+<p>Five retrospective peels, five one-year-ahead index hindcasts and a two-arm likelihood profile examine time-series stability, prediction and objective support. In the hindcast panels, the dashed series is predicted using only data before each held-out year; closer tracking and points nearer the one-to-one line indicate better out-of-sample prediction. Bias near zero and smaller RMSE are preferred; MASE below one is reported only when a valid training-history naive scale is available. The profile starts at the diagnostic centre; lower and upper arms advance sequentially in 2.5% steps within each arm and run concurrently with each other.</p>
+</section>
+<section id="data-fit" class="level2" data-number="0.4">
+<h2 data-number="0.4" class="anchored" data-anchor-id="data-fit"><span class="header-section-number">0.4</span> Data fit</h2>
+<p>Observed abundance indices, fitted values, supplied log-scale uncertainty and standardised residuals are paired by index in <a href="#fig-cpue-fit-residuals" class="quarto-xref">Figure&nbsp;7</a>. Composition figures use the observation and prediction records carried by the diagnostic fit.</p>
+</section>
+<section id="population-estimates" class="level2" data-number="0.5">
+<h2 data-number="0.5" class="anchored" data-anchor-id="population-estimates"><span class="header-section-number">0.5</span> Population estimates</h2>
+<p>The diagnostic population trajectories are shown in <a href="#fig-diag-time-series" class="quarto-xref">Figure&nbsp;20</a>. Regional shares are calculated only where regional quantities sum to the supplied all-region value; they are not inferred from fishery labels.</p>
+</section>
+<section id="stock-status" class="level2" data-number="0.6">
+<h2 data-number="0.6" class="anchored" data-anchor-id="stock-status"><span class="header-section-number">0.6</span> Stock status</h2>
+<p>Terminal ensemble uncertainty is shown in Kobe and Majuro coordinates in <a href="#fig-combined-kobe-majuro-status" class="quarto-xref">Figure&nbsp;27</a>. Annual status in <a href="#fig-time-dynamic-kobe-majuro" class="quarto-xref">Figure&nbsp;28</a> compares the diagnostic path with the year-specific median across all ensemble members. Individual member paths remain in the supplementary viewer. Management quantities and reference-point probabilities use the explicit periods stated in the summary and are reported in <a href="#tbl-manage-quant" class="quarto-xref">Table&nbsp;2</a> and <a href="#tbl-stock-status-refs" class="quarto-xref">Table&nbsp;3</a>.</p>
+<p>The reference-catch projection follows the 2024 assessment specification and spans 2023–2042. Each of 100 independently refitted ensemble members contributes 50 stochastic recruitment paths. <a href="#fig-projection-stock-trajectories" class="quarto-xref">Figure&nbsp;30</a> joins compatible historical ensemble summaries to the projected period, marks the transition, shows 2.5%–97.5% intervals and overlays three coherent individual paths selected across the terminal depletion distribution. Regional and catch-attainment results remain in the portable result tables. Terminal quantities are listed in <a href="#tbl-stock-projections" class="quarto-xref">Table&nbsp;5</a>.</p>
+<p>The diagnostic, stepwise and ensemble views answer different questions. The diagnostic shows one detailed fit, the cumulative stepwise sequence isolates reproducible model choices, and the independently refitted ensemble describes variation among the supplied 2024 model members. Median trajectories and central run ranges summarise the ensemble without hiding the member-level paths retained in the viewer.</p>
+<p>Starting-value, simulation-estimation, retrospective, hindcast and likelihood-profile results should be read together. They expose optimisation sensitivity, recovery under the fitted model, time-series dependence, predictive behaviour and local objective shape. The projections are a 20-year workflow demonstration under the declared reference-catch scenario and carry model-member and stochastic recruitment variation forward.</p>
+<p>The public assessment design and write-up were provided by the Pacific Community. All model fitting, diagnostic assembly, visualisation and report generation in this demonstration use the pinned KIMSA companion package revisions recorded with the outputs.</p>
+</section>
+<section id="sec-references" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> References</h1>
+<!-- Edit this section for the current assessment. -->
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-kristensen2026rtmb" class="csl-entry" role="listitem">
+Kristensen, K. (2026). RTMB: R bindings for TMB. <a href="https://doi.org/10.32614/CRAN.package.RTMB">https://doi.org/10.32614/CRAN.package.RTMB</a>.
+</div>
+<div id="ref-pacificcommunity2024ensemble" class="csl-entry" role="listitem">
+Pacific Community (2024). ALB 2024 ensemble results. GitHub repository <a href="https://github.com/PacificCommunity/ofp-sam-alb-2024-ensemble">https://github.com/PacificCommunity/ofp-sam-alb-2024-ensemble</a>.
+</div>
+<div id="ref-teears2024" class="csl-entry" role="listitem">
+Teears, T., Castillo-Jordán, C., Davies, N., Day, J., Hampton, J., Magnusson, A., Peatman, T., Pilling, G., Xu, H., Vidal, T., Williams, P., and Hamer, P. (2024). Stock assessment of south pacific albacore: 2024. WCPFC-SC20-2024/SA-WP-02, Rev. 3, Western; Central Pacific Fisheries Commission Scientific Committee <a href="https://meetings.wcpfc.int/node/23119">https://meetings.wcpfc.int/node/23119</a>.
+</div>
+</div>
+<!-- Generated entry point; edit sections/artifacts.qmd to arrange results. -->
+<!-- Generated report slots; source order retained. -->
+</section>
+<section id="tables" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Tables</h1>
+<div id="tbl-fisheries-definitions" class="quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[12.68,36.62,11.27,9.86,15.49,14.08]">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-fisheries-definitions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Fishery definitions and observation units.
+</figcaption>
+<div aria-describedby="tbl-fisheries-definitions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 37%">
+<col style="width: 11%">
+<col style="width: 10%">
+<col style="width: 15%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Fishery</th>
+<th style="text-align: left;">Fishery name</th>
+<th style="text-align: right;">Region</th>
+<th style="text-align: left;">Role</th>
+<th style="text-align: left;">Years</th>
+<th style="text-align: left;">Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">LL.DWFN.1a</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: left;">1954–2022</td>
+<td style="text-align: left;">fish</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">LL.DWFN.1b</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: left;">1954–2022</td>
+<td style="text-align: left;">fish</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">LL.DWFN.1c</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: left;">1954–2022</td>
+<td style="text-align: left;">fish</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">LL.DWFN.1d</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: left;">1954–2022</td>
+<td style="text-align: left;">fish</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">LL.PICT.1ab</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: left;">1992–2022</td>
+<td style="text-align: left;">fish</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">LL.PICT.1cd</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: left;">1982–2022</td>
+<td style="text-align: left;">fish</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">LL.AZ.1abcd</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: left;">1987–2022</td>
+<td style="text-align: left;">fish</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">LL.DWFN.1ef</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: left;">1954–2022</td>
+<td style="text-align: left;">fish</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">LL.PICT.1ef</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: left;">1984–2022</td>
+<td style="text-align: left;">fish</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">LL.AZ.1ef</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: left;">1985–2022</td>
+<td style="text-align: left;">fish</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">TR.ALL.1e</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: left;">1982–2022</td>
+<td style="text-align: left;">t</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">TR.ALL.1f</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: left;">1987–2022</td>
+<td style="text-align: left;">t</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">DN.ALL.1ef</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: left;">1983–1990</td>
+<td style="text-align: left;">t</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">LL.EPO.2a</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: left;">1957–2022</td>
+<td style="text-align: left;">fish</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">15</td>
+<td style="text-align: left;">LL.EPO.2b</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: left;">1961–2021</td>
+<td style="text-align: left;">fish</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">16</td>
+<td style="text-align: left;">LL.EPO.2c</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: left;">1963–2021</td>
+<td style="text-align: left;">fish</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">17</td>
+<td style="text-align: left;">TR.EPO.2abc</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: left;">1986–2006</td>
+<td style="text-align: left;">t</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">18</td>
+<td style="text-align: left;">LL.INDEX.1abcd.1954-2022</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Index</td>
+<td style="text-align: left;">1954–2022</td>
+<td style="text-align: left;">relative</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">19</td>
+<td style="text-align: left;">TR.INDEX.1ef.NZ-troll</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Index</td>
+<td style="text-align: left;">1992–2022</td>
+<td style="text-align: left;">relative</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20</td>
+<td style="text-align: left;">LL.INDEX.2abc.1954-2022</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Index</td>
+<td style="text-align: left;">1954–2022</td>
+<td style="text-align: left;">relative</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/fisheries-definitions.csv">Download complete table</a></p>
+<div id="tbl-manage-quant" class="quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[15.38,14.53,8.55,10.26,10.26,10.26,10.26,10.26,10.26]">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-manage-quant-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Management quantities and supplied uncertainty summaries.
+</figcaption>
+<div aria-describedby="tbl-manage-quant-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 14%">
+<col style="width: 9%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Quantity</th>
+<th style="text-align: left;">Period</th>
+<th style="text-align: left;">Unit</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">Median</th>
+<th style="text-align: right;">Minimum</th>
+<th style="text-align: right;">10%</th>
+<th style="text-align: right;">90%</th>
+<th style="text-align: right;">Maximum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Aggregate F</td>
+<td style="text-align: left;">2018–2021</td>
+<td style="text-align: left;">per year</td>
+<td style="text-align: right;">0.0728</td>
+<td style="text-align: right;">0.0666</td>
+<td style="text-align: right;">0.0222</td>
+<td style="text-align: right;">0.0332</td>
+<td style="text-align: right;">0.108</td>
+<td style="text-align: right;">0.156</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Aggregate F</td>
+<td style="text-align: left;">2022</td>
+<td style="text-align: left;">per year</td>
+<td style="text-align: right;">0.0692</td>
+<td style="text-align: right;">0.0619</td>
+<td style="text-align: right;">0.0206</td>
+<td style="text-align: right;">0.0314</td>
+<td style="text-align: right;">0.104</td>
+<td style="text-align: right;">0.151</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BMSY</td>
+<td style="text-align: left;">Reference point</td>
+<td style="text-align: left;">t</td>
+<td style="text-align: right;">785000</td>
+<td style="text-align: right;">662000</td>
+<td style="text-align: right;">330000</td>
+<td style="text-align: right;">423000</td>
+<td style="text-align: right;">1290000</td>
+<td style="text-align: right;">2210000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dynamic unfished spawning potential</td>
+<td style="text-align: left;">2019–2022</td>
+<td style="text-align: left;">t</td>
+<td style="text-align: right;">678000</td>
+<td style="text-align: right;">668000</td>
+<td style="text-align: right;">601000</td>
+<td style="text-align: right;">624000</td>
+<td style="text-align: right;">748000</td>
+<td style="text-align: right;">813000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dynamic unfished spawning potential</td>
+<td style="text-align: left;">2022</td>
+<td style="text-align: left;">t</td>
+<td style="text-align: right;">705000</td>
+<td style="text-align: right;">690000</td>
+<td style="text-align: right;">616000</td>
+<td style="text-align: right;">651000</td>
+<td style="text-align: right;">799000</td>
+<td style="text-align: right;">901000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(F/F_{MSY}\)</span></td>
+<td style="text-align: left;">2018–2021</td>
+<td style="text-align: left;">ratio</td>
+<td style="text-align: right;">0.458</td>
+<td style="text-align: right;">0.448</td>
+<td style="text-align: right;">0.205</td>
+<td style="text-align: right;">0.253</td>
+<td style="text-align: right;">0.638</td>
+<td style="text-align: right;">0.85</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(F/F_{MSY}\)</span></td>
+<td style="text-align: left;">2022</td>
+<td style="text-align: left;">ratio</td>
+<td style="text-align: right;">0.435</td>
+<td style="text-align: right;">0.429</td>
+<td style="text-align: right;">0.189</td>
+<td style="text-align: right;">0.232</td>
+<td style="text-align: right;">0.613</td>
+<td style="text-align: right;">0.818</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">FMSY</td>
+<td style="text-align: left;">Reference point</td>
+<td style="text-align: left;">per year</td>
+<td style="text-align: right;">0.155</td>
+<td style="text-align: right;">0.159</td>
+<td style="text-align: right;">0.106</td>
+<td style="text-align: right;">0.123</td>
+<td style="text-align: right;">0.182</td>
+<td style="text-align: right;">0.203</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MSY</td>
+<td style="text-align: left;">Reference point</td>
+<td style="text-align: left;">t/year</td>
+<td style="text-align: right;">115000</td>
+<td style="text-align: right;">103000</td>
+<td style="text-align: right;">62900</td>
+<td style="text-align: right;">75100</td>
+<td style="text-align: right;">177000</td>
+<td style="text-align: right;">235000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(SB/SB_{F=0}\)</span></td>
+<td style="text-align: left;">2019–2022</td>
+<td style="text-align: left;">ratio</td>
+<td style="text-align: right;">0.513</td>
+<td style="text-align: right;">0.512</td>
+<td style="text-align: right;">0.274</td>
+<td style="text-align: right;">0.39</td>
+<td style="text-align: right;">0.668</td>
+<td style="text-align: right;">0.742</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(SB/SB_{F=0}\)</span></td>
+<td style="text-align: left;">2022</td>
+<td style="text-align: left;">ratio</td>
+<td style="text-align: right;">0.548</td>
+<td style="text-align: right;">0.542</td>
+<td style="text-align: right;">0.292</td>
+<td style="text-align: right;">0.422</td>
+<td style="text-align: right;">0.703</td>
+<td style="text-align: right;">0.781</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(SB/SB_{MSY}\)</span></td>
+<td style="text-align: left;">2019–2022</td>
+<td style="text-align: left;">ratio</td>
+<td style="text-align: right;">3.22</td>
+<td style="text-align: right;">3.03</td>
+<td style="text-align: right;">1.55</td>
+<td style="text-align: right;">2.1</td>
+<td style="text-align: right;">4.89</td>
+<td style="text-align: right;">6.01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(SB/SB_{MSY}\)</span></td>
+<td style="text-align: left;">2022</td>
+<td style="text-align: left;">ratio</td>
+<td style="text-align: right;">3.58</td>
+<td style="text-align: right;">3.32</td>
+<td style="text-align: right;">1.67</td>
+<td style="text-align: right;">2.28</td>
+<td style="text-align: right;">5.47</td>
+<td style="text-align: right;">6.97</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SBMSY</td>
+<td style="text-align: left;">Reference point</td>
+<td style="text-align: left;">t</td>
+<td style="text-align: right;">114000</td>
+<td style="text-align: right;">114000</td>
+<td style="text-align: right;">60600</td>
+<td style="text-align: right;">83600</td>
+<td style="text-align: right;">146000</td>
+<td style="text-align: right;">167000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Spawning potential</td>
+<td style="text-align: left;">2019–2022</td>
+<td style="text-align: left;">t</td>
+<td style="text-align: right;">349000</td>
+<td style="text-align: right;">335000</td>
+<td style="text-align: right;">222000</td>
+<td style="text-align: right;">262000</td>
+<td style="text-align: right;">488000</td>
+<td style="text-align: right;">604000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Spawning potential</td>
+<td style="text-align: left;">2022</td>
+<td style="text-align: left;">t</td>
+<td style="text-align: right;">389000</td>
+<td style="text-align: right;">369000</td>
+<td style="text-align: right;">238000</td>
+<td style="text-align: right;">287000</td>
+<td style="text-align: right;">546000</td>
+<td style="text-align: right;">704000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/ensemble/manage-quant.csv">Download complete table</a></p>
+<div id="tbl-stock-status-refs" class="quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[44.19,25.58,30.23]">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-stock-status-refs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Stock-status probabilities for the declared reference points.
+</figcaption>
+<div aria-describedby="tbl-stock-status-refs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 44%">
+<col style="width: 26%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Condition</th>
+<th style="text-align: left;">Period</th>
+<th style="text-align: right;">Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(F/F_{MSY}\)</span> &gt; 1</td>
+<td style="text-align: left;">2018–2021</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(SB/SB_{F=0}\)</span> &lt; 0.20</td>
+<td style="text-align: left;">2019–2022</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(SB/SB_{MSY}\)</span> &lt; 1</td>
+<td style="text-align: left;">2019–2022</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(F/F_{MSY}\)</span> &gt; 1</td>
+<td style="text-align: left;">2022</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(SB/SB_{F=0}\)</span> &lt; 0.20</td>
+<td style="text-align: left;">2022</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(SB/SB_{MSY}\)</span> &lt; 1</td>
+<td style="text-align: left;">2022</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/ensemble/stock-status-refs.csv">Download complete table</a></p>
+<div id="tbl-ref-points" class="quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[33.33,33.33,33.33]">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ref-points-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Model reference points and their definitions.
+</figcaption>
+<div aria-describedby="tbl-ref-points-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Quantity</th>
+<th style="text-align: right;">Estimate</th>
+<th style="text-align: left;">Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">MSY</td>
+<td style="text-align: right;">86055</td>
+<td style="text-align: left;">t/year</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">FMSY</td>
+<td style="text-align: right;">0.14846</td>
+<td style="text-align: left;">per year</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BMSY</td>
+<td style="text-align: right;">579660</td>
+<td style="text-align: left;">t</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SBMSY</td>
+<td style="text-align: right;">136940</td>
+<td style="text-align: left;">t</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/ref-points.csv">Download complete table</a></p>
+<div id="tbl-stock-projections" class="quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[20.24,9.52,33.33,11.90,25.00]">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-stock-projections-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5: Projected quantities by scenario and reporting period.
+</figcaption>
+<div aria-describedby="tbl-stock-projections-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 10%">
+<col style="width: 33%">
+<col style="width: 12%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Scenario</th>
+<th style="text-align: right;">Period</th>
+<th style="text-align: left;">Quantity</th>
+<th style="text-align: right;">Median</th>
+<th style="text-align: left;">95% interval</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Reference catch</td>
+<td style="text-align: right;">2042</td>
+<td style="text-align: left;">Spawning Biomass</td>
+<td style="text-align: right;">273700</td>
+<td style="text-align: left;">7.053e+04–6.297e+05</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reference catch</td>
+<td style="text-align: right;">2042</td>
+<td style="text-align: left;">Dynamic Spawning Depletion</td>
+<td style="text-align: right;">0.46049</td>
+<td style="text-align: left;">0.1184–0.8391</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reference catch</td>
+<td style="text-align: right;">2042</td>
+<td style="text-align: left;">Fishing Mortality Proxy</td>
+<td style="text-align: right;">0.084509</td>
+<td style="text-align: left;">0.02722–0.2258</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reference catch</td>
+<td style="text-align: right;">2042</td>
+<td style="text-align: left;">Recruitment</td>
+<td style="text-align: right;">90321000</td>
+<td style="text-align: left;">1.728e+07–5.534e+08</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reference catch</td>
+<td style="text-align: right;">2042</td>
+<td style="text-align: left;">Total Biomass</td>
+<td style="text-align: right;">943750</td>
+<td style="text-align: left;">2.862e+05–2.997e+06</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reference catch</td>
+<td style="text-align: right;">2042</td>
+<td style="text-align: left;">Catch</td>
+<td style="text-align: right;">79733</td>
+<td style="text-align: left;">5.664e+04–8.432e+04</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/projection/stock-projections.csv">Download complete table</a></p>
+<div id="tbl-hindcast-skill" class="quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[43.90,7.32,4.88,12.20,12.20,10.98,8.54]">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-hindcast-skill-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6: Held-out prediction bias (predicted minus observed), RMSE and MASE by series and forecast lead. N counts scored forecasts; MASE uses each cutoff’s training naive-error scale.
+</figcaption>
+<div aria-describedby="tbl-hindcast-skill-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 44%">
+<col style="width: 7%">
+<col style="width: 5%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 11%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Series</th>
+<th style="text-align: right;">Lead</th>
+<th style="text-align: right;">N</th>
+<th style="text-align: right;">Bias</th>
+<th style="text-align: right;">RMSE</th>
+<th style="text-align: right;">MASE</th>
+<th style="text-align: left;">Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Longline index / Region 1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0.013635</td>
+<td style="text-align: right;">0.075785</td>
+<td style="text-align: right;">0.35625</td>
+<td style="text-align: left;">index</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">New Zealand troll index / Region 1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0.43361</td>
+<td style="text-align: right;">0.70298</td>
+<td style="text-align: right;">2.4447</td>
+<td style="text-align: left;">index</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Longline index / Region 2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">-0.13701</td>
+<td style="text-align: right;">0.21829</td>
+<td style="text-align: right;">0.84836</td>
+<td style="text-align: left;">index</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/hindcast/hindcast-skill.csv">Download complete table</a></p>
+</section>
+<section id="figures" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Figures</h1>
+<div id="fig-map-5regions" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/map-5regions.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-map-5regions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/diagnostic/map-5regions.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-map-5regions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Four-region South Pacific assessment structure. Boundaries follow the published ALB assessment definition: 10°S and 25°S in the WCPFC Convention Area, with one eastern Pacific region.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/map-5regions.pdf">Download vector figure</a></p>
+<div id="fig-data-coverage-tile" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/fig-data-coverage-tile.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-data-coverage-tile-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/diagnostic/fig-data-coverage-tile.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-coverage-tile-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Observation availability by data type and fishery. Coloured cells indicate years with observations.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/fig-data-coverage-tile.pdf">Download vector figure</a></p>
+<div id="fig-growth-curve" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/growth-curve.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-growth-curve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/diagnostic/growth-curve.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-growth-curve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Mean length at the start of each model age class.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/growth-curve.pdf">Download vector figure</a></p>
+<div id="fig-maturity-ogive" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/maturity-ogive.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-maturity-ogive-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/diagnostic/maturity-ogive.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-maturity-ogive-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Model reproductive coefficient at age.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/maturity-ogive.pdf">Download vector figure</a></p>
+<div id="fig-natm-at-age" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/natm-at-age.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-natm-at-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/diagnostic/natm-at-age.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-natm-at-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Annual instantaneous natural mortality at age.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/natm-at-age.pdf">Download vector figure</a></p>
+<div id="fig-stepwise-panel" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/stepwise/stepwise-panel.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-stepwise-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/stepwise/stepwise-panel.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stepwise-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Stepwise model trajectories.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/stepwise/stepwise-panel.pdf">Download vector figure</a></p>
+<div id="fig-cpue-fit-residuals" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/cpue-fit-residuals.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cpue-fit-residuals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/diagnostic/cpue-fit-residuals.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cpue-fit-residuals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Abundance-index fits and log residuals by series. Shading: central 95% conditional observation intervals. Residuals use the supplied log-scale standard deviations.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/cpue-fit-residuals.pdf">Download vector figure</a></p>
+<div id="fig-length-fit-by-fishery" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/length-fit-by-fishery.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-length-fit-by-fishery-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/diagnostic/length-fit-by-fishery.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-length-fit-by-fishery-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Length-composition fits by fishery. Observed sample counts (bars) and predictions (lines), pooled over years.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/length-fit-by-fishery.pdf">Download vector figure</a></p>
+<div id="fig-length-fit-by-region" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/length-fit-by-region.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-length-fit-by-region-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/diagnostic/length-fit-by-region.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-length-fit-by-region-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Length-composition fits by region. Observed sample counts (bars) and predictions (lines), pooled over years.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/length-fit-by-region.pdf">Download vector figure</a></p>
+<div id="fig-caal-fits-regions" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/caal-fits-regions.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-caal-fits-regions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/diagnostic/caal-fits-regions.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-caal-fits-regions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10: Observed and predicted age distributions conditional on length. Cells: predictions; circles: observations; solid and dashed lines: predicted and observed mean age.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/caal-fits-regions.pdf">Download vector figure</a></p>
+<div id="fig-jitter-derived-values-diag-panel" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/jitter/jitter-derived-values-diag-panel.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-jitter-derived-values-diag-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/jitter/jitter-derived-values-diag-panel.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-jitter-derived-values-diag-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11: Population trajectories across models (thin lines) and the reference model (red). Shading shows central 80% pointwise run ranges; the dark line is the median and the dashed red line is the reference model. Where isolated outer ranges dominate, upward triangles mark values beyond the robust static axis; complete values remain in the viewer. The reference model is excluded from these summaries.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/jitter/jitter-derived-values-diag-panel.pdf">Download vector figure</a></p>
+<div id="fig-jitter-regional-depletion" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/jitter/jitter-regional-depletion.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-jitter-regional-depletion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/jitter/jitter-regional-depletion.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-jitter-regional-depletion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12: Spawning depletion by model and region, relative to each model’s dynamic unfished reference. Shading shows central 80% pointwise run ranges; the dark line is the median and the dashed red line is the reference model. Where isolated outer ranges dominate, upward triangles mark values beyond the robust static axis; complete values remain in the viewer. The reference model is excluded from these summaries.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/jitter/jitter-regional-depletion.pdf">Download vector figure</a></p>
+<div id="fig-selftest-recovery" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/selftest/selftest-recovery.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-selftest-recovery-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/selftest/selftest-recovery.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-selftest-recovery-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13: Relative recovery error for terminal quantities and supplied key parameters in simulated-data refits. Boxes summarize replicates and points retain every finite result.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/selftest/selftest-recovery.pdf">Download vector figure</a></p>
+<div id="fig-selftest-time-series" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/selftest/selftest-time-series.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-selftest-time-series-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/selftest/selftest-time-series.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-selftest-time-series-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14: Population trajectories across models (thin lines) and the reference model (red). Shading shows central 50, 80, 95% pointwise run ranges; the dark line is the median and the dashed red line is the reference model. Where isolated outer ranges dominate, upward triangles mark values beyond the robust static axis; complete values remain in the viewer. The reference model is excluded from these summaries.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/selftest/selftest-time-series.pdf">Download vector figure</a></p>
+<div id="fig-retro-analysis" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/retrospective/retro-analysis.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-retro-analysis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/retrospective/retro-analysis.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-retro-analysis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15: Population trajectories for the full-data fit and retrospective peels. Points mark terminal years; rho is Mohn’s mean terminal relative difference for peels passing the recorded numerical checks.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/retrospective/retro-analysis.pdf">Download vector figure</a></p>
+<div id="fig-diag-profile-data-sources" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/profile/diag-profile-data-sources.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-diag-profile-data-sources-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/profile/diag-profile-data-sources.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diag-profile-data-sources-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16: Total negative log-likelihood and component profiles. Each curve is centered on its own minimum. Reproductively weighted biomass summed over regions and averaged across model periods in 1954-2022.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/profile/diag-profile-data-sources.pdf">Download vector figure</a></p>
+<div id="fig-diag-profile-data-cpue" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/profile/diag-profile-data-cpue.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-diag-profile-data-cpue-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/profile/diag-profile-data-cpue.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diag-profile-data-cpue-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;17: Negative log-likelihood profiles for abundance-index components. Each curve is centered on its own minimum. Reproductively weighted biomass summed over regions and averaged across model periods in 1954-2022.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/profile/diag-profile-data-cpue.pdf">Download vector figure</a></p>
+<div id="fig-diag-profile-data-lf" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/profile/diag-profile-data-lf.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-diag-profile-data-lf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/profile/diag-profile-data-lf.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diag-profile-data-lf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;18: Negative log-likelihood profiles for length-composition components. Each curve is centered on its own minimum. Reproductively weighted biomass summed over regions and averaged across model periods in 1954-2022.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/profile/diag-profile-data-lf.pdf">Download vector figure</a></p>
+<div id="fig-diag-profile-data-caal" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/profile/diag-profile-data-caal.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-diag-profile-data-caal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/profile/diag-profile-data-caal.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diag-profile-data-caal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;19: Negative log-likelihood profiles for conditional age-at-length components. Each curve is centered on its own minimum. Reproductively weighted biomass summed over regions and averaged across model periods in 1954-2022.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/profile/diag-profile-data-caal.pdf">Download vector figure</a></p>
+<div id="fig-diag-time-series" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/diag-time-series.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-diag-time-series-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/diagnostic/diag-time-series.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diag-time-series-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;20: Estimated population trajectories.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/diag-time-series.pdf">Download vector figure</a></p>
+<div id="fig-select-age" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/select-age.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-select-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/diagnostic/select-age.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-select-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;21: Fishery selectivity at age.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/select-age.pdf">Download vector figure</a></p>
+<div id="fig-season-movement-coeff" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/season-movement-coeff.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-season-movement-coeff-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/diagnostic/season-movement-coeff.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-season-movement-coeff-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;22: Mean movement probabilities across supplied model age classes, by season and source-to-destination region. Diagonal cells retain the probability of remaining in the source region.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/season-movement-coeff.pdf">Download vector figure</a></p>
+<div id="fig-recruitment-annual" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/recruitment-annual.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-recruitment-annual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/diagnostic/recruitment-annual.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-recruitment-annual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;23: Annual recruitment overall and by model region.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/recruitment-annual.pdf">Download vector figure</a></p>
+<div id="fig-timeseries-model-regions-stack" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/timeseries-model-regions-stack.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-timeseries-model-regions-stack-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/diagnostic/timeseries-model-regions-stack.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-timeseries-model-regions-stack-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;24: Regional shares of population quantities.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/timeseries-model-regions-stack.pdf">Download vector figure</a></p>
+<div id="fig-total-biomass-with-without-fishing" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/total-biomass-with-without-fishing.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-total-biomass-with-without-fishing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/diagnostic/total-biomass-with-without-fishing.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-total-biomass-with-without-fishing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;25: Total biomass under estimated fishing (solid) and the dynamic no-fishing counterfactual (dashed), by region and overall.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/total-biomass-with-without-fishing.pdf">Download vector figure</a></p>
+<div id="fig-ensemble-individual" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/ensemble/ensemble-individual.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ensemble-individual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/ensemble/ensemble-individual.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ensemble-individual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;26: Empirical ensemble ranges and medians with the reference model (red dashed). Individual trajectories remain selectable in the supplementary viewer. Shading shows central 50, 80, 95% pointwise run ranges; the dark line is the median and the dashed red line is the reference model. Where isolated outer ranges dominate, upward triangles mark values beyond the robust static axis; complete values remain in the viewer.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/ensemble/ensemble-individual.pdf">Download vector figure</a></p>
+<div id="fig-combined-kobe-majuro-status" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/ensemble/combined-kobe-majuro-status.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-combined-kobe-majuro-status-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/ensemble/combined-kobe-majuro-status.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-combined-kobe-majuro-status-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;27: Kobe (upper) and Majuro (lower) status in 2022. Open points: model estimates; percentages: weighted status probabilities. Contours: 50%, 80% and 95% smoothed joint highest-density regions of structural model spread; smoothing can cross a management boundary even when its empirical percentage rounds to zero. Majuro probabilities distinguish depletion below the limit, and F above or below FMSY when the depletion criterion is met.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/ensemble/combined-kobe-majuro-status.pdf">Download vector figure</a></p>
+<div id="fig-time-dynamic-kobe-majuro" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/ensemble/time-dynamic-kobe-majuro.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-time-dynamic-kobe-majuro-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/ensemble/time-dynamic-kobe-majuro.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-time-dynamic-kobe-majuro-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;28: Stock status relative to the supplied spawning and fishing reference points. Rows show Kobe and Majuro coordinates; columns compare the diagnostic path with the annual ensemble median. Older years are muted, the latest ten years are emphasized and the terminal year is labelled. Individual ensemble-member paths remain selectable in the interactive viewer.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/ensemble/time-dynamic-kobe-majuro.pdf">Download vector figure</a></p>
+<div id="fig-yield" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/diagnostic/yield.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-yield-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/diagnostic/yield.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-yield-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;29: Equilibrium yield across fishing-mortality multipliers.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/diagnostic/yield.pdf">Download vector figure</a></p>
+<div id="fig-projection-stock-trajectories" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/projection/projection-stock-trajectories.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-projection-stock-trajectories-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/projection/projection-stock-trajectories.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-projection-stock-trajectories-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;30: Historical and projected quantities by scenario with supplied uncertainty intervals. Central 95% intervals (2.5% to 97.5% quantiles across Monte Carlo ensemble members and recruitment replicates). Thin lines are a declared subset of individual projection paths. Static panels pair the full projection with a history window of equal duration; the viewer retains the complete history. Where isolated outer intervals dominate, upward triangles mark values beyond the robust static axis; complete values remain in the viewer.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/projection/projection-stock-trajectories.pdf">Download vector figure</a></p>
+<div id="fig-hindcast-analysis" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/hindcast/hindcast-analysis.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hindcast-analysis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/hindcast/hindcast-analysis.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hindcast-analysis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;31: Observed values (black) and rolling 1-year-ahead predictions (teal); shading marks the held-out evaluation period. Right panels compare predictions with observations against the 1:1 line. MASE scales forecast errors by each origin’s training naive MAE; n is the number of evaluated predictions.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/hindcast/hindcast-analysis.pdf">Download vector figure</a></p>
+<div id="fig-hindcast-skill-plot" class="quarto-float quarto-figure quarto-figure-center anchored" data-pdf-source="artifacts/hindcast/hindcast-skill-plot.pdf">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hindcast-skill-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artifacts/hindcast/hindcast-skill-plot.svg" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hindcast-skill-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;32: Out-of-sample hindcast error by index series and forecast lead. Points show bias and RMSE; MASE is scaled by the training-history naive mean absolute error and the dashed line marks one. The dashed bias reference marks zero. Values use only observations withheld at each rolling origin; n is retained in the accompanying table.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/hindcast/hindcast-skill-plot.pdf">Download vector figure</a></p>
+</section>
+<section id="supplementary-outputs" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Supplementary outputs</h1>
+<p><a href="https://kyuhank.github.io/assessment-workflow-demo/artifacts/index.html">Supplementary interactive viewer</a></p>
+<p class="software-credit">
+Prepared with KIMSA companion tools · Developed by Kyuhan Kim
+</p>
+<!-- Add an appendix heading and supporting material only when needed. -->
+<!-- Optional supporting methods or additional analyses. To include an appendix,
+add a heading such as '# Appendix: additional methods {#sec-additional-methods}'
+and your content below. This empty section produces no heading in the report. -->
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,7 @@
+"Model","Label","Status","Passed","Failed","Unknown"
+"diagnostic","Diagnostic model","passed",2,0,0
+"hindcast-2017","Index hindcast through 2017","passed",2,0,0
+"hindcast-2018","Index hindcast through 2018","passed",2,0,0
+"hindcast-2019","Index hindcast through 2019","passed",2,0,0
+"hindcast-2020","Index hindcast through 2020","passed",2,0,0
+"hindcast-2021","Index hindcast through 2021","passed",2,0,0

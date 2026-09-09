@@ -1,0 +1,22 @@
+"Model","Label","Status","Passed","Failed","Unknown"
+"diagnostic","Generating diagnostic model","passed",2,0,0
+"selftest-001","Self-test 1","passed",2,0,0
+"selftest-002","Self-test 2","passed",2,0,0
+"selftest-003","Self-test 3","passed",2,0,0
+"selftest-004","Self-test 4","passed",2,0,0
+"selftest-005","Self-test 5","passed",2,0,0
+"selftest-006","Self-test 6","passed",2,0,0
+"selftest-007","Self-test 7","passed",2,0,0
+"selftest-008","Self-test 8","passed",2,0,0
+"selftest-009","Self-test 9","passed",2,0,0
+"selftest-010","Self-test 10","passed",2,0,0
+"selftest-011","Self-test 11","passed",2,0,0
+"selftest-012","Self-test 12","passed",2,0,0
+"selftest-013","Self-test 13","passed",2,0,0
+"selftest-014","Self-test 14","passed",2,0,0
+"selftest-015","Self-test 15","passed",2,0,0
+"selftest-016","Self-test 16","passed",2,0,0
+"selftest-017","Self-test 17","passed",2,0,0
+"selftest-018","Self-test 18","passed",2,0,0
+"selftest-019","Self-test 19","passed",2,0,0
+"selftest-020","Self-test 20","passed",2,0,0

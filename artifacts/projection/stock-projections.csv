@@ -1,0 +1,7 @@
+"Scenario","Period","Quantity","Median","95% interval"
+"Reference catch","2042","Spawning Biomass",273697.147339458,"7.053e+04–6.297e+05"
+"Reference catch","2042","Dynamic Spawning Depletion",0.460489529789657,"0.1184–0.8391"
+"Reference catch","2042","Fishing Mortality Proxy",0.0845088496900119,"0.02722–0.2258"
+"Reference catch","2042","Recruitment",90320552.4022954,"1.728e+07–5.534e+08"
+"Reference catch","2042","Total Biomass",943751.805166431,"2.862e+05–2.997e+06"
+"Reference catch","2042","Catch",79733.3640811456,"5.664e+04–8.432e+04"
